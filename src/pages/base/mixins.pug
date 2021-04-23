@@ -15,7 +15,8 @@ mixin teaser(id, title, summary, img=false, link='#')
   article.feed__item(id=id, itemscope, itemtype='http://schema.org/Article')
     a.feed__block-link(href= link)
       figure.feed__img
-        img(src='/images/socmedical/placeholders/thumbnail-' + img + '.jpg' alt='')
+        if img
+          img(src='/images/socmedical/placeholders/thumbnail-' + img + '.jpg' alt='')
       .feed__copy
         h3.feed__title(itemprop='headline')= title
         p.feed__summary(itemprop='description')= summary
