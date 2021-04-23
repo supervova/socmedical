@@ -1,0 +1,192 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $zindex-fixed;
+}
+
+.header > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.9rem;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: $size-2;
+    padding-top: ($size-line * 2) + 1.8rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// SEARCH
+// -----------------------------------------------------------------------------
+
+.header__search {
+  @include media-breakpoint-down(mdl) {
+    background-color: $color-bg-alt;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-$size-line);
+    transition:
+      opacity $duration-sm $easing,
+      transform $duration-sm $easing;
+    height: $size-7;
+    z-index: 1;
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+
+  @include media-breakpoint-up(mdl) {
+    grid-column: 4 / span 4;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-column: 5 / span 4;
+  }
+}
+
+// Input and its container
+.form__item {
+  padding-bottom: 0;
+  flex-grow: 1;
+}
+
+.header__search .form__control {
+  padding-right: $size-7;
+}
+
+
+// Submit
+.header__search-submit {
+  @extend %btn;
+
+  background: $transparent;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: $size-6;
+  height: $size-6;
+}
+
+
+// Cancel button
+.header__search-cancel {
+  @extend %btn-ghost;
+
+  margin-left: $size-1;
+  height: $size-6;
+
+  @include media-breakpoint-up(mdl) {
+    display: none;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// BUTTONS
+// -----------------------------------------------------------------------------
+
+.header__buttons {
+  display: flex;
+  list-style: none;
+  padding: 0;
+
+  @include media-breakpoint-up(md) {
+    grid-column: 5 / span 8;
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(mdl) {
+    grid-column: 8 / span 5;
+    justify-content: flex-end;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-column: 9 / span 4;
+  }
+}
+
+.header__buttons li {
+  padding: 0;
+}
+
+.header__btn-sign-up,
+.header__btn-sign-in {
+  @extend %btn-base, %btn-outline;
+
+  background-color: rgba($color-bg-alt, .5);
+  backdrop-filter: blur(20px);
+
+  &:hover {
+    background-color: lighten($color-bg-alt, 4%);
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    padding-left: $size-line;
+    padding-right: $size-line;
+
+    .icon {
+      display: none;
+    }
+  }
+}
+
+.header__btn-sign-up {
+  @include media-breakpoint-down(md) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transform: translateX(.1rem);
+  }
+}
+
+.header__btn-sign-in {
+  @include media-breakpoint-down(md) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-left: $size-1;
+  }
+}
+
+.header__btn-search-slot {
+  display: none;
+
+  .btn:hover {
+    background-color: lighten($color-bg-alt, 4%);
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: inline-block;
+    margin-left: $size-1;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  @include media-breakpoint-up(mdl) {
+    display: none;
+  }
+}

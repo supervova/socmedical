@@ -1,0 +1,241 @@
+{
+  "name": "socmedical",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "b": "gulp --p"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=3"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-changed": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "html5-boilerplate": "github:h5bp/html5-boilerplate",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^9.0.0",
+    "popper.js": "^1.16.1",
+    "postcss-uncss": "^0.17.0",
+    "webpack-stream": "^6.1.2",
+    "yargs": "^16.2.0"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-sass-guidelines"
+    ],
+    "ignoreFiles": [
+      "**/*.css",
+      "**/*.html",
+      "node_modules/**/*"
+    ],
+    "rules": {
+      "comment-whitespace-inside": "always",
+      "font-family-name-quotes": "always-where-recommended",
+      "function-parentheses-space-inside": "never-single-line",
+      "max-nesting-depth": 3,
+      "media-feature-colon-space-after": "always",
+      "media-feature-colon-space-before": "never",
+      "media-feature-range-operator-space-after": "always",
+      "media-feature-range-operator-space-before": "always",
+      "no-duplicate-selectors": true,
+      "number-leading-zero": "never",
+      "order/order": [
+        "custom-properties",
+        "dollar-variables",
+        {
+          "type": "at-rule",
+          "name": "include"
+        },
+        "declarations",
+        "rules",
+        {
+          "type": "at-rule",
+          "name": "include",
+          "hasBlock": true
+        }
+      ],
+      "order/properties-alphabetical-order": null,
+      "property-no-unknown": [
+        true,
+        {
+          "ignoreProperties": [
+            "appearance"
+          ]
+        }
+      ],
+      "rule-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "after-comment",
+            "inside-block"
+          ]
+        }
+      ],
+      "scss/at-extend-no-missing-placeholder": null,
+      "scss/dollar-variable-colon-space-after": null,
+      "selector-attribute-quotes": "always",
+      "selector-class-pattern": "[a-zA-Z0-9]+[a-za-zA-Z0-9-_]*"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "plugin:prettier/recommended"
+    ],
+    "globals": {
+      "wp": true
+    },
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true,
+      "jquery": true
+    },
+    "plugins": [
+      "eslint-plugin-prettier",
+      "import"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
+    "settings": {
+      "import/core-modules": [],
+      "import/ignore": [
+        "node_modules",
+        "\\.(coffee|scss|css|less|hbs|svg|json)$"
+      ]
+    },
+    "rules": {
+      "import/no-extraneous-dependencies": "off",
+      "max-len": [
+        "error",
+        {
+          "ignoreComments": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true
+        }
+      ],
+      "no-multi-spaces": [
+        "error",
+        {
+          "exceptions": {
+            "BinaryExpression": true,
+            "VariableDeclarator": true
+          }
+        }
+      ],
+      "no-plusplus": [
+        2,
+        {
+          "allowForLoopAfterthoughts": true
+        }
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ]
+    }
+  },
+  "pugLintConfig": {
+    "disallowAttributeConcatenation": null,
+    "disallowAttributeInterpolation": true,
+    "disallowAttributeTemplateString": null,
+    "disallowBlockExpansion": null,
+    "disallowClassAttributeWithStaticValue": true,
+    "disallowClassLiteralsBeforeAttributes": null,
+    "disallowClassLiteralsBeforeIdLiterals": true,
+    "disallowClassLiterals": null,
+    "disallowDuplicateAttributes": true,
+    "disallowHtmlText": null,
+    "disallowIdAttributeWithStaticValue": null,
+    "disallowIdLiteralsBeforeAttributes": null,
+    "disallowIdLiterals": null,
+    "disallowLegacyMixinCall": true,
+    "disallowMultipleLineBreaks": true,
+    "disallowSpaceAfterCodeOperator": null,
+    "disallowSpacesInsideAttributeBrackets": true,
+    "disallowSpecificAttributes": null,
+    "disallowSpecificTags": null,
+    "disallowStringConcatenation": null,
+    "disallowStringInterpolation": null,
+    "disallowTagInterpolation": true,
+    "disallowTemplateString": null,
+    "maximumNumberOfLines": null,
+    "requireClassLiteralsBeforeAttributes": true,
+    "requireIdLiteralsBeforeAttributes": true,
+    "requireLineFeedAtFileEnd": true,
+    "requireLowerCaseAttributes": true,
+    "requireLowerCaseTags": true,
+    "requireSpaceAfterCodeOperator": true,
+    "requireSpacesInsideAttributeBrackets": null,
+    "requireSpecificAttributes": [
+      {
+        "img": [
+          "alt",
+          "src"
+        ]
+      },
+      {
+        "a": [
+          "href"
+        ]
+      }
+    ],
+    "requireStrictEqualityOperators": true,
+    "validateAttributeQuoteMarks": "'",
+    "validateAttributeSeparator": {
+      "separator": ", ",
+      "multiLineSeparator": "\n  "
+    },
+    "validateDivTags": null,
+    "validateExtension": true,
+    "validateIndentation": 2,
+    "validateLineBreaks": "LF",
+    "validateSelfClosingTags": true,
+    "validateTemplateString": [
+      "variable",
+      "string"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "es5",
+    "overrides": [
+      {
+        "files": [
+          "*.html"
+        ],
+        "options": {
+          "printWidth": 1000
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

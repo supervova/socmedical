@@ -1,0 +1,171 @@
+// stylelint-disable selector-no-qualifying-type
+
+$table-background:                      $color-bg-normal;
+$table-accent-bg:                       $color-bg-alt;
+$table-hover-bg:                        hsla(0, 0%, 0%, .03);
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+// #region
+
+table {
+  background-color: $table-background;
+  font-feature-settings: 'lnum' 1, 'tnum' 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  margin-top: var(--margin-top-table);
+  margin-bottom: var(--margin-top-bottom);
+  table-layout: fixed;
+  width: 100%;
+  max-width: 100%;
+}
+
+caption {
+  // caption-side: bottom;
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  padding-top: 0;
+  padding-bottom: $size-1;
+  padding-left: calc(var(--padding-x-cell) / 2);
+}
+
+th,
+td {
+  border-top: $border-width solid $color-ink-border;
+  text-align: left;
+  padding-top: calc(var(--padding-y-cell) - #{$border-width});
+  padding-right: var(--padding-x-cell);
+  padding-bottom: var(--padding-y-cell);
+  padding-left: var(--padding-x-cell);
+  vertical-align: top;
+
+  &:first-child {
+    padding-left: calc(var(--padding-x-cell) / 2);
+  }
+
+  &:last-child {
+    padding-right: calc(var(--padding-x-cell) / 2);
+  }
+
+  // Remove margin from the last-child
+  > :last-child { margin-bottom: 0; }
+}
+
+thead th {
+  border-bottom: (2 * $border-width) solid $color-ink-border;
+  font-weight: 500;
+  padding-bottom: calc(var(--padding-y-cell) - #{$border-width * 2});
+  vertical-align: bottom;
+
+  &[colspan] {
+    text-align: center;
+  }
+}
+
+th[scope='row'] {
+  border-right: $border-width solid $color-ink-border;
+
+  tbody & {
+    background: $color-bg-normal;
+  }
+}
+
+
+.table__special-cell {
+  min-width: 10em;
+  max-width: 90vw;
+}
+
+// #endregion
+
+// -----------------------------------------------------------------------------
+// Hover effect and zebra striping (deprecated)
+// -----------------------------------------------------------------------------
+
+// #region
+
+// tbody tr:nth-of-type(odd) {
+//   background-color: $table-accent-bg;
+// }
+
+tbody tr:hover {
+  background-color: $table-hover-bg;
+  transition: background-color $duration-sm;
+}
+
+// #endregion
+
+// -----------------------------------------------------------------------------
+// Helpers
+// -----------------------------------------------------------------------------
+
+// #region
+
+.table__num {
+  text-align: right;
+}
+
+// Reduce cell to the width of its content, if space is available
+.table__shrinked-cell {
+  width: 1%;
+}
+
+// Row numbers
+tbody {
+  // Start the counter
+  tr {
+    counter-increment: row-number;
+  }
+}
+
+.table__row-number {
+  // Add the counter number
+  &::after {
+    content: counter(row-number);
+  }
+}
+
+// #endregion
+
+// -----------------------------------------------------------------------------
+// Responsive table
+// -----------------------------------------------------------------------------
+
+// #region
+
+.has-responsive-table {
+  // Edge shadows
+  background:
+    linear-gradient(to right, $table-background 30%, rgba(255, 255, 255, 0)),
+    linear-gradient(to right, rgba(255, 255, 255, 0), $table-background 70%) 0 100%,
+    radial-gradient(
+      farthest-side at 0% 50%,
+      rgba(0, 0, 0, .2),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      farthest-side at 100% 50%,
+      rgba(0, 0, 0, .2),
+      rgba(0, 0, 0, 0)
+    )
+    0 100%;
+  background-attachment: local, local, scroll, scroll;
+  background-color: $table-background;
+  background-position: 0 0, 100%, 0 0, 100%;
+  background-repeat: no-repeat;
+  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+
+  border: .1rem solid $color-ink-border;
+  margin-top: var(--margin-top-table);
+  margin-bottom: var(--margin-top-bottom);
+  overflow: auto;
+
+  &:focus {
+    box-shadow: $box-shadow-focus-outline;
+  }
+}
+
+.has-responsive-table table {
+  margin: 0;
+}

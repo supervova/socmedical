@@ -1,0 +1,42 @@
+.icon {
+  --icon-stroke: #{$color-primary};
+  --icon-stroke-width: 2;
+  --icon-fill: #{$color-bg-alt};
+
+  display: inline-block;
+
+  // Prevent the icon from shrinking inside a flex container.
+  flex-shrink: 0;
+  overflow: hidden;
+
+  // Vertical-align: middle не всегда
+  // выравнивает по визуальному центру, надо
+  // экспериментировать с цифровыми значениями
+  vertical-align: -.4rem;
+  transition: fill $duration-sm;
+
+  width: 2.4rem;
+  height: 2.4rem;
+
+  @media #{$mq-retina} {
+    --icon-stroke-width: 1.5;
+  }
+}
+
+.icon-badge {
+  background-color: $color-primary;
+  border-radius: $border-radius-pill;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  width: $size-8;
+  height: $size-8;
+}
+
+.icon-badge > .icon,
+%icon-active {
+  --icon-stroke: #{$color-ink-inverse-normal};
+  --icon-fill: #{$transparent};
+}
+

@@ -1,0 +1,30 @@
+include /pages/base/mixins
+
+header.header
+  .container
+    a.d-md-none(href="/")
+      img(src="/images/socmedical/components/logo/logomark.svg", width="40", height="40", alt="Фирменный знак SocMedical")
+      span.sr-only SocMedical — первая страница
+
+    form#header-search-form.header__search(action='/search' method='get')
+      .form__item
+        input#header-search-input.form__control(name='q' type='search' dir='auto' autocomplete='off' aria-label='Искать на сайте' placeholder='Поиск')
+        //- input#header-search-input.form-control(type='text' dir='auto' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false' aria-autocomplete='list' aria-expanded='true' aria-owns='search suggestions' aria-label='Искать на сайте' placeholder='Поиск')
+        button#header-search-submit.header__search-submit(type='submit' disabled aria-label='Submit Search')
+          +icon('search')
+      button.header__search-cancel(type='reset', data-search-cancel) Отмена
+
+    ul.header__buttons
+      li
+        a.header__btn-sign-up(href='javascript:void(0)', onclick='loginform()')
+          span.d-md-none Регистрация
+          span.d-none.d-md-inline Зарегистрироваться
+          +icon('chevron-right', 'is-chevron')
+      li
+        a.header__btn-sign-in(href='javascript:void(0)', onclick='quickreg()')
+          span.d-md-none Вход
+          span.d-none.d-md-inline Войти
+          +icon('chevron-right', 'is-chevron')
+      li.header__btn-search-slot
+        a.btn.is-outline.is-compact(href='/search' role='button' data-search-btn aria-haspopup='true' aria-label='Искать на сайте')
+          +icon('search')

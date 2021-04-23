@@ -1,0 +1,26 @@
+extends /pages/base/base.pug
+include /pages/base/mixins
+
+//- SETTINGS -------------------------------------------------------------------
+
+append config
+  -
+    var page = {
+      isFront: true,
+      title: site.title,
+      desc: site.desc,
+      link: site.link,
+      img: site.img
+    }
+
+//- CONTENT --------------------------------------------------------------------
+
+
+
+block content
+
+  //- MODAL
+  button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#modal')
+    | Launch demo modal
+
+

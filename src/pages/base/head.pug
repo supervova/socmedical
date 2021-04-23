@@ -1,0 +1,66 @@
+meta(charset='utf-8')
+title #{page.title}
+meta(name='description', content=page.desc)
+//- meta(name='viewport', content='initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
+meta(name='viewport', content='width=device-width, initial-scale=1')
+
+//- OG
+meta(property='og:title', content=page.title)
+meta(property='og:type', content=(page.isFront ? 'website' : 'article'))
+meta(property='og:url', content=site.link + page.link)
+//- Recommended size for high resolution devices: at least 1200 x 630px
+meta(property='og:image', content=site.link + page.img)
+meta(property='fb:admins', content=site.facebookAdmins)
+meta(name='twitter:card', content='summary_large_image')
+
+//- WEB APP: https://go.shr.lc/3bhwCj1
+meta(name='apple-mobile-web-app-capable', content='yes')
+meta(name='apple-mobile-web-app-status-bar-style', content='default')
+meta(name='theme-color', content=site.color)
+
+link(rel='canonical', href=page.link)
+link(rel='apple-touch-icon', href=site.icon.lg)
+link(rel='icon', href=site.icon.svg, type='image/svg+xml', sizes='any')
+link(rel='manifest', href='/manifest.json')
+
+if site.fonts
+  link(rel='preconnect', href='https://fonts.googleapis.com/')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=' + site.fonts + '&display=swap')
+link(rel='stylesheet' href=site.css)
+
+if site.author
+  meta(name='author', content=site.author)
+
+script(type='application/ld+json').
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "#{company.title}",
+    "url": "#{site.link}",
+    "logo": "#{site.link}#{company.logo}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "#{company.city}",
+      "addressRegion": "#{company.region}",
+      "postalCode": "#{company.postalCode}",
+      "addressCountry": "#{company.country}"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "telephone": "#{company.phone}"
+    },
+    "sameAs": [
+      "https://www.facebook.com/#{company.social.facebook}",
+      "https://www.instagram.com/#{company.social.instagram}",
+      "https://www.linkedin.com/in/#{company.social.linkedin}"
+    ]
+  }
+
+if site.gtm
+  script.
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','#{site.gtm}');

@@ -1,0 +1,74 @@
+include /pages/base/mixins
+
+div.navbar-wrapper
+  .container
+    nav.navbar
+      a.d-none.d-md-block(href="/")
+        figure.navbar__logo
+          img.navbar__logomark(src="/images/socmedical/components/logo/logomark.svg", width="40", height="40", alt="Фирменный знак SocMedical")
+          figcaption
+            img(src="/images/socmedical/components/logo/logotype.svg", , width="115", height="32", alt="Логотип SocMedical")
+            div.navbar__tagline Медицинская социальная&nbsp;сеть
+
+      ul.navbar__list
+        li.navbar__item
+          a.navbar__link(href='')
+            +icon('group')
+            span.d-md-none Сообщ.
+            span.d-none.d-md-inline Сообщества
+        li.navbar__item
+          a.navbar__link(href='')
+            +icon('list')
+            | Лента
+        li.navbar__item
+          a.navbar__link(href='')
+            +icon('case')
+            span.d-md-none Услуги
+            span.d-none.d-md-inline Медуслуги
+        li.navbar__item.d-none.d-md-flex
+          a.navbar__link(href='')
+            +icon('pills')
+            | Маркетплейс
+        li.navbar__item.d-none.d-md-flex
+          a.navbar__link(href='')
+            +icon('stethoscope')
+            | Специалисты
+        li.navbar__item.d-none.d-lg-flex
+          a.navbar__link(href='')
+            +icon('building')
+            | Организации
+        li.navbar__item.dropdown(data-dropdown)
+          button#navbar-more.navbar__dropdown-label(type='button' aria-controls='navbar-more-menu' aria-expanded='false' data-dropdown-toggle)
+            +icon('arrow-up-circle', 'd-md-none')
+            +icon('arrow-right-circle', 'd-none d-md-block')
+            | Еще
+          ul#navbar-more-menu.dropdown__menu(role="listbox" aria-labelledby="navbar-more" data-dropdown-menu)
+            li.d-md-none(role='option')
+              a.dropdown__link(href='')
+                +icon('pills')
+                | Маркетплейс
+            li.d-md-none(role='option')
+              a.dropdown__link(href='')
+                +icon('stethoscope')
+                | Специалисты
+            li.d-lg-none(role='option')
+              a.dropdown__link(href='')
+                +icon('building')
+                | Организации
+            li(role='option')
+              a.dropdown__link(href='')
+                +icon('calendar')
+                | События
+            li.d-sm-none.d-md-flex(role='option')
+              a.dropdown__link(href='')
+                +icon('heart')
+                | Программы здоровья
+            li.d-sm-none.d-md-flex(role='option')
+              a.dropdown__link(href='')
+                +icon('ambulance')
+                span.d-sm-none Мед. на упреждение
+                span.d-none.d-md-inline Медицина на упреждение
+            li.d-sm-none.d-md-flex(role='option')
+              a.dropdown__link(href='')
+                +icon('book')
+                | Обучение

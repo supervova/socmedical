@@ -1,0 +1,29 @@
+.feature {
+  text-align: center;
+  padding-bottom: $size-line * 2 + $size-1;
+}
+
+.feature__icon {
+  background: $color-primary;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: $size-8;
+  height: $size-8;
+
+  > .icon {
+    fill: $color-ink-accent-normal;
+  }
+}
+
+.feature__title {
+  text-transform: none;
+  margin-bottom: -$size-line;
+}
+
+.feature__copy {
+  color: $color-ink-2ry;
+}

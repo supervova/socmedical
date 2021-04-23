@@ -1,0 +1,297 @@
+extends /pages/base/base.pug
+include /pages/base/mixins
+
+//- SETTINGS -------------------------------------------------------------------
+
+append config
+  -
+    var page = {
+      isFront: true,
+      title: site.title,
+      desc: site.desc,
+      link: site.link,
+      img: site.img
+    }
+
+//- CONTENT --------------------------------------------------------------------
+
+
+
+block content
+
+  main.main
+    //- HERO
+    section.hero
+      figure.hero__picture
+        img(src='/images/socmedical/components/hero/family-europeans.png', width="226", height="241", alt='')
+
+      .hero__copy
+        h1.hero__title Международная медицинская социальная сеть
+
+        ul.list.is-checklist
+          li Участвуйте в&nbsp;сообществах, объединенных общими интересами в&nbsp;области здоровья.
+          li Консультируйтесь у&nbsp;врачей онлайн.
+          li Покупайте на&nbsp;нашем портале лекарства и&nbsp;товары для здоровья.
+
+        a.btn.is-primary(href='javascript:void(0)', onclick='quickreg()')
+          span.d-md-none Зарегистрироваться
+          span.d-none.d-md-inline Позаботьтесь о своём здоровье
+          +icon('chevron-right', 'is-chevron')
+
+        a.btn.is-outline(href='javascript:void(0)', onclick='quickreg()')
+          | Вы доктор? Вам сюда
+          +icon('chevron-right', 'is-chevron')
+
+    //- POPULAR
+    section.section
+      .container
+        header.section__header
+          button.section__eyebrow.is-action(type='button', data-bs-toggle='modal', data-bs-target='#modal') Самара
+          h2.section__title Популярное
+        .row.is-sm-y-scrolling.pt-2.pb-1
+          .col-md-4.col-mdl-3
+            .card.has-directory-links
+              figure.icon-badge
+                +icon('person')
+              ul.directory-links
+                +directory-link('Врачи', '8 478', true)
+                +directory-link('Стоматолог', '1 011')
+                +directory-link('Гинеколог', '685')
+                +directory-link('Педиатр', '558')
+                +directory-link('Невролог', '299')
+                +directory-link('Дерматолог', '163')
+              +link-go
+
+          .d-md-none.d-mdl-block.col-mdl-3
+            .card.has-directory-links
+              figure.icon-badge
+                +icon('building')
+              ul.directory-links
+                +directory-link('Клиники', '897', true)
+                +directory-link('Стоматология', '283')
+                +directory-link('Клиника', '93')
+                +directory-link('Поликлиника', '56')
+                +directory-link('Больница', '23')
+                +directory-link('Роддом', '7')
+              +link-go
+
+          .col-md-4.col-mdl-3
+            .card.has-directory-links
+              figure.icon-badge
+                +icon('case')
+              ul.directory-links
+                +directory-link('Услуги', '11 640', true)
+                +directory-link('Имплантация зубов', '199')
+                +directory-link('Прививки', '65')
+                +directory-link('Брекеты', '64')
+                +directory-link('ЭКО', '16')
+                +directory-link('Ринопластика', '13')
+              +link-go
+
+          .col-md-4.col-mdl-3
+            .card.has-directory-links
+              figure.icon-badge
+                +icon('activity')
+              ul.directory-links
+                +directory-link('Диагностика', '7 465', true)
+                +directory-link('УЗИ', '212')
+                +directory-link('Рентген', '62')
+                +directory-link('Гастроскопия', '49')
+                +directory-link('КТ', '33')
+                +directory-link('МРТ', '17')
+              +link-go
+
+    hr.section-divider
+
+    //- STORE
+    section.section
+      .container
+        header.section__header
+          p.section__eyebrow фармацевтика и медицинские изделия
+          h2.section__title Лекарства, БАДы и медицинские товары
+
+        .row.is-sm-y-scrolling.pt-1.pb-1
+          .col-md-4.col-mdl-3.col-lg-2
+            +product-tile(
+              '001',
+              'Витатека Рыбий жир, капсулы 100 шт.',
+               5, 10,
+               72, 89
+            )
+
+          .col-md-4.col-mdl-3.col-lg-2
+            +product-tile(
+              '002',
+              'Balance Group Life 4999-011 Спирулина таблетки, 100 г',
+               0, 0,
+               621, 800
+            )
+
+          .col-md-4.col-mdl-3.col-lg-2
+            +product-tile(
+              '003',
+              'Детримакс Бэби 30 мл',
+               5, 88,
+               360
+            )
+
+          .col-md-4.d-md-none.d-mdl-block.col-mdl-3.col-lg-2
+            +product-tile(
+              '004',
+              'Магний B6 (Magnesium B6), 30 таб. по 650 мг. Для нервной системы, при стрессах и нагрузке',
+               4.5, 132,
+               295, 370
+            )
+
+          .col-md-4.d-md-none.d-lg-block.col-lg-2
+            +product-tile(
+              '005',
+              'Омега 3 1000 мг (90 капсул) / Рыбий жир / Omega 3',
+               4.5, 138,
+               460, '1 057'
+            )
+
+          .col-md-4.d-md-none.d-lg-block.col-lg-2
+            +product-tile(
+              '006',
+              'РЕГУЛЯТОР АППЕТИТА - LIPROMIX ДИЕТА, средство для похудения. Способствует снижению аппетита, потере веса и активации обмена веществ. Биотин + витаминный комплекс',
+               0, 0,
+               294, '4 900'
+            )
+
+        a.link.is-cta.is-centered(href='#')
+          | Весь ассортимент
+          +icon('chevron-right')
+
+    hr.section-divider
+
+    //- FEED
+    section.section
+      .container
+        header.section__header
+          p.section__eyebrow Лента новостей
+          h2.section__title Врачи и пациенты о главных событиях
+
+        .feed
+          +teaser(
+            'Fo5csvdG',
+            'Прививать иностранцев в России пока не планируют',
+            'Привиться от коронавируса российскими вакцинами на территории РФ сегодня могут только россияне при предъявлении паспорта и полиса ОМС, в исключительных случаях - граждане других государств, если у них есть вид на жительство, сообщили "Российской газете" в Минздраве. В ведомстве подчеркнули, что в приоритете государства защитить соотечественников. При этом вакцинация от COVID-19 в России проводится бесплатно.',
+            '01'
+          )
+          +teaser(
+            '1HGtE890',
+            'Тут такое дело',
+            'У меня в январе сразу после болезни был средний уровень антител. Сейчас сделала количественный анализ, за два месяца они почти полностью исчезли. Пересдала - точно, антител нет, это не ошибка. Болела тяжело, больше не хочу. '
+          )
+          +teaser(
+            '6n4SNHhy',
+            'Жириновский призвал закрыть авиасообщение с Турцией',
+            'Лидер ЛДПР Владимир Жириновский обратился к правительству РФ с призывом закрыть авиасообщение с Турцией из-за роста в этой стране заболеваемости коронавирусом.',
+            '02'
+          )
+          +teaser(
+            'FfGwKzLh',
+            'EUobserver: у 10 человек в России были осложнения после вакцинации «Спутником V», четверо из них умерли Росздравнадзор заявил, что не было ни одной смерти из-за самой вакцины',
+            'Четыре человека в течение «недавнего времени» умерли в России вскоре после того, как привились от коронавируса вакциной «Спутник V», пишет издание EUobserver, ссылаясь на документы, поступившие в распоряжение Европейского агентства по лекарственным средствам (ЕМА). Это агентство занимается экспертизой «Спутника V», которая должна позволить препарату выйти на рынок Евросоюза.',
+            '03'
+          )
+          +teaser(
+            'AsKtAONG',
+            'Система долговременного ухода заработает в полную силу к 2030 году',
+            'К 2030 году долговременный уход как государственная мера поддержки будет доступен всем нуждающимся. Об этом заявила вице-премьер Татьяна Голикова на подведении итогов конкурса лучших практик активного долголетия в пятницу, 9 апреля.',
+            '04'
+          )
+          +teaser(
+            'zRo5ZTa9',
+            'В Тюменской области 82-летнюю женщину спасли после третьего инсульта',
+            'У жительницы Ишима случился третий инсульт. Спасти ее удалось благодаря бдительности родственников и своевременной тромболитической терапии.',
+            '05'
+          )
+          +teaser(
+            'AmkK7OmA',
+            'Теперь к каждому посту со словами прививка, вакцина, Спутник - прицепляют довесок от фб со ссылкой на справку по вакцинации? (Тестирую).',
+            ''
+          )
+          +teaser(
+            'YKe1A3TC',
+            'Ученые научили крыс находить рак и диабет по запаху',
+            'В Новгородской области подвели итоги исследования диагностических способностей лабораторных крыс. Оказалось, что животные способны выявлять у пациентов онкологические и эндокринные заболевания по запаху изо рта, сообщает РИА Новости со ссылкой на Фонд перспективных исследований.',
+            '06'
+          )
+
+        a.link.is-cta.is-centered(href='#')
+          | К другим новостям
+          +icon('chevron-right')
+
+    hr.section-divider
+
+    //- FEATURES
+    section.section
+      .container
+        header.section__header
+          p.section__eyebrow знания и профилактика
+          h2.section__title Будьте здоровы!
+
+          .row.is-comfort.pt-1.pb-1
+
+            .col-md-6.col-mdl-4
+              .featurette
+                figure.icon-badge
+                  +icon('ambulance')
+                a.featurette__link(href="#", tabindex=-1)
+                  h3.featurette__title Проактивная медицина
+                  p.featurette__summary Главная цель направления проактивной медицины&nbsp;— научить каждого управлять своим здоровьем. Усилия врача концентрированы на&nbsp;предотвращении заболеваний.
+                a.link.is-cta.is-centered(href='#')
+                  | Подробнее
+                  +icon('chevron-right')
+
+            .col-md-6.col-mdl-4
+              .featurette.mb-0
+                figure.icon-badge
+                  +icon('heart')
+                a.featurette__link(href="#", tabindex=-1)
+                  h3.featurette__title Программы здоровья
+                  p.featurette__summary Комплексные программы диагностики позволяют выявлять факторы риска на&nbsp;ранних стадиях. Включают в&nbsp;себя различные исследования и&nbsp;консультации специалистов.
+                a.link.is-cta.is-centered(href='#')
+                  | Подробнее
+                  +icon('chevron-right')
+
+            .d-none.d-mdl-block.col-mdl-4
+              .featurette
+                figure.icon-badge
+                  +icon('book')
+                a.featurette__link(href="#", tabindex=-1)
+                  h3.featurette__title Образовательные курсы
+                  p.featurette__summary Пройдите онлайн-курсы по&nbsp;общему оздоровлению, чтобы укрепить свое физическое и&nbsp;эмоциональное здоровье&nbsp;— от&nbsp;зрения и&nbsp;осанки до&nbsp;концентрации внимания и&nbsp;сна.
+                a.link.is-cta.is-centered(href='#')
+                  | Подробнее
+                  +icon('chevron-right')
+
+    //- KPI
+    .container.pb-1
+      .card
+        .row
+          .kpi.d-none.d-mdl-block.col-mdl-4.col-lg-3
+            span.kpi__value 2 107 786
+            span.kpi__caption отзывов
+          .kpi.col-md-6.col-mdl-4.col-lg-3
+            span.kpi__value 5 459 013
+            span.kpi__caption записей на прием
+          .kpi.d-none.d-md-block.col-md-6.col-mdl-4.col-lg-3
+            span.kpi__value 725 177
+            span.kpi__caption врачей
+          .kpi.d-none.d-lg-block.col-lg-3
+            span.kpi__value 17 939 712
+            span.kpi__caption посетителей в мес.
+
+    //- CTA
+    .container
+      .cta
+        .cta__copy
+          h2.cta__title То, что доктор прописал
+          a.btn.is-outline.is-inverse(href='javascript:void(0)', onclick='quickreg()')
+            | Зарегистрироваться
+            +icon('chevron-right', 'is-chevron')
+        img.cta__img(src="/images/socmedical/components/cta/doctor.png", alt="Доктор скоро вас примет")
+

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g stroke="var(--icon-stroke)" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--icon-stroke-width)" transform="translate(1 3)">
+    <path d="M2,15.5 C2,16.8807119 3.11928813,18 4.5,18 C5.88071187,18 7,16.8807119 7,15.5"/>
+    <circle cx="17.5" cy="15.5" r="2.5"/>
+    <polygon fill="var(--icon-fill)" points="19 6 22 9 22 14 16 14 16 6"/>
+    <rect width="16" height="14"/>
+    <path d="M8,4 L8,10 M5,7 L11,7"/>
+  </g>
+</svg>

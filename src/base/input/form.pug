@@ -1,0 +1,61 @@
+//- MARKUP
+
+//- Full width input
+.form__item
+  label.form-label(for='form-textarea1') Caption
+  textarea#form-textarea.form-control(required, placeholder='Required example textarea')
+  .form__alert(role='alert') Message
+
+//- Input in row
+.row
+  .form__item.col-sm-4
+    label.form-label(for='form-textarea1') Caption
+    input#form-input1.form__control(type='text', required)
+    .form__alert(role='alert') Message
+
+//- Inputs with prefixes and / or suffixes
+.form__item.col-sm-4
+  label.form__label(for='form-input2') Caption
+  .form__group
+    span.form__control-prefix $
+    span.form__control-suffix .00
+    input#form-input2.form__control(type='text', required)
+    .form__alert(role='alert') Message
+
+//- ----------------------------------------------------------------------------
+
+//- Full form
+form#form-needs-validation(action='' method='post' novalidate)
+  input(type='hidden' name='' value='')
+  .form__item
+    label(for='form-name') Name
+    input#form-name.form__control(name='name' type='text' value='' maxlength='128' pattern='[A-Za-z -]+' required)
+    .form__alert(role='alert') Message
+  .form__item
+    label(for='form-email') Email
+    input#form-email.form__control(name='email' type='email' inputmode='email' value='' maxlength='128' required)
+    .form__alert(role='alert') Message
+  .row
+    .form__item-item.col-4
+      label(for='form-country-code') Country code
+      input#form-country-code.form__control(name='country-code' type='text' inputmode='numeric' value='' maxlength='3' pattern='\d{3}' required)
+      .form__alert(role='alert') Message
+    .form__item-item.col-8
+      label(for='form-phone') Phone number
+      input#form-phone.form__control(name='phone' type='text' inputmode='numeric' value='' maxlength='9' pattern='\d{8,9}' required)
+      .form__alert(role='alert') Message
+  .form__item
+    label(for='form-state') State
+    select#form-state.form__select(name='state')
+      option(value='AL') Alabama
+      option(value='AK') Alaska
+      option(value='AZ') Arizona
+  .form__item.has-checkbox
+    input#form-terms.form__input(type='checkbox' name='terms' required)
+    label(for='form-terms')
+      | You agree to our
+      a(href='' target='_blank' rel='noopener noreferrer') Terms
+    .form__alert(role='alert') Message
+  button#form-submit.btn.is-submit(type='submit') Sign Up
+    svg.spinner.is-sm(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 48 48')
+      circle.spinner__circle(cx='24' cy='24' r='20')

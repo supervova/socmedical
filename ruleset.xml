@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<ruleset name="_project">
+  <description>_project Coding Standards (PSR2 Based)</description>
+
+  <!-- Show colors in console -->
+  <arg value="-colors"/>
+
+  <!-- Show sniff codes in all reports -->
+  <arg value="s"/>
+
+  <arg name="tab-width" value="2"/>
+
+  <rule ref="PSR2" />
+
+  <!-- Если нужно исключить правила для всех файлов, делается это в теге PSR2 -->
+  <!--
+  <rule ref="PSR2">
+    <exclude name="Generic.Files.LineLength"/>
+    <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
+  </rule>
+  -->
+
+  <!-- Если нужно исключить правило для определенных файлов, делается это в теге правила -->
+  <!--
+  <rule ref="Generic.Files.LineLength.TooLong">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
+  -->
+
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="2"/>
+    </properties>
+  </rule>
+
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration">
+    <properties>
+      <property name="indent" value="2" />
+    </properties>
+  </rule>
+
+  <rule ref="PSR2.Methods.FunctionCallSignature">
+    <properties>
+      <property name="indent" value="2" />
+    </properties>
+  </rule>
+
+
+</ruleset>

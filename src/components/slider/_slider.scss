@@ -1,0 +1,56 @@
+// 1) Turn on animation in styles.scss
+
+// 2) Set a `position: relative` for the parent element. It is optional to use
+// the `slider` class.
+
+// 3) Then use mixins to create the required styles for children.
+
+// examples:
+// @include media-breakpoint-down(md) {
+//   .page.is-home .has-kpi .row {
+//     position: relative;
+//   }
+
+//   .page.is-home .has-kpi {
+//     @include slider-slides(4, '.col-md-3');
+//   }
+// }
+
+// @include slider-slides(3);
+
+.slider {
+  position: relative; // required
+  width: 100%;
+}
+
+// MIXINS
+
+@mixin slider-slides(
+  $slides: 5,
+  $slide-class: '.slider__item',
+  $on-screen: 4s
+) {
+
+  #{$slide-class} {
+    animation-name: slider-autoplay-0#{$slides};
+    animation-duration: ($slides * $on-screen);
+    animation-iteration-count: infinite;
+    animation-iteration-count: $easing;
+    opacity: 1;
+    position: relative;
+  }
+
+  #{$slide-class} ~ #{$slide-class} {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  @for $i from 2 through $slides {
+    #{$slide-class}.is-#{$i} {
+      animation-delay: ($on-screen * ($i - 1));
+    }
+  }
+}

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>SocMedical</title>
+    <meta name="description" content="Международная медицинская социальная сеть">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body>
+    <!-- noindex-->
+    <noscript>
+      <div class="alert is-warning is-global" role="alert">
+        <p>
+          <svg class="icon" aria-hidden="true" focusable="false">
+            <use xlink:href="/img/base/icons/sprite.svg#icon-warning-md"></use>
+          </svg>
+          В&nbsp;вашем браузере выключен JavaScript, поэтому на&nbsp;сайте могут не&nbsp;работать некоторые элементы интерфейса. Но&nbsp;вы&nbsp;всегда можете <a href="http://www.google.com/adsense/support/bin/answer.py?hl=ru&amp;answer=12654" target="_blank" rel="noopener noreferrer">включить Javascript</a>.
+        </p>
+      </div>
+    </noscript>
+    <!-- /noindex-->
+    <div class="app" id="root">
+      <!-- PROJECT –––––––––––––––––––––––––––––––––––––––––––––––––––––––––-->
+      <div class="project">
+        <header class="project">
+          <h2 class="project__title">Несохраненный проект</h2>
+          <button class="btn has-only-icon" type="button" aria-controls="project-search" aria-expanded="false">
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="/img/base/graphics/sprite.svg#icon-search"></use>
+            </svg><span class="label">Поиск по проекту</span>
+          </button>
+          <form class="form is-search" id="project-search" action="/" role="search">
+            <input class="form__control" autocomplete="off">
+            <div class="form__menu"></div>
+          </form>
+        </header>
+        <nav class="project__nav" aria-label="Папки и документы в проекте">
+          <ul class="project__lists">
+            <li class="project__item is-open-docs">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-note"></use>
+              </svg><span class="project__item-label">Открытые</span><span class="project__count">8</span>
+            </li>
+            <li class="project__item is-favorites">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-star"></use>
+              </svg><span class="project__item-label">Избранное</span><span class="project__count">8</span>
+            </li>
+            <li class="project__item is-bookmarks">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-bookmark"></use>
+              </svg><span class="project__item-label">Закладки</span><span class="project__count">8</span>
+            </li>
+            <li class="project__item is-all">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-all"></use>
+              </svg><span class="project__item-label">Все</span><span class="project__count">8</span>
+            </li>
+          </ul>
+          <h3 class="project__heading" id="project-folders-title">Папки
+            <button class="btn" type="button" aria-controls="project-folders" aria-expanded="true"><span class="label">Скрыть</span></button>
+          </h3>
+          <ul class="project__folders" id="project-folders" aria-labelledby="project-folders-title">
+            <li class="project__item is-folder">
+              <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-chevron"></use>
+              </svg>
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-folder"></use>
+              </svg><span class="project__item-label" id="project-folder-rabochie-proekty" role="button" aria-controls="23TplPdS" aria-expanded="false">Рабочие проекты</span><span class="project__count">8</span>
+              <div class="project__nested-list" id="23TplPdS" aria-labelledby="project-folder-rabochie-proekty"></div>
+            </li>
+            <li class="project__item is-folder">
+              <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-chevron"></use>
+              </svg>
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-folder"></use>
+              </svg><span class="project__item-label" id="project-folder-kniga" role="button" aria-controls="dBvJIh-H" aria-expanded="false">Книга</span><span class="project__count">8</span>
+              <div class="project__nested-list" id="dBvJIh-H" aria-labelledby="project-folder-kniga"></div>
+            </li>
+            <li class="project__item is-medium">
+              <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-chevron"></use>
+              </svg>
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-medium"></use>
+              </svg><span class="project__item-label" id="project-folder-blog-golden-calf-ru" role="button" aria-controls="46Juzcyx" aria-expanded="false">blog.golden-calf.ru</span><span class="project__count">8</span>
+              <div class="project__nested-list" id="46Juzcyx" aria-labelledby="project-folder-blog-golden-calf-ru"></div>
+            </li>
+          </ul>
+          <h3 class="project__heading" id="project-tags-title">Метки
+            <button class="btn" type="button" aria-controls="project-tags" aria-expanded="true"><span class="label">Скрыть</span></button>
+          </h3>
+          <ul class="project__folders" id="project-tags" aria-labelledby="project-tags-title">
+            <li class="project__item is-tag">
+              <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-chevron"></use>
+              </svg><span class="project__item-label" id="project-tag-rabota" role="button" aria-controls="eWRhpRV" aria-expanded="true">Работа</span><span class="project__count">8</span>
+              <div class="project__nested-list" id="eWRhpRV" aria-labelledby="project-tag-rabota">
+                <ul>
+                  <li class="project__item is-tag"><span class="project__item-label">Питер</span><span class="project__count">8</span></li>
+                  <li class="project__item is-tag"><span class="project__item-label">Sandoz</span><span class="project__count">8</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="project__item is-tag">
+              <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-chevron"></use>
+              </svg><span class="project__item-label" id="project-tag-english" role="button" aria-controls="2WEKaVNO" aria-expanded="false">English</span><span class="project__count">8</span>
+              <div class="project__nested-list" id="2WEKaVNO" aria-labelledby="project-tag-english"></div>
+            </li>
+            <li class="project__item is-tag">
+              <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-chevron"></use>
+              </svg><span class="project__item-label" id="project-tag-polya" role="button" aria-controls="7oet_d9Z" aria-expanded="false">Поля</span><span class="project__count">8</span>
+              <div class="project__nested-list" id="7oet_d9Z" aria-labelledby="project-tag-polya"></div>
+            </li>
+          </ul>
+          <p class="project__item">
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="/img/base/graphics/sprite.svg#icon-trash"></use>
+            </svg><span class="project__item-label">Корзина</span><span class="project__count">8</span>
+          </p>
+          <button class="btn is-sidebar-toggle" type="button">
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="/img/base/graphics/sprite.svg#icon-chevron"></use>
+            </svg><span class="label">Свернуть боковую панель</span>
+          </button>
+        </nav>
+        <footer class="project__footer">
+          <button class="btn" type="button">
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="/img/base/graphics/sprite.svg#icon-plus"></use>
+            </svg><span class="label">Добавить</span>
+          </button>
+        </footer>
+      </div>
+      <!-- DOCS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––-->
+      <div class="docs">
+        <header class="docs__header">
+          <h2 class="docs__header-title">Книга</h2>
+          <div class="menu" id="docs-menu" role="menu">
+            <button class="btn has-only-icon" id="docs-header-btn" type="button" aria-haspopup="true" aria-controls="docs-menu">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-more"></use>
+              </svg><span class="label">Сортировать</span>
+            </button>
+            <ul class="menu__list" aria-labelledby="docs-header-btn">
+              <li class="has-submenu">
+                <button class="menu__item" type="button" aria-haspopup="true" title="Сортировка">
+                  <svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="/img/base/graphics/sprite.svg#icon-sort"></use>
+                  </svg><span class="label">Сортировка</span>
+                  <svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="/img/base/graphics/sprite.svg#icon-chevron"></use>
+                  </svg>
+                </button>
+                <ul class="menu__list">
+                  <li>
+                    <button class="menu__item" type="button" role="menuitem">
+                      <svg class="icon" aria-hidden="true" focusable="false">
+                        <use href="/img/base/graphics/sprite.svg#icon-az"></use>
+                      </svg><span class="label">По названию</span>
+                      <svg class="icon" aria-hidden="true" focusable="false">
+                        <use href="/img/base/graphics/sprite.svg#icon-check"></use>
+                      </svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="menu__item" type="button" role="menuitem">
+                      <svg class="icon" aria-hidden="true" focusable="false">
+                        <use href="/img/base/graphics/sprite.svg#icon-calendar"></use>
+                      </svg><span class="label">По дате изменения</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="menu__item" type="button" role="menuitem">
+                      <svg class="icon" aria-hidden="true" focusable="false">
+                        <use href="/img/base/graphics/sprite.svg#icon-calendar"></use>
+                      </svg><span class="label">По дате создания</span>
+                    </button>
+                  </li>
+                  <li class="menu__hr"></li>
+                  <li>
+                    <button class="menu__item" type="button" role="menuitem">
+                      <svg class="icon" aria-hidden="true" focusable="false">
+                        <use href="/img/base/graphics/sprite.svg#icon-calendar"></use>
+                      </svg><span class="label">В нисходящем порядке</span>
+                      <svg class="icon" aria-hidden="true" focusable="false">
+                        <use href="/img/base/graphics/sprite.svg#icon-check"></use>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button class="menu__item" type="button" role="menuitem">
+                  <svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="/img/base/graphics/sprite.svg#icon-rename"></use>
+                  </svg><span class="label">Переименовать</span>
+                </button>
+              </li>
+              <li>
+                <button class="menu__item" type="button" role="menuitem">
+                  <svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="/img/base/graphics/sprite.svg#icon-star"></use>
+                  </svg><span class="label">Важное</span>
+                  <svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="/img/base/graphics/sprite.svg#icon-check"></use>
+                  </svg>
+                </button>
+              </li>
+              <li class="menu__hr"></li>
+              <li>
+                <button class="menu__item" type="button" role="menuitem">
+                  <svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="/img/base/graphics/sprite.svg#icon-group"></use>
+                  </svg><span class="label">Общий доступ…</span>
+                </button>
+              </li>
+              <li class="menu__hr"></li>
+              <li>
+                <button class="menu__item" type="button" role="menuitem">
+                  <svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="/img/base/graphics/sprite.svg#icon-trash"></use>
+                  </svg><span class="label">Удалить</span>
+                </button>
+              </li>
+            </ul>            Список / таблица — ⌥⌘1
+                        Фрагменты — ⌥⌘2
+                        Карточки — ⌥⌘3
+          </div>
+        </header>
+        <div class="docs__list">
+          <article class="docs__item" id="KJCuwcZ6" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">👊 Техники базовых ударов, бросков и физподготовка</h3>
+              <p class="docs__snippet" itemprop="description">Как стать боксером за 10 уроков Кросс Джеб Хук Апперкот Лоу-кик Мае-гери Маваши-гери Удар локтем Удар коленом Базовые броски из вольной борьбы Удар головой Верт...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">19 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Единоборства</a></li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs__img">
+              <figure class="border"><img src="https://www.evernote.com/shard/s46/thm/note/f2ee5b5a-6eb2-0773-4db3-673222833822" alt=""></figure>
+            </div>
+            <div class="docs__icons">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-star"></use>
+              </svg>
+            </div>
+          </article>
+          <article class="docs__item" id="HmLKEt3U" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">Техника бокса: Как бить кросс правильно – Karate.ru</h3>
+              <p class="docs__snippet" itemprop="description">Техника бокса: Как бить кросс правильно Кросс – это мощный удар, который следует использовать с осторожностью. В большинстве случаев это встречный удар или удар...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">19 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Единоборства</a></li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs__img">
+              <figure class="border"><img src="https://www.evernote.com/shard/s46/thm/note/eaa211ed-16aa-4e36-b29c-d10d42a15625" alt=""></figure>
+            </div>
+          </article>
+          <article class="docs__item" id="deYy9UDY" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">Как Бить Джеб</h3>
+              <p class="docs__snippet" itemprop="description">Хотя джеб и не такой внушительный удар, как кросс, хук или апперкот, джеб более практичен, чем все остальные удары вместе взятые. Джеб может бить, толкать, отвл...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">19 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Единоборства</a></li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs__img">
+              <figure class="border"><img src="https://www.evernote.com/shard/s46/thm/note/6d7796ae-2535-42de-8de4-761ba5e1e472" alt=""></figure>
+            </div>
+          </article>
+          <article class="docs__item" id="bE4sgdEo" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">WebAIM: "Skip Navigation" Links</h3>
+              <p class="docs__snippet" itemprop="description">The main content is not usually the first thing on a web page. Keyboard and screen reader users generally must navigate a long list of navigation links, sub-lis...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">17 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Accessibility / WCAG / ARIA</a></li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+          <article class="docs__item" id="WvKyeWN7" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">E-Commerce Tracking in Google Analytics - Tutorial</h3>
+              <p class="docs__snippet" itemprop="description">What is Ecommerce Tracking in Google Analytics? Ecommerce tracking is a feature of Google Analytics through which you can track ecommerce data(like sales amount...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">17 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Analytics</a></li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs__img">
+              <figure class="border"><img src="https://www.evernote.com/shard/s46/thm/note/7e0e8872-4fd0-4733-9b86-6d0f36f5c754" alt=""></figure>
+            </div>
+          </article>
+          <article class="docs__item" id="DPGqG9cB" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">Design Tokens: 10 Tips to Architect & Implement Design Decisions for Everyone</h3>
+              <p class="docs__snippet" itemprop="description">In a recent code review, my passions stirred as I walked through a Pill component’s style with a designer teammate. I could hardly contain my excitement: “Look....</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">17 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Design systems</a></li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+          <article class="docs__item" id="wpp9NFWP" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">Sketch Essential</h3>
+              <p class="docs__snippet" itemprop="description">1. Runner Pro Runneris probably one of the most popular plugins from Sketch. It empowers me to speed up my design and organisation processes. I won’t go into e...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">17 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Sketch</a></li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs__img">
+              <figure class="border"><img src="https://www.evernote.com/shard/s46/thm/note/8fbfd6b2-1de3-49b4-80d8-675b7a36b6b6" alt=""></figure>
+            </div>
+          </article>
+          <article class="docs__item" id="R4wvXqmC" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">How to plan & create a website or app. Not another design process</h3>
+              <p class="docs__snippet" itemprop="description">Картинку можно увеличить до размера</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">17 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Project Management</a></li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs__img">
+              <figure class="border"><img src="https://www.evernote.com/shard/s46/thm/note/181bb192-f54a-4b59-a477-9e84c0378356" alt=""></figure>
+            </div>
+          </article>
+          <article class="docs__item" id="Efkdox6U" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">Overflow In CSS</h3>
+              <p class="docs__snippet" itemprop="description">In CSS, we can have control over an element when its content is too big to fit in. The property for that is overflow, which is a shorthand for overflow-xand ove...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">17 нояб.</time>
+              </footer>
+            </div>
+            <div class="docs__img">
+              <figure class="border"><img src="https://www.evernote.com/shard/s46/thm/note/1a06d930-4b75-43f7-9808-e9dcb82aa0e2" alt=""></figure>
+            </div>
+          </article>
+          <article class="docs__item" id="3TpgcEjN" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">Словарь моушн-дизайнера</h3>
+              <p class="docs__snippet" itemprop="description">Моушн-дизайн(от англ. motion design) – графика в движении, искусство оживления графики средствами анимации. Моушн-дизайн используется в титрах к фильмам, реклам...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">17 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Монтаж</a></li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+          <article class="docs__item" id="tdqokYR9" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">SCOPE проекта</h3>
+              <p class="docs__snippet" itemprop="description">Вкратце, SCOPE проекта - это содержание проекта, т.е. концепция проекта, где должна быть описана цель проекта, шаги для её достижения, целевая аудитория. Инстру...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">17 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Project Management</a></li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+          <article class="docs__item" id="PNANA4fm" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">Trick: Get macOS Big Sur to work on older Macs – Archyde</h3>
+              <p class="docs__snippet" itemprop="description">Trick: Get macOS Big Sur to work on older Macs June 28, 2020by archyde Reddit has brought together numerous users who want to install Big Sur on an old Mac. App...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">15 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">macOS</a></li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+          <article class="docs__item" id="wWxoWVe3" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">Навигация с клавиатуры в JavaScript - Доступность</h3>
+              <p class="docs__snippet" itemprop="description">Как сделать для JavaScript-виджетов на основе span или div возможность навигации с клавиатуры. Обзор Веб-приложения часто используют JavaScript, чтобы имитирова...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">14 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Accessibility / WCAG / ARIA</a></li>
+                </ul>
+              </footer>
+            </div>
+          </article>
+          <article class="docs__item" id="KhE3vZDP" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">🔥 Как выбрать внешний монитор для MacBook и не пожалеть о покупке</h3>
+              <p class="docs__snippet" itemprop="description">Как выбрать внешний монитор для MacBook и не пожалеть о покупке Расскажу, почему изображение на внешнем мониторе MacBook бываем мелким, крупным и мутным. И как ...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">12 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">Macbook</a></li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs__img">
+              <figure class="border"><img src="https://www.evernote.com/shard/s46/thm/note/e0b76d3d-1166-4a1c-be68-47f4661b5270" alt=""></figure>
+            </div>
+          </article>
+          <article class="docs__item" id="zHb7MhGQ" draggable="true" itemscope="" itemtype="http://schema.org/Article">
+            <div class="docs__copy">
+              <h3 class="docs__title" itemprop="headline">Ultimate Guide to Using MailChimp and WordPress</h3>
+              <p class="docs__snippet" itemprop="description">More than 70% of users who abandon your website will probably never come back unless they buy something from you, or you successfully get them to subscribe to y...</p>
+              <footer class="docs__meta">
+                <time class="docs__date" datetime="2020-11-22T15:29" itemprop="dateModified">11 нояб.</time>
+                <ul class="docs__tags" itemprop="keywords">
+                  <li><a class="docs__tag" href="#" title="Просмотреть документы, помеченные этим тегом" rel="category tag">WordPress</a></li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs__img">
+              <figure class="border"><img src="https://www.evernote.com/shard/s46/thm/note/fc835baa-ca2a-494b-a5b3-1563fb1297b8" alt=""></figure>
+            </div>
+          </article>
+        </div>
+        <footer class="docs__footer">
+          <button class="btn" type="button">
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="/img/base/graphics/sprite.svg#icon-plus"></use>
+            </svg><span class="label">Добавить</span>
+          </button>
+        </footer>
+      </div>
+      <!-- MAIN ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––-->
+      <main class="main">
+        <div class="main__editor">
+          <iframe class="main__doc" id="main-doc" aria-label="Редактор заметки" title="Редактор заметки"></iframe>
+          <aside class="main__menu">
+            <button class="btn has-only-icon" type="button">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/img/base/graphics/sprite.svg#icon-focus-md"></use>
+              </svg><span class="label">Фокусировка</span>
+            </button>
+            <div class="menu" id="main-menu-person" role="menu">
+              <button class="btn has-only-icon" id="main-menu-person-btn" type="button" aria-haspopup="true" aria-controls="docs-menu">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="/img/base/graphics/sprite.svg#icon-more"></use>
+                </svg><span class="label">Сортировать</span>
+              </button>
+              <ul class="menu__list" aria-labelledby="main-menu-person-btn">
+                <li>
+                  <h3 class="menu__heading">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/img/base/graphics/sprite.svg#icon-sort"></use>
+                    </svg><span class="label">Сортировка</span>
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/img/base/graphics/sprite.svg#icon-chevron"></use>
+                    </svg>
+                  </h3>
+                  <ul class="menu__list">
+                    <li>
+                      <button class="menu__item" type="button" role="menuitem">
+                        <svg class="icon" aria-hidden="true" focusable="false">
+                          <use href="/img/base/graphics/sprite.svg#icon-az"></use>
+                        </svg><span class="label">По названию</span>
+                        <svg class="icon" aria-hidden="true" focusable="false">
+                          <use href="/img/base/graphics/sprite.svg#icon-check"></use>
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="menu__item" type="button" role="menuitem">
+                        <svg class="icon" aria-hidden="true" focusable="false">
+                          <use href="/img/base/graphics/sprite.svg#icon-calendar"></use>
+                        </svg><span class="label">По дате изменения</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="menu__item" type="button" role="menuitem">
+                        <svg class="icon" aria-hidden="true" focusable="false">
+                          <use href="/img/base/graphics/sprite.svg#icon-calendar"></use>
+                        </svg><span class="label">По дате создания</span>
+                      </button>
+                    </li>
+                    <li class="menu__hr"></li>
+                    <li>
+                      <button class="menu__item" type="button" role="menuitem">
+                        <svg class="icon" aria-hidden="true" focusable="false">
+                          <use href="/img/base/graphics/sprite.svg#icon-calendar"></use>
+                        </svg><span class="label">В нисходящем порядке</span>
+                        <svg class="icon" aria-hidden="true" focusable="false">
+                          <use href="/img/base/graphics/sprite.svg#icon-check"></use>
+                        </svg>
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <button class="menu__item" type="button" role="menuitem">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/img/base/graphics/sprite.svg#icon-rename"></use>
+                    </svg><span class="label">Переименовать</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="menu__item" type="button" role="menuitem">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/img/base/graphics/sprite.svg#icon-star"></use>
+                    </svg><span class="label">Важное</span>
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/img/base/graphics/sprite.svg#icon-check"></use>
+                    </svg>
+                  </button>
+                </li>
+                <li class="menu__hr"></li>
+                <li>
+                  <button class="menu__item" type="button" role="menuitem">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/img/base/graphics/sprite.svg#icon-group"></use>
+                    </svg><span class="label">Общий доступ…</span>
+                  </button>
+                </li>
+                <li class="menu__hr"></li>
+                <li>
+                  <button class="menu__item" type="button" role="menuitem">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/img/base/graphics/sprite.svg#icon-trash"></use>
+                    </svg><span class="label">Удалить</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>© <a href="https://super-mark.ru/" target="_blank" rel="noopener noreferrer">Владимир Никишин</a>, 2021 г. Все права защищены.</p>
+    </footer>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-label="Трейлер-тизер" aria-hidden="true"></div>
+    <div class="modal-dialog" role="document">
+      <div class="modal__content">
+        <div class="modal__body">
+          <iframe width="740" height="416" src="https://www.youtube.com/embed/pSu0XP5Pgb8?rel=0&amp;modestbranding=1&amp;autohide=1&amp;showinfo=0&amp;controls=0" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen></iframe>
+          <button class="modal__close" type="button" data-dismiss="modal" aria-label="Close">
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="/img/base/graphics/sprite.svg#icon-close-xs"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

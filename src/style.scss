@@ -1,0 +1,77 @@
+// Modifiers are not defined in component files. The unique page styles are
+// written in the corresponded <head> section (less is better). And styles
+// for a group of pages are written in pages folder. E.g. /pages/company.scss
+// .hero.is-company { background: hsl(50, 100%, 50%); }
+
+@import 'base/functions';
+@import 'base/variables';
+@import 'base/mixins';
+
+// BS
+@import './node_modules/bootstrap/scss/functions';
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+@import './node_modules/bootstrap/scss/grid';
+
+// BS5 utilities
+@import './node_modules/bootstrap/scss/utilities';
+
+// Only use the utilities we need
+$utilities: map-get-multiple(
+  $utilities,
+  (
+    'display',
+    'margin-top',
+    'margin-bottom',
+    'margin-x',
+    'padding-x',
+    'padding-top',
+    'padding-bottom',
+    'padding-right',
+    'padding-left'
+    // 'order','flex','flex-direction','flex-grow','flex-shrink','flex-wrap','justify-content','align-items','align-content','align-self','margin', 'margin-y', 'margin-right', 'margin-left','negative-margin','negative-margin-x','negative-margin-y','negative-margin-top','negative-margin-right','negative-margin-bottom','negative-margin-left','padding','padding-x','padding-y',
+  ));
+
+@import './node_modules/bootstrap/scss/utilities/api';
+
+// Base
+@import 'base/normalize';
+@import 'base/content/body';
+@import 'base/content/headings';
+@import 'base/graphics/icon';
+@import 'base/content/media';
+@import 'base/button';
+@import 'base/input/form';
+@import 'base/input/label';
+@import 'base/input/select';
+@import 'base/input/checks-radio';
+@import 'base/input/validation';
+@import 'base/table/table';
+@import 'base/grid';
+// @import 'base/animation';
+
+// Components
+@import 'components/alert/alert';
+@import 'components/header/header';
+@import 'components/navbar/navbar';
+@import 'components/dropdown/dropdown';
+@import 'components/hero/hero';
+@import 'components/list/custom';
+@import 'components/section/section';
+@import 'components/card/card';
+@import 'components/product/product-tile';
+@import 'components/rating/rating';
+@import 'components/list/feed';
+@import 'components/featurette/featurette';
+@import 'components/kpi/kpi';
+@import 'components/cta/cta';
+@import 'components/footer/footer';
+@import 'components/language-switcher/language-switcher';
+@import 'components/modal/modal';
+@import 'base/input/combobox';
+@import 'components/scrim/scrim';
+
+// Helpers & Print
+@import 'util/content';
+@import 'util/layout';
+@import 'base/print';

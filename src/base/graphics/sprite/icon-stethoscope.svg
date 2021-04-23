@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g stroke="var(--icon-stroke)" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--icon-stroke-width)">
+    <path d="M16 11.1000977L16 11.1000977 16 16C16 18.7614237 13.7614237 21 11 21 8.23857625 21 6 18.7614237 6 16L6 12.0527344 6 12.0527344M18 3L20 3 20 7C20 9.209139 18.209139 11 16 11 13.790861 11 12 9.209139 12 7L12 3 14 3"/>
+    <circle fill="var(--icon-fill)" cx="6" cy="12" r="2" />
+  </g>
+</svg>

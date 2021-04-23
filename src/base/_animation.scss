@@ -1,0 +1,31 @@
+// Fade in / fade out and slide in / slide out
+// Overwrite duration in animated element styles. E.g. .dropdown.ani-fade-enter {…}
+.ani-fade-enter,
+.ani-fade-leave,
+.ani-slide-enter,
+.ani-slide-leave {
+  transition: all $duration;
+}
+
+// ? .ani-fade-enter-active
+.ani-fade-enter-start,
+.ani-fade-leave-end {
+  opacity: 0;
+}
+
+// Overwrite transform in animated element styles
+// ? .ani-slide-enter-active
+.ani-slide-enter-start,
+.ani-slide-leave-end {
+  transform: translateX(-100px);
+}
+
+@keyframes max-height {
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 100rem;
+  }
+}

@@ -1,0 +1,154 @@
+// https://cloudfour.com/thinks/styling-complex-labels/
+
+// MARKUP
+
+// .grid.is-plans
+//   label.plan
+//     input.plan__radio(name='plan', type='radio', checked)
+//     span.sr-only Basic - $0 per month, 1 team member, 100 GB per month, 1 concurrent build
+//     span.plan__details(aria-hidden='true')
+//       span.plan__type Basic
+//       span.plan__cost $0
+//         span.plan__slash /
+//         abbr.plan__cycle(title='month') mo
+//       span 1 team member
+//       span 100 GB/mo
+//       span 1 concurrent build
+//   //- other-cards
+
+$plan-padding: $size-line;
+$plan-radius: $border-radius;
+$plan-radio-border-width: .2rem;
+$plan-radio-size: .5em;
+
+.grid.is-plans {
+  margin: 0 auto;
+  max-width: 60em;
+  padding: 0;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.plan {
+  background-color: $color-bg-normal;
+  border-radius: $plan-radius;
+  position: relative;
+
+  &:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
+  }
+}
+
+.plan__radio {
+  appearance: none;
+  background: #fff;
+  border-radius: 50%;
+  border: $plan-radio-border-width solid $color-ink-border;
+  cursor: pointer;
+  font-size: inherit;
+  height: $plan-radio-size;
+  margin: 0;
+  outline: none;
+  position: absolute;
+  right: $plan-padding + $plan-radio-border-width;
+  top: $plan-padding + $plan-radio-border-width;
+  transition:
+    background $duration-sm $easing,
+    border-color $duration-sm $easing;
+  width: $plan-radio-size;
+
+  &::after {
+    border: $plan-radio-border-width solid #fff;
+    border-top: 0;
+    border-left: 0;
+    content: '';
+    display: block;
+    height: .75rem;
+    left: 25%;
+    position: absolute;
+    top: 50%;
+    transform:
+      rotate(45deg)
+      translate(-50%, -50%);
+    width: .375rem;
+  }
+
+  &:checked {
+    background: $color-primary;
+    border-color: $color-primary;
+  }
+}
+
+.plan:hover .plan__radio {
+  border-color: $color-bg-alt;
+
+  &:checked {
+    border-color: $color-primary;
+  }
+}
+
+.plan__details {
+  border-radius: $plan-radius;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: $plan-padding;
+  transition: border-color .2s ease-out;
+}
+
+.plan:hover .plan__details {
+  border-color: $color-bg-alt;
+}
+
+.plan__radio:checked ~ .plan__details {
+  border-color: $color-primary;
+}
+
+.plan__radio:focus ~ .plan__details {
+  box-shadow: 0 0 0 2px $color-bg-alt;
+}
+
+.plan__radio:disabled ~ .plan__details {
+  color: $color-bg-alt;
+  cursor: default;
+}
+
+.plan__radio:disabled ~ .plan__details .plan__type {
+  color: $color-bg-alt;
+}
+
+.plan:hover .plan__radio:disabled ~ .plan__details {
+  border-color: $color-ink-border;
+  box-shadow: none;
+}
+
+.plan:hover .plan__radio:disabled {
+  border-color: $color-ink-border;
+}
+
+.plan__type {
+  color: $color-primary-text;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: var(--line-height-base);
+}
+
+.plan__cost {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: .5rem 0;
+}
+
+.plan__slash {
+  font-weight: normal;
+}
+
+.plan__cycle {
+  border-bottom: 0;
+  cursor: inherit;
+  font-size: 2rem;
+  font-variant: none;
+  text-decoration: none;
+}

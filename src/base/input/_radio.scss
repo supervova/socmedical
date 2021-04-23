@@ -1,0 +1,82 @@
+// MARKUP
+
+// label
+//   input.form__radio(name='', type='radio', value='')
+//   span.form__radio-toggle(aria-hidden='true')
+//   label text
+
+$radio-size:                            1.6rem;
+$radio-border-width:                    .2rem;
+$radio-color:                           $color-ink-border;
+$radio-color-active:                    $color-primary;
+
+// Hide the native radio button
+.form__radio,
+%form-radio {
+  border: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+// Custom radio button (additional decorative span). Basic appearance
+.form__radio ~ .form__radio-toggle,
+%form-radio-toggle {
+  border-radius: 50%;
+  border: $radio-border-width solid $radio-color;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: .3rem;
+  position: relative;
+  vertical-align: -.2rem;
+  transition: border-color $duration;
+  width: $radio-size;
+  height: $radio-size;
+}
+
+// Focus, hover and checked states
+.form__radio:hover ~ .form__radio-toggle,
+.form__radio:focus ~ .form__radio-toggle,
+.form__radio:checked ~ .form__radio-toggle,
+%form-radio-toggle-focus-hover {
+  border-color: $radio-color-active;
+}
+
+// Check - Squircle
+.form__radio:checked ~ .form__radio-toggle::after,
+%form-radio-toggle-check {
+  background: $radio-color-active;
+  border-radius: 30%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 40%;
+  height: 40%;
+}
+
+// Check like in checkbox
+// .form__radio:checked ~ .form__radio-toggle,
+// %form-radio-toggle-check {
+//   background: $radio-color-active;
+
+//   &::after {
+//     background: rgba(0, 0, 0, 0) url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpolygon%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%20points%3D%2212.37%204%2013.785%205.415%206.589%2012.612%203%209.021%204.411%207.61%206.589%209.782%22%2F%3E%3C%2Fsvg%3E%0A') no-repeat;
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate3d(-50%, -50%, 0);
+//     width: $radio-size;
+//     height: $radio-size;
+//   }
+// }
+
+

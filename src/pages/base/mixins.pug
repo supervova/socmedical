@@ -1,0 +1,68 @@
+//- Icon
+mixin icon(name, classes)
+  svg.icon(class=classes aria-hidden='true' focusable='false')
+    use(href='/images/socmedical/base/graphics/sprite.svg#icon-' + name)
+
+//- Button
+mixin button(label, icon=false, classes=false, type='button')
+  button.btn(class=classes type=type)
+    if icon
+      +icon(icon)
+    span.label= label
+
+//- Feed snippet
+mixin teaser(id, title, summary, img=false, link='#')
+  article.feed__item(id=id, itemscope, itemtype='http://schema.org/Article')
+    a.feed__block-link(href= link)
+      figure.feed__img
+        img(src='/images/socmedical/placeholders/thumbnail-' + img + '.jpg' alt='')
+      .feed__copy
+        h3.feed__title(itemprop='headline')= title
+        p.feed__summary(itemprop='description')= summary
+//-
+  +teaser(
+    'id',
+    'title',
+    'summary',
+    'img'
+  )
+
+//- DIRECTORY LINKS
+mixin directory-link(label, counter, title=false)
+  li
+    a.directory-links__item(href="#")
+      if title
+        h3.directory-links__title= label
+      else
+        span.directory-links__label= label
+      span.directory-links__counter= counter
+
+mixin link-go(url='#')
+  a.btn.is-icon(href= url)
+    +icon('arrow-right')
+    span.sr-only Перейти в каталог
+
+//- PRODUCTS TILES
+mixin product-tile(img, title, rating, count, price, priceOld, link='#')
+  .product-tile
+    figure.product-tile__img
+      img(src=`/images/socmedical/placeholders/product-${img}.jpg`, alt='')
+    h3.product-tile__title
+      a.product-tile__link(href= link)= title
+    figure.rating(style=`--rating: ${rating};`)
+      span.rating__points
+      figcaption.rating__count(title=`${count} голосов`)= count
+    a.product-tile__price(href= link)
+      span.product-tile__actual-price= price + '₽'
+      if priceOld
+        del.product-tile__old-price= priceOld + '₽'
+      +icon('chevron-right', 'is-chevron')
+
+//- LANGUAGES
+
+mixin lang(name, code)
+  li
+    a.language-switcher__link(href=`https://${code}.socmedical.com`, lang= code)
+      svg.icon(aria-hidden='true' focusable='false')
+        use(href='/images/socmedical/base/graphics/flags.svg#icon-flag-' + code)
+      = name

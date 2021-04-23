@@ -1,0 +1,73 @@
+// https://glennmccomb.com/articles/building-a-pure-css-animated-svg-spinner/
+// https://projects.lukehaas.me/css-loaders/
+
+// 📐 Markup: @see _spinner.svg
+
+// Play with these one to control animation
+$long-dash:                             180;
+$spinner-anim-multiplier:               2;
+$circle-anim-multiplier:                8;
+
+.spinner {
+  animation: ($duration-xl * $spinner-anim-multiplier) linear infinite svg-animation;
+  width: 48px;
+  height: 48px;
+}
+
+.spinner.is-sm {
+  width: 24px;
+  height: 24px;
+}
+
+// Circle styles
+.spinner__circle {
+  animation: ($duration-xl * $circle-anim-multiplier) $easing infinite both circle-animation;
+  display: block;
+  fill: transparent;
+  stroke: $color-primary;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 280;
+  stroke-width: $size-1;
+  transform-origin: 50% 50%;
+}
+
+// SVG animation.
+@keyframes svg-animation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+// Circle animation.
+@keyframes circle-animation {
+
+  // Start with short dash for 25% of animation.
+  0%,
+  25% {
+    stroke-dashoffset: 280;
+    transform: rotate(0);
+  }
+
+  // Very long dash, slightly rotated for 25% of animation.
+  // This is the "head" of the stroke getting away from the tail.
+  50%,
+  75% {
+    stroke-dashoffset: $long-dash;
+    transform: rotate(45deg);
+  }
+
+  // Back to short dash, rotated back to starting position.
+  // This is the "tail" of the stroke catching up to the head.
+  // The stroke moves backwards while at the same time the
+  // entire circle is rotated forward to return to its
+  // starting position.
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(360deg);
+  }
+}

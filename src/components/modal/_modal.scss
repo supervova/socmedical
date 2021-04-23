@@ -1,0 +1,179 @@
+// MARKUP
+// Note that we don’t need to add role="dialog" since BS already add it via JS.
+// button.btn.is-primary(type='button', data-bs-toggle='modal', data-bs-target='#modal') Launch modal
+
+// #modal.modal.fade(aria-labelledby='modal-title' tabindex='-1' aria-modal='true' role='dialog' style='display: block;')
+//   .modal-dialog
+//     .modal__box
+//       .modal__header
+//         h3#modal-title.modal__title Title
+//         button.btn.is-close(type='button' data-bs-dismiss='modal' aria-label='Закрыть')
+//           svg.icon(aria-hidden='true' focusable='false')
+//             use(href='/path/to/theme/base/graphics/sprite.svg#icon-close')
+//       .modal__body
+//         | Lorem, ipsum dolor.
+//       .modal__footer
+//         button.btn.is-primary(type='submit') Submit
+
+$modal-content-bg:                      $color-bg-normal;
+$modal-top-offset:                      $size-8;
+$modal-max-height:                      calc(100vh - $size-8 * 2);
+$modal-transition:                      transform $duration-lg $easing;
+
+$modal-header-padding:                  calc(#{$size-line} + var(--padding-top-h2)) var(--padding-x-box) var(--padding-bottom-h2);
+$modal-body-padding:                    0 var(--padding-x-box) $size-line;
+$modal-footer-padding:                  $size-2 var(--padding-x-box) var(--padding-x-box);
+
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+
+  .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+// Container
+.modal {
+  display: none;
+  overflow: hidden;
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+  // BS deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
+  // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
+  // See also https://github.com/twbs/bootstrap/issues/17695
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $zindex-modal;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  margin: $size-1;
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
+  position: relative;
+  width: auto;
+
+  // When fading in the modal, animate it to slide down
+  .modal.fade & {
+    transition: transform $duration $easing;
+    transform: translate(0, -$size-line * 2);
+  }
+
+  .modal.show & {
+    transform: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin: ($size-line * 2) $size-line;
+  }
+}
+
+.modal-dialog.is-scrollable {
+  height: subtract(100%, $size-2);
+
+  .modal__box {
+    overflow: hidden;
+    max-height: 100%;
+  }
+
+  .modal__body {
+    overflow-y: auto;
+  }
+}
+
+// Actual modal
+.modal__box {
+  background-clip: padding-box;
+  background-color: $modal-content-bg;
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow-z5;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  // Remove focus outline from opened modal
+  outline: 0;
+  // counteract the pointer-events: none; in the .modal-dialog
+  pointer-events: auto;
+  position: relative;
+  // Ensure `.modal__box` extends the full width of the parent `.modal-dialog`
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    max-width: $width-md;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: $width-lg;
+  }
+}
+
+// Overlay
+.modal-backdrop {
+  background-color: $color-bg-scrim;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: $zindex-modal-backdrop;
+
+  // Fade for backdrop
+  &.fade { opacity: 0; }
+  &.show { opacity: $modal-backdrop-opacity; }
+}
+
+// Modal header
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
+  padding: $modal-header-padding;
+}
+
+// Title text within header
+.modal__title {
+  @extend %h2;
+
+  padding: 0;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal__header and .modal__footer)
+.modal__body {
+  // Enable `flex-grow: 1` so that the body take up as much space as possible
+  // when there should be a fixed height on `.modal-dialog`.
+  flex: 1 1 auto;
+  position: relative;
+  padding: $modal-body-padding;
+}
+
+// Footer (for actions)
+.modal__footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  // Right align buttons with flex property because text-align doesn't work on flex items
+  justify-content: flex-end;
+  padding: $modal-footer-padding;
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  overflow: scroll;
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+}
+
+// Scale up the modal

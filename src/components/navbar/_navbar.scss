@@ -1,0 +1,220 @@
+.navbar-wrapper {
+  pointer-events: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: $zindex-fixed;
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    top: 0;
+  }
+}
+
+.navbar-wrapper > .container {
+  @include media-breakpoint-down(md) {
+    padding: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: $size-4;
+    padding-bottom: $size-4;
+  }
+}
+
+.navbar {
+  background: $color-bg-alt;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, .5),
+    0 -2px 4px 0 rgba(0, 0, 0, .08),
+    0 -1px 0 0 rgba(0, 0, 0, .06);
+  pointer-events: auto;
+  width: 100%;
+  height: $size-7;
+
+  @include media-breakpoint-up(md) {
+    background: $color-bg-normal;
+    border-radius: $border-radius-lg;
+    box-shadow:
+      $box-shadow-contour,
+      $box-shadow-z5;
+    padding-top: $size-line * 2;
+    padding-left: $size-1;
+    padding-right: $size-1;
+    width: calc(#{percentage(1/4)} - 1.2rem);
+    height: auto;
+    min-height: 65.6rem;
+  }
+
+  @include media-breakpoint-only(mdl) {
+    width: calc(#{percentage(1/6)} - 1.4rem);
+  }
+
+  @include media-breakpoint-only(lg) {
+    padding-top: $size-5;
+    padding-left: $size-line;
+    padding-right: $size-line;
+    min-height: 73.6rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// LOGO
+// -----------------------------------------------------------------------------
+
+.navbar__logo {
+  text-align: center;
+  margin-bottom: 2.9rem;
+
+  @include media-breakpoint-up(mdl) {
+    margin-bottom: 1.3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: ($size-line * 3) + 2.1rem;
+  }
+}
+
+.navbar__logomark {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-breakpoint-up(lg) {
+    margin-left: $size-1;
+    margin-right: $size-1;
+  }
+}
+
+.navbar__tagline {
+  color: $color-ink-2ry;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  padding: .4rem 0 0;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: -.4rem;
+    padding: 0;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// MENU
+// -----------------------------------------------------------------------------
+.navbar__list {
+  display: flex;
+  padding: 0;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: column;
+  }
+}
+
+.navbar__item {
+  display: flex;
+  flex: 1 0 0%;
+  justify-content: center;
+  padding: 0;
+
+  @include media-breakpoint-only(md) {
+    padding-bottom: $size-1;
+  }
+}
+
+.navbar__link,
+%navbar-link {
+  border-radius: $border-radius;
+  color: $color-ink-2ry;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  text-align: center;
+  margin-top: .4rem;
+  padding: .4rem $size-1;
+  transition: background $duration-xs;
+  min-width: 7rem;
+
+  &:hover,
+  &:focus {
+    background-color: $color-bg-alt;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    color: $color-ink-2ry;
+    font-size: var(--font-size-small);
+    letter-spacing: .05rem;
+    line-height: var(--line-height-small);
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0;
+    padding: $size-2 $size-1 1.3rem;
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+    margin-bottom: .4rem;
+    padding: .2rem $size-2 0;
+    transition: background $duration-xs;
+    height: 5.2rem;
+  }
+}
+
+.navbar__link .icon,
+.navbar__dropdown-label .icon {
+  display: block;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 1.2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 0;
+    margin-right: $size-2;
+    transform: translateY(-.1rem);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MORE
+// -----------------------------------------------------------------------------
+
+.navbar__dropdown-label {
+  @extend %btn, %navbar-link;
+
+  background: $transparent;
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-start;
+  }
+}
+
+.navbar__dropdown-label[aria-expanded='true'] {
+  background-color: darken($color-bg-alt, 5%);
+
+  @include media-breakpoint-up(md) {
+    background-color: $color-bg-alt;
+  }
+}
+
+.navbar__item .dropdown__menu {
+  top: auto;
+  bottom: 100%;
+  left: auto;
+  right: 2rem;
+
+  @include media-breakpoint-up(md) {
+    bottom: -$size-line;
+    left: $size-line * 6;
+    right: auto;
+  }
+}

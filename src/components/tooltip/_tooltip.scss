@@ -1,0 +1,183 @@
+// Bootstrap tooltips rely on the 3rd party library Popper.js for positioning.
+// But in most cases, positioning is not required, so this simple alternative
+// seems preferable.
+// Based on Chris Bracco's one. See https://codepen.io/cbracco/pen/nufHz
+
+$tooltip-background:                    $color-bg-alt;
+$tooltip-padding-bottom:                1.3rem;
+$tooltip-padding:                       1.4rem ($size-1 * 2) $tooltip-padding-bottom;
+$tooltip-width:                         $width-xs;
+$tooltip-arrow-width:                   $size-1;
+$tooltip-offset:                        ($size-1 * 2);
+
+// An element that has a tooltip
+.has-tooltip {
+  cursor: pointer;
+  overflow: visible; // !important
+  position: relative;
+
+  // A tooltip's body and an arrow
+  &::before,
+  &::after {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transition:
+      opacity $duration-sm $easing,
+      visibility $duration-sm $easing,
+      transform $duration-sm $easing;
+    transform: translate3d(0, 0, 0);
+    visibility: hidden;
+  }
+
+  // Tooltip's body
+  &::after {
+    background-color: $tooltip-background;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-z4;
+    color: $color-ink-normal;
+    content: attr(aria-label);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    padding: $tooltip-padding;
+    width: $tooltip-width;
+    z-index: $zindex-tooltip;
+  }
+
+  // Tooltip's arrow
+  &::before {
+    background: $transparent;
+    border: ($tooltip-arrow-width / 2) solid $transparent;
+    content: '';
+    z-index: $zindex-tooltip + 1;
+  }
+
+  // Show the tooltip on hover and focus
+  &:hover,
+  &:focus {
+    &::before,
+    &::after {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+// Directions
+
+// Top
+.has-tooltip.is-top {
+  &::before,
+  &::after {
+    bottom: 100%;
+    left: 50%;
+  }
+
+  &::before {
+    border-top-color: $tooltip-background;
+    margin-left: -($tooltip-arrow-width / 2);
+    margin-bottom: -$tooltip-arrow-width;
+  }
+
+  &::after {
+    transform: translateX(-50%);
+  }
+
+  // Translate on hover/focus
+  &:hover,
+  &:focus {
+    &::before {
+      transform: translate3d(0, -$tooltip-offset, 0);
+    }
+
+    &::after {
+      transform: translate3d(-50%, -$tooltip-offset, 0);
+    }
+  }
+}
+
+// Right
+.has-tooltip.is-right {
+  &::before,
+  &::after {
+    bottom: 50%;
+    left: 100%;
+  }
+
+  &::after {
+    margin-bottom: -($tooltip-padding-bottom * 2);
+  }
+
+  &::before {
+    border-right-color: $tooltip-background;
+    margin-bottom: -($tooltip-arrow-width / 2);
+    margin-left: -$tooltip-arrow-width;
+  }
+
+  // Translate on hover/focus
+  &:hover,
+  &:focus {
+    &::before,
+    &::after {
+      transform: translateX($tooltip-offset);
+    }
+  }
+}
+
+// Bottom
+.has-tooltip.is-bottom {
+  &::before,
+  &::after {
+    top: 100%;
+    left: 50%;
+  }
+
+  &::after {
+    transform: translateX(-50%);
+  }
+
+  &::before {
+    border-bottom-color: $tooltip-background;
+    margin-top: -$tooltip-arrow-width;
+  }
+
+  // Translate on hover/focus
+  &:hover,
+  &:focus {
+    &::before {
+      transform: translate3d(0, $tooltip-offset, 0);
+    }
+
+    &::after {
+      transform: translate3d(-50%, $tooltip-offset, 0);
+    }
+  }
+}
+
+// Left
+.has-tooltip.is-left {
+  &::before,
+  &::after {
+    right: 100%;
+    bottom: 50%;
+  }
+
+  &::after {
+    margin-bottom: -($tooltip-padding-bottom * 2);
+  }
+
+  &::before {
+    border-left-color: $tooltip-background;
+    margin-right: -$tooltip-arrow-width;
+    margin-bottom: -($tooltip-arrow-width / 2);
+  }
+
+  // Translate on hover/focus
+  &:hover,
+  &:focus {
+    &::before,
+    &::after {
+      transform: translateX(-$tooltip-offset);
+    }
+  }
+}

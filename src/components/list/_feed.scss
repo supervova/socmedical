@@ -1,0 +1,85 @@
+.feed {
+  padding-top: $size-line;
+  padding-bottom: $size-line * 2;
+
+  @include media-breakpoint-only(md) {
+    margin-left: auto;
+    margin-right: auto;
+    width: percentage(10/12);
+  }
+
+  @include media-breakpoint-up(mdl) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: $size-4;
+    grid-row-gap: $size-8;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MEDIA OBJECT
+// -----------------------------------------------------------------------------
+
+// MARKUP
+// article.feed__item
+//   a.feed__block-link
+//     figure.feed__img
+//       img
+//     .feed__copy
+//       h3.feed__title
+//       p.feed__summary
+
+.feed__item + .feed__item {
+  @include media-breakpoint-down(mdl) {
+    margin-top: $size-5;
+  }
+}
+
+.feed__block-link {
+  @extend %standard-focus;
+
+  display: flex;
+  // We used it to make sure that image doesn’t stretch out.
+  align-items: flex-start;
+  position: relative;
+}
+
+.feed__img {
+  @extend %border;
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    border-radius: $border-radius;
+    background: $color-primary url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cpath%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%20d%3D%22M25%2C4%20L24.9995935%2C11.339%20L31.3564065%2C7.66987298%20L36.3564065%2C16.330127%20L30.0005935%2C20%20L36.3564065%2C23.669873%20L31.3564065%2C32.330127%20L24.9995935%2C28.66%20L25%2C36%20L15%2C36%20L14.9995935%2C28.66%20L8.64359354%2C32.330127%20L3.64359354%2C23.669873%20L9.99859354%2C19.999%20L3.64359354%2C16.330127%20L8.64359354%2C7.66987298%20L14.9995935%2C11.339%20L15%2C4%20L25%2C4%20Z%20M20%2C12%20C15.581722%2C12%2012%2C15.581722%2012%2C20%20C12%2C24.418278%2015.581722%2C28%2020%2C28%20C22.2147688%2C28%2024.2193313%2C27.0999998%2025.6679116%2C25.6457754%20L25.8619666%2C25.4440693%20L25.7834218%2C25.4134271%20C27.4006076%2C26.0779664%2029.249063%2C25.7414155%2030.5266709%2C24.5678122%20L30.6900121%2C24.41%20L30.6400121%2C23.79%20L30.414049%2C23.7631741%20C29.2946432%2C23.5982192%2028.335512%2C22.9753883%2027.7222569%2C22.0973233%20C27.9033637%2C21.4288967%2028%2C20.7257336%2028%2C20%20C28%2C15.581722%2024.418278%2C12%2020%2C12%20Z%22%2F%3E%3C%2Fsvg%3E') no-repeat 50% 50%;
+    display: table;
+    margin-right: var(--padding-x-box);
+    margin-bottom: 0;
+    overflow: hidden;
+    width: 9.6rem;
+    height: 10.4rem;
+  }
+}
+
+.feed__copy {
+  @include multiline-truncate(4, 2.4rem, .5rem);
+  flex: 1;
+}
+
+.feed__title {
+  font-size: var(--font-size-big);
+  font-weight: 500;
+  line-height: 24 / 21;
+  text-transform: none;
+  margin-bottom: -$size-line;
+  padding-top: .5rem;
+  padding-bottom: 1.9rem;
+
+  .feed__block-link:hover & {
+    color: $color-ink-link;
+  }
+}
+
+.feed__summary {
+  color: $color-ink-2ry;
+}

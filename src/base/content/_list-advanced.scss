@@ -1,0 +1,73 @@
+// CSS COUNTERS
+// https://www.w3schools.com/css/css_counters.asp
+
+body {
+  counter-reset: one-level-counter;
+  counter-reset: section;
+}
+
+.section__title {
+  counter-increment: one-level-counter;
+
+  &::before {
+    content: counter(one-level-counter) '\) ';
+  }
+}
+
+// NESTED COUNTERS
+// The first argument for counters() function is the name of the counter to use.
+// The built-in list-item counter is using here. The second argument (in this
+// case, the dot) is a string — this is what will be concatenated between output
+// counters.
+
+
+.section__title.has-subtitles {
+  counter-increment: section;
+  counter-reset: subsection;
+
+  &::before {
+    content: counter(section) '. ';
+  }
+}
+
+.section__subtitle::before {
+  counter-increment: subsection;
+
+  &::before {
+    content: counter(section) '.' counter(subsection) ' ';
+  }
+}
+
+// STYLED OLs SERIALS
+ol {
+  // We replace native serial numbers with before pseudo-elements
+  list-style: none;
+
+  // counter-increment is a CSS property that will increment a specific
+  // "counter" variable whenever it encounters a new element. I named my
+  // variable "ol-serial"
+  counter-reset: ol-serial;
+}
+
+ol li {
+  counter-increment: ol-serial;
+
+  &::before {
+    // Before each ordered-list item, we display the current value of the count.
+    content: counter(ol-serial) '. ';
+  }
+}
+
+
+// MARKER
+// It's a pseudo-element that allows to control bullets and numbers of lists,
+// as well as add markers to any elements.
+// ⚠️ Firefox only https://caniuse.com/#feat=css-marker-pseudo
+
+ol ::marker {
+  content: counters(list-item,'.') ')';
+}
+
+ul ::marker {
+  color: #f00;
+}

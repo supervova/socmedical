@@ -1,0 +1,33 @@
+.featurette {
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: $size-line * 2;
+  }
+}
+
+.featurette .icon-badge {
+  margin-bottom: $size-4;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featurette__title {
+  font-size: var(--font-size-big);
+  line-height: var(--line-height-big);
+  margin-bottom: -$size-2;
+  padding-top: var(--padding-top-big);
+  padding-bottom: var(--padding-bottom-big);
+
+  .featurette__link:hover & {
+    color: $color-ink-link;
+  }
+}
+
+.featurette__summary {
+  color: $color-ink-2ry;
+}
+
+.featurette .link.is-cta {
+  margin-top: -$size-line;
+}

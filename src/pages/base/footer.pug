@@ -1,0 +1,69 @@
+include /pages/base/mixins
+
+footer.footer
+  .container
+    ul.language-switcher
+      +lang('Afrikaans', 'af')
+      +lang('Deutsch', 'de')
+      +lang('English', 'en')
+      +lang('Español', 'es')
+      +lang('Français', 'fr')
+      +lang('Italiano', 'it')
+      +lang('Polski', 'pl')
+      +lang('Português', 'pt')
+      +lang('Srpsko-hrvatski', 'hr')
+      +lang('Suomi', 'fi')
+      +lang('Türkçe', 'tr')
+      +lang('Русский', 'ru')
+      +lang('Українська', 'uk')
+      +lang('Հայերեն', 'hy')
+      +lang('עִברִית', 'he')
+      +lang('العربية', 'ar')
+      +lang('हिन्दी', 'hi')
+      +lang('ภาษาไทย', 'th')
+      +lang('中文', 'zh')
+      +lang('日本語', 'ja')
+
+    .footer__doormat(role='group')
+
+      section
+        h3.footer__doormat-subhead Личное
+        ul.footer__doormat-links
+          li: a(href='#') Моя страница
+          li: a(href='#') Контакты
+          li: a(href='#') Мессенджер
+
+      section
+        h3.footer__doormat-subhead Соцсеть
+        ul.footer__doormat-links
+          li: a(href='#') Медуслуги
+          li: a(href='#') Сообщества
+          li: a(href='#') Лента
+
+      section
+        h3.footer__doormat-subhead Маркетплейс
+        ul.footer__doormat-links
+          li: a(href='#') Все товары
+          li: a(href='#') Стать продавцом
+          li: a(href='#') Добавить товар
+
+      section
+        h3.footer__doormat-subhead Организации
+        ul.footer__doormat-links
+          li: a(href='#') Страницы
+          li: a(href='#') Вакансии
+          li: a(href='#') События
+
+    ul.footer__meta-nav
+      li: a(href='#') О нас
+      li: a(href='#') Контакты
+      li: a(href='#') Вопрос-Ответ
+      li: a(href='#') Соглашение
+      li: a(href='#') Конфиденциальность
+
+    p.footer__site-credits
+      | Copyright © 2018-2021, SocMedical ™<br>
+      | Социальная сеть нового поколения!<br>
+      | Работает под управлением <a href="https://en.qwertynetworks.com/" target="_blank" rel="noopener noreferrer">Qwerty Social Network Engine</a>
+
+

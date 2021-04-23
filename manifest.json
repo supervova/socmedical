@@ -1,0 +1,12 @@
+{
+  "short_name": "SocMedical",
+  "name": "SocMedical",
+  "icons": [{
+    "src": "/images/socmedical/base/graphics/icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "start_url": "/",
+  "background_color": "#fff",
+  "theme_color": "#4cb37c"
+}

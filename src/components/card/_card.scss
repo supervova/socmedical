@@ -1,0 +1,118 @@
+// MARKUP
+// .card
+//   .card__pic
+//     img[src='' alt='']
+//   .card__copy
+//     h2 Product
+//     p Content
+//     a.link.is-cta[href='']>svg+{Buy}
+
+.card {
+  background-color: $color-bg-normal;
+  border-radius: $border-radius;
+  box-shadow:
+    $box-shadow-contour,
+    $box-shadow-z2;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.card > img {
+  object-fit: cover;
+  width: 100%;
+  height: $size-line * 9;
+}
+
+.card__copy {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: $size-line;
+  padding-bottom: $size-1;
+  padding-left: var(--padding-x-box);
+  padding-right: var(--padding-x-box);
+}
+
+.card__eyebrow {
+  @extend %text-truncate;
+
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  letter-spacing: .1rem;
+  line-height: var(--line-height-small);
+  text-transform: uppercase;
+  padding-top: 1.2rem;
+  padding-bottom: 2.1rem;
+}
+
+.card__title {
+  font-family: $font-family-accent;
+  font-size: var(--font-size-big);
+  line-height: var(--line-height-big);
+  padding-top: var(--padding-top-big);
+  padding-bottom: var(--padding-bottom-big);
+}
+
+.card__summary {
+  @include multiline-truncate();
+
+  color: $color-ink-2ry;
+}
+
+.card__footer {
+  display: flex;
+  margin-top: auto !important;
+  list-style: none;
+  padding-top: $size-line;
+}
+
+.card__footer-item + .card__footer-item {
+  margin-left: $size-2;
+}
+
+// -----------------------------------------------------------------------------
+// CUSTOM
+// -----------------------------------------------------------------------------
+
+.card.has-directory-links {
+  padding: ($size-line * 2) var(--padding-x-box) $size-line;
+  overflow: visible;
+  position: relative;
+}
+
+
+.card.has-directory-links .icon-badge,
+.card.has-directory-links .btn.is-icon {
+  box-shadow: $box-shadow-z3;
+  position: absolute;
+  left: 50%;
+}
+
+.card.has-directory-links .icon-badge {
+  top: 0;
+  transform: translate3d(-50%, -#{$size-4}, 0);
+}
+
+.card.has-directory-links .btn.is-icon {
+  bottom: 0;
+  transform: translate3d(-50%, 2rem, 0);
+
+  &:focus {
+    box-shadow:
+      $box-shadow-focus-outline,
+      $box-shadow-z3;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// ACRYLIC MATERIAL
+// -----------------------------------------------------------------------------
+
+// https://caniuse.com/#search=backdrop-filter
+
+.card.is-acrylic {
+  backdrop-filter: blur(1rem);
+}

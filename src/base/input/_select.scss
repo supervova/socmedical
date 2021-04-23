@@ -1,0 +1,25 @@
+// class applies to select element itself, not a wrapper element
+.form__control.is-select {
+  background-image: $chevron-down;
+  background-position: right $size-1 top 50%, 0 0;
+  background-repeat: no-repeat;
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  padding-top: var(--padding-top-select);
+  padding-bottom: var(--padding-bottom-select);
+  vertical-align: middle;
+  width: 100%;
+  // useful when width is set to anything other than 100%
+  max-width: 100%;
+}
+
+// Hide arrow icon in IE browsers
+.form__control.is-select::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.form__control option {
+  font-weight: normal;
+}
+

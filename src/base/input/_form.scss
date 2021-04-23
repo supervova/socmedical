@@ -1,0 +1,64 @@
+// wtfforms.com — Mark Otto ide project, form controls customization
+// css-tricks.com/the-cleanest-trick-for-autogrowing-textareas
+
+// MARKUP TIP: use inputmode attribute to control keyboard appearance on mobile
+// devices
+// <input type="text" inputmode="url">
+// <input type="text" inputmode="email">
+// <input type="text" inputmode="search">
+// <input type="text" inputmode="numeric">
+// <input type="text" inputmode="tel">
+
+// With input(inputmode="decimal") the keyboard appears on iOS the same as the
+// tel case, but replaces the +*# key with a simple decimal (.).
+// <input type="text" inputmode="decimal">
+
+// Input container
+.form__item {
+  position: relative;
+  padding-bottom: var(--padding-bottom-form-group);
+}
+
+// Input, text area, select
+.form__control {
+  appearance: none;
+  background-clip: padding-box;
+  background-color: $color-bg-normal;
+  background-image: none;
+  border-radius: $border-radius;
+  border: 0;
+  box-shadow:
+    $box-shadow-contour,
+    $box-shadow-z2;
+  color: $color-ink-2ry;
+  display: block;
+  margin: 0;
+  padding-top: var(--padding-y-input);
+  padding-right: var(--padding-right-input);
+  padding-bottom: var(--padding-y-input);
+  padding-left: var(--padding-left-input);
+  overflow: visible;
+  transition: border-color $easing $duration-xs;
+  width: 100%;
+
+  &:focus {
+    color: $color-ink-normal;
+    border-color: $color-primary;
+    box-shadow:
+      $box-shadow-focus-outline,
+      $box-shadow-z2;
+    outline: 0;
+  }
+
+  // Placeholder
+  &::placeholder {
+    color: $color-ink-3ry;
+    // Override Firefox's unusual default opacity
+    opacity: 1;
+  }
+}
+
+.form__actions {
+  padding-bottom: var(--padding-bottom-form-actions);
+}
+

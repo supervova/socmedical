@@ -1,0 +1,85 @@
+// Inserting a pseudo br between two flex items
+.br {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.br-md {
+  @include media-breakpoint-up(md) {
+    flex-basis: 100%;
+    height: 0;
+  }
+}
+
+.br-lg {
+  @include media-breakpoint-up(lg) {
+    flex-basis: 100%;
+    height: 0;
+  }
+}
+
+.w-readable {
+  max-width: $width-readable;
+}
+
+@include media-breakpoint-up(lg) {
+  .w-lg-1of4 {
+    max-width: calc(25% - #{$grid-gutter-width});
+  }
+
+  .w-lg-1of3 {
+    max-width: calc(33.3333% - #{$grid-gutter-width});
+  }
+
+  .w-lg-5of12 {
+    max-width: calc(41.6667% - #{$grid-gutter-width});
+  }
+
+  .w-lg-1of2 {
+    max-width: calc(50% - #{$grid-gutter-width});
+  }
+
+  .w-lg-2of3 {
+    max-width: calc(66.6667% - #{$grid-gutter-width});
+  }
+
+  .w-lg-3of4 {
+    max-width: calc(75% - #{$grid-gutter-width});
+  }
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+// -----------------------------------------------------------------------------
+// FLEX
+// -----------------------------------------------------------------------------
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+// -----------------------------------------------------------------------------
+// SPACING
+// -----------------------------------------------------------------------------
+
+// Centering by margin auto
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @include media-breakpoint-down($breakpoint) {
+    .mx#{$infix}-auto {
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+  }
+}

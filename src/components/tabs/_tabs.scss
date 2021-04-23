@@ -1,0 +1,96 @@
+// -----------------------------------------------------------------------------
+// Tabs
+// -----------------------------------------------------------------------------
+
+.tabbed-section {
+  --tabs-background-hover: #{$black-min};
+  --tabs-border-color-active: #{$color-primary};
+  --tabs-color-active: #{$color-ink-normal};
+  --tabs-color: #{$color-ink-link};
+
+  &.is-inverse {
+    --tabs-background-hover: #{rgba(#fff, .1)};
+    --tabs-color-active: #{$color-ink-inverse-normal};
+    --tabs-color: #{$color-ink-inverse-2ry};
+  }
+}
+
+.tabbed-section__tabs {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 1.2rem;
+}
+
+.tabbed-section__tab {
+  padding-bottom: 0;
+}
+
+.tabbed-section__tab-link {
+  border-radius: $border-radius-sm;
+  color: var(--tabs-color);
+  display: block;
+  padding: var(--padding-top-base) $size-1;
+  position: relative;
+
+  &:hover,
+  &:focus:not(.is-active) {
+    background-color: var(--tabs-background-hover);
+    text-decoration: none;
+  }
+}
+
+.tabbed-section__tab-link.is-active {
+  color: var(--tabs-color-active);
+  cursor: default;
+  pointer-events: none;
+
+  &::after {
+    border-bottom: 2px solid var(--tabs-border-color-active);
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: .2rem;
+    left: $size-1;
+    right: $size-1;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// PANES
+// -----------------------------------------------------------------------------
+
+.tabbed-section__content {
+  > .tabs__pane {
+    display: none;
+  }
+
+  > .tabs__pane.is-active {
+    display: block;
+  }
+}
+
+
+.tabbed-section.is-inverse .tabbed-section__content,
+.tabbed-section.is-inverse .tabbed-section__content h2 {
+  color: $color-ink-inverse-normal;
+}
+
+.tabbed-section.is-inverse .tabbed-section__content a {
+  color: $color-ink-inverse-link;
+}
+
+// TRANSFORMER
+
+.tabbed-section.is-expanded-lg {
+  @include media-breakpoint-up(lg) {
+    .tabbed-section__tabs {
+      display: none;
+    }
+
+    .tabs__pane {
+      display: block;
+    }
+  }
+}

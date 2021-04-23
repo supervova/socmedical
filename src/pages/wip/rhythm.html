@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- TODO: таблица и форма -->
+  <meta charset="utf-8">
+  <title>Vertical Rhythm</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+
+    body:hover {
+      background: transparent url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%2224%22%20viewBox%3D%220%200%208%2024%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Crect%20width%3D%228%22%20height%3D%221%22%20y%3D%2223%22%20fill%3D%22%23000%22%20fill-opacity%3D%22.24%22%2F%3E%3Crect%20width%3D%228%22%20height%3D%221%22%20y%3D%2215%22%20fill%3D%22%23F0F%22%20fill-opacity%3D%22.12%22%2F%3E%3Crect%20width%3D%228%22%20height%3D%221%22%20y%3D%227%22%20fill%3D%22%23F0F%22%20fill-opacity%3D%22.12%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') repeat;
+    }
+
+    h1:hover,
+    h2:hover,
+    h3:hover,
+    h4:hover,
+    dl:hover,
+    p:hover,
+    ol:hover,
+    ul:hover {
+      background: hsla(240, 100%, 50%, .24);
+    }
+
+    .table {
+      background-color: hsla(30, 100%, 50%, .12);
+    }
+
+    /* Main content container */
+    .article {
+      text-align: left;
+      padding: 0 1.6rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .article {
+        margin: 0 auto;
+        max-width: 70ch;
+      }
+    }
+
+    .form {
+      margin: 0 auto;
+    }
+
+    .form__control {
+      background: rgba(0, 0, 0, 0);
+    }
+
+    .spacer {
+      background: hsla(0, 100%, 50%, .24);
+      height: 2.4rem;
+    }
+
+    @media only screen and (max-width: 568px) {
+      body {
+        background: transparent url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%2224%22%20viewBox%3D%220%200%208%2024%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Crect%20width%3D%228%22%20height%3D%221%22%20y%3D%2223%22%20fill%3D%22%23000%22%20fill-opacity%3D%22.24%22%2F%3E%3Crect%20width%3D%228%22%20height%3D%221%22%20y%3D%2215%22%20fill%3D%22%23F0F%22%20fill-opacity%3D%22.12%22%2F%3E%3Crect%20width%3D%228%22%20height%3D%221%22%20y%3D%227%22%20fill%3D%22%23F0F%22%20fill-opacity%3D%22.12%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') repeat;
+      }
+
+      .d-xs-none {
+        display: none;
+      }
+
+      img {
+        height: 144px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <article class="article">
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <h1 class="hero__title">Heroic title</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <h1>Simple H1 or <span class="d-xs-none">Hero Subtitle</span></h1>
+    <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+    <p><a href="">Lorem ipsum dolor</a>, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <header>
+      <p class="eyebrow">Eyebrow</p>
+      <h1>Съешь же <span class="d-xs-none">ещё этих</span></h1>
+    </header>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <h2>H2: Съешь же ещё этих</h2>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <h3>h3: Съешь же ещё этих</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <h4>h4: Съешь же ещё этих</h4>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <!-- <p class="petit">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+    <p class="petit">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p> -->
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <p class="list-caption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+    <ul>
+      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</li>
+      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</li>
+      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</li>
+    </ul>
+
+    <ol>
+      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</li>
+      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</li>
+      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</li>
+      <li>Lorem ipsum dolor sit amet.</li>
+    </ol>
+
+    <ul>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+      <li>Quisquam, aliquid aliquam? Excepturi quia ex delectus molestiae.</li>
+      <li>Quam itaque, velit quo veritatis sint doloribus quas?</li>
+      <li>Incidunt unde ex optio delectus rerum quidem quos.</li>
+    </ul>
+
+    <figure>
+      <img src="https://via.placeholder.com/440x240" alt=" ">
+      <figcaption>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</figcaption>
+    </figure>
+
+    <figure class="border">
+      <img src="https://via.placeholder.com/440x240" alt=" ">
+    </figure>
+
+    <img src="https://via.placeholder.com/440x240" alt=" ">
+
+    <blockquote class="blockquote">
+      <p>Мы повторили рекордный результат 2016 года — аудитория не уменьшается. Это доказывает, что выбранный формат „Московского культурного форума“ является правильным, востребованным среди москвичей и гостей столицы.</p>
+      <footer class="blockquote__footer">Александр Кибовский, руководитель Департамента культуры города Москвы</footer>
+    </blockquote>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <pre> Text in a pre element
+    is displayed in a fixed-width
+    font, and it preserves
+    both spaces and
+    line breaks</pre>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</p>
+
+    <dl>
+      <dt>Lorem ipsum dolor</dt>
+      <dd>Sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</dd>
+      <dt>Lorem ipsum dolor</dt>
+      <dd>Sit amet consectetur adipisicing elit. Quis facere possimus non consectetur libero, consequatur asperiores, aliquam quo incidunt alias modi in minus minima totam expedita suscipit molestiae maiores quam!</dd>
+    </dl>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <td></td>
+          <td>Lorem, ipsum dolor.</td>
+          <td><a href="https://getbootstrap.com/docs/4.0/content/figures/" target="_blank">BS figures</a></td>
+        </tr>
+        <tr>
+          <td><img src="https://unsplash.it/72/72" alt=" "></td>
+          <td>Media — Images</td>
+          <td><a href="https://getbootstrap.com/docs/4.0/content/images/" target="_blank">BS images</a></td>
+        </tr>
+        <tr>
+          <td>Lorem, ipsum dolor.</td>
+          <td>Tables</td>
+          <td><a href="https://material.io/guidelines/components/data-tables.html" target="_blank">MD tables<br><a href="https://getbootstrap.com/docs/4.0/content/tables/" target="_blank">BS tables</a><br><a href="http://carbondesignsystem.com/components/data-table/usage" target="_blank">IBM-C data table</a><br><a href="http://carbondesignsystem.com/components/structured-list/usage" target="_blank">IBM-C structured list</a></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+
+  <div class="d-flex">
+    <div class="form col-lg-6">
+      <h2 class="form__headline">Обратная связь</h2>
+      <p class="form__subhead">Напишите нам или оставьте номер — свяжемся</p>
+
+      <form class="form__body" action="/" method="post">
+
+        <div class="form__group has-icon-user">
+          <label for="form-name">Ваше имя <span class="form-required" title=" ">*</span></label>
+          <input class="form__control form__control required" id="form-name" required="" placeholder="Ваше имя *" type="text" name="submitted[form_name]">
+        </div>
+
+        <div class="form__group has-icon-services">
+          <label for="form-services">Выберите услугу <span class="form-required" title=" ">*</span></label>
+          <select class="form__control is-select is-required" id="form-services" required="" name="submitted[form_services]">
+            <option value="" selected="">Выберите услугу *</option>
+            <option value="event">Организация мероприятий</option>
+            <option value="pr">PR-поддержка, PR-кампания</option>
+            <option value="analytics">Аналитика медиапространства и творческие решения</option>
+            <option value="rnd">Исследования и IT-решения в госсекторе</option>
+            <option value="fundraising">Фандрайзинг</option>
+          </select>
+        </div>
+
+        <div class="form__group has-icon-message">
+          <label for="form-message">Сообщение <span class="form-required" title=" ">*</span></label>
+          <textarea class="form__control is-required" id="form-message" required="" placeholder="Сообщение *" name="submitted[form_message]" cols="40" rows="8"></textarea>
+        </div>
+
+        <div class="form__group">
+          <input class="form__checkbox" id="form-mailchimp-mailchimp-signup" type="checkbox" name="submitted[form_mailchimp][mailchimp_signup]" value="1" checked="">
+          <label class="option" for="form-mailchimp-mailchimp-signup">Подписаться на блог о PR и event-менеджменте</label>
+        </div>
+
+        <div class="form__actions">
+          <input class="btn is-primary" type="submit" name="op" value="Отправить">
+        </div>
+
+        <div class="form__group">
+          <p class="form__disclaimer">Нажимая на кнопку, вы даете<br><a href="/ru/company/privacy-policy#consent" target="_blank">согласие на обработку своих персональных данных</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

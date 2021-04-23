@@ -1,0 +1,144 @@
+// stylelint-disable order/order
+
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY
+// -----------------------------------------------------------------------------
+
+// Hyphenate
+@mixin hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+// word-break
+@mixin break-word {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+// normal-wrap
+@mixin normal-wrap {
+  overflow-wrap: normal;
+  word-wrap: normal;
+  word-break: normal;
+}
+
+// MULTILINE TRUNCATE
+
+@mixin multiline-truncate($lines: 4, $line-height: 2.4rem, $padding-top: .6rem) {
+  -webkit-box-orient: vertical; // stylelint-disable-line
+  -webkit-line-clamp: $lines;
+  display: -webkit-box; // stylelint-disable-line
+  // non webkits: limit the height and hide the overlowing content(w/o ellipsis
+  max-height: $lines * $line-height + $padding-top;
+  overflow: hidden;
+}
+
+// BULLET SEPARATORS
+
+// @require $size, $color, $mq
+// @param $size {String} Defines the width and height of the dot
+// @param $color {String} Defines the color of the dot
+// @param $mq {Boolean} If you want a dots on touch device or not
+
+@mixin bullet-separator($size: 3px, $color: $color-primary, $mq: null) {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    background-color: $color;
+    border-radius: $size / 2;
+    content: '';
+    display: inline-block;
+    margin: {
+      left: $size-1;
+      right: $size-1;
+    }
+    vertical-align: middle;
+    width: $size;
+    height: $size;
+  }
+
+  &:first-child {
+    margin-right: 0;
+    padding-right: 0;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  @if $mq != null {
+    @include media-breakpoint-down($mq) {
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// BACKGROUNDS
+// -----------------------------------------------------------------------------
+
+// Striped Gradient
+@mixin gradient-striped(
+  $stripe-color: rgba(#000, .025),
+  $angle: 45deg,
+  $color: null) {
+
+  @if $color != null {
+    background-color: $color;
+  }
+
+  background-image: linear-gradient($angle, $stripe-color 25%, transparent 25%, transparent 50%, $stripe-color 50%, $stripe-color 75%, transparent 75%, transparent);
+  background-size: 64px 64px;
+}
+
+
+// -----------------------------------------------------------------------------
+// SCROLLBAR
+// -----------------------------------------------------------------------------
+
+@mixin scrollbar(
+  $size: 12px,
+  $thumb: $color-ink-border,
+  $track: $color-background-secondary) {
+
+  // The emerging W3C standard that is currently Firefox-only
+  scrollbar-width: thin;
+  scrollbar-color: $thumb $track;
+
+  // Works on Chrome/Edge/Safari
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+
+    &:window-inactive {
+      opacity: 0;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb;
+    border-radius: $border-radius;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+}
+
+// Enable momentum scrolling in Mobile Safari (iOS)
+// Side effect: hides scrollbars for this browser
+///
+// Fixes a bug where some zones were not scrollable:
+// https://github.com/salesforce-ux/design-system/issues/81
+@mixin enable-ios-momentum-scrolling {
+  -webkit-overflow-scrolling: touch;
+}
+

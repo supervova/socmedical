@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g stroke="var(--icon-stroke)" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--icon-stroke-width)" transform="translate(3 3)">
+    <circle fill="var(--icon-fill)" cx="8" cy="8" r="8" />
+    <line x1="18" x2="13.65" y1="18" y2="13.65"/>
+  </g>
+</svg>

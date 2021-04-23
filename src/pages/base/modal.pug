@@ -1,0 +1,25 @@
+#modal.modal.fade(aria-labelledby='region-selector-title', aria-hidden='true', tabindex='-1')
+  .modal-dialog
+    .modal__box
+      .modal__header
+        h3#region-selector-title.modal__title Выберите город или регион
+        button.btn.is-close(type='button' data-bs-dismiss='modal' aria-label='Закрыть')
+          svg.icon(aria-hidden='true', focusable='false')
+            use(href='/images/socmedical/base/graphics/sprite.svg#icon-close')
+      form#form-region.modal__body
+        label#form-region-label.sr-only(for='form-region-input')
+          | Выберите город или регион
+        #form-region-combobox.combobox
+          input#form-region-input.form__control(type='text', role='combobox', aria-expanded='false', aria-owns='form-region-suggestions', aria-haspopup='grid', autocomplete='off', autocapitalize='off', spellcheck='false', aria-autocomplete='list', aria-controls='form-region-suggestions', placeholder='Начните вводить название…')
+          ul#form-region-suggestions.combobox__suggestions(role='listbox', aria-labelledby='form-region-label')
+            li.combobox__option(role='option')
+              span.combobox__option-label Москва
+              span.combobox__option-details Москва и Московская область, Россия
+            li.combobox__option(role='option')
+              span.combobox__option-label Санкт-Петербург
+              span.combobox__option-details Санкт-Петербург и Ленинградская область, Россия Санкт-Петербург и Ленинградская область, Россия Санкт-Петербург и Ленинградская область, Россия
+            li.combobox__option(role='option')
+              span.combobox__option-label Самара
+              span.combobox__option-details Самарская область, Россия
+      .modal__footer
+        button.btn.is-primary(type='submit') Продолжить с новым регионом

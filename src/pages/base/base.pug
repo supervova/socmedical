@@ -1,0 +1,32 @@
+block config
+  include /pages/base/config
+
+doctype html
+html(lang=site.lang)
+  head
+
+    block head
+      include /pages/base/head
+
+  body(class=bodyClasses || false)
+    block bodyPrefix
+      include /pages/base/body-prefix
+
+    block header
+      include /pages/base/header
+
+    block nav
+      include /pages/base/main-nav
+
+    //- Content ----------------------------------------------------------------
+    block content
+
+    block footer
+      include /pages/base/footer
+
+    block bodySuffix
+      include /pages/base/modal
+
+    block scripts
+      //- script(src='/js/plugins.js')
+      script(src='/js/socmedical/main.js')

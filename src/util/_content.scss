@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// MEDIA
+// -----------------------------------------------------------------------------
+
+// ASPECT RATIO
+
+[class*='aspect-ratio-'] {
+  display: block;
+  position: relative;
+}
+
+[class*='aspect-ratio-'] > * {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.aspect-ratio-16-9 {
+  padding-top: percentage(9 / 16);
+}
+
+.aspect-ratio-square {
+  padding-top: 100%;
+}
+
+// -----------------------------------------------------------------------------
+// TEXT
+// -----------------------------------------------------------------------------
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.is-note {
+  color: $color-ink-2ry;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+.sr-only,
+%sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+.text-hide,
+%text-hide {
+  background-color: $transparent;
+  border: 0;
+  color: $transparent;
+  font: 0/0 a;
+  text-shadow: none;
+}
+
+.text-truncate,
+%text-truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.has-middle-dot,
+%has-middle-dot {
+  &::before {
+    color: $color-ink-icon;
+    content: ' \00b7';
+  }
+}
+
+.has-focus-outline,
+%has-focus-outline {
+  :focus {
+    box-shadow: $box-shadow-focus-outline;
+    outline: 0;
+  }
+}
+
+.chevron-down,
+%chevron-down {
+  background-image: $chevron-down;
+}
+
+.chevron-right,
+%chevron-right {
+  background-image: $chevron-right;
+}
+
+// -----------------------------------------------------------------------------
+// HANG LEADING BRACES AND QUOTES INTO THE LEFT MARGIN
+// -----------------------------------------------------------------------------
+
+// The technique can not be realized with the :before pseudo element as it
+// is moved to a new line with the parent.
+// It can be applied to:
+// laquo — «
+// bdquo — „
+// brace — {
+// ldquo — “
+// lsquo — ‘
+
+// Using
+// This is <span class="hp-space"> </span><span class="hp-quote">„</span>Magic
+
+.main__header > h1 {
+  // Right margin for quote predecessor to compensate negative one in line
+  .hp-space {
+    margin-right: 1.2rem;
+
+    @include media-breakpoint-up(md) {
+      margin-right: 1.9rem;
+    }
+  }
+
+  // Left negative margin for quote
+  .hp-quote {
+    margin-left: -1.2rem;
+
+    @include media-breakpoint-up(md) {
+      margin-left: -1.9rem;
+    }
+  }
+}

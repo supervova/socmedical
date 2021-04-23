@@ -1,0 +1,11 @@
+// noindex
+noscript
+  if site.gtm
+    iframe(src='https://www.googletagmanager.com/ns.html?id=#{site.gtm}' height='0' width='0' style='display:none;visibility:hidden')
+  .alert.is-warning.is-global(role='alert')
+    p
+      svg.icon(aria-hidden='true' focusable='false')
+        use(xlink:href='/img/base/icons/sprite.svg#icon-warning-md')
+      |
+      | В&nbsp;вашем браузере выключен JavaScript, поэтому на&nbsp;сайте могут не&nbsp;работать некоторые элементы интерфейса. Но&nbsp;вы&nbsp;всегда можете <a href="http://www.google.com/adsense/support/bin/answer.py?hl=ru&amp;answer=12654" target="_blank" rel="noopener noreferrer">включить Javascript</a>.
+// /noindex

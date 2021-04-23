@@ -1,0 +1,37 @@
+// -----------------------------------------------------------------------------
+// LIST ITEM / MEDIA OBJECT
+// -----------------------------------------------------------------------------
+
+// MARKUP
+
+// .list-item
+//   figure.list-item__figure
+//     img(src='', alt='')
+//   .list-item__body
+//     h2.list-item__title Sandy Sandwiches
+//     p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+
+.list-item {
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    align-items: flex-start;
+    margin-top: $size-line + .6rem;
+  }
+}
+
+.list-item__figure {
+  @extend %border;
+
+  @include media-breakpoint-up(sm) {
+    margin-right: $size-line;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-right: $size-4;
+  }
+}
+
+.list-item__body {
+  flex: 1;
+}

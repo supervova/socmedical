@@ -1,0 +1,108 @@
+// -----------------------------------------------------------------------------
+// TOP LEVEL
+// -----------------------------------------------------------------------------
+// #region
+
+// Main layout
+// .wrapper {
+//   @include media-breakpoint-up(mdl) {
+//     grid-template-columns: repeat(12, 1fr);
+//     grid-template-rows:
+//       [header] 100px
+//       [hero] 560px
+//       auto
+//       [footer] 100px;
+//   }
+// }
+
+// Use .wrapper.has-right-sidebar etc snippets
+// #endregion
+
+// -----------------------------------------------------------------------------
+// FLEX ROWS
+// -----------------------------------------------------------------------------
+// #region
+
+.row.is-comfort {
+  margin-left: $grid-gutter-lg / -2;
+  margin-right: $grid-gutter-lg / -2;
+
+  > * {
+    padding-left: $grid-gutter-lg / 2;
+    padding-right: $grid-gutter-lg / 2;
+  }
+}
+
+.row.is-loose {
+  margin-left: $grid-gutter-xl / -2;
+  margin-right: $grid-gutter-xl / -2;
+
+  > * {
+    padding-left: $grid-gutter-xl / 2;
+    padding-right: $grid-gutter-xl / 2;
+  }
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// HORIZONTAL SCROLLING ROWS
+// -----------------------------------------------------------------------------
+// #region
+
+.row.is-sm-y-scrolling {
+  --is-sm-y-scrolling-item-width: 24rem;
+
+  @include media-breakpoint-down(md) {
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: calc(-1 * var(--padding-x-container));
+    min-width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    [class^='col-'],
+    [class*=' col-'] {
+      margin-right: $grid-gutter-width;
+      width: var(--is-sm-y-scrolling-item-width);
+    }
+  }
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// MASONRY
+// -----------------------------------------------------------------------------
+// #region
+
+.grid.is-masonry {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-template-rows: masonry;
+}
+
+// #endregion: grid
+
+// -----------------------------------------------------------------------------
+// CSS COLUMNS
+// -----------------------------------------------------------------------------
+// #region
+
+.columns.is-md-2 {
+  @include media-breakpoint-up(md) {
+    columns: 2;
+    column-gap: $grid-gutter-width;
+  }
+}
+
+.columns.is-lg-3 {
+  @include media-breakpoint-up(mdl) {
+    columns: 3;
+  }
+}
+
+.columns.is-masonry > * {
+  break-inside: avoid-column;
+}
+// #endregion

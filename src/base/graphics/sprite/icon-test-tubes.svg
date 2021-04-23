@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g fill="none" fill-rule="evenodd">
+    <path fill="var(--icon-fill)" d="M4,11 L10,11 L10,18 C10,19.6568542 8.65685425,21 7,21 C5.34314575,21 4,19.6568542 4,18 L4,11 Z"/>
+    <path stroke="var(--icon-stroke)" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--icon-stroke-width)" d="M4,3 L10,3 L10,18 C10,19.6568542 8.65685425,21 7,21 C5.34314575,21 4,19.6568542 4,18 L4,3 Z"/>
+    <path fill="var(--icon-fill)" d="M14,15 L20,15 L20,18 C20,19.6568542 18.6568542,21 17,21 C15.3431458,21 14,19.6568542 14,18 L14,15 Z"/>
+    <path stroke="var(--icon-stroke)" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--icon-stroke-width)" d="M14 3L20 3 20 18C20 19.6568542 18.6568542 21 17 21 15.3431458 21 14 19.6568542 14 18L14 3zM3 3L11 3M13 3L21 3"/>
+  </g>
+</svg>

@@ -1,0 +1,73 @@
+.pagination {
+  padding-top: $size-line * 3;
+  padding-bottom: $size-line;
+}
+
+.pagination > ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
+// To override li:not(:last-child) selector styles
+.pagination .pagination__item {
+  padding-bottom: 0;
+}
+
+// .pagination__item:not(:first-child) .pagination__link {
+//   margin-left: -1px;
+// }
+
+.pagination__link {
+  background-color: $transparent;
+  border-radius: $border-radius;
+  color: $color-ink-link;
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem .4rem;
+  position: relative;
+  text-decoration: none;
+  transition:
+    box-shadow $duration-xs,
+    background-color $duration-xs;
+  min-width: 4.4rem;
+
+  &:hover {
+    background-color: $color-bg-alt;
+    filter: none;
+    text-decoration: none;
+    z-index: 2;
+  }
+
+  &:focus {
+    background-color: $color-bg-alt;
+    box-shadow: $box-shadow-focus-outline;
+    outline: 0;
+    z-index: 3;
+  }
+
+  &.is-active {
+    background-color: $color-bg-primary;
+    color: $color-ink-inverse-normal;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  &.is-disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
+
+}
+
+
+.pagination__link .icon {
+  fill: $color-ink-icon;
+}
+
+.pagination__item:first-child .icon {
+  transform: scaleX(-1);
+}
+
+
