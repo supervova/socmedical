@@ -50,9 +50,7 @@
 
     </script>
   </head>
-  <body><script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.12'><\/script>".replace("HOST", location.hostname));
-//]]></script>
+  <body>
 
     <!-- noindex-->
     <noscript>
@@ -66,6 +64,18 @@
       </div>
     </noscript>
     <!-- /noindex-->
+    <form class="search-drawer" id="search-drawer" action="/search" method="get">
+      <div class="form__item">
+        <input class="form__control" name="q" type="search" dir="auto" autocomplete="off" aria-label="Искать на сайте" placeholder="Поиск">
+        <button class="search-drawer__submit" type="submit" disabled aria-label="Submit Search">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/images/socmedical/base/graphics/sprite.svg#icon-search"></use>
+              </svg>
+        </button>
+      </div>
+      <button class="search-drawer__cancel" type="reset" data-search-cancel>Отмена</button>
+    </form>
+    <div class="scrim" id="search-scrim"></div>
     <header class="header">
       <div class="container"><a class="d-md-none" href="/"><img src="/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical"><span class="sr-only">SocMedical — первая страница</span></a>
         <form class="header__search" id="header-search-form" action="/search" method="get">
@@ -77,7 +87,6 @@
                   </svg>
             </button>
           </div>
-          <button class="header__search-cancel" type="reset" data-search-cancel>Отмена</button>
         </form>
         <ul class="header__buttons">
           <li><a class="header__btn-sign-up" href="javascript:void(0)" onclick="loginform()"><span class="d-md-none">Регистрация</span><span class="d-none d-md-inline">Зарегистрироваться</span>
@@ -384,49 +393,57 @@
           </header>
           <div class="feed">
                 <article class="feed__item" id="Fo5csvdG" itemscope itemtype="http://schema.org/Article"><a class="feed__block-link" href="#">
-                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-01.jpg" alt=""></figure>
+                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-01.jpg" alt="">
+                    </figure>
                     <div class="feed__copy">
                       <h3 class="feed__title" itemprop="headline">Прививать иностранцев в России пока не планируют</h3>
                       <p class="feed__summary" itemprop="description">Привиться от коронавируса российскими вакцинами на территории РФ сегодня могут только россияне при предъявлении паспорта и полиса ОМС, в исключительных случаях - граждане других государств, если у них есть вид на жительство, сообщили &quot;Российской газете&quot; в Минздраве. В ведомстве подчеркнули, что в приоритете государства защитить соотечественников. При этом вакцинация от COVID-19 в России проводится бесплатно.</p>
                     </div></a></article>
                 <article class="feed__item" id="1HGtE890" itemscope itemtype="http://schema.org/Article"><a class="feed__block-link" href="#">
-                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-false.jpg" alt=""></figure>
+                    <figure class="feed__img">
+                    </figure>
                     <div class="feed__copy">
                       <h3 class="feed__title" itemprop="headline">Тут такое дело</h3>
                       <p class="feed__summary" itemprop="description">У меня в январе сразу после болезни был средний уровень антител. Сейчас сделала количественный анализ, за два месяца они почти полностью исчезли. Пересдала - точно, антител нет, это не ошибка. Болела тяжело, больше не хочу. </p>
                     </div></a></article>
                 <article class="feed__item" id="6n4SNHhy" itemscope itemtype="http://schema.org/Article"><a class="feed__block-link" href="#">
-                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-02.jpg" alt=""></figure>
+                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-02.jpg" alt="">
+                    </figure>
                     <div class="feed__copy">
                       <h3 class="feed__title" itemprop="headline">Жириновский призвал закрыть авиасообщение с Турцией</h3>
                       <p class="feed__summary" itemprop="description">Лидер ЛДПР Владимир Жириновский обратился к правительству РФ с призывом закрыть авиасообщение с Турцией из-за роста в этой стране заболеваемости коронавирусом.</p>
                     </div></a></article>
                 <article class="feed__item" id="FfGwKzLh" itemscope itemtype="http://schema.org/Article"><a class="feed__block-link" href="#">
-                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-03.jpg" alt=""></figure>
+                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-03.jpg" alt="">
+                    </figure>
                     <div class="feed__copy">
                       <h3 class="feed__title" itemprop="headline">EUobserver: у 10 человек в России были осложнения после вакцинации «Спутником V», четверо из них умерли Росздравнадзор заявил, что не было ни одной смерти из-за самой вакцины</h3>
                       <p class="feed__summary" itemprop="description">Четыре человека в течение «недавнего времени» умерли в России вскоре после того, как привились от коронавируса вакциной «Спутник V», пишет издание EUobserver, ссылаясь на документы, поступившие в распоряжение Европейского агентства по лекарственным средствам (ЕМА). Это агентство занимается экспертизой «Спутника V», которая должна позволить препарату выйти на рынок Евросоюза.</p>
                     </div></a></article>
                 <article class="feed__item" id="AsKtAONG" itemscope itemtype="http://schema.org/Article"><a class="feed__block-link" href="#">
-                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-04.jpg" alt=""></figure>
+                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-04.jpg" alt="">
+                    </figure>
                     <div class="feed__copy">
                       <h3 class="feed__title" itemprop="headline">Система долговременного ухода заработает в полную силу к 2030 году</h3>
                       <p class="feed__summary" itemprop="description">К 2030 году долговременный уход как государственная мера поддержки будет доступен всем нуждающимся. Об этом заявила вице-премьер Татьяна Голикова на подведении итогов конкурса лучших практик активного долголетия в пятницу, 9 апреля.</p>
                     </div></a></article>
                 <article class="feed__item" id="zRo5ZTa9" itemscope itemtype="http://schema.org/Article"><a class="feed__block-link" href="#">
-                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-05.jpg" alt=""></figure>
+                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-05.jpg" alt="">
+                    </figure>
                     <div class="feed__copy">
                       <h3 class="feed__title" itemprop="headline">В Тюменской области 82-летнюю женщину спасли после третьего инсульта</h3>
                       <p class="feed__summary" itemprop="description">У жительницы Ишима случился третий инсульт. Спасти ее удалось благодаря бдительности родственников и своевременной тромболитической терапии.</p>
                     </div></a></article>
                 <article class="feed__item" id="AmkK7OmA" itemscope itemtype="http://schema.org/Article"><a class="feed__block-link" href="#">
-                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-false.jpg" alt=""></figure>
+                    <figure class="feed__img">
+                    </figure>
                     <div class="feed__copy">
                       <h3 class="feed__title" itemprop="headline">Теперь к каждому посту со словами прививка, вакцина, Спутник - прицепляют довесок от фб со ссылкой на справку по вакцинации? (Тестирую).</h3>
                       <p class="feed__summary" itemprop="description"></p>
                     </div></a></article>
                 <article class="feed__item" id="YKe1A3TC" itemscope itemtype="http://schema.org/Article"><a class="feed__block-link" href="#">
-                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-06.jpg" alt=""></figure>
+                    <figure class="feed__img"><img src="/images/socmedical/placeholders/thumbnail-06.jpg" alt="">
+                    </figure>
                     <div class="feed__copy">
                       <h3 class="feed__title" itemprop="headline">Ученые научили крыс находить рак и диабет по запаху</h3>
                       <p class="feed__summary" itemprop="description">В Новгородской области подвели итоги исследования диагностических способностей лабораторных крыс. Оказалось, что животные способны выявлять у пациентов онкологические и эндокринные заболевания по запаху изо рта, сообщает РИА Новости со ссылкой на Фонд перспективных исследований.</p>
@@ -671,7 +688,5 @@
         </div>
       </div>
     </div>
-    <div class="scrim"></div>
-    <script src="/js/socmedical/main.js"></script>
   </body>
 </html>
