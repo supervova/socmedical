@@ -3,7 +3,7 @@
   background-color: $color-bg-scrim;
   opacity: 0;
   transition: opacity $duration;
-  z-index: $zindex-fixed-scrim;
+  z-index: $zindex-scrim;
 
   &.is-on {
     opacity: 1;

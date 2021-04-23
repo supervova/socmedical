@@ -13,19 +13,19 @@ html(lang=site.lang)
       include /pages/base/body-prefix
 
     block header
-      include /pages/base/header
+      include /components/header/header
 
     block nav
-      include /pages/base/main-nav
+      include /components/navbar/navbar
 
     //- Content ----------------------------------------------------------------
     block content
 
     block footer
-      include /pages/base/footer
+      include /components/footer/footer
 
     block bodySuffix
-      include /pages/base/modal
+      include /components/modal/modal
 
     block scripts
       //- script(src='/js/plugins.js')

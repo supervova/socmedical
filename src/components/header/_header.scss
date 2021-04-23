@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: $zindex-fixed;
+  z-index: $zindex-tooltip;
 }
 
 .header > .container {
@@ -24,70 +24,40 @@
 // SEARCH
 // -----------------------------------------------------------------------------
 
-.header__search {
-  @include media-breakpoint-down(mdl) {
-    background-color: $color-bg-alt;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: translateY(-$size-line);
-    transition:
-      opacity $duration-sm $easing,
-      transform $duration-sm $easing;
-    height: $size-7;
-    z-index: 1;
+// SEARCH DRAWER (USING UP TO LANDSCAPE TABLET)
+.search-drawer {
+  background-color: $color-bg-alt;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-$size-line);
+  transition:
+    opacity $duration-sm $easing,
+    transform $duration-sm $easing;
+  height: $size-7;
+  z-index: $zindex-drawer;
 
-    &.is-open {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   @include media-breakpoint-up(mdl) {
-    grid-column: 4 / span 4;
-  }
-
-  @include media-breakpoint-up(lg) {
-    grid-column: 5 / span 4;
+    display: none;
   }
 }
-
-// Input and its container
-.form__item {
-  padding-bottom: 0;
-  flex-grow: 1;
-}
-
-.header__search .form__control {
-  padding-right: $size-7;
-}
-
-
-// Submit
-.header__search-submit {
-  @extend %btn;
-
-  background: $transparent;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: $size-6;
-  height: $size-6;
-}
-
 
 // Cancel button
-.header__search-cancel {
+.search-drawer__cancel {
   @extend %btn-ghost;
 
   margin-left: $size-1;
@@ -98,6 +68,46 @@
   }
 }
 
+// STANDARD SEARCH FORM (LANDSCAPE TABLET AND UP)
+.header__search {
+  display: none;
+
+  @include media-breakpoint-up(mdl) {
+    display: block;
+    grid-column: 4 / span 4;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-column: 5 / span 4;
+  }
+}
+
+// COMMON ELEMENTS
+
+// Input and its container
+.form__item {
+  padding-bottom: 0;
+  flex-grow: 1;
+}
+
+.header__search .form__control,
+.search-drawer .form__control {
+  padding-right: $size-7;
+}
+
+// Submit
+.header__search-submit,
+.search-drawer__submit {
+  @extend %btn;
+
+  background: $transparent;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: $size-6;
+  height: $size-6;
+}
 
 // -----------------------------------------------------------------------------
 // BUTTONS

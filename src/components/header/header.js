@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars, no-shadow */
 
 (() => {
-  const form = document.getElementById('header-search-form');
-  const scrim = document.getElementById('scrim');
+  const form = document.getElementById('search-drawer');
+  const scrim = document.getElementById('search-scrim');
 
   const closeSearch = () => {
     form.classList.remove('is-open');

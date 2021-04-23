@@ -62,6 +62,18 @@
       </div>
     </noscript>
     <!-- /noindex-->
+    <form class="search-drawer" id="search-drawer" action="/search" method="get">
+      <div class="form__item">
+        <input class="form__control" name="q" type="search" dir="auto" autocomplete="off" aria-label="Искать на сайте" placeholder="Поиск">
+        <button class="search-drawer__submit" type="submit" disabled aria-label="Submit Search">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/images/socmedical/base/graphics/sprite.svg#icon-search"></use>
+              </svg>
+        </button>
+      </div>
+      <button class="search-drawer__cancel" type="reset" data-search-cancel>Отмена</button>
+    </form>
+    <div class="scrim" id="search-scrim"></div>
     <header class="header">
       <div class="container"><a class="d-md-none" href="/"><img src="/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical"><span class="sr-only">SocMedical — первая страница</span></a>
         <form class="header__search" id="header-search-form" action="/search" method="get">
@@ -73,7 +85,6 @@
                   </svg>
             </button>
           </div>
-          <button class="header__search-cancel" type="reset" data-search-cancel>Отмена</button>
         </form>
         <ul class="header__buttons">
           <li><a class="header__btn-sign-up" href="javascript:void(0)" onclick="loginform()"><span class="d-md-none">Регистрация</span><span class="d-none d-md-inline">Зарегистрироваться</span>
