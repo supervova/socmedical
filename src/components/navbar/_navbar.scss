@@ -64,6 +64,19 @@
 // -----------------------------------------------------------------------------
 
 .navbar__logo {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    border-radius: $border-radius;
+
+    &:focus {
+      background: $color-bg-alt;
+    }
+  }
+}
+
+.navbar__logo > figure {
   text-align: center;
   margin-bottom: 2.9rem;
 

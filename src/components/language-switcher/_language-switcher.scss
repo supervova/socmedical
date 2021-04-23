@@ -29,7 +29,7 @@
 }
 
 .language-switcher__link {
-  @extend %text-truncate;
+  @extend %text-truncate, %standard-focus;
 
   color: $color-ink-link;
   display: flex;

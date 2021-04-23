@@ -40,10 +40,6 @@
       inset 0 0 0 100px $black-min;
   }
 
-  &:focus {
-    box-shadow: $box-shadow-focus-outline;
-  }
-
   &.is-compact {
     padding-left: 1.2rem;
     padding-right: 1.2rem;
@@ -74,6 +70,10 @@
     filter: brightness($hover-brightness);
   }
 
+  &:focus {
+    box-shadow: $box-shadow-focus-outline;
+  }
+
   &:active {
     background-image: none;
   }
@@ -96,6 +96,10 @@
     background-color: $color-bg-alt;
     color: $color-primary-text;
   }
+
+  &:focus {
+    box-shadow: $box-shadow-focus-outline;
+  }
 }
 
 .btn.is-outline.is-inverse {
@@ -106,6 +110,10 @@
   &:hover {
     background-color: rgba($color-bg-alt, .2);
     color: $color-ink-inverse-normal;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 .4rem $color-ink-inverse-2ry;
   }
 
   .icon {
@@ -124,6 +132,10 @@
   &:hover {
     text-decoration: none;
   }
+
+  &:focus {
+    box-shadow: $box-shadow-focus-outline;
+  }
 }
 
 .btn.is-icon {
@@ -136,6 +148,10 @@
 
   &:hover {
     filter: brightness($hover-brightness);
+  }
+
+  &:focus {
+    box-shadow: $box-shadow-focus-outline;
   }
 
   @media #{$mq-retina} {
