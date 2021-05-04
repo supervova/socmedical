@@ -204,7 +204,7 @@
 .navbar__dropdown-label {
   @extend %btn, %navbar-link;
 
-  background: $transparent;
+  background: transparent;
 
   @include media-breakpoint-up(lg) {
     justify-content: flex-start;

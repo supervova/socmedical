@@ -37,6 +37,6 @@
 .icon-badge > .icon,
 %icon-active {
   --icon-stroke: #{$color-ink-inverse-normal};
-  --icon-fill: #{$transparent};
+  --icon-fill: transparent;
 }
 

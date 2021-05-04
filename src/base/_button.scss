@@ -85,7 +85,7 @@
 
 .btn.is-outline,
 %btn-outline {
-  background-color: $transparent;
+  background-color: transparent;
   box-shadow: inset 0 0 0 1px $color-ink-accent-border;
   color: $color-primary-text;
   transition:
@@ -126,7 +126,7 @@
 %btn-ghost {
   @extend %btn;
 
-  background-color: $transparent;
+  background-color: transparent;
   color: $color-ink-link;
 
   &:hover {

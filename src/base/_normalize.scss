@@ -86,7 +86,7 @@ pre {
  */
 
 a {
-  background-color: $transparent;
+  background-color: transparent;
 }
 
 /**
@@ -390,7 +390,7 @@ template {
 // DOCUMENT
 
 html {
-  -webkit-tap-highlight-color: $transparent;
+  -webkit-tap-highlight-color: transparent;
   font-size: 62.5%;
   text-size-adjust: 100%;
   overflow-y: scroll;

@@ -46,8 +46,8 @@ $tooltip-offset:                        ($size-1 * 2);
 
   // Tooltip's arrow
   &::before {
-    background: $transparent;
-    border: ($tooltip-arrow-width / 2) solid $transparent;
+    background: transparent;
+    border: ($tooltip-arrow-width / 2) solid transparent;
     content: '';
     z-index: $zindex-tooltip + 1;
   }

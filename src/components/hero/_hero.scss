@@ -44,6 +44,7 @@
       calc(50% + 52.8rem) calc(100% - 21.6rem);
     background-repeat: no-repeat;
     background-size: 87.4rem;
+    box-shadow: inset 0 -.8rem 0 lighten($color-primary, 25%);
     overflow-x: hidden;
     padding-top: 0;
     min-height: 74.4rem;
@@ -57,87 +58,126 @@
 // #endregion
 
 // -----------------------------------------------------------------------------
-// BOTTOM BAR
-// -----------------------------------------------------------------------------
-// #region
-
-.hero::after {
-  background-color: rgba($color-primary, .4);
-  background-image: url('/images/socmedical/pattern-oblique.png');
-  backdrop-filter: blur(20px);
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1.2rem;
-}
-// #endregion
-
-// -----------------------------------------------------------------------------
 // IMAGE
 // -----------------------------------------------------------------------------
 // #region
 
+
+
 .hero__picture {
+  --hero-asterisks: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2281%22%20height%3D%2234%22%20viewBox%3D%220%200%2081%2034%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%239BD5B6%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%222%22%20d%3D%22M286.464102%2C189%20L286.464102%2C181%20M283%2C187%20L289.928203%2C183%20M283%2C183%20L289.928203%2C187%20M286.464102%2C165%20L286.464102%2C157%20M283%2C163%20L289.928203%2C159%20M283%2C159%20L289.928203%2C163%20M262.464102%2C189%20L262.464102%2C181%20M259%2C187%20L265.928203%2C183%20M259%2C183%20L265.928203%2C187%20M262.464102%2C165%20L262.464102%2C157%20M259%2C163%20L265.928203%2C159%20M259%2C159%20L265.928203%2C163%20M238.464102%2C189%20L238.464102%2C181%20M235%2C187%20L241.928203%2C183%20M235%2C183%20L241.928203%2C187%20M238.464102%2C165%20L238.464102%2C157%20M235%2C163%20L241.928203%2C159%20M235%2C159%20L241.928203%2C163%20M214.464102%2C189%20L214.464102%2C181%20M211%2C187%20L217.928203%2C183%20M211%2C183%20L217.928203%2C187%20M214.464102%2C165%20L214.464102%2C157%20M211%2C163%20L217.928203%2C159%20M211%2C159%20L217.928203%2C163%22%20transform%3D%22translate%28-210%20-156%29%22%2F%3E%3C%2Fsvg%3E');
+  --hero-oval: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22210%22%20height%3D%22168%22%20viewBox%3D%220%200%20210%20168%22%3E%3Cpath%20fill%3D%22%2347A875%22%20fill-rule%3D%22evenodd%22%20d%3D%22M168.007686%2C-0.00191651682%20C193.506695%2C19.1547706%20210%2C49.6512764%20210%2C84%20C210%2C118.348724%20193.506695%2C148.845229%20168.007686%2C168.001917%20L41.9923144%2C168.001917%20C16.4933051%2C148.845229%200%2C118.348724%200%2C84%20C0%2C49.6512764%2016.4933051%2C19.1547706%2041.9923144%2C-0.00191651682%20L168.007686%2C-0.00191651682%20Z%22%2F%3E%3C%2Fsvg%3E');
+  --hero-corner: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22195%22%20height%3D%22167%22%20viewBox%3D%220%200%20195%20167%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%234CB37C%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%224%22%20d%3D%22M191.59214%2C164.162906%20C181.992091%2C164.222173%20172.483126%2C164.131056%20163.340374%2C164.131056%20L161.910356%2C164.13174%20C114.623377%2C164.175769%2057.9204604%2C166.23401%2029.2811704%2C137.59357%20C4.30748321%2C112.334349%203.02232974%2C65.3055466%203%2C22.0516137%20L3%2C19.074879%20C3.00340013%2C13.6296417%203.01838941%2C8.25413818%203%2C3%22%2F%3E%3C%2Fsvg%3E');
+
   background-color: $color-primary;
-  background-image:
-    radial-gradient(
-      28.8rem at 28.8rem 28.8rem,
-      rgba(255, 255, 255, .48),
-      rgba(255, 255, 255, .24) 24%,
-      rgba(255, 255, 255, .12) 38%,
-      rgba(255, 255, 255, 0)
-    ),
-    url('/images/socmedical/components/hero/bg-shapes.svg');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 57.6rem, 38.4rem;
-  border-radius: $border-radius;
+  border-radius: $border-radius-lg;
+  box-shadow: inset 0 0 0 2.5rem lighten($color-primary, 3%);
   position: relative;
   margin-bottom: 0;
   height: $size-line * 7;
+
+  &::after {
+    background-image: var(--hero-asterisks);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    content: '';
+    position: absolute;
+    right: $size-4;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8.2rem;
+    height: 3.5rem;
+  }
+
+  &::before {
+    background-image: var(--hero-oval);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 21rem;
+    height: 16.8rem;
+  }
 
   @include media-breakpoint-up(md) {
     grid-column: 6 / span 7;
   }
 
   @include media-breakpoint-up(mdl) {
-    background-color: $transparent;
-    background-image: url('/images/socmedical/components/hero/bg-shapes-lg.svg');
-    background-position: ($size-line * 10) ($size-line * 6);
-    background-size: auto;
+    background-color: transparent;
+    box-shadow: none;
     border-radius: 0;
     display: flex;
-    align-items: flex-end;
-    grid-column: 8 / span 7;
+    align-items: center;
+    grid-column: 10 / span 4;
     grid-row: 1 / 2;
     margin-top: 0;
     height: 100%;
+
+    &::after,
+    &::before {
+      display: none;
+    }
   }
 }
 
-.hero__picture > img {
-  clip-path: inset(0 0 #{$size-5} 0);
+
+.hero__picture > picture {
   position: absolute;
-  bottom: -$size-5;
-  left: $size-line;
-  width: auto;
-  height: 22.6rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 
   @include media-breakpoint-up(mdl) {
+    background-image:
+      var(--hero-asterisks),
+      url('/images/socmedical/components/hero/bg-shapes-lg.svg');
+    background-position:
+      right $size-4 top 32%,
+      0 100%;
+    background-repeat: no-repeat;
+    background-size: auto, contain;
+    // clip-path: url('#hero-clip-path');
     clip-path: none;
-    position: static;
+    position: relative;
+    bottom: auto;
+    left: auto;
     object-fit: cover;
     object-position: 0 calc(100% + #{$size-line * 3});
-    max-width: none;
+    transform: none;
+    width: 54.3rem;
     height: auto;
+
+    &::after {
+      background-image: var(--hero-corner);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: contain;
+      content: '';
+      position: absolute;
+      bottom: percentage(51 / 662);
+      left: percentage(51 / 423);
+      width: percentage(195 / 423);
+      height: percentage(167 / 662);
+      z-index: 2;
+    }
   }
 
   @include media-breakpoint-up(lg) {
-    object-fit: cover;
     object-position: $size-line 100%;
-    max-width: none;
+  }
+}
+
+.hero__picture > picture > img {
+  width: auto;
+  max-width: none;
+
+  @include media-breakpoint-up(mdl) {
+    max-width: 100%;
   }
 }
 // #endregion
@@ -161,13 +201,12 @@
   @include media-breakpoint-up(mdl) {
     grid-column: 5 / span 5;
     grid-row: 1 / 2;
-    padding-top: $size-line * 5;
+    justify-content: center;
     padding-bottom: 0;
   }
 
   @include media-breakpoint-up(lg) {
     grid-column: 6 / span 4;
-    padding-top: $size-line * 7;
   }
 }
 
