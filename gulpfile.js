@@ -143,7 +143,7 @@ const cssTasks = (source, subtitle, uncssHTML, destination, link = true) =>
         )
       )
     )
-    .pipe(gulpif(PRODUCTION, cleanCSS()))
+    .pipe(gulpif(PRODUCTION, cleanCSS({ format: 'beautify' })))
     .pipe(size({ title: `styles: ${subtitle}` }))
     .pipe(dest(destination))
     .pipe(browserSync.stream());
