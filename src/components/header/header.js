@@ -1,6 +1,10 @@
 /* eslint-disable no-unused-vars, no-shadow */
-
 (() => {
+  /**
+   * ---------------------------------------------------------------------------
+   * TOGGLE SEARCH FORM ON MOBILES
+   * ---------------------------------------------------------------------------
+   */
   const form = document.getElementById('search-drawer');
   const scrim = document.getElementById('search-scrim');
 
@@ -38,4 +42,26 @@
       }
     });
   }
+
+  /**
+   * ---------------------------------------------------------------------------
+   * SHOW HEADER WHEN START SCROLLING UP ON TABLETS AND DESKTOPS
+   * ---------------------------------------------------------------------------
+   */
+  let prevScrollPos = window.pageYOffset;
+  const header = document.getElementById('header');
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      const currentScrollPos = window.pageYOffset;
+      if (currentScrollPos > prevScrollPos) {
+        header.style.setProperty('--top-position', '-130px');
+      } else {
+        header.style.setProperty('--top-position', '0');
+      }
+      prevScrollPos = currentScrollPos;
+    },
+    false
+  );
 })();

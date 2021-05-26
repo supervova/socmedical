@@ -2,13 +2,16 @@ block config
   include /pages/base/config
 
 doctype html
-html(lang=site.lang)
+html(lang=site.lang, prefix='og: http://ogp.me/ns#')
   head
 
     block head
-      include /pages/base/head
+      if page.init
+        include /pages/base/head-init
+      else
+        include /pages/base/head
 
-  body(class=bodyClasses || false)
+  body(class=page.bodyClasses || false)
     block bodyPrefix
       include /pages/base/body-prefix
 
@@ -25,8 +28,9 @@ html(lang=site.lang)
       include /components/footer/footer
 
     block bodySuffix
-      include /components/modal/modal
+      unless page.init
+        include /components/modal/modal
 
     block scripts
-      //- script(src='/js/plugins.js')
-      script(src='/js/socmedical/main.js')
+      //- script(src=`${site.baseUrl}js/plugins.js`)
+      script(src=`${site.baseUrl}js/socmedical/main.js`)

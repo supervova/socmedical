@@ -51,7 +51,6 @@ a:not([class]) {
   transition: color $duration-xs $easing;
 
   &:hover {
-    filter: brightness($hover-brightness);
     text-decoration: underline;
     // Place below descenders
     text-underline-offset: .2rem;

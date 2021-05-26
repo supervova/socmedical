@@ -1,7 +1,7 @@
 //- Icon
 mixin icon(name, classes)
   svg.icon(class=classes aria-hidden='true' focusable='false')
-    use(href='/images/socmedical/base/graphics/sprite.svg#icon-' + name)
+    use(href=`${site.baseUrl}images/socmedical/base/graphics/sprite.svg#icon-${name}`)
 
 //- Button
 mixin button(label, icon=false, classes=false, type='button')
@@ -16,7 +16,7 @@ mixin teaser(id, title, summary, img=false, link='#')
     a.feed__block-link(href= link)
       figure.feed__img
         if img
-          img(src='/images/socmedical/placeholders/thumbnail-' + img + '.jpg' alt='')
+          img(src=`${site.baseUrl}images/socmedical/placeholders/thumbnail-${img}.jpg` alt='')
       .feed__copy
         h3.feed__title(itemprop='headline')= title
         p.feed__summary(itemprop='description')= summary
@@ -47,7 +47,7 @@ mixin link-go(url='#')
 mixin product-tile(img, title, rating, count, price, priceOld, link='#')
   .product-tile
     figure.product-tile__img
-      img(src=`/images/socmedical/placeholders/product-${img}.jpg`, alt='')
+      img(src=`${site.baseUrl}images/socmedical/placeholders/product-${img}.jpg`, alt='')
     h3.product-tile__title
       a.product-tile__link(href= link)= title
     figure.rating(style=`--rating: ${rating};`)
@@ -65,5 +65,5 @@ mixin lang(name, code)
   li
     a.language-switcher__link(href=`https://${code}.socmedical.com`, lang= code)
       svg.icon(aria-hidden='true' focusable='false')
-        use(href='/images/socmedical/base/graphics/flags.svg#icon-flag-' + code)
+        use(href=`${site.baseUrl}images/socmedical/base/graphics/flags.svg#icon-flag-${code}`)
       = name

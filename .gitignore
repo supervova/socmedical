@@ -10,6 +10,8 @@ _tmp
 assets
 backup
 docs
+src/overrides/*
+!src/overrides/_overrides.scss
 tmp
 uploads
 

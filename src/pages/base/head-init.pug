@@ -1,0 +1,85 @@
+title #{page.title}
+meta(http-equiv='content-type' content='text/html; charset=UTF-8')
+meta(name='description', content=page.desc)
+meta(name='keywords' content='business, money, idea, investments, investor, project, финансы')
+meta(name='robots' content='index,follow')
+meta(http-equiv='X-UA-Compatible' content='IE=edge')
+meta(name='viewport' content='width=device-width,initial-scale=1')
+meta(itemprop='name' content= page.title)
+meta(itemprop='description' content= page.desc)
+meta(itemprop='image' content= page.img)
+meta(name='twitter:card' content='summary')
+meta(name='twitter:site' content= site.twitter)
+meta(name='twitter:title' content= page.title)
+meta(name='twitter:description' content= page.desc)
+meta(name='twitter:creator' content= site.author)
+meta(name='twitter:image:src' content= page.img)
+meta(name='twitter:domain' content=`en.${site.domain}`)
+meta(property='og:locale' content= page.lang)
+meta(property='og:type' content='website')
+link(rel='alternate' hreflang='af' href=`https://af.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='ar' href=`https://ar.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='hy' href=`https://hy.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='zh' href=`https://zh.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='fi' href=`https://fi.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='fr' href=`https://fr.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='de' href=`https://de.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='he' href=`https://he.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='hi' href=`https://hi.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='it' href=`https://it.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='ja' href=`https://ja.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='pl' href=`https://pl.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='pt' href=`https://pt.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='ru' href=`https://ru.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='es' href=`https://es.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='th' href=`https://th.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='tr' href=`https://tr.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='uk' href=`https://uk.${site.domain}/${page.path}`)
+link(rel='alternate' hreflang='hr' href=`https://hr.${site.domain}/${page.path}`)
+meta(property='og:title' content= page.title)
+meta(property='og:description' content= page.desc)
+meta(property='og:image' content= page.img)
+meta(property='og:url' content=`https://${page.lang}.${site.domain}/${page.path}`)
+meta(property='og:site_name' content= site.title)
+meta(property='og:see_also' content= site.link)
+meta(property='fb:app_id' content= site.fbAppId)
+meta(name='generator' content='Qwerty Social Network Engine 5.286 - https://qwertynetworks.com')
+base(href=`https://${page.lang}.${site.domain}`)
+link(rel='canonical' href=`https://${page.lang}.${site.domain}/${page.path}`)
+
+link(rel='stylesheet' href=site.coreCss)
+
+if site.fonts
+  link(rel='preconnect', href='https://fonts.googleapis.com/')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=' + site.fonts + '&display=swap')
+link(rel='stylesheet' href=site.css)
+
+script(type='application/ld+json').
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://#{page.lang}.#{site.domain}/#{page.path}"
+    },
+    "headline": "#{page.title}",
+    "image": "#{page.img}",
+    "datePublished": "#{page.published}",
+    "dateModified": "#{page.modified}",
+    "author": {
+      "@type": "Person",
+      "name": "#{page.author}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "#{company.title}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "#{company.logo}"
+      }
+    },
+    "articleBody": "#{page.desc}"
+  }
+
+link(rel='icon', href=`https://${page.lang}.${site.domain}/favicon.png` type='image/x-icon')
+link(rel='Shortcut Icon', href=`https://${page.lang}.${site.domain}/favicon.png` type='image/x-icon')

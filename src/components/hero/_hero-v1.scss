@@ -63,7 +63,7 @@
 
 .hero::after {
   background-color: rgba($color-primary, .4);
-  background-image: url('/images/socmedical/pattern-oblique.png');
+  background-image: url('#{$base-url}images/socmedical/pattern-oblique.png');
   backdrop-filter: blur(20px);
   content: '';
   position: absolute;

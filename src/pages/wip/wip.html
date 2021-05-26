@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
     <title>SocMedical</title>
@@ -20,7 +20,8 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap">
-    <link rel="stylesheet" href="/css/socmedical/style.css">
+    <link rel="stylesheet" href="http://localhost:9000/css/socmedical/style.css">
+    <meta name="author" content="@qwertynetworks">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -55,7 +56,7 @@
       <div class="alert is-warning is-global" role="alert">
         <p>
           <svg class="icon" aria-hidden="true" focusable="false">
-            <use xlink:href="/img/base/icons/sprite.svg#icon-warning-md"></use>
+            <use xlink:href="/img/base/icons/sprite.svg#icon-warning"></use>
           </svg>
           В&nbsp;вашем браузере выключен JavaScript, поэтому на&nbsp;сайте могут не&nbsp;работать некоторые элементы интерфейса. Но&nbsp;вы&nbsp;всегда можете <a href="http://www.google.com/adsense/support/bin/answer.py?hl=ru&amp;answer=12654" target="_blank" rel="noopener noreferrer">включить Javascript</a>.
         </p>
@@ -74,7 +75,7 @@
       <button class="search-drawer__cancel" type="reset" data-search-cancel>Отмена</button>
     </form>
     <div class="scrim" id="search-scrim"></div>
-    <header class="header">
+    <header class="header" id="header">
       <div class="container"><a class="d-md-none" href="/"><img src="/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical"><span class="sr-only">SocMedical — первая страница</span></a>
         <form class="header__search" id="header-search-form" action="/search" method="get">
           <div class="form__item">
@@ -106,7 +107,7 @@
       <div class="container">
         <nav class="navbar"><a class="navbar__logo" href="/">
             <figure><img class="navbar__logomark" src="/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical">
-              <figcaption><img src="/images/socmedical/components/logo/logotype.svg"  width="115" height="32" alt="Логотип SocMedical">
+              <figcaption><img src="/images/socmedical/components/logo/logotype.svg" width="115" height="32" alt="Логотип SocMedical">
                 <div class="navbar__tagline">Медицинская социальная&nbsp;сеть</div>
               </figcaption>
             </figure></a>
@@ -180,7 +181,7 @@
       </div>
     </div>
     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal">Launch demo modal</button>
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="container">
         <ul class="language-switcher">
               <li><a class="language-switcher__link" href="https://af.socmedical.com" lang="af">

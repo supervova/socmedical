@@ -419,7 +419,7 @@ body {
 // stylelint-disable property-no-vendor-prefix
 
 ::selection {
-  background: $color-bg-primary;
+  background: $color-primary-bg-dark;
   color: $color-ink-inverse-normal;
   text-shadow: none;
 }

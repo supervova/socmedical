@@ -10,7 +10,8 @@ append config
       title: site.title,
       desc: site.desc,
       link: site.link,
-      img: site.img
+      img: site.img,
+      bodyClasses: 'page is-home'
     }
 
 //- CONTENT --------------------------------------------------------------------
@@ -293,5 +294,5 @@ block content
           a.btn.is-outline.is-inverse(href='javascript:void(0)', onclick='quickreg()')
             | Зарегистрироваться
             +icon('chevron-right', 'is-chevron')
-        img.cta__img(src="/images/socmedical/components/cta/doctor.png", alt="Доктор скоро вас примет")
+        img.cta__img(src=`${site.baseUrl}images/socmedical/components/cta/doctor.png`, alt="Доктор скоро вас примет")
 

@@ -12,12 +12,33 @@
   }
 }
 
+// Fix navbar on interior pages and hide it when the footer is appeared
+
+.navbar-wrapper:not(.page.is-home .navbar-wrapper) {
+  opacity: 1;
+  position: fixed;
+  transition: opacity $duration $easing;
+
+  @include media-breakpoint-up(md) {
+    min-height: 100vh;
+  }
+}
+
+.has-hidden-stickies:not(.is-home) .navbar-wrapper {
+  opacity: 0;
+}
+
+// Navbar outer container
+
 .navbar-wrapper > .container {
+  --padding-x-container: 0;
+
   @include media-breakpoint-down(md) {
-    padding: 0;
+    pointer-events: none;
   }
 
   @include media-breakpoint-up(md) {
+    --padding-x-container: #{$size-4};
     padding-top: $size-4;
     padding-bottom: $size-4;
   }
@@ -107,6 +128,7 @@
   color: $color-ink-2ry;
   font-size: var(--font-size-small);
   line-height: var(--line-height-small);
+  word-break: break-word;
   padding: .4rem 0 0;
 
   @include media-breakpoint-up(lg) {

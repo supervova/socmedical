@@ -10,7 +10,7 @@
 
 // Stars/hearts
 .rating__points {
-  --point-color: #{$black-min};
+  --point-color: #{$dark-min};
   --point-background: #{$red};
   --percent: calc(var(--rating) / 5 * 100%);
 

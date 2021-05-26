@@ -37,7 +37,7 @@
     box-shadow:
       inset 0 0 0 1px $color-ink-border,
       inset 0 3px 5px $color-ink-border,
-      inset 0 0 0 100px $black-min;
+      inset 0 0 0 100px $dark-min;
   }
 
   &.is-compact {
@@ -57,7 +57,7 @@
 }
 
 .btn.is-primary {
-  background-color: $color-bg-primary;
+  background-color: $color-primary-bg-dark;
   background-image: linear-gradient(lighten($color-primary, 2%), darken($color-primary, 10%));
   color: $color-ink-inverse-normal;
   text-shadow: 0 1px 0 $color-ink-border;

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body class="supportDesktop supportOffline">
+    <div id="p_prldr" style="display: none">
+      <div class="contpre">
+        <img style="width: 81px; height: 81px" class="spinner" src="/images/ogimage_b2bingo_small.png" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" /><br />
+        <small>loading...</small>
+      </div>
+    </div>
+
+    <div style="height: 50px"></div>
+
+    <form class="search-drawer" id="search-drawer" action="/search" method="get">
+      <div class="form__item">
+        <input class="form__control" name="q" type="search" dir="auto" autocomplete="off" aria-label="Искать на сайте" placeholder="Поиск" />
+        <button class="search-drawer__submit" type="submit" disabled="" aria-label="Submit Search">
+          <svg class="icon" aria-hidden="true" focusable="false">
+            <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </div>
+      <button class="search-drawer__cancel" type="reset" data-search-cancel="">Отмена</button>
+    </form>
+    <div class="scrim" id="search-scrim"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="header" style="--top-position: 0">
+      <div class="container">
+        <a class="d-md-none" href="/"><img src="/project12/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical" /><span class="sr-only">SocMedical — первая страница</span></a>
+        <form class="header__search" id="header-search-form" action="/search" method="get">
+          <div class="form__item">
+            <input class="form__control" id="header-search-input" name="q" type="search" dir="auto" autocomplete="off" aria-label="Искать на сайте" placeholder="Поиск" />
+            <button class="header__search-submit" id="header-search-submit" type="submit" disabled="" aria-label="Submit Search">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-search"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <ul class="header__buttons">
+          <li>
+            <a class="header__btn-sign-up" href="javascript:void(0)" onclick="loginform()"
+              ><span class="d-md-none">Регистрация</span><span class="d-none d-md-inline">Зарегистрироваться</span>
+              <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-chevron-right"></use></svg
+            ></a>
+          </li>
+          <li>
+            <a class="header__btn-sign-in" href="javascript:void(0)" onclick="quickreg()"
+              ><span class="d-md-none">Вход</span><span class="d-none d-md-inline">Войти</span>
+              <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-chevron-right"></use></svg
+            ></a>
+          </li>
+          <li class="header__btn-search-slot">
+            <a class="btn is-outline is-compact" href="/search" role="button" data-search-btn="" aria-haspopup="true" aria-label="Искать на сайте">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-search"></use></svg
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar">
+          <a class="navbar__logo" href="/">
+            <figure>
+              <img class="navbar__logomark" src="/project12/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical" />
+              <figcaption>
+                <img src="/project12/images/socmedical/components/logo/logotype.svg" width="115" height="32" alt="Логотип SocMedical" />
+                <div class="navbar__tagline">Медицинская социальная&nbsp;сеть</div>
+              </figcaption>
+            </figure></a
+          >
+          <ul class="navbar__list">
+            <li class="navbar__item">
+              <a class="navbar__link" href="">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-group"></use></svg
+                ><span class="d-md-none">Сообщ.</span><span class="d-none d-md-inline">Сообщества</span></a
+              >
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__link" href="">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-list"></use></svg
+                >Лента</a
+              >
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__link" href="">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-case"></use></svg
+                ><span class="d-md-none">Услуги</span><span class="d-none d-md-inline">Медуслуги</span></a
+              >
+            </li>
+            <li class="navbar__item d-none d-md-flex">
+              <a class="navbar__link" href="">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-pills"></use></svg
+                >Маркетплейс</a
+              >
+            </li>
+            <li class="navbar__item d-none d-md-flex">
+              <a class="navbar__link" href="">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-stethoscope"></use></svg
+                >Специалисты</a
+              >
+            </li>
+            <li class="navbar__item d-none d-lg-flex">
+              <a class="navbar__link" href="">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-building"></use></svg
+                >Организации</a
+              >
+            </li>
+            <li class="navbar__item dropdown" data-dropdown="">
+              <button class="navbar__dropdown-label" id="navbar-more" type="button" aria-controls="navbar-more-menu" aria-expanded="false" data-dropdown-toggle="">
+                <svg class="icon d-md-none" aria-hidden="true" focusable="false">
+                  <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-arrow-up-circle"></use>
+                </svg>
+                <svg class="icon d-none d-md-block" aria-hidden="true" focusable="false">
+                  <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-arrow-right-circle"></use></svg
+                >Еще
+              </button>
+              <ul class="dropdown__menu" id="navbar-more-menu" role="listbox" aria-labelledby="navbar-more" data-dropdown-menu="">
+                <li class="d-md-none" role="option">
+                  <a class="dropdown__link" href="">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-pills"></use></svg
+                    >Маркетплейс</a
+                  >
+                </li>
+                <li class="d-md-none" role="option">
+                  <a class="dropdown__link" href="">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-stethoscope"></use></svg
+                    >Специалисты</a
+                  >
+                </li>
+                <li class="d-lg-none" role="option">
+                  <a class="dropdown__link" href="">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-building"></use></svg
+                    >Организации</a
+                  >
+                </li>
+                <li role="option">
+                  <a class="dropdown__link" href="">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-calendar"></use></svg
+                    >События</a
+                  >
+                </li>
+                <li class="d-sm-none d-md-flex" role="option">
+                  <a class="dropdown__link" href="">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-heart"></use></svg
+                    >Программы здоровья</a
+                  >
+                </li>
+                <li class="d-sm-none d-md-flex" role="option">
+                  <a class="dropdown__link" href="">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-ambulance"></use></svg
+                    ><span class="d-sm-none">Мед. на упреждение</span><span class="d-none d-md-inline">Медицина на упреждение</span></a
+                  >
+                </li>
+                <li class="d-sm-none d-md-flex" role="option">
+                  <a class="dropdown__link" href="">
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="/project12/images/socmedical/base/graphics/sprite.svg#icon-book"></use></svg
+                    >Обучение</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- MAIN AREA -->
+    <div class="bodybg">
+      <div class="containerbg">
+        <div id="notifier"></div>
+        <span class="" id="0"></span>
+        <div class="row affix-row">
+          <!-- SVG icons start /-->
+          <span style="display: none">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 525.153 525.153" style="enable-background: new 0 0 525.153 525.153" xml:space="preserve" id="truck">
+              <g>
+                <path
+                  d="M453.557,167.119h-71.618v-95.49H47.745C21.487,71.629,0,93.138,0,119.374V381.95h47.745
+c0,39.627,31.991,71.574,71.596,71.574c39.649,0,71.618-31.969,71.618-71.574h143.213c0,39.627,31.991,71.574,71.618,71.574
+c39.627,0,71.596-31.969,71.596-71.574h47.767V262.587L453.557,167.119z M119.341,417.77c-19.803,0-35.798-16.017-35.798-35.82
+c0-19.825,15.973-35.82,35.798-35.82s35.82,15.973,35.82,35.82C155.161,401.731,139.165,417.77,119.341,417.77z M441.609,202.917
+l46.782,59.67H381.917v-59.67H441.609z M405.812,417.77c-19.825,0-35.82-16.017-35.82-35.82c0-19.825,15.973-35.82,35.82-35.82
+c19.803,0,35.798,15.973,35.798,35.82C441.609,401.731,425.614,417.77,405.812,417.77z"
+                ></path>
+              </g>
+            </svg>
+          </span>
+          <!-- SVG icons end /-->
+
+          <div class="toTop" onclick="$('body,html').animate({scrollTop:0},200);" style="top: 50px; display: fixed">
+            <span>To top</span><br />
+            <span class="glyphicons glyphicons-circle-arrow-top" style="font-size: 20px; color: #2a323b"></span>
+          </div>
+
+          <!-- MAIN -->
+          <div id="postcontainer" class="col-sm-9 col-md-10 affix-content" style="background: #fff; padding: 10px; float: right">
+            <div id="coverbg" class="coverbg" style="height: 243.438px">
+              <a href="/community-12056/">
+                <h2 class="communityname" itemprop="name">Сообщество собирателей инвестиций</h2>
+                <div class="communitylogo" id="communitylogo" style="height: 116.85px; width: 116.85px"></div>
+                <div class="communitydescr" id="communitydescr" itemprop="description">Соберем инвестиции для проекта , бизнеса, идеи</div>
+              </a>
+              <div id="subscribes" style="position: absolute; width: 100%; margin-left: -20px; top: 213.438px" align="center">
+                <div id="unsubscribediv" style="display: none"><a href="javascript:void(0)" onclick="subscribe(12056)" class="btn btn-default">Leave community</a></div>
+                <div id="subscribediv" style="display: block">
+                  <a id="btnsubscribe" href="javascript:void(0)" onclick="subscribe(12056)" class="btn btn-success">Join the community</a>
+                  <div id="waitsubscribe" style="display: none"><img width="50px" height="50px" src="./images/loading.gif" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" /></div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 10px; margin-bottom: 10px" align="right">
+              <span id="aboutdiv" style="display: none"
+                ><span style="white-space: nowrap">Date of creation: 2019-09-18 06:15:59</span>, &nbsp;<span style="white-space: pre-wrap">Administrator: <a href="/user/1025937" target="_blank">Strategik</a></span
+                >, &nbsp;<span style="white-space: nowrap">Total subscribers: <a href="/community-12056?membersof">1</a></span
+                >, &nbsp;<span style="white-space: nowrap">Total publications: 1</span>, &nbsp;<span style="white-space: nowrap">Total comments: 1</span></span
+              >
+              <a id="aboutlink" href="javascript:void(0)" onclick="aboutcommunity()"></a><br />
+            </div>
+            <div class="container">
+              <div id="buybuttonhead" style="display: none; text-align: center">
+                <button class="btn btn-success btn-lg" onclick="buyform()"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>
+              </div>
+              <main>
+                <div class="page-header">
+                  <a href="https://en.b2bingo.com/user/1025937" target="_blank">
+                    <div class="post_avatar"><img class="post_avatar" src="https://en.b2bingo.com/uploads/files/d/3/f/1/5/boxd3f154511a42c7ae3383b11f6f326232.jpg" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" /></div>
+                    Strategik</a
+                  >
+                  · <span class="date" style="white-space: nowrap">2020-12-02 06:31</span>
+                </div>
+                <div class="page-header">
+                  <h3 style="margin-top: 0">Heya!</h3>
+                </div>
+                <div style="overflow: hidden">
+                  <p>
+                    <b>This is an automatic translation.</b><br />
+                    <a href="https://en.b2bingo.com/community-12056/7261338/?readlng=ru">Click here to read the publication in the original language.</a>
+                  </p>
+                  <p>Unprincipled Investment Gatherer</p>
+                  <p>I know where the money is for your project!</p>
+                  <p>Collecting investments for a business or project is easy and interesting!</p>
+                  <p>Have you thought about it?</p>
+                  <p>Do you want to be convinced of this?</p>
+                  <p>Let's get money for your project - breaking all the rules!</p>
+                  <p>Let's get obsessed with the project idea and its implementation!</p>
+                  <p>Let's push the boundaries of what is permitted!</p>
+                  <p>And the money will flow to you like a full-flowing river!</p>
+                  <p>Until you scream - "Enough!" - and then all your gold will turn into shards! - joke🙂</p>
+                  <p>Welcome to the Game called - Get all the money in the world and change it with your idea!</p>
+                  <p>Don't want to change anything? Then just take the money and get busy.</p>
+                  <p>What do you get:</p>
+                  <ol>
+                    <li>An investment product from your idea, project, business - a means of obtaining investment</li>
+                    <li>Promotion of this product to the pockets of investors</li>
+                    <li>Investors' requests with an offer of money for your project</li>
+                    <li>Negotiation support and assistance in closing investment deals</li>
+                    <li>Money to the account</li>
+                  </ol>
+                  <p>Terms of cooperation:</p>
+                  <p>- Time costs money - from 5 thousand rubles a week payment for work, weekly.</p>
+                  <p>- Reward - 4% of the attracted money after receiving.</p>
+                  <p>Negotiations on the subject - all after receiving the money - I do not conduct, I do not take prisoners!</p>
+                  <p></p>
+                  <p>Paying attention!</p>
+                  <p></p>
+                  <p>I work very quickly, please contact only on business and willingness to interact with investors.</p>
+                  <p><strong>Download:</strong> <a href="/file/24613e65087183060386ff2aeba50fdc?oid=u1025937">osen8.jpg</a> (235 kilobytes)</p>
+                  <p>
+                    <b>This is an automatic translation.</b><br />
+                    <a href="https://en.b2bingo.com/community-12056/7261338/?readlng=ru">Click here to read the publication in the original language.</a>
+                  </p>
+                  <p>
+                    <b>This post is available in the following languages:</b><br />
+                    <a href="https://en.b2bingo.com/community-12056/7261338/?readlng=en" style="white-space: nowrap"><img border="0" src="/images/flags/32/GB.png" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" /> English</a> <a href="https://en.b2bingo.com/community-12056/7261338/?readlng=ru" style="white-space: nowrap"><img border="0" src="/images/flags/32/RU.png" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" /> Русский</a>
+                  </p>
+                </div>
+              </main>
+              <div style="text-align: right">
+                <a href="javascript:void(0)" onclick="abusepost()"><small>Report abuse</small></a>
+              </div>
+              <div class="page-footer">
+                <span class="postrating">
+                  <font color="green"><span id="postpluscount">44</span></font>
+                </span>
+                <a href="javascript:void(0)" onclick="votepost(7261338,1)"> <span class="glyphicon glyphicon-thumbs-up postvote" id="thumbsup" aria-hidden="true" title="Like!"></span> </a>
+                <span class="postrating">
+                  <font color="red"><span id="postminuscount">10</span></font>
+                </span>
+                <a href="javascript:void(0)" onclick="votepost(7261338,0)"> <span class="glyphicon glyphicon-thumbs-down postvote" id="thumbsdown" aria-hidden="true" title="Dislike!"></span> </a>&nbsp; <a href="/donate?touserid=1025937" target="_blank"> <img style="width: 32px; height: 32px; border: none; vertical-align: top" alt="Financial support" title="Financial support" src="/images/donateico.png" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" /> </a>
+                <div style="display: inline-block; float: right; margin-top: 10px">
+                  <a href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="The number of views and unique users (when the reader was stayed more than 20 seconds)"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 10 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 6</a>
+                </div>
+                <div><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <span>Category:</span> <a href="/category/3149">привлечение инвестиций</a></div>
+                <p class="post-tag"><a href="/tag/%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81">бизнес</a> <a href="/tag/%D0%B4%D0%B5%D0%BD%D1%8C%D0%B3%D0%B8">деньги</a> <a href="/tag/%D0%B8%D0%B4%D0%B5%D1%8F">идея</a> <a href="/tag/%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%B8">инвестиции</a> <a href="/tag/%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%BE%D1%80">инвестор</a> <a href="/tag/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82">проект</a> <a href="/tag/%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D1%8B">финансы</a></p>
+                <div id="buybutton" style="display: none; text-align: center">
+                  <button class="btn btn-success btn-lg" onclick="buyform()"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>
+                </div>
+                <br />
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+
+                <div class="addthis_inline_share_toolbox_lrmc" style="text-align: center; margin-bottom: -10px; clear: both" data-url="https://en.b2bingo.com/community-12056/7261338" data-title="Unscrupulous investment gatherer" data-description="Collecting money for a project or business is very exciting and interesting">
+                  <small style="color: #666">Do not forget to share:</small>
+                  <div id="atstbx5" class="at-resp-share-element at-style-responsive addthis-smartlayers addthis-animated at4-show" aria-labelledby="at-96973629-5e2d-403c-a5d0-409695a76fab" role="region">
+                    <span id="at-96973629-5e2d-403c-a5d0-409695a76fab" class="at4-visually-hidden">AddThis Sharing Buttons</span>
+                    <div class="at-share-btn-elements">
+                      <a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-facebook" style="background-color: rgb(228, 235, 243); border-radius: 4px"
+                        ><span class="at4-visually-hidden">Share to Facebook</span
+                        ><span class="at-icon-wrapper" style="line-height: 20px; height: 20px; width: 20px"
+                          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-facebook-1" class="at-icon at-icon-facebook" style="fill: rgb(42, 50, 59); width: 20px; height: 20px">
+                            <title id="at-svg-facebook-1">Facebook</title>
+                            <g><path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path></g></svg></span></a
+                      ><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-messenger" style="background-color: rgb(228, 235, 243); border-radius: 4px"
+                        ><span class="at4-visually-hidden">Share to Messenger</span
+                        ><span class="at-icon-wrapper" style="line-height: 20px; height: 20px; width: 20px"
+                          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-messenger-2" class="at-icon at-icon-messenger" style="fill: rgb(42, 50, 59); width: 20px; height: 20px">
+                            <title id="at-svg-messenger-2">Messenger</title>
+                            <g><path d="M16 6C9.925 6 5 10.56 5 16.185c0 3.205 1.6 6.065 4.1 7.932V28l3.745-2.056c1 .277 2.058.426 3.155.426 6.075 0 11-4.56 11-10.185C27 10.56 22.075 6 16 6zm1.093 13.716l-2.8-2.988-5.467 2.988 6.013-6.383 2.868 2.988 5.398-2.987-6.013 6.383z" fill-rule="evenodd"></path></g></svg></span></a
+                      ><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-viber" style="background-color: rgb(228, 235, 243); border-radius: 4px"
+                        ><span class="at4-visually-hidden">Share to Viber</span
+                        ><span class="at-icon-wrapper" style="line-height: 20px; height: 20px; width: 20px"
+                          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-viber-3" class="at-icon at-icon-viber" style="fill: rgb(42, 50, 59); width: 20px; height: 20px">
+                            <title id="at-svg-viber-3">Viber</title>
+                            <g><path d="M21.176 27c-.208-.062-.618-.13-.987-.303-6.476-3.02-11.18-7.972-13.853-15.082-.897-2.383.04-4.396 2.298-5.22.405-.147.802-.157 1.2.002.964.383 3.404 4.022 3.458 5.11.042.835-.48 1.287-1 1.67-.983.722-.988 1.638-.568 2.66.948 2.308 2.567 3.895 4.663 4.925.76.374 1.488.337 2.007-.515.925-1.518 2.06-1.445 3.3-.502.62.473 1.253.936 1.844 1.45.8.702 1.816 1.285 1.336 2.754-.5 1.527-2.226 3.066-3.7 3.05zm-4.76-20.986c4.546.166 8.46 4.677 8.406 9.543-.005.478.153 1.185-.504 1.172-.628-.015-.464-.733-.52-1.21-.603-5.167-2.786-7.606-7.52-8.394-.392-.066-.99.026-.96-.535.044-.833.754-.523 1.097-.576zm6.072 8.672c-.045.356.147.968-.385 1.056-.72.118-.58-.595-.65-1.053-.48-3.144-1.5-4.297-4.423-5.005-.43-.105-1.1-.032-.99-.75.108-.685.71-.452 1.164-.393 2.92.38 5.307 3.126 5.284 6.144zm-2.222-.573c.013.398-.026.818-.46.874-.314.04-.52-.245-.553-.597-.12-1.296-.75-2.062-1.95-2.27-.36-.063-.712-.19-.544-.715.11-.352.408-.387.712-.396 1.297-.036 2.815 1.647 2.794 3.103z" fill-rule="evenodd"></path></g></svg></span></a
+                      ><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-whatsapp" style="background-color: rgb(228, 235, 243); border-radius: 4px"
+                        ><span class="at4-visually-hidden">Share to WhatsApp</span
+                        ><span class="at-icon-wrapper" style="line-height: 20px; height: 20px; width: 20px"
+                          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-whatsapp-4" class="at-icon at-icon-whatsapp" style="fill: rgb(42, 50, 59); width: 20px; height: 20px">
+                            <title id="at-svg-whatsapp-4">WhatsApp</title>
+                            <g><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd"></path></g></svg></span></a
+                      ><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-telegram" style="background-color: rgb(228, 235, 243); border-radius: 4px"
+                        ><span class="at4-visually-hidden">Share to Telegram</span
+                        ><span class="at-icon-wrapper" style="line-height: 20px; height: 20px; width: 20px"
+                          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-telegram-5" class="at-icon at-icon-telegram" style="fill: rgb(42, 50, 59); width: 20px; height: 20px">
+                            <title id="at-svg-telegram-5">Telegram</title>
+                            <g>
+                              <g fill-rule="evenodd"></g>
+                              <path d="M15.02 20.814l9.31-12.48L9.554 17.24l1.92 6.42c.225.63.114.88.767.88l.344-5.22 2.436 1.494z" opacity=".6"></path>
+                              <path d="M12.24 24.54c.504 0 .727-.234 1.008-.51l2.687-2.655-3.35-2.054-.344 5.22z" opacity=".3"></path>
+                              <path d="M12.583 19.322l8.12 6.095c.926.52 1.595.25 1.826-.874l3.304-15.825c.338-1.378-.517-2.003-1.403-1.594L5.024 14.727c-1.325.54-1.317 1.29-.24 1.625l4.98 1.58 11.53-7.39c.543-.336 1.043-.156.633.214"></path>
+                            </g></svg></span></a
+                      ><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-twitter" style="background-color: rgb(228, 235, 243); border-radius: 4px"
+                        ><span class="at4-visually-hidden">Share to Twitter</span
+                        ><span class="at-icon-wrapper" style="line-height: 20px; height: 20px; width: 20px"
+                          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-twitter-6" class="at-icon at-icon-twitter" style="fill: rgb(42, 50, 59); width: 20px; height: 20px">
+                            <title id="at-svg-twitter-6">Twitter</title>
+                            <g><path d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336" fill-rule="evenodd"></path></g></svg></span></a
+                      ><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-skype" style="background-color: rgb(228, 235, 243); border-radius: 4px"
+                        ><span class="at4-visually-hidden">Share to Skype</span
+                        ><span class="at-icon-wrapper" style="line-height: 20px; height: 20px; width: 20px"
+                          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-skype-7" class="at-icon at-icon-skype" style="fill: rgb(42, 50, 59); width: 20px; height: 20px">
+                            <title id="at-svg-skype-7">Skype</title>
+                            <g><path d="M22.453 19c0-.52-.1-.997-.305-1.43a3.438 3.438 0 0 0-.757-1.07 4.837 4.837 0 0 0-1.14-.766 8.692 8.692 0 0 0-1.29-.53 17.54 17.54 0 0 0-1.366-.36l-1.625-.375a49.96 49.96 0 0 1-.69-.165 5.017 5.017 0 0 1-.546-.18c-.218-.083-.375-.167-.468-.25a1.31 1.31 0 0 1-.258-.328.92.92 0 0 1-.117-.47c0-.8.75-1.202 2.25-1.202a3.6 3.6 0 0 1 1.204.188c.354.125.635.273.843.445.21.172.407.346.594.523.19.178.397.33.626.454.23.125.48.188.75.188.49 0 .883-.167 1.18-.5.297-.333.445-.734.445-1.203 0-.574-.29-1.092-.874-1.556-.583-.463-1.323-.815-2.218-1.055-.896-.24-1.844-.36-2.844-.36a8.73 8.73 0 0 0-2.063.242 7.19 7.19 0 0 0-1.866.735 3.782 3.782 0 0 0-1.39 1.36c-.35.577-.524 1.246-.524 2.007 0 .635.1 1.19.297 1.664.198.474.49.867.875 1.18.385.312.802.565 1.25.757a9.66 9.66 0 0 0 1.61.508l2.28.563c.938.23 1.52.416 1.75.562.334.208.5.52.5.938 0 .406-.208.742-.625 1.007-.416.266-.963.4-1.64.4-.53 0-1.008-.084-1.43-.25-.422-.168-.76-.368-1.015-.603a13 13 0 0 1-.71-.703 3.737 3.737 0 0 0-.72-.6 1.536 1.536 0 0 0-.844-.25c-.52 0-.914.155-1.18.467-.265.313-.398.703-.398 1.172 0 .96.635 1.78 1.906 2.46 1.27.683 2.787 1.025 4.547 1.025.76 0 1.49-.096 2.188-.288a7.115 7.115 0 0 0 1.915-.836 4.048 4.048 0 0 0 1.383-1.46c.343-.61.515-1.296.515-2.056zM28 22c0 1.656-.586 3.07-1.758 4.242C25.07 27.414 23.656 28 22 28a5.845 5.845 0 0 1-3.656-1.25c-.802.167-1.584.25-2.344.25-1.49 0-2.914-.29-4.273-.867-1.36-.578-2.532-1.36-3.516-2.344-.983-.985-1.765-2.157-2.343-3.517A10.81 10.81 0 0 1 5 16c0-.76.083-1.542.25-2.344A5.845 5.845 0 0 1 4 10c0-1.656.586-3.07 1.758-4.242C6.93 4.586 8.344 4 10 4c1.354 0 2.573.417 3.656 1.25C14.458 5.083 15.24 5 16 5c1.49 0 2.914.29 4.273.867 1.36.578 2.532 1.36 3.516 2.344.983.985 1.765 2.157 2.343 3.517A10.81 10.81 0 0 1 27 16c0 .76-.083 1.542-.25 2.344A5.845 5.845 0 0 1 28 22z" fill-rule="evenodd"></path></g></svg></span></a
+                      ><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-vk" style="background-color: rgb(228, 235, 243); border-radius: 4px"
+                        ><span class="at4-visually-hidden">Share to Vkontakte</span
+                        ><span class="at-icon-wrapper" style="line-height: 20px; height: 20px; width: 20px"
+                          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-vk-8" class="at-icon at-icon-vk" style="fill: rgb(42, 50, 59); width: 20px; height: 20px">
+                            <title id="at-svg-vk-8">Vkontakte</title>
+                            <g><path d="M26.712 10.96s-.167-.48-1.21-.348l-3.447.024a.785.785 0 0 0-.455.072s-.204.108-.3.37a22.1 22.1 0 0 1-1.28 2.695c-1.533 2.61-2.156 2.754-2.407 2.587-.587-.372-.43-1.51-.43-2.323 0-2.54.382-3.592-.756-3.868-.37-.084-.646-.144-1.616-.156-1.232-.012-2.274 0-2.86.287-.396.193-.695.624-.515.648.227.036.742.143 1.017.515 0 0 .3.49.347 1.568.13 2.982-.48 3.353-.48 3.353-.466.252-1.28-.167-2.478-2.634 0 0-.694-1.222-1.233-2.563-.097-.25-.288-.383-.288-.383s-.216-.168-.527-.216l-3.28.024c-.504 0-.683.228-.683.228s-.18.19-.012.587c2.562 6.022 5.483 9.04 5.483 9.04s2.67 2.79 5.7 2.597h1.376c.418-.035.634-.263.634-.263s.192-.214.18-.61c-.024-1.843.838-2.12.838-2.12.838-.262 1.915 1.785 3.065 2.575 0 0 .874.6 1.532.467l3.064-.048c1.617-.01.85-1.352.85-1.352-.06-.108-.442-.934-2.286-2.647-1.916-1.784-1.665-1.496.658-4.585 1.413-1.88 1.976-3.03 1.796-3.52z" fill-rule="evenodd"></path></g></svg></span
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <br />
+                <div id="commentsblock" style="margin-top: -15px">
+                  <div class="comments">
+                    <h3 class="title-comments">Comments (1)</h3>
+                    <button type="button" id="postcomment" class="btn btn-default" style="margin-bottom: 10px; margin-top: 0; display: inline-block" onclick="loginform()">Post a comment</button>
+                    <span id="replyto0"></span>
+                    <div class="comment comment29914140" style="margin-top: 10px; min-width: 50% !important; padding-right: 1px !important; margin-right: 1px !important; padding-left: calc(0 * 5%); width: 100%">
+                      <div style="padding: 5px; border-radius: 8px">
+                        <input id="score29914140" type="hidden" value="0" />
+                        <div style="display: inline-block">
+                          <a href="https://en.b2bingo.com/user/1042830" target="_blank">
+                            <div class="post_avatar"><img src="./uploads/files/d/9/a/4/2/boxd9a4245b7c219ce0c23c085d5d52bd53.png" class="post_avatar" border="0" /></div>
+                          </a>
+                        </div>
+                        <div style="white-space: normal; display: inline-block; vertical-align: bottom">
+                          <div class="author"><a href="https://en.b2bingo.com/user/1042830" target="_blank" id="author29914140">Денис Малиновский</a></div>
+                          <br />
+                          <div class="metadata">
+                            <a href="javascript:void(0)" onclick="copycommentlink(29914140);"> 2 months ago, <span id="cdate29914140" class="" style="white-space: nowrap">21.03.2021, 02:51:30</span></a
+                            ><a name="comment29914140" style="display: block; content: ''; height: 75px; margin: -75px 0 0; float: left"></a>
+                          </div>
+                        </div>
+                        <div id="textcomment29914140" class="media-text text-justify" style="min-width: 200px">Как с вами связяться?</div>
+                        <div class="footer-comment">
+                          <span class="rating">
+                            <font color="green"><span id="pluscount29914140">&nbsp;</span></font>
+                          </span>
+                          <a href="javascript:void(0)" onclick="loginform()"><span id="thumbsup29914140" class="glyphicon glyphicon-thumbs-up vote" aria-hidden="true" title="Like!"></span></a>
+                          <span class="rating">
+                            <font color="red"><span id="minuscount29914140">&nbsp;</span></font>
+                          </span>
+                          <a href="javascript:void(0)" onclick="loginform()"><span id="thumbsdown29914140" class="glyphicon glyphicon-thumbs-down vote" aria-hidden="true" title="Dislike!"></span></a> &nbsp;
+                          <span class="comment-reply">
+                            <a href="javascript:void(0)" class="reply" onclick="loginform()">To reply <img src="./images/reply.png" width="20px" height="20px" border="0" /></a>
+                          </span>
+                          <div style="display: inline-block; float: right">
+                            <div class="btn-group dropup">
+                              <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0)">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                <b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="left: auto; right: 100%; z-index: 100000">
+                                <li class="dropdown-submenu">
+                                  <a href="javascript:void(0)" onclick="copycommentlink(29914140);">Copy link</a>
+                                </li>
+                                <li class="dropdown-submenu"><a href="javascript:void(0)" onclick="loginform()">Report abuse</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <span id="replyto29914140"></span>
+                    </div>
+                  </div>
+                  <input type="hidden" id="commentscore" name="commentscore" value="0" />
+                </div>
+                <div id="loadingcomments" style="text-align: center; display: none">
+                  <span>Loading...</span><br />
+                  <img alt="Loading..." width="30px" src="/images/loading.gif" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" /><br />
+                  <a href="https://en.b2bingo.com/community-12056/7261338">Click here if comments are not loaded</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <ul class="language-switcher">
+          <li>
+            <a class="language-switcher__link" href="https://af.socmedical.com" lang="af">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-af"></use>
+              </svg>
+              Afrikaans
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://de.socmedical.com" lang="de">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-de"></use>
+              </svg>
+              Deutsch
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://en.socmedical.com" lang="en">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-en"></use>
+              </svg>
+              English
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://es.socmedical.com" lang="es">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-es"></use>
+              </svg>
+              Español
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://fr.socmedical.com" lang="fr">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-fr"></use>
+              </svg>
+              Français
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://it.socmedical.com" lang="it">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-it"></use>
+              </svg>
+              Italiano
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://pl.socmedical.com" lang="pl">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-pl"></use>
+              </svg>
+              Polski
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://pt.socmedical.com" lang="pt">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-pt"></use>
+              </svg>
+              Português
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://hr.socmedical.com" lang="hr">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-hr"></use>
+              </svg>
+              Srpsko-hrvatski
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://fi.socmedical.com" lang="fi">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-fi"></use>
+              </svg>
+              Suomi
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://tr.socmedical.com" lang="tr">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-tr"></use>
+              </svg>
+              Türkçe
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://ru.socmedical.com" lang="ru">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-ru"></use>
+              </svg>
+              Русский
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://uk.socmedical.com" lang="uk">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-uk"></use>
+              </svg>
+              Українська
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://hy.socmedical.com" lang="hy">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-hy"></use>
+              </svg>
+              Հայերեն
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://he.socmedical.com" lang="he">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-he"></use>
+              </svg>
+              עִברִית
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://ar.socmedical.com" lang="ar">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-ar"></use>
+              </svg>
+              العربية
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://hi.socmedical.com" lang="hi">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-hi"></use>
+              </svg>
+              हिन्दी
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://th.socmedical.com" lang="th">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-th"></use>
+              </svg>
+              ภาษาไทย
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://zh.socmedical.com" lang="zh">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-zh"></use>
+              </svg>
+              中文
+            </a>
+          </li>
+          <li>
+            <a class="language-switcher__link" href="https://ja.socmedical.com" lang="ja">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="/project12/images/socmedical/base/graphics/flags.svg#icon-flag-ja"></use>
+              </svg>
+              日本語
+            </a>
+          </li>
+        </ul>
+        <div class="footer__doormat" role="group">
+          <section>
+            <h3 class="footer__doormat-subhead">Личное</h3>
+            <ul class="footer__doormat-links">
+              <li><a href="#">Моя страница</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li><a href="#">Мессенджер</a></li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="footer__doormat-subhead">Соцсеть</h3>
+            <ul class="footer__doormat-links">
+              <li><a href="#">Медуслуги</a></li>
+              <li><a href="#">Сообщества</a></li>
+              <li><a href="#">Лента</a></li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="footer__doormat-subhead">Маркетплейс</h3>
+            <ul class="footer__doormat-links">
+              <li><a href="#">Все товары</a></li>
+              <li><a href="#">Стать продавцом</a></li>
+              <li><a href="#">Добавить товар</a></li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="footer__doormat-subhead">Организации</h3>
+            <ul class="footer__doormat-links">
+              <li><a href="#">Страницы</a></li>
+              <li><a href="#">Вакансии</a></li>
+              <li><a href="#">События</a></li>
+            </ul>
+          </section>
+        </div>
+        <ul class="footer__meta-nav">
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Вопрос-Ответ</a></li>
+          <li><a href="#">Соглашение</a></li>
+          <li><a href="#">Конфиденциальность</a></li>
+        </ul>
+        <p class="footer__site-credits">
+          Copyright ©&nbsp;2018-2021, SocMedical&nbsp;™<br />
+          Социальная сеть нового поколения!<br />
+          Работает под управлением <a href="https://en.qwertynetworks.com/" target="_blank" rel="noopener noreferrer">Qwerty Social Network Engine</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- BODY SUFFIX -->
+    <!-- Yandex.Metrika counter -->
+
+    <!-- /Yandex.Metrika counter -->
+
+    <!--noindex-->
+    <div class="modal fade" id="editcomment" tabindex="-1" role="dialog" aria-labelledby="editcommentLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"
+                ><!--nottranslate--><span class="nottranslate">×</span
+                ><!--nottranslate--></span
+              >
+            </button>
+            <h4 class="modal-title qwerty" id="editcommentLabel">Edit comment</h4>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="editcommentid" name="editcommentid" />
+            <textarea id="commenteditor"></textarea>
+          </div>
+          <div class="modal-footer" style="white-space: nowrap">
+            <div style="white-space: nowrap">
+              <button type="button" class="btn btn-default" id="cancelsave" onclick="$('#editcomment').modal('hide');">Cancel</button>
+              <button type="button" class="btn btn-primary" id="savecommentbutton" onclick="$('#editcomment').modal('hide'); savecomment(0,-1);">Save comment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="newpicture" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Picture</h4>
+          </div>
+          <div style="padding: 10px 10px 10px">
+            <form class="form-vertical" action="javascript:void(0);">
+              <input type="hidden" name="filename" id="filename" value="" />
+              <div class="file-field">
+                <div style="vertical-align: middle; margin: 2px; white-space: nowrap; width: 100%"><img id="editphoto" style="max-width: 100%; max-height: 300px" src="./images/no-image.png" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" /></div>
+                <div id="selectfile" class="btn btn-primary btn-sm" style="display: inline-block">
+                  <input type="file" id="PhotoFile" name="PhotoFile" onchange="showeditphoto();" />
+                  <input class="form-control" type="hidden" id="photo_b64" name="photo_b64" />
+                </div>
+                <div class="input-group" style="margin-top: 10px">
+                  <span>Description or keywords:</span><small style="float: right">No more than 50 characters</small>
+                  <input type="text" class="form-control" name="description" id="description" value="" />
+                </div>
+                <div id="loadingphoto" style="display: none"><img width="50px" height="50px" src="./images/loading.gif" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" /></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div id="deletediv" class="checkbox has-error" style="display: inline-block; white-space: nowrap; float: left">
+              <label>
+                <input type="checkbox" name="todelete" id="todelete" />
+                <span>Delete file</span>
+              </label>
+            </div>
+            <div style="display: inline-block; white-space: nowrap">
+              <button id="cancelimgbutton" type="button" class="btn btn-default" data-dismiss="modal">Cancel changes</button>
+              <button id="saveimgbutton" type="button" class="btn btn-primary" onclick="saveimage()">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/noindex-->
+
+    <div data-id="KP5YZKWKSIFMS">
+      <div class="smartphoto" aria-hidden="true" role="dialog">
+        <div class="smartphoto-body">
+          <div class="smartphoto-inner">
+            <div class="smartphoto-header">
+              <span class="smartphoto-count">1/</span>
+              <span class="smartphoto-caption" aria-live="polite" tabindex="-1"></span>
+              <button class="smartphoto-dismiss" data-action-click="hidePhoto()"><span class="smartphoto-sr-only">close the image dialog</span></button>
+            </div>
+            <div class="smartphoto-content" data-action-click="hidePhoto()"></div>
+            <ul style="transform: translate(0px, 0px)" class="smartphoto-list"></ul>
+            <ul class="smartphoto-arrows">
+              <li class="smartphoto-arrow-left" aria-hidden="true">
+                <a href="#" data-action-click="gotoSlide()" role="button"><span class="smartphoto-sr-only">go to the previous image</span></a>
+              </li>
+              <li class="smartphoto-arrow-right" aria-hidden="true">
+                <a href="#" data-action-click="gotoSlide()" role="button"><span class="smartphoto-sr-only">go to the next image</span></a>
+              </li>
+            </ul>
+            <nav class="smartphoto-nav">
+              <ul></ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000"><iframe id="_atssh876" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px; left: 0px" src="https://s7.addthis.com/static/sh.f48a1a04fe8dbf021b4cda1d.html#rand=0.6375689990843434&amp;iit=1622063941210&amp;tmr=load%3D1622063938237%26core%3D1622063938288%26main%3D1622063941203%26ifr%3D1622063941214&amp;cb=0&amp;cdn=0&amp;md=0&amp;kw=business%2Cmoney%2Cidea%2Cinvestments%2Cinvestor%2Cproject%2C%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D1%8B&amp;ab=-&amp;dh=en.b2bingo.com&amp;dr=https%3A%2F%2Fen.b2bingo.com%2Fpublications&amp;du=https%3A%2F%2Fen.b2bingo.com%2Fcommunity-12056%2F7261338&amp;href=https%3A%2F%2Fen.b2bingo.com%2Fcommunity-12056%2F7261338&amp;dt=Unscrupulous%20investment%20gatherer&amp;dbg=0&amp;cap=tc%3D0%26ab%3D0&amp;inst=1&amp;jsl=1&amp;prod=undefined&amp;lng=en&amp;ogt=see_also%2Csite_name%2Curl%2Cimage%2Cdescription%2Ctitle%2Ctype%3Dwebsite&amp;pc=men&amp;pub=ra-5bbc687b13c1de74&amp;ssl=1&amp;sid=60aebb42a8b4ad8c&amp;srf=0.01&amp;ver=300&amp;xck=0&amp;xtr=0&amp;og=locale%3Den%26type%3Dwebsite%26title%3DUnscrupulous%2520investment%2520gatherer%26description%3DCollecting%2520money%2520for%2520a%2520project%2520or%2520business%2520is%2520very%2520exciting%2520and%2520interesting%26image%3Dhttps%253A%252F%252Fen.b2bingo.com%252Fimages%252Fogimage_b2bingo_small.png%26url%3Dhttps%253A%252F%252Fen.b2bingo.com%252Fcommunity-12056%252F7261338%253Freadlng%253Den%26site_name%3DUnscrupulous%2520investment%2520gatherer%26see_also%3Dhttps%253A%252F%252Fen.b2bingo.com&amp;csi=undefined&amp;rev=v8.28.8-wp&amp;ct=1&amp;xld=1&amp;xd=1"></iframe></div>
+    <div class="extLives"></div>
+    <div>
+      <link href="/css/A.bootstrap.css,,qv==5.286+jquery.toast.min.css,,qv==5.286+main.css,,qv==5.286+b2bingo.css,,qv==5.286+smartphoto.min.css,,qv==5.286,Mcc.BNnog1DZA4.css.pagespeed.cf.SgoExs0AWL.css" rel="stylesheet" />
+
+      <link rel="stylesheet" href="/js/tinymce/plugins/codesample/prism.css?v=5.286" />
+      <link href="/A.external,,_css,,_cdn.jsdelivr.net,,_suggestions.min.css,,qv==5.286+owl-carousel,,_owl.carousel.css,,qv==5.286,Mcc.FIy6Vr9Xby.css.pagespeed.cf.tzyuNHJUim.css" rel="stylesheet" />
+    </div>
+    <iframe allowfullscreen="" src="data:text/html;charset=utf-8, %3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22en%22%3E%0A%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22utf-8%22%20/%3E%0A%20%20%3Cstyle%3E%0A%20%20%20%20html%20%7B%0A%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20height%3A%20100%25%3B%0A%20%20%20%20%7D%0A%20%20%20%20body%20%7B%0A%20%20%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20height%3A%20100%25%3B%0A%20%20%20%20%7D%0A%20%20%3C/style%3E%0A%20%20%3Clink%20href%3D%22chrome-extension%3A//odfonlkabodgbolnmmkdijkaeggofoop/assets/css/font-awesome.min.css%22%20rel%3D%22stylesheet%22%20/%3E%0A%20%20%3Clink%20href%3D%22chrome-extension%3A//odfonlkabodgbolnmmkdijkaeggofoop/pages/content/app.css%22%20rel%3D%22stylesheet%22%20/%3E%0A%20%20%3Ctextarea%20id%3D%22config%22%20style%3D%22display%3Anone%22%3E%7B%22theme%22%3A%22default%22%2C%22zoom%22%3A1%2C%22outline%22%3Atrue%2C%22translateLang%22%3A%22en-US%22%2C%22clearly%22%3A%7B%22whitelist%22%3A%5B%22news.google.com/*%22%2C%22support.google.com/*%22%2C%22medium.com/*%22%2C%22www.jianshu.com/p/*%22%5D%2C%22blacklist%22%3A%5B%22www.youtube.com/*%22%2C%22www.google.*%22%2C%22chrome.google.com/*%22%2C%22translate.google.com/*%22%2C%22mail.google.com/*%22%2C%22drive.google.com/*%22%2C%22docs.google.com/*%22%5D%2C%22fonts%22%3A%5B%7B%22name%22%3A%22Lora%22%2C%22lang%22%3A%5B%22en%22%5D%2C%22default%22%3A%22en%22%2C%22system%22%3A%5B%22win%22%2C%22mac%22%5D%7D%2C%7B%22name%22%3A%22NotoSerif%22%2C%22lang%22%3A%5B%22en%22%5D%2C%22system%22%3A%5B%22win%22%2C%22mac%22%5D%7D%2C%7B%22name%22%3A%22Crimson%20Text%22%2C%22lang%22%3A%5B%22en%22%5D%2C%22system%22%3A%5B%22win%22%2C%22mac%22%5D%7D%2C%7B%22name%22%3A%22Georgia%22%2C%22lang%22%3A%5B%22en%22%5D%2C%22system%22%3A%5B%22win%22%2C%22mac%22%5D%7D%2C%7B%22name%22%3A%22Roboto%22%2C%22lang%22%3A%5B%22en%22%5D%2C%22system%22%3A%5B%22win%22%2C%22mac%22%5D%7D%2C%7B%22name%22%3A%22Kaiti%22%2C%22lang%22%3A%5B%22zh%22%5D%2C%22default%22%3A%22zh%22%2C%22system%22%3A%5B%22win%22%2C%22mac%22%5D%7D%2C%7B%22name%22%3A%22Songti%22%2C%22lang%22%3A%5B%22zh%22%5D%2C%22system%22%3A%5B%22win%22%2C%22mac%22%5D%7D%2C%7B%22name%22%3A%22System%22%2C%22lang%22%3A%5B%22zh%22%2C%22en%22%5D%2C%22system%22%3A%5B%22win%22%2C%22mac%22%5D%7D%5D%7D%2C%22lang%22%3A%22en%22%2C%22tabId%22%3A18%7D%3C/textarea%3E%0A%3C/head%3E%0A%0A%3Cbody%20id%3D%22root%22%3E%0A%20%20%3Cdiv%20id%3D%22popshare%22%3E%0A%20%20%20%20%3Ccanvas%20id%3D%22popshare-image%22%3E%3C/canvas%3E%0A%20%20%3C/div%3E%0A%20%20%3Cdiv%20id%3D%22poptranslate%22%3E%0A%20%20%20%20%3Cdiv%20id%3D%22poptranslate-toolbox%22%3E%0A%20%20%20%20%3Cspan%3ETranslation%20language%3A%3C/span%3E%20%3Cselect%20id%3D%22poptranslate-lang%22%3E%3Coption%20value%3D%22af%22%3EAfrikaans%3C/option%3E%3Coption%20value%3D%22sq%22%3EAlbanian%3C/option%3E%3Coption%20value%3D%22am%22%3EAmharic%3C/option%3E%3Coption%20value%3D%22ar%22%3EArabic%3C/option%3E%3Coption%20value%3D%22hy%22%3EArmenian%3C/option%3E%3Coption%20value%3D%22az%22%3EAzerbaijani%3C/option%3E%3Coption%20value%3D%22eu%22%3EBasque%3C/option%3E%3Coption%20value%3D%22be%22%3EBelarusian%3C/option%3E%3Coption%20value%3D%22bn%22%3EBengali%3C/option%3E%3Coption%20value%3D%22bs%22%3EBosnian%3C/option%3E%3Coption%20value%3D%22bg%22%3EBulgarian%3C/option%3E%3Coption%20value%3D%22ca%22%3ECatalan%3C/option%3E%3Coption%20value%3D%22ceb%22%3ECebuano%3C/option%3E%3Coption%20value%3D%22ny%22%3EChichewa%3C/option%3E%3Coption%20value%3D%22zh-CN%22%3EChinese%20%28Simplified%29%3C/option%3E%3Coption%20value%3D%22zh-TW%22%3EChinese%20%28Traditional%29%3C/option%3E%3Coption%20value%3D%22co%22%3ECorsican%3C/option%3E%3Coption%20value%3D%22hr%22%3ECroatian%3C/option%3E%3Coption%20value%3D%22cs%22%3ECzech%3C/option%3E%3Coption%20value%3D%22da%22%3EDanish%3C/option%3E%3Coption%20value%3D%22nl%22%3EDutch%3C/option%3E%3Coption%20value%3D%22en%22%3EEnglish%3C/option%3E%3Coption%20value%3D%22eo%22%3EEsperanto%3C/option%3E%3Coption%20value%3D%22et%22%3EEstonian%3C/option%3E%3Coption%20value%3D%22tl%22%3EFilipino%3C/option%3E%3Coption%20value%3D%22fi%22%3EFinnish%3C/option%3E%3Coption%20value%3D%22fr%22%3EFrench%3C/option%3E%3Coption%20value%3D%22fy%22%3EFrisian%3C/option%3E%3Coption%20value%3D%22gl%22%3EGalician%3C/option%3E%3Coption%20value%3D%22ka%22%3EGeorgian%3C/option%3E%3Coption%20value%3D%22de%22%3EGerman%3C/option%3E%3Coption%20value%3D%22el%22%3EGreek%3C/option%3E%3Coption%20value%3D%22gu%22%3EGujarati%3C/option%3E%3Coption%20value%3D%22ht%22%3EHaitian%20Creole%3C/option%3E%3Coption%20value%3D%22ha%22%3EHausa%3C/option%3E%3Coption%20value%3D%22haw%22%3EHawaiian%3C/option%3E%3Coption%20value%3D%22iw%22%3EHebrew%3C/option%3E%3Coption%20value%3D%22hi%22%3EHindi%3C/option%3E%3Coption%20value%3D%22hmn%22%3EHmong%3C/option%3E%3Coption%20value%3D%22hu%22%3EHungarian%3C/option%3E%3Coption%20value%3D%22is%22%3EIcelandic%3C/option%3E%3Coption%20value%3D%22ig%22%3EIgbo%3C/option%3E%3Coption%20value%3D%22id%22%3EIndonesian%3C/option%3E%3Coption%20value%3D%22ga%22%3EIrish%3C/option%3E%3Coption%20value%3D%22it%22%3EItalian%3C/option%3E%3Coption%20value%3D%22ja%22%3EJapanese%3C/option%3E%3Coption%20value%3D%22jw%22%3EJavanese%3C/option%3E%3Coption%20value%3D%22kn%22%3EKannada%3C/option%3E%3Coption%20value%3D%22kk%22%3EKazakh%3C/option%3E%3Coption%20value%3D%22km%22%3EKhmer%3C/option%3E%3Coption%20value%3D%22ko%22%3EKorean%3C/option%3E%3Coption%20value%3D%22ku%22%3EKurdish%20%28Kurmanji%29%3C/option%3E%3Coption%20value%3D%22ky%22%3EKyrgyz%3C/option%3E%3Coption%20value%3D%22lo%22%3ELao%3C/option%3E%3Coption%20value%3D%22la%22%3ELatin%3C/option%3E%3Coption%20value%3D%22lv%22%3ELatvian%3C/option%3E%3Coption%20value%3D%22lt%22%3ELithuanian%3C/option%3E%3Coption%20value%3D%22lb%22%3ELuxembourgish%3C/option%3E%3Coption%20value%3D%22mk%22%3EMacedonian%3C/option%3E%3Coption%20value%3D%22mg%22%3EMalagasy%3C/option%3E%3Coption%20value%3D%22ms%22%3EMalay%3C/option%3E%3Coption%20value%3D%22ml%22%3EMalayalam%3C/option%3E%3Coption%20value%3D%22mt%22%3EMaltese%3C/option%3E%3Coption%20value%3D%22mi%22%3EMaori%3C/option%3E%3Coption%20value%3D%22mr%22%3EMarathi%3C/option%3E%3Coption%20value%3D%22mn%22%3EMongolian%3C/option%3E%3Coption%20value%3D%22my%22%3EMyanmar%20%28Burmese%29%3C/option%3E%3Coption%20value%3D%22ne%22%3ENepali%3C/option%3E%3Coption%20value%3D%22no%22%3ENorwegian%3C/option%3E%3Coption%20value%3D%22ps%22%3EPashto%3C/option%3E%3Coption%20value%3D%22fa%22%3EPersian%3C/option%3E%3Coption%20value%3D%22pl%22%3EPolish%3C/option%3E%3Coption%20value%3D%22pt%22%3EPortuguese%3C/option%3E%3Coption%20value%3D%22pa%22%3EPunjabi%3C/option%3E%3Coption%20value%3D%22ro%22%3ERomanian%3C/option%3E%3Coption%20value%3D%22ru%22%3ERussian%3C/option%3E%3Coption%20value%3D%22sm%22%3ESamoan%3C/option%3E%3Coption%20value%3D%22gd%22%3EScots%20Gaelic%3C/option%3E%3Coption%20value%3D%22sr%22%3ESerbian%3C/option%3E%3Coption%20value%3D%22st%22%3ESesotho%3C/option%3E%3Coption%20value%3D%22sn%22%3EShona%3C/option%3E%3Coption%20value%3D%22sd%22%3ESindhi%3C/option%3E%3Coption%20value%3D%22si%22%3ESinhala%3C/option%3E%3Coption%20value%3D%22sk%22%3ESlovak%3C/option%3E%3Coption%20value%3D%22sl%22%3ESlovenian%3C/option%3E%3Coption%20value%3D%22so%22%3ESomali%3C/option%3E%3Coption%20value%3D%22es%22%3ESpanish%3C/option%3E%3Coption%20value%3D%22su%22%3ESundanese%3C/option%3E%3Coption%20value%3D%22sw%22%3ESwahili%3C/option%3E%3Coption%20value%3D%22sv%22%3ESwedish%3C/option%3E%3Coption%20value%3D%22tg%22%3ETajik%3C/option%3E%3Coption%20value%3D%22ta%22%3ETamil%3C/option%3E%3Coption%20value%3D%22te%22%3ETelugu%3C/option%3E%3Coption%20value%3D%22th%22%3EThai%3C/option%3E%3Coption%20value%3D%22tr%22%3ETurkish%3C/option%3E%3Coption%20value%3D%22uk%22%3EUkrainian%3C/option%3E%3Coption%20value%3D%22ur%22%3EUrdu%3C/option%3E%3Coption%20value%3D%22uz%22%3EUzbek%3C/option%3E%3Coption%20value%3D%22vi%22%3EVietnamese%3C/option%3E%3Coption%20value%3D%22cy%22%3EWelsh%3C/option%3E%3Coption%20value%3D%22xh%22%3EXhosa%3C/option%3E%3Coption%20value%3D%22yi%22%3EYiddish%3C/option%3E%3Coption%20value%3D%22yo%22%3EYoruba%3C/option%3E%3Coption%20value%3D%22zu%22%3EZulu%3C/option%3E%3C/select%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3Cdiv%20id%3D%22poptranslate-content%22%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22poptranslate-word%22%3E%3C/div%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22poptranslate-voice%22%3E%0A%20%20%20%20%20%20%20%20%3Ci%20class%3D%22material-icons%22%20id%3D%22poptranslate-btn-speak%22%3Evolume_up%3C/i%3E%0A%20%20%20%20%20%20%20%20%3Cspan%3E%3C/span%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22poptranslate-explain%22%3E%3C/div%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22poptranslate-translit%22%3E%3C/div%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22poptranslate-dict%22%3E%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%3C/div%3E%0A%20%20%3Cdiv%20id%3D%22popmenu%22%3E%0A%20%20%20%20%3Cdiv%20id%3D%22popmenu-overlay%22%3E%3C/div%3E%0A%20%20%20%20%3Cdiv%20id%3D%22popmenu-container%22%3E%0A%20%20%20%20%20%20%3Cli%20id%3D%22popmenu-translate%22%20class%3D%22popmenu-item%22%20data-type%3D%22translate%22%3ETranslate%3C/li%3E%0A%20%20%20%20%20%20%3Cli%20id%3D%22popmenu-copy%22%20class%3D%22popmenu-item%22%20data-type%3D%22copy%22%3ECopy%3C/li%3E%0A%20%20%20%20%20%20%3Cli%20id%3D%22popmenu-search%22%20class%3D%22popmenu-item%22%20data-type%3D%22search%22%3ESearch%3C/li%3E%0A%20%20%20%20%20%20%3Cli%20id%3D%22popmenu-wiki%22%20class%3D%22popmenu-item%22%20data-type%3D%22wiki%22%3EWiki%3C/li%3E%0A%20%20%20%20%20%20%3C%21--%20%3Cli%20id%3D%22popmenu-share%22%20class%3D%22popmenu-item%22%20data-type%3D%22share%22%3EShare%3C/li%3E%20--%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C%21--%3Cli%20id%3D%22popmenu-share%22%3EShare%3C/li%3E--%3E%0A%20%20%3C/div%3E%0A%20%20%3Cdiv%20id%3D%22outline%22%3E%3C/div%3E%0A%20%20%3Cdiv%20id%3D%22main%22%3E%0A%20%20%20%20%3Cdiv%20id%3D%22title%22%3E%3C/div%3E%0A%20%20%20%20%3Cdiv%20id%3D%22byline%22%3E%3C/div%3E%0A%20%20%20%20%3Cdiv%20id%3D%22content%22%3ENo%20Aritcle%3C/div%3E%0A%0A%20%20%20%20%3Cdiv%20id%3D%22footer%22%20data-html2canvas-ignore%3D%22true%22%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22share%22%20class%3D%22share%22%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22share-title%22%3EDoes%20Clearly%20works%20fine%3F%3C/span%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22share-default%22%20class%3D%22share-overlay%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20id%3D%22btn-thumb-up%22%20class%3D%22material-icons%20thumb%20thumb-up%22%3Ethumb_up%3C/i%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20id%3D%22btn-thumb-down%22%20class%3D%22material-icons%20thumb%20thumb-down%22%3Ethumb_down%3C/i%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22share-no%22%20class%3D%22share-overlay%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22share-letter%22%3EWe%20have%20received%20your%20feedback%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%3Ca%20class%3D%22btn-cantact%22%20href%3D%22https%3A//clearlyreader.com/r/support%22%20target%3D%22_blank%22%3E%3Ci%20class%3D%22material-icons%22%3Email_outline%3C/i%3EContact%20us%3C/a%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22share-yes%22%20class%3D%22share-overlay%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22share-letter%22%3EHelp%20Clearly%20Reader%20to%20better%3F%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%3Ca%20id%3D%22btn-comments%22%20href%3D%22https%3A//clearlyreader.com/r/reviews%22%20target%3D%22_blank%22%3E%3Ci%20class%3D%22material-icons%22%3Estar_border%3C/i%3EGive%20stars%3C/a%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22moretips%22%20%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22shortcut%22%3E%3C%21--%20Shortcuts%3A%20%3Cstrong%3ESHIFT+OPTION+C%3C/strong%3E%20to%20Toggle%2C%20%3Cstrong%3EESC%3C/strong%3E%20to%20Close.%20--%3E%3C/span%3E%0A%20%20%20%20%20%20%3Ca%20class%3D%22feedback%22%20target%3D%22_blank%22%20href%3D%22https%3A//clearlyreader.com/r/subscribe%22%3E%3Ci%20class%3D%22material-icons%22%3Email%3C/i%3EJoin%20maillist%3C/a%3E%0A%20%20%20%20%20%20%3Ca%20target%3D%22_blank%22%20class%3D%22donate%22%20href%3D%22https%3A//clearlyreader.com/r/feedback%22%3EFeedback%3C/a%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%3C/div%3E%0A%20%20%3Cdiv%20id%3D%22tool%22%3E%0A%20%20%20%20%20%20%3C%21--%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22menu%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn%22%20id%3D%22translate-start%22%3E%u5F00%u59CB%3C/span%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20--%3E%0A%0A%20%20%20%20%3Cdiv%20class%3D%22menu%22%3E%0A%20%20%20%20%20%20%3Cspan%20id%3D%22btn-close%22%3E%3Ci%20class%3D%22material-icons%22%3Ecancel%3C/i%3E%3C/span%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cdiv%20class%3D%22menu%22%20menu-tooltip%3D%22THEME%20SETTING%22%3E%0A%20%20%20%20%20%20%3Cspan%20id%3D%22btn-style%22%3E%3C/span%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cdiv%20class%3D%22menu%22%20id%3D%22menu-speak%22%20menu-tooltip%3D%22SPEAK%22%3E%0A%20%20%20%20%20%20%3Cspan%20id%3D%22btn-speak%22%3E%3Ci%20class%3D%22material-icons%22%20id%3D%22menu-speak-icon%22%3Evolume_up%3C/i%3E%3C/span%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3C%21--%20%3Cdiv%20class%3D%22menu%22%20menu-tooltip%3D%22SAVE%20AS%20PDF%22%3E%0A%20%20%20%20%20%20%3Cspan%20id%3D%22btn-pdf%22%3E%3Ci%20class%3D%22material-icons%22%20id%3D%22picture_as_pdf%22%3Epicture_as_pdf%3C/i%3E%3C/span%3E%0A%20%20%20%20%3C/div%3E%20--%3E%0A%0A%20%20%20%20%3Cdiv%20class%3D%22menu%22%20menu-tooltip%3D%22PRINT%22%3E%0A%20%20%20%20%20%20%3Cspan%20id%3D%22btn-print%22%3E%3Ci%20class%3D%22material-icons%22%20id%3D%22print%22%3Eprint%3C/i%3E%3C/span%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cdiv%20class%3D%22menu%22%20id%3D%22menu-fullscreen%22%20menu-tooltip%3D%22FULLSCREEN%22%3E%0A%20%20%20%20%20%20%3Cspan%3E%3Ci%20class%3D%22material-icons%22%20id%3D%22menu-fullscreen-icon%22%3Efullscreen%3C/i%3E%3C/span%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cdiv%20class%3D%22dialog%22%20id%3D%22dialog-style%22%3E%0A%20%20%20%20%20%20%20%3Cdiv%20class%3D%22overlay-backdrop%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22setting%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22dialog-title%22%3ESTYLE%20SETTING%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22dialog-btn-close%22%3E%3Ci%20class%3D%22material-icons%22%3Eclose%3C/i%3E%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22tcell%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-label%22%3E%3Cspan%20id%3D%22value-zoom%22%20class%3D%22form-value%22%3E%3C/span%3EFont%20size%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn-letter%22%20id%3D%22btn-zoomin%22%3EA%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn-letter%22%20id%3D%22btn-zoomout%22%3EA%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22tcell%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-label%22%3EThemes%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn%20btn-theme-default%22%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn%20btn-theme-yellow%22%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn%20btn-theme-gray%22%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn%20btn-theme-black%22%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22tcell%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-label%22%3EFonts%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22font-select-style%22%20class%3D%22form-group%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22tcell%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-label%22%3EOutline%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22switch-outline%22%20class%3D%22switch%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22slider%22%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%0A%0A%20%20%20%20%3C%21--div%20class%3D%22menu%22%20id%3D%22menu-translate%22%20menu-tooltip%3D%22TRANSLATE%22%3E%0A%20%20%20%20%20%20%20%20%3Cspan%3E%3Ci%20class%3D%22material-icons%22%20id%3D%22menu-translate-icon%22%3Etranslate%3C/i%3E%3C/span%3E%0A%20%20%20%20%3C/div--%3E%0A%0A%20%20%20%20%3C%21--%20%3Cdiv%20class%3D%22menu%22%20id%3D%22menu-speak%22%20menu-tooltip%3D%22AUDIO%22%3E%0A%20%20%20%20%20%20%20%20%3Cspan%3E%3Ci%20class%3D%22material-icons%22%20id%3D%22menu-speak-icon%22%3Evolume_down%3C/i%3E%3C/span%3E%20--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn%22%20id%3D%22btn-speak-pause%22%20style%3D%22display%3Anone%22%3E%3Ci%20class%3D%22fa%20fa-pause%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn%22%20id%3D%22btn-speak-resume%22%20style%3D%22display%3Anone%22%3E%3Ci%20class%3D%22fa%20fa-play%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22btn%22%20id%3D%22btn-speak-stop%22%20style%3D%22display%3Anone%22%3E%3Ci%20class%3D%22fa%20fa-stop%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20--%3E%0A%20%20%20%20%3C%21--%20%3C/div%3E%20--%3E%0A%3C/div%3E%0A%3Cscript%20src%3D%22chrome-extension%3A//odfonlkabodgbolnmmkdijkaeggofoop/pages/content/jquery.min.js%22%20type%3D%22text/javascript%22%3E%3C/script%3E%0A%3Cscript%20src%3D%22chrome-extension%3A//odfonlkabodgbolnmmkdijkaeggofoop/pages/content/html2canvas.min.js%22%20type%3D%22text/javascript%22%3E%3C/script%3E%0A%3Cscript%20src%3D%22chrome-extension%3A//odfonlkabodgbolnmmkdijkaeggofoop/pages/content/html2pdf.bundle.min.js%22%20type%3D%22text/javascript%22%3E%3C/script%3E%0A%3Cscript%20src%3D%22chrome-extension%3A//odfonlkabodgbolnmmkdijkaeggofoop/pages/content/app.js%22%20type%3D%22text/javascript%22%3E%3C/script%3E%0A%3C/body%3E%0A%3C/html%3E%0A" id="clearly-container" referrerpolicy="origin-when-cross-origin" style="display: none"></iframe>
+    <div style="position: absolute; left: 0px; top: 0px"></div>
+    <div class="online-chat-root">
+      <div id="widget-root-4JcT1JbLnU" class="notranslate online-chat-components-wrapper device-type-desktop device-mouse">
+        <div data-v-400c7c13=""></div>
+        <!---->
+        <div data-v-361f7f09="" data-v-f6209cda="" data-v-3622e84e="" class="draggable fixed stick-to-bottom online-chat-widget-draggable-wrapper top-z-index relative" style="top: 11px !important; left: 389px !important; width: 355px !important; height: 490px !important; pointer-events: none !important">
+          <!---->
+          <div data-v-55afea9b="" data-v-f6209cda="" class="resize-helper top-z-index n" data-v-361f7f09=""></div>
+          <div data-v-55afea9b="" data-v-f6209cda="" class="resize-helper top-z-index s" data-v-361f7f09=""></div>
+          <div data-v-55afea9b="" data-v-f6209cda="" class="resize-helper top-z-index w" data-v-361f7f09=""></div>
+          <div data-v-55afea9b="" data-v-f6209cda="" class="resize-helper top-z-index e" data-v-361f7f09=""></div>
+          <div data-v-55afea9b="" data-v-f6209cda="" class="resize-helper top-z-index n e" data-v-361f7f09=""></div>
+          <div data-v-55afea9b="" data-v-f6209cda="" class="resize-helper top-z-index n w" data-v-361f7f09=""></div>
+          <div data-v-55afea9b="" data-v-f6209cda="" class="resize-helper top-z-index s e" data-v-361f7f09=""></div>
+          <div data-v-55afea9b="" data-v-f6209cda="" class="resize-helper top-z-index s w" data-v-361f7f09=""></div>
+        </div>
+        <!---->
+        <div data-v-dd6b94c6="">
+          <div data-v-00409d00="" data-v-dd6b94c6="" class="trigger-type primary-bottom secondary-right primary-top-bottom trigger top-z-index pointer" id="supportTrigger">
+            <div data-v-b3bc7f00="" data-v-00409d00="" class="dropdown-container">
+              <div data-v-b3bc7f00="" class="inner">
+                <div data-v-0f6faad5="" data-v-439c84a3="" data-v-b3bc7f00="" class="trigger-popup">
+                  <div data-v-0f6faad5="" class="inner">
+                    <div data-v-0f6faad5="" class="close">
+                      <svg data-v-7baac538="" data-v-0f6faad5="" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-icon pointer"><path data-v-7baac538="" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"></path></svg>
+                    </div>
+                    <div data-v-0f6faad5="" class="slot">
+                      <div data-v-3278be35="" data-v-439c84a3="" class="lh-primary notification-message-list message-list" data-v-0f6faad5="">
+                        <div data-v-3278be35=""><span data-v-3278be35="" class="htmlify">Artificial Intelligence</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!---->
+              </div>
+            </div>
+            <div data-v-d9688032="" data-v-00409d00="" class="trigger-round-item" style="width: 80px !important; height: 80px !important; font-size: 80px !important; background: rgb(219, 226, 240) !important; color: rgb(62, 114, 175) !important">
+              <div data-v-c6c4ab38="" data-v-00409d00="" class="round-trigger-badge" data-v-d9688032="">
+                <div data-v-d95cf22c="" data-v-c6c4ab38="">
+                  <div data-v-d95cf22c="" class="badge badge-background"><div data-v-d95cf22c="" class="badge-number">1</div></div>
+                </div>
+              </div>
+              <div data-v-1b548483="" data-v-d9688032="" class="flex-container align-center horizontal svg-icon-background-wrapper h-100 icon-wrapper">
+                <svg data-v-7baac538="" data-v-d9688032="" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-icon icon" data-v-1b548483=""><path data-v-7baac538="" d="M569.9 441.1c-.5-.4-22.6-24.2-37.9-54.9 27.5-27.1 44-61.1 44-98.2 0-80-76.5-146.1-176.2-157.9C368.4 72.5 294.3 32 208 32 93.1 32 0 103.6 0 192c0 37 16.5 71 44 98.2-15.3 30.7-37.3 54.5-37.7 54.9-6.3 6.7-8.1 16.5-4.4 25 3.6 8.5 12 14 21.2 14 53.5 0 96.7-20.2 125.2-38.8 9.1 2.1 18.4 3.7 28 4.8 31.5 57.5 105.5 98 191.8 98 20.8 0 40.8-2.4 59.8-6.8 28.5 18.5 71.6 38.8 125.2 38.8 9.2 0 17.5-5.5 21.2-14 3.6-8.5 1.9-18.3-4.4-25zM155.4 314l-13.2-3-11.4 7.4c-20.1 13.1-50.5 28.2-87.7 32.5 8.8-11.3 20.2-27.6 29.5-46.4L83 283.7l-16.5-16.3C50.7 251.9 32 226.2 32 192c0-70.6 79-128 176-128s176 57.4 176 128-79 128-176 128c-17.7 0-35.4-2-52.6-6zm289.8 100.4l-11.4-7.4-13.2 3.1c-17.2 4-34.9 6-52.6 6-65.1 0-122-25.9-152.4-64.3C326.9 348.6 416 278.4 416 192c0-9.5-1.3-18.7-3.3-27.7C488.1 178.8 544 228.7 544 288c0 34.2-18.7 59.9-34.5 75.4L493 379.7l10.3 20.7c9.4 18.9 20.8 35.2 29.5 46.4-37.1-4.2-67.5-19.4-87.6-32.4z"></path></svg>
+              </div>
+            </div>
+          </div>
+          <div data-v-400c7c13="" data-v-dd6b94c6=""></div>
+        </div>
+        <!---->
+        <!---->
+        <!---->
+        <div data-v-a07e09ae=""></div>
+        <!---->
+        <div data-v-400c7c13="" data-v-2132403d=""></div>
+      </div>
+    </div>
+  </body>
+</html>

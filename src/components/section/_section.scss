@@ -1,9 +1,5 @@
 /* stylelint-disable property-no-unknown */
 
-// -----------------------------------------------------------------------------
-// SECTION BOX AND ELEMENTS
-// -----------------------------------------------------------------------------
-
 // ☝️🧐 The .section defines the vertical paddings and background. The horizontal
 // paddings and max-width are determined by the nested .container.
 
@@ -16,7 +12,6 @@
   padding-bottom: ($size-line * 2);
 }
 
-
 // -----------------------------------------------------------------------------
 // CONTAINER
 // -----------------------------------------------------------------------------
@@ -27,9 +22,16 @@
   padding-left: var(--padding-x-container);
   padding-right: var(--padding-x-container);
   width: 100%;
-  max-width: $container-max-width;
-}
 
+  // we iterate over the map $container-max-widths: save the key to the variable
+  // $breakpoint, and save the value to the variable $max-width
+  @each $breakpoint, $max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      width: $max-width;
+      max-width: 100%;
+    }
+  }
+}
 
 // -----------------------------------------------------------------------------
 // SECTION ELEMENTS
@@ -41,66 +43,10 @@
   align-items: center;
 }
 
-.section__eyebrow {
-  @extend %petit;
-
-  background-color: transparent;
-  color: $color-primary-text;
-  font-weight: 500;
-  letter-spacing: .05rem;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: -$size-line;
-  padding-left: 0;
-  padding-right: 0;
-
-  @include media-breakpoint-up(md) {
-    margin-bottom: -$size-4;
-  }
+.section__summary {
+  @extend %lead;
 }
 
-.section__eyebrow.is-action {
-  @extend %btn;
-
-  padding-top: 1.4rem;
-  padding-bottom: 2.2rem;
-  position: relative;
-
-  &::after {
-    border-top: .2rem dashed $color-primary;
-    content: '';
-    position: absolute;
-    bottom: 2rem;
-    left: 0;
-    right: 0;
-    height: 0;
-  }
-
-  &:focus::after {
-    border-top: 2px solid $color-primary;
-  }
-}
-
-.section__title {
-  text-align: center;
-  margin-top: 0;
-
-  .is-action + & {
-    pointer-events: none;
-  }
-}
-
-// -----------------------------------------------------------------------------
-// SECTION DIVIDER
-// -----------------------------------------------------------------------------
-
-.section-divider {
-  margin-top: $size-line - .1rem;
-  margin-bottom: $size-line;
-  margin-left: auto;
-  margin-right: auto;
-  width: percentage(3/4);
-}
 
 // -----------------------------------------------------------------------------
 // VARIATIONS
@@ -110,14 +56,19 @@
   background-color: $color-bg-alt;
 }
 
+
+.section.is-above-the-fold {
+  content-visibility: visible;
+}
+
 // HIGHLIGHT
 
 .section.is-highlight {
-  background-color: $color-bg-primary;
+  background-color: $color-primary-bg-dark;
 
   h2,
   p {
-    color: $color-ink-accent-normal;
+    color: $color-ink-inverse-normal;
   }
 }
 

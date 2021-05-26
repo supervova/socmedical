@@ -9,11 +9,11 @@ form#search-drawer.search-drawer(action='/search' method='get')
   button.search-drawer__cancel(type='reset', data-search-cancel) Отмена
 #search-scrim.scrim
 
-header.header
+header#header.header
 
   .container
     a.d-md-none(href="/")
-      img(src="/images/socmedical/components/logo/logomark.svg", width="40", height="40", alt="Фирменный знак SocMedical")
+      img(src=`${site.baseUrl}images/socmedical/components/logo/logomark.svg`, width="40", height="40", alt="Фирменный знак SocMedical")
       span.sr-only SocMedical — первая страница
 
     form#header-search-form.header__search(action='/search' method='get')

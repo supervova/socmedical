@@ -135,7 +135,7 @@
   @include media-breakpoint-up(mdl) {
     background-image:
       var(--hero-asterisks),
-      url('/images/socmedical/components/hero/bg-shapes-lg.svg');
+      url('#{$base-url}/images/socmedical/components/hero/bg-shapes-lg.svg');
     background-position:
       right $size-4 top 24%,
       0 100%;
@@ -211,7 +211,7 @@
 }
 
 .hero__title {
-  color: $color-ink-accent-normal;
+  color: $color-ink-highlight;
   font-size: var(--font-size-hero-title);
   font-weight: var(--font-weight-hero-title);
   letter-spacing: -.15rem;

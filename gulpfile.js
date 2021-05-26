@@ -32,7 +32,7 @@ const paths = {
     },
     watch: `${root.src}/**/*.scss`,
     tmp: `${root.src}/css`,
-    dest: `${root.dest}/css/socmedical`,
+    dest: `${root.dest}/css`,
   },
 
   markup: {
@@ -99,7 +99,7 @@ const uncss = require('postcss-uncss');
 // COMMON STYLES FUNCTION
 const cssTasks = (source, subtitle, uncssHTML, destination, link = true) =>
   src(source)
-    .pipe(changed(paths.css.dest))
+    .pipe(changed(destination))
     .pipe(plumber())
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
     .pipe(
@@ -143,7 +143,8 @@ const cssTasks = (source, subtitle, uncssHTML, destination, link = true) =>
         )
       )
     )
-    .pipe(gulpif(PRODUCTION, cleanCSS({ format: 'beautify' })))
+    // .pipe(gulpif(PRODUCTION, cleanCSS({ format: 'beautify' })))
+    .pipe(gulpif(PRODUCTION, cleanCSS()))
     .pipe(size({ title: `styles: ${subtitle}` }))
     .pipe(dest(destination))
     .pipe(browserSync.stream());
@@ -155,9 +156,16 @@ function css(done) {
     'main', // subtitle
     // uncssHTML; use array syntax for normal results
     [`${root.src}/pages/uncss/**/*.html`],
-    paths.css.dest
+    `${paths.css.dest}/socmedical`
   );
   done();
+}
+
+// Core CSS
+function copyCoreCss() {
+  return src(`${root.src}/css/core/**/*.css`).pipe(
+    dest(`${paths.css.dest}/core`)
+  );
 }
 // #endregion
 
@@ -203,7 +211,7 @@ const imageminSVG = require('imagemin-svgo');
 // Common images function
 const imgTasks = (source, subtitle, destination) =>
   src(source, { since: lastRun(imgTasks) })
-    .pipe(changed(`${root.dest}/images/socmedical`))
+    .pipe(changed(paths.img.dest))
     .pipe(
       imagemin(
         [
@@ -310,7 +318,7 @@ const webpack = require('webpack-stream');
 
 function scripts() {
   return src(paths.js.src.main)
-    .pipe(changed(`${paths.js.dest}/**/*.js`))
+    .pipe(changed(paths.js.dest))
     .pipe(plumber())
     .pipe(
       webpack({
@@ -340,7 +348,6 @@ const del = require('del');
 // Assets
 function cleanAssets() {
   return del([
-    // ⚠️ Use the .css extension to prevent cleaning up the whole WP theme
     `${paths.css.dest}/**/*.css`,
     // `${root.dest}_includes/critical.css`,
     `${paths.js.dest}/**/*`,
@@ -370,9 +377,14 @@ function serve(done) {
     server: {
       baseDir: root.dest,
     },
+    middleware(req, res, next) {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      next();
+    },
     port: 9000,
     notify: false,
   });
+  copyCoreCss();
   watchFiles();
   done();
 }
@@ -387,6 +399,7 @@ function serve(done) {
 
 const build = series(
   cleanAssets,
+  copyCoreCss,
   sprite,
   buildPug,
   img,
@@ -402,11 +415,13 @@ const build = series(
 
 /* eslint-disable no-multi-spaces */
 
+exports.copycss = copyCoreCss;
 exports.clean = cleanAssets;
 exports.sprite = sprite;
 exports.img = img;
 exports.js = scripts;
 exports.css = css;
 exports.pug = buildPug;
+exports.w = watchFiles;
 exports.s = serve;
 exports.default = build;
