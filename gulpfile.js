@@ -93,8 +93,8 @@ const paths = {
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const sass = require('gulp-sass');
-const postcss = require('gulp-postcss');
-const uncss = require('postcss-uncss');
+// const postcss = require('gulp-postcss');
+// const uncss = require('postcss-uncss');
 
 // COMMON STYLES FUNCTION
 const cssTasks = (source, subtitle, uncssHTML, destination, link = true) =>
@@ -112,37 +112,38 @@ const cssTasks = (source, subtitle, uncssHTML, destination, link = true) =>
     .pipe(autoprefixer({ cascade: false }))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(dest(paths.css.tmp))
-    .pipe(
-      gulpif(
-        PRODUCTION,
-        gulpif(
-          link,
-          postcss([
-            uncss({
-              html: uncssHTML,
-              ignore: [
-                /* eslint-disable max-len */
-                // Bootstrap
-                /\w\.fade/,
-                /\.collapse?(ing)?/,
-                /\.carousel(-[a-zA-Z]+)?/,
-                /\.modal(-[a-zA-Z]+)?/,
+    // .pipe(
+    //   gulpif(
+    //     PRODUCTION,
+    //     gulpif(
+    //       link,
+    //       postcss([
+    //         uncss({
+    //           html: uncssHTML,
+    //           ignore: [
+    //             /* eslint-disable max-len */
+    //             // Bootstrap
+    //             /\w\.fade/,
+    //             /\.collapse?(ing)?/,
+    //             /\.carousel(-[a-zA-Z]+)?/,
+    //             /\.modal(-[a-zA-Z]+)?/,
 
-                // Custom
-                /\.[mp][btlrx]-(((sm|md|mdl|lg|xl|xxl)-)*?)[0-9s]+/,
-                /\.form__control\.is-textarea\.is-touched/,
-                /\.form__control\.is-touched/,
-                /\.mx-(.*?)auto+/,
-                /\.vk/,
-                /\w\.(has-been-validated|has-spinner|is-active|is-on|is-open|is-pressed|is-touched)/,
-                /iframe/,
-                /* eslint-enable max-len */
-              ],
-            }),
-          ])
-        )
-      )
-    )
+    //             // Custom
+    //             /\.header:not\(.page.is-home\ .header\)/,
+    //             /\.[mp][btlrx]-(((sm|md|mdl|lg|xl|xxl)-)*?)[0-9s]+/,
+    //             /\.form__control\.is-textarea\.is-touched/,
+    //             /\.form__control\.is-touched/,
+    //             /\.mx-(.*?)auto+/,
+    //             /\.vk/,
+    //             /\w\.(has-been-validated|has-spinner|is-active|is-on|is-open|is-pressed|is-touched)/,
+    //             /iframe/,
+    //             /* eslint-enable max-len */
+    //           ],
+    //         }),
+    //       ])
+    //     )
+    //   )
+    // )
     // .pipe(gulpif(PRODUCTION, cleanCSS({ format: 'beautify' })))
     .pipe(gulpif(PRODUCTION, cleanCSS()))
     .pipe(size({ title: `styles: ${subtitle}` }))

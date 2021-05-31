@@ -208,8 +208,12 @@ main li {
 // -----------------------------------------------------------------------------
 // #region
 .navbar-wrapper > .container {
-  max-width: 136.6rem;
+  max-width: 136.6rem !important;
   width: auto;
+
+  @include media-breakpoint-up(md) {
+    padding-left: $size-4;
+  }
 }
 
 .navbar {

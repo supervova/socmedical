@@ -4290,7 +4290,7 @@ tbody tr {
   z-index: 1; }
   @media (min-width: 1024px) {
     .hero__picture > picture {
-      background-image: var(--hero-asterisks), url("//images/socmedical/components/hero/bg-shapes-lg.svg");
+      background-image: var(--hero-asterisks), url("/project12//images/socmedical/components/hero/bg-shapes-lg.svg");
       background-position: right 3.2rem top 24%, 0 100%;
       background-repeat: no-repeat;
       background-size: auto, contain;
@@ -5554,8 +5554,11 @@ main li {
   padding: 0 1.2rem !important; }
 
 .navbar-wrapper > .container {
-  max-width: 136.6rem;
+  max-width: 136.6rem !important;
   width: auto; }
+  @media (min-width: 768px) {
+    .navbar-wrapper > .container {
+      padding-left: 3.2rem; } }
 
 .navbar {
   border: 0 !important;
