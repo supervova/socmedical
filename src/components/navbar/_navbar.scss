@@ -1,29 +1,26 @@
 .navbar-wrapper {
   pointer-events: none;
+  opacity: 1;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  transition: opacity $duration $easing;
   z-index: $zindex-tooltip;
 
   @include media-breakpoint-up(md) {
-    position: absolute;
     top: 0;
-  }
-}
-
-// Fix navbar on interior pages and hide it when the footer is appeared
-
-.navbar-wrapper:not(.page.is-home .navbar-wrapper) {
-  opacity: 1;
-  position: fixed;
-  transition: opacity $duration $easing;
-
-  @include media-breakpoint-up(md) {
     min-height: 100vh;
   }
 }
 
+.page.is-home .navbar-wrapper {
+  @include media-breakpoint-up(md) {
+    position: absolute;
+  }
+}
+
+// Hide navbar on inner pages when the footer is appeared
 .has-hidden-stickies:not(.is-home) .navbar-wrapper {
   opacity: 0;
 }

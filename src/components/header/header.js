@@ -48,20 +48,22 @@
    * SHOW HEADER WHEN START SCROLLING UP ON TABLETS AND DESKTOPS
    * ---------------------------------------------------------------------------
    */
-  let prevScrollPos = window.pageYOffset;
-  const header = document.getElementById('header');
+  if (!document.body.classList.contains('is-home')) {
+    let prevScrollPos = window.pageYOffset;
+    const header = document.getElementById('header');
 
-  window.addEventListener(
-    'scroll',
-    () => {
-      const currentScrollPos = window.pageYOffset;
-      if (currentScrollPos > prevScrollPos) {
-        header.style.setProperty('--top-position', '-130px');
-      } else {
-        header.style.setProperty('--top-position', '0');
-      }
-      prevScrollPos = currentScrollPos;
-    },
-    false
-  );
+    window.addEventListener(
+      'scroll',
+      () => {
+        const currentScrollPos = window.pageYOffset;
+        if (currentScrollPos > prevScrollPos) {
+          header.style.setProperty('--top-position', '-130px');
+        } else {
+          header.style.setProperty('--top-position', '0');
+        }
+        prevScrollPos = currentScrollPos;
+      },
+      false
+    );
+  }
 })();

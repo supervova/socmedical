@@ -21,12 +21,13 @@
 %btn-base {
   @extend %btn;
 
+  --padding: 0 #{$size-2};
+
   border-radius: $border-radius;
   text-decoration: none;
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: $size-2;
-  padding-right: $size-2;
+  padding: var(--padding);
   height: $size-6;
 
   &:hover {
@@ -41,8 +42,7 @@
   }
 
   &.is-compact {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    --padding: 0 1.2rem;
   }
 
   // Reduce right padding in buttons with chevrons
@@ -51,8 +51,7 @@
   }
 
   @include media-breakpoint-up(md) {
-    padding-left: $size-3;
-    padding-right: $size-3;
+    --padding: 0 #{$size-3};
   }
 }
 
@@ -139,10 +138,11 @@
 }
 
 .btn.is-icon {
+  --padding: 0;
+
   background-color: $color-bg-alt;
   border: 2px solid $color-primary;
   border-radius: 50%;
-  padding: 0;
   width: $size-5;
   height: $size-5;
 
@@ -184,9 +184,9 @@
 // -----------------------------------------------------------------------------
 
 .btn.is-close {
+  --padding: .4rem;
   border-radius: 50%;
   flex-shrink: 0;
-  padding: .4rem;
   transform: translateY(-.4rem);
   height: auto;
 }

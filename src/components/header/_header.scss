@@ -4,11 +4,8 @@
   left: 0;
   right: 0;
   z-index: $zindex-tooltip;
-}
 
-// Hide it when the footer is appeared
-
-.header:not(.page.is-home .header) {
+  // Hide it on inner pages when the footer is appeared
   @include media-breakpoint-up(md) {
     --top-position: 0;
 
@@ -20,6 +17,13 @@
     transition:
       top $duration-md $easing,
       opacity $duration $easing;
+  }
+}
+
+.page.is-home .header {
+  @include media-breakpoint-up(md) {
+    background-color: transparent;
+    position: absolute;
   }
 }
 
@@ -37,6 +41,11 @@
   justify-content: space-between;
   padding-top: 1.9rem;
 
+  &::after,
+  &::before {
+    display: none;
+  }
+
   @include media-breakpoint-up(md) {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -45,11 +54,6 @@
     padding-bottom: $size-line;
     position: relative;
     z-index: 2;
-  }
-
-  &::after,
-  &::before {
-    display: none;
   }
 }
 

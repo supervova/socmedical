@@ -29,7 +29,7 @@ body {
   dl,
   h4,
   ol,
-  p,
+  p:not([class]),
   ul {
     font-size: var(--font-size-base) !important;
   }
@@ -64,13 +64,10 @@ body h3 {
   font-family: $font-family-accent !important;
 }
 
-body h2 {
-  font-weight: var(--font-weight-h2) !important;
-}
-
+body h2,
 h3,
 h4 {
-  font-weight: bolder !important;
+  font-weight: var(--font-weight-h2) !important;
 }
 
 h3 {
@@ -113,7 +110,7 @@ h3 {
 // -----------------------------------------------------------------------------
 // #region
 
-p {
+p:not([class]) {
   font-weight: 400 !important;
   margin: 0 !important;
 }
@@ -196,10 +193,13 @@ main li {
 }
 
 .btn {
+  --display: inline-flex;
+
   border-radius: $border-radius !important;
   border: 0 !important;
-  display: inline-flex !important;
-  padding: 0 1.2rem !important;
+  display: var(--display) !important;
+  padding: var(--padding) !important;
+
 }
 // #endregion
 

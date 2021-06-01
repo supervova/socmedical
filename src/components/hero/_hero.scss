@@ -242,10 +242,11 @@
 }
 
 .hero__copy .btn.is-outline {
-  display: none;
+  --display: none;
 
   @include media-breakpoint-up(mdl) {
-    display: inline-flex;
+    --display: inline-flex;
+
     margin-top: $size-1;
 
     &:hover {

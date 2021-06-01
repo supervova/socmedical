@@ -40,6 +40,7 @@ const paths = {
       `${root.src}/pages/**/*.pug`,
       `!${root.src}/pages/base/*.pug`,
       `!${root.src}/pages/notes/*.pug`,
+      `!${root.src}/pages/outlines/*.pug`,
     ],
     watch: `${root.src}/**/*.pug`,
     dest: `${root.src}/pages`,
@@ -91,13 +92,20 @@ const paths = {
 // #region
 
 const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
 const sass = require('gulp-sass');
+// const cssnano = require('gulp-cssnano');
+const cleanCSS = require('gulp-clean-css');
 // const postcss = require('gulp-postcss');
 // const uncss = require('postcss-uncss');
 
 // COMMON STYLES FUNCTION
-const cssTasks = (source, subtitle, uncssHTML, destination, link = true) =>
+const cssTasks = (
+  source,
+  subtitle,
+  uncssHTML,
+  destination
+  /* , link = true */
+) =>
   src(source)
     .pipe(changed(destination))
     .pipe(plumber())
@@ -350,6 +358,7 @@ const del = require('del');
 function cleanAssets() {
   return del([
     `${paths.css.dest}/**/*.css`,
+    `!${paths.css.dest}/**/bootstrap.css`,
     // `${root.dest}_includes/critical.css`,
     `${paths.js.dest}/**/*`,
     `${paths.img.dest}/**/*`,
