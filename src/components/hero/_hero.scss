@@ -135,7 +135,7 @@
   @include media-breakpoint-up(mdl) {
     background-image:
       var(--hero-asterisks),
-      url('#{$base-url}/images/socmedical/components/hero/bg-shapes-lg.svg');
+      url('#{$base-url}images/socmedical/components/hero/bg-shapes-lg.svg');
     background-position:
       right $size-4 top 24%,
       0 100%;
