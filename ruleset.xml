@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="_project">
-  <description>_project Coding Standards (PSR2 Based)</description>
+<ruleset name="socmedical">
+  <description>SocMedical Coding Standards (PSR2 Based)</description>
 
   <!-- Show colors in console -->
   <arg value="-colors"/>

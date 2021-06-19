@@ -9,7 +9,7 @@ $spinner-anim-multiplier:               2;
 $circle-anim-multiplier:                8;
 
 .spinner {
-  animation: ($duration-xl * $spinner-anim-multiplier) linear infinite svg-animation;
+  animation: calc(var(--motion-duration-xl) * $spinner-anim-multiplier) linear infinite svg-animation;
   width: 48px;
   height: 48px;
 }
@@ -21,14 +21,14 @@ $circle-anim-multiplier:                8;
 
 // Circle styles
 .spinner__circle {
-  animation: ($duration-xl * $circle-anim-multiplier) $easing infinite both circle-animation;
+  animation: calc(var(--motion-duration-xl) * $circle-anim-multiplier) var(--motion-easing-base) infinite both circle-animation;
   display: block;
   fill: transparent;
-  stroke: $color-primary;
+  stroke: $color-brand-primary-base;
   stroke-linecap: round;
   stroke-dasharray: 283;
   stroke-dashoffset: 280;
-  stroke-width: $size-1;
+  stroke-width: $size-space-1;
   transform-origin: 50% 50%;
 }
 

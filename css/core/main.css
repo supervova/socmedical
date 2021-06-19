@@ -1,0 +1,1157 @@
+body{font-family: Montserrat, 'Lato', sans-serif;font-display:swap;font-weight:300;font-size:17px;color:#000;-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch;}
+h1, h2, h3, h4, h5, h6{font-family:'Lato', sans-serif;font-display:swap;font-weight:300;color: inherit;}
+h1{font-size:40px;}
+h3{font-weight:300;}
+h4{font-weight:300;font-size:20px;}
+p{line-height:25px;margin-top:15px;margin-bottom:5px;font-size:17px;font-weight: 300;}
+footer{font-family: Montserrat, 'Lato', sans-serif;font-weight:300;font-size:17px;font-display:swap;}
+.centered{text-align:center;}
+a{word-break: break-all;-webkit-transition:color 0.1s ease-in, background 0.1s ease-in;-moz-transition:color 0.1s ease-in, background 0.1s ease-in;-ms-transition:color 0.1s ease-in, background 0.1s ease-in;-o-transition:color 0.1s ease-in, background 0.1s ease-in;transition:color 0.1s ease-in, background 0.1s ease-in;}
+a:hover,
+a:focus{color:#7b7b7b;text-decoration:none;outline:0;}
+a:before,
+a:after{-webkit-transition:color 0.1s ease-in, background 0.1s ease-in;-moz-transition:color 0.1s ease-in, background 0.1s ease-in;-ms-transition:color 0.1s ease-in, background 0.1s ease-in;-o-transition:color 0.1s ease-in, background 0.1s ease-in;transition:color 0.1s ease-in, background 0.1s ease-in;}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;padding:0;}
+.dropdown-menu {
+	background-color: #fff !important;
+	color: #000 !important;
+}
+.mobileprofile {
+	margin: 0;
+	position: absolute;
+	top: -5px;
+	right: 10px;
+	left: auto;
+	z-index: 100000;
+	text-align: right;
+	background-color: transparent !important;
+}
+.mobileprofile a {
+	background-color: transparent !important;
+}
+.navbar-default{background-color:#FFF;border-color:transparent;box-shadow:0 5px 10px rgba(0, 0, 0, 0.6);}
+.nav.navbar-nav.navbar-right{font-size:17px;}
+.nav.navbar-nav.navbar-right > li > a{margin-top:3px;margin-right:20px;padding:0px 5px;cursor:pointer;}
+.navbar-default .navbar-nav > li > a{color:#000;}
+.mt{margin-top:10px;}
+.form-control{height:42px;font-size:18px;width:280px;}
+i{margin:8px;color:#3498db;}
+.logo{font-family:'Mrs Sheppards', cursive;font-display:swap;font-size:31px;line-height:31px;margin:0px 0 7px;color:#333;}
+.logoHeader{font-family:'Mrs Sheppards', cursive;font-display:swap;font-size:145px;line-height:31px;margin:105px 0 7px;color:#FFF;display:block;position:relative;z-index:1;text-shadow:8px 8px 0px rgba(0,0,0,0.1);text-align:center;width:430px;}
+.logoImg{width:130px;margin:0 145px 7px;}
+.downloadButton{color:#FFFFFF;margin:10px 10px;padding:20px 50px;width:408px;display:none;text-align:center;font-weight:300;background:transparent;border-radius:3px;font-size:38px;}
+.downloadButton sup{font-family:'Lato', sans-serif;font-size:15px;font-display:swap;}
+.cropHeaderWrapper{overflow:hidden;height:420px;}
+#cropContainerHeaderButton{color:#FFF;margin:10px 0 30px 71px;padding:15px 50px;width:407px;display:block;text-align:center;font-weight:400;background:#2CE987;text-transform:uppercase;border-radius:2px;box-shadow:8px 8px 0px rgba(0,0,0,0.1);font-size:20px;}
+#cropContainerHeaderButton:hover{background:#1CD139;}
+.optionsDiv{border-radius:2px;position:absolute;}
+.optionsDiv a{width:50%;margin-right:20%;float:left;margin-bottom:10px;cursor:pointer;}
+#optionsFloating.fixed{position:fixed;top:100px;}
+.downloadLink{font-size:22px;color:#666;text-align:center;display:block;width:320px;width:320px;padding:10px;border:1px solid #CCC;height:62px;margin:0 auto;}
+.downloadLink:hover{background:#FFF;}
+.downloadLink:hover .downloadIcon.small{background-position:0px -25px;}
+.downloadLink .downloadIcon{float:left;}
+.downloadLink span{line-height:40px;float:left;}
+#cropContainerModal{width:100%;height:200px;position:relative;border:1px solid #ccc;}
+#cropContaineroutput{width:100%;height:145px;position:relative;border:1px solid #ccc;}
+#cropContainerEyecandy{width:100%;height:200px;position:relative;border:1px solid #ccc;}
+#cropContainerPreload{width:100%;height:200px;position:relative;border:1px solid #ccc;}
+#cropContainerMinimal{width:100%;height:200px;position:relative;border:1px solid #ccc;}
+#cropContainerPlaceHolder2{width:100%;height:200px;position:relative;border:none;}
+#web_by{position:absolute;right:10px;font-size:10px;color:#aaa;padding:13px;cursor:pointer;}
+#web_by label{display:none;position:absolute;right:5px;top:-32px;z-index:10000;font-size:10px;color:#ffa200;padding:10px 9px;cursor:pointer;width:60px;height:40px;background-image:url('../img/jobotic_bubble.png');background-repeat:no-repeat;}
+#jobotic{position:fixed;right:-100px;bottom:-3px;font-size:10px;color:#aaa;padding:13px;cursor:pointer;z-index:9999;}
+#kontakt{float:left;width:100%;height:auto;z-index:450;position:relative;}
+#kontakt_bg{position:absolute;top:0;left:0;width:100%;height:auto;z-index:450;}
+#copyright{float:left;width:100%;height:45px;background-color:#FFF;margin-top:6px;}
+#copyright p{float:left;width:100%;font-size:12px;color:#999;text-align:center;background-color:#FFF;margin-top:10px;}
+.header_photo img{border:1px solid #aaa;height:44px;width:44px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;}
+.container{overflow:auto;}
+.emotion{white-space:nowrap;display:inline-block;cursor:pointer;margin-bottom:5px;}
+.page-footer{padding:10px;border-top:1px solid #eee;}
+.msg_avatar{display:inline-block;vertical-align:middle;white-space:nowrap;}
+.msg_avatar img{border:1px solid #fff;height:40px;width:40px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;}
+.readmore{overflow:hidden;text-align:left;margin-top:15px;width:100%;}
+.postspost{word-break: break-all;width:100%;display:inline-block;margin-bottom:10px;padding:0 10px 10px 10px;border-radius:10px;overflow:hidden;vertical-align:top;box-shadow:0 2px 4px rgba(0, 0, 0, .3);}
+.postthumbnail{max-width:100%;max-height:150px;margin:5px;float:left;border:none;}
+.pinned{width:24px;height:24px;float:right;opacity:0.5;filter:alpha(opacity=50);-moz-opacity:0.5;}
+.sharing{cursor:pointer;opacity:0.5;filter:alpha(opacity=50);-moz-opacity:0.5;}
+.qwertymain{color:rgb(255, 255, 255);text-shadow:2px 2px 0px rgba(0,0,0,0.2);}
+.qwertymain a{color:rgb(255, 255, 255);text-shadow:2px 2px 0px rgba(0,0,0,0.2);}
+.qwertymain a:hover,
+.qwertymain a:focus{color:rgb(255, 255, 255);}
+.qwertymain:hover,
+.qwertymain:focus{color:rgb(255, 255, 255);}
+.sidebarinfo{line-height:1.2em;padding:0 10px 0 0;}
+@media (min-width:768px){.affix-content .container{width:100%;}
+/*html,body{height:100%;overflow:auto;}*/
+.affix-content .container .page-header{margin-top:0;}
+.affix-sidebar{padding-right:0;font-size:small;padding-left:0;overflow:hidden;max-width: 240px;}
+.affix-row, .affix-container, .affix-content{height:100%;overflow:hidden;margin-left:0;margin-right:0;}
+.affix-content{overflow:hidden;}
+.sidebar-nav .navbar .navbar-collapse{padding:0;max-height:none;}
+.sidebar-nav .navbar{border-radius:0;margin-bottom:0;border:0;}
+.sidebar-nav .navbar ul{float:none;display:block;}
+.sidebar-nav .navbar li{float:none;display:block;}
+.sidebar-nav .navbar li a{padding-top:6px;padding-bottom:6px;}
+}
+@media (min-width:769px){.affix-content .container{width:100%;}
+.affix-content .container .page-header{margin-top:0;}
+}
+@media (min-width:992px){.affix-content .container{width:100%;}
+.affix-content .container .page-header{margin-top:0;}
+}
+@media (min-width:1220px){.affix-row{overflow:hidden;}
+.affix-content{overflow:hidden;}
+.affix-content .container{width:100%;}
+.affix-content .container .page-header{margin-top:0;}
+.affix-content{padding-right:30px;padding-left:30px;}
+.affix-title{border-bottom:1px solid #ecf0f1;padding-bottom:10px;}
+.navbar-nav{margin:0;}
+.navbar-collapse{padding:0;}
+.sidebar-nav .navbar li a:hover{background-color:#e6e6e6;}
+.sidebar-nav .navbar li a > .caret{margin-top:8px;}
+}
+.affix-content{max-width: 100%;overflow:hidden;}
+.affix-row{overflow:hidden;}
+.post_avatar{display:inline-block;vertical-align:middle;white-space:nowrap;}
+.post_avatar img{border:1px solid #e6e6e6;height:50px;width:50px!important;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;}
+.avatar_mini{display:inline-block;vertical-align:middle;white-space:nowrap;}
+.avatar_mini img{border:1px solid #e6e6e6;height:30px;width:30px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;}
+.media{margin-top:0px;}
+.comment .num{display:inline-block;font-size:1.2rem;font-weight:100;vertical-align:bottom;line-height:1.5em;}
+.comment .author{display:inline-block;font-size:1.2rem;font-weight:700;vertical-align:bottom;line-height:1.5em;}
+.comment .metadata{display:inline-block;font-size:1.2rem;vertical-align:top;line-height:1.5em;}
+.vote{color:#ccc !important;cursor:pointer;text-shadow:1px 1px 3px white, 0 0 1em white;}
+.votedplus{color:green !important;cursor:pointer;text-shadow:1px 1px 3px white, 0 0 1em white;}
+.votedminus{color:red !important;cursor:pointer;text-shadow:1px 1px 3px white, 0 0 1em white;}
+.postvote{color:#ccc !important;cursor:pointer;font-size:3rem;text-shadow:1px 1px 3px white, 0 0 1em white;}
+.postvotedplus{color:green !important;cursor:pointer;font-size:3rem;text-shadow:1px 1px 3px white, 0 0 1em white;}
+.postvotedminus{color:red !important;cursor:pointer;font-size:3rem;text-shadow:1px 1px 3px white, 0 0 1em white;}
+.rating{text-shadow:1px 1px 3px white, 0 0 1em white;}
+.postrating{font-size:2rem;text-shadow:1px 1px 3px white, 0 0 1em white;}
+.reply, .comment-reply a:hover, .comment-reply a:focus{text-decoration:none;}
+.devide{padding:0px 4px;font-size:0.9em;}
+.media-text{margin-bottom:0.25rem;}
+.title-comments{font-size:1.4rem;font-weight:bold;line-height:1.5rem;margin-bottom:1rem;padding-bottom:.25rem;}
+.toTop{border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;color:#b3b3b3;background:#fff;text-align:center;padding:0 8px 0;position:fixed;top:43px;left:50%;margin-left:-30px;cursor:pointer;display:none;font-size:11px;font-weight:400;z-index:10025;box-shadow: 0 7px 7px rgba(102, 102, 102, 0.4);}
+@media (min-width:768px){.toTop{border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;padding:8px;top:22px;box-shadow: 0 4px 2px rgba(102, 102, 102, 0.4);}}
+.cookiesalert{background:#fff;padding:10px 20px 20px 40px;position:fixed;bottom:0px;left:0px;box-shadow: -2px -3px 5px #ccc;width:100%;font-size:14px;font-weight:normal;line-height:15px;color:#4d4d4d;overflow:hidden;z-index:1000000;}
+@media (max-width:800px){.cookiesalert{bottom:15px;left:0px;padding:10px 20px 20px 10px;border-radius:0px;width:100%;box-shadow: 0px -3px 5px #ccc;}}
+#petitionform .modal-dialog{z-index:1000000 !important}
+#regform .modal-dialog{z-index:1000000 !important}
+.petition{margin-left: 6px; color:#FFFFFF;text-shadow: 1px 1px 0px #000, 0 0 2px #fefcc9, 1px -1px 3px #feec85, -2px -2px 4px #ffae34, 2px -4px 5px #ec760c, -2px -6px 6px #cd4606, 0 -7px 6px #990000;}
+.isjob{color:#FFFFFF;font-size:14px;text-shadow:-0 -1px 1px gray,
+0 -1px 1px gray,
+-0 1px 1px gray,
+0 1px 1px gray,
+-1px -0 1px gray,
+1px -0 1px gray,
+-1px 0 1px gray,
+1px 0 1px gray,
+-1px -1px 1px gray,
+1px -1px 1px gray,
+-1px 1px 1px gray,
+1px 1px 1px gray,
+-1px -1px 1px gray,
+1px -1px 1px gray,
+-1px 1px 1px gray,
+1px 1px 1px gray;}
+.isproject{color:#FFFFFF;font-size:14px;text-shadow:-0 -1px 1px orange,
+0 -1px 1px orange,
+-0 1px 1px orange,
+0 1px 1px orange,
+-1px -0 1px orange,
+1px -0 1px orange,
+-1px 0 1px orange,
+1px 0 1px orange,
+-1px -1px 1px orange,
+1px -1px 1px orange,
+-1px 1px 1px orange,
+1px 1px 1px orange,
+-1px -1px 1px orange,
+1px -1px 1px orange,
+-1px 1px 1px orange,
+1px 1px 1px orange;}
+.wages{font-family:Arial;font-display:swap;font-size:18px;color:#FFFFFF;white-space:nowrap;text-shadow:-0 -4px 6px #0FDD24,
+0 -4px 6px #0FDD24,
+-0 4px 6px #0FDD24,
+0 4px 6px #0FDD24,
+-4px -0 6px #0FDD24,
+4px -0 6px #0FDD24,
+-4px 0 6px #0FDD24,
+4px 0 6px #0FDD24,
+-1px -4px 6px #0FDD24,
+1px -4px 6px #0FDD24,
+-1px 4px 6px #0FDD24,
+1px 4px 6px #0FDD24,
+-4px -1px 6px #0FDD24,
+4px -1px 6px #0FDD24,
+-4px 1px 6px #0FDD24,
+4px 1px 6px #0FDD24,
+-2px -4px 6px #0FDD24,
+2px -4px 6px #0FDD24,
+-2px 4px 6px #0FDD24,
+2px 4px 6px #0FDD24,
+-4px -2px 6px #0FDD24,
+4px -2px 6px #0FDD24,
+-4px 2px 6px #0FDD24,
+4px 2px 6px #0FDD24,
+-3px -4px 6px #0FDD24,
+3px -4px 6px #0FDD24,
+-3px 4px 6px #0FDD24,
+3px 4px 6px #0FDD24,
+-4px -3px 6px #0FDD24,
+4px -3px 6px #0FDD24,
+-4px 3px 6px #0FDD24,
+4px 3px 6px #0FDD24,
+-4px -4px 6px #0FDD24,
+4px -4px 6px #0FDD24,
+-4px 4px 6px #0FDD24,
+4px 4px 6px #0FDD24,
+-4px -4px 6px #0FDD24,
+4px -4px 6px #0FDD24,
+-4px 4px 6px #0FDD24,
+4px 4px 6px #0FDD24;}
+.jobathome{float:right;font-size:12px;}
+.b_w{-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:grayscale(100%);filter:url(grayscale.svg#greyscale);filter:gray;}
+.row-flex{display:flex;flex-flow:row wrap;}
+#clouds{max-width:100%;height:170px;background-image:url(/images/clouds.png);background-position:0px 0px;background-repeat:repeat-x;animation:animatedClouds 40s linear infinite;-webkit-animation:animatedClouds 40s linear infinite;}
+@keyframes animatedClouds{from{background-position:0 0;}
+to{background-position:100% 0;}
+}
+@-webkit-keyframes animatedClouds{from{background-position:0 0;}
+to{background-position:100% 0;}
+}
+.cloudsoff{text-align:center;padding:5px;position:fixed;bottom:5px;right:10px;cursor:pointer;background:#f7f7f7;color:#333;font-family:verdana;font-size:11px;font-display:swap;z-index:10000;}
+.cloudicon{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:url(desaturate.svg#greyscale);filter:gray;-webkit-filter:grayscale(1);}
+.cloudicon:hover{filter:grayscale(0%);-webkit-filter:grayscale(0%);-moz-filter:grayscale(0%);-ms-filter:grayscale(0%);-o-filter:grayscale(0%);-webkit-filter:grayscale(0);filter:none;}
+.costblock {
+	text-decoration:none;
+	color: blue;
+	background:#ffc;
+	padding:0.5em;
+	border-radius:10px;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    border:1px solid #efefef;
+	margin-left: 3px;
+	margin-right: 10px;
+	font-style: italic;
+}
+.notifymsg {
+  padding: 10px;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+.notifymsg-bold {
+  font-weight: 600;
+}
+.notifymsg h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.notifymsg .notifymsg-link {
+  font-weight: bold;
+}
+.notifymsg > p,
+.notifymsg > ul {
+  margin-bottom: 0;
+}
+.notifymsg > p + p {
+  margin-top: 5px;
+}
+.notifymsg-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.notifymsg-success hr {
+  border-top-color: #c9e2b3;
+}
+.notifymsg-success .notifymsg-link {
+  color: #2b542c;
+}
+.notifymsg-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.notifymsg-info hr {
+  border-top-color: #a6e1ec;
+}
+.notifymsg-info .notifymsg-link {
+  color: #245269;
+}
+.notifymsg-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.notifymsg-warning hr {
+  border-top-color: #f7e1b5;
+}
+.notifymsg-warning .notifymsg-link {
+  color: #66512c;
+}
+.notifymsg-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.notifymsg-danger hr {
+  border-top-color: #e4b9c0;
+}
+.notifymsg-danger .notifymsg-link {
+  color: #843534;
+}
+@font-face{font-family:'Glyphicons Regular';font-display:swap;src:url('../fonts/glyphicons-regular.eot');src:url('../fonts/glyphicons-regular.eot?#iefix') format('embedded-opentype'),url('../fonts/glyphicons-regular.woff2') format('woff2'),url('../fonts/glyphicons-regular.woff') format('woff'),url('../fonts/glyphicons-regular.ttf') format('truetype'),url('../fonts/glyphicons-regular.svg#glyphiconsregular') format('svg')}.glyphicons{display:inline-block;font-family:'Glyphicons Regular';font-display:block;font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.glyphicons.x2:before{padding:8px 12px}.glyphicons.x3:before{padding:16px 20px}.glyphicons.x4:before{padding:20px 28px}.glyphicons.x5:before{padding:28px 36px}.glyphicons.light:before{color:#f2f2f2}.glyphicons.drop:before{text-shadow:-1px 1px 3px rgba(0,0,0,0.3)}.glyphicons.flip{-moz-transform:scaleX(-1);-o-transform:scaleX(-1);-webkit-transform:scaleX(-1);transform:scaleX(-1);filter:FlipH;-ms-filter:"FlipH"}.glyphicons.flipv{-moz-transform:scaleY(-1);-o-transform:scaleY(-1);-webkit-transform:scaleY(-1);transform:scaleY(-1);filter:FlipV;-ms-filter:"FlipV"}.glyphicons.rotate90{-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}.glyphicons.rotate180{-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.glyphicons.rotate270{-webkit-transform:rotate(270deg);-moz-transform:rotate(270deg);-ms-transform:rotate(270deg);transform:rotate(270deg)}.glyphicons-glass:before{content:"\E001"}.glyphicons-leaf:before{content:"\E002"}.glyphicons-dog:before{content:"\E003"}.glyphicons-user:before{content:"\E004"}.glyphicons-girl:before{content:"\E005"}.glyphicons-car:before{content:"\E006"}.glyphicons-user-add:before{content:"\E007"}.glyphicons-user-remove:before{content:"\E008"}.glyphicons-film:before{content:"\E009"}.glyphicons-magic:before{content:"\E010"}.glyphicons-envelope:before{content:"\E011"}.glyphicons-camera:before{content:"\E012"}.glyphicons-heart:before{content:"\E013"}.glyphicons-beach-umbrella:before{content:"\E014"}.glyphicons-train:before{content:"\E015"}.glyphicons-print:before{content:"\E016"}.glyphicons-bin:before{content:"\E017"}.glyphicons-music:before{content:"\E018"}.glyphicons-music-alt:before{content:"\E019"}.glyphicons-heart-empty:before{content:"\E020"}.glyphicons-home:before{content:"\E021"}.glyphicons-snowflake:before{content:"\E022"}.glyphicons-fire:before{content:"\E023"}.glyphicons-magnet:before{content:"\E024"}.glyphicons-parents:before{content:"\E025"}.glyphicons-binoculars:before{content:"\E026"}.glyphicons-road:before{content:"\E027"}.glyphicons-search:before{content:"\E028"}.glyphicons-cars:before{content:"\E029"}.glyphicons-notes-2:before{content:"\E030"}.glyphicons-pencil:before{content:"\E031"}.glyphicons-bus:before{content:"\E032"}.glyphicons-wifi-alt:before{content:"\E033"}.glyphicons-luggage:before{content:"\E034"}.glyphicons-old-man:before{content:"\E035"}.glyphicons-woman:before{content:"\E036"}.glyphicons-file:before{content:"\E037"}.glyphicons-coins:before{content:"\E038"}.glyphicons-plane:before{content:"\E039"}.glyphicons-notes:before{content:"\E040"}.glyphicons-stats:before{content:"\E041"}.glyphicons-charts:before{content:"\E042"}.glyphicons-pie-chart:before{content:"\E043"}.glyphicons-group:before{content:"\E044"}.glyphicons-keys:before{content:"\E045"}.glyphicons-calendar:before{content:"\E046"}.glyphicons-router:before{content:"\E047"}.glyphicons-camera-small:before{content:"\E048"}.glyphicons-star-empty:before{content:"\E049"}.glyphicons-star:before{content:"\E050"}.glyphicons-link:before{content:"\E051"}.glyphicons-eye-open:before{content:"\E052"}.glyphicons-eye-close:before{content:"\E053"}.glyphicons-alarm:before{content:"\E054"}.glyphicons-clock:before{content:"\E055"}.glyphicons-stopwatch:before{content:"\E056"}.glyphicons-projector:before{content:"\E057"}.glyphicons-history:before{content:"\E058"}.glyphicons-truck:before{content:"\E059"}.glyphicons-cargo:before{content:"\E060"}.glyphicons-compass:before{content:"\E061"}.glyphicons-keynote:before{content:"\E062"}.glyphicons-paperclip:before{content:"\E063"}.glyphicons-power:before{content:"\E064"}.glyphicons-lightbulb:before{content:"\E065"}.glyphicons-tag:before{content:"\E066"}.glyphicons-tags:before{content:"\E067"}.glyphicons-cleaning:before{content:"\E068"}.glyphicons-ruler:before{content:"\E069"}.glyphicons-gift:before{content:"\E070"}.glyphicons-umbrella:before{content:"\E071"}.glyphicons-book:before{content:"\E072"}.glyphicons-bookmark:before{content:"\E073"}.glyphicons-wifi:before{content:"\E074"}.glyphicons-cup:before{content:"\E075"}.glyphicons-stroller:before{content:"\E076"}.glyphicons-headphones:before{content:"\E077"}.glyphicons-headset:before{content:"\E078"}.glyphicons-warning-sign:before{content:"\E079"}.glyphicons-signal:before{content:"\E080"}.glyphicons-retweet:before{content:"\E081"}.glyphicons-refresh:before{content:"\E082"}.glyphicons-roundabout:before{content:"\E083"}.glyphicons-random:before{content:"\E084"}.glyphicons-heat:before{content:"\E085"}.glyphicons-repeat:before{content:"\E086"}.glyphicons-display:before{content:"\E087"}.glyphicons-log-book:before{content:"\E088"}.glyphicons-address-book:before{content:"\E089"}.glyphicons-building:before{content:"\E090"}.glyphicons-eyedropper:before{content:"\E091"}.glyphicons-adjust:before{content:"\E092"}.glyphicons-tint:before{content:"\E093"}.glyphicons-crop:before{content:"\E094"}.glyphicons-vector-path-square:before{content:"\E095"}.glyphicons-vector-path-circle:before{content:"\E096"}.glyphicons-vector-path-polygon:before{content:"\E097"}.glyphicons-vector-path-line:before{content:"\E098"}.glyphicons-vector-path-curve:before{content:"\E099"}.glyphicons-vector-path-all:before{content:"\E100"}.glyphicons-font:before{content:"\E101"}.glyphicons-italic:before{content:"\E102"}.glyphicons-bold:before{content:"\E103"}.glyphicons-text-underline:before{content:"\E104"}.glyphicons-text-strike:before{content:"\E105"}.glyphicons-text-height:before{content:"\E106"}.glyphicons-text-width:before{content:"\E107"}.glyphicons-text-resize:before{content:"\E108"}.glyphicons-left-indent:before{content:"\E109"}.glyphicons-right-indent:before{content:"\E110"}.glyphicons-align-left:before{content:"\E111"}.glyphicons-align-center:before{content:"\E112"}.glyphicons-align-right:before{content:"\E113"}.glyphicons-justify:before{content:"\E114"}.glyphicons-list:before{content:"\E115"}.glyphicons-text-smaller:before{content:"\E116"}.glyphicons-text-bigger:before{content:"\E117"}.glyphicons-embed:before{content:"\E118"}.glyphicons-embed-close:before{content:"\E119"}.glyphicons-table:before{content:"\E120"}.glyphicons-message-full:before{content:"\E121"}.glyphicons-message-empty:before{content:"\E122"}.glyphicons-message-in:before{content:"\E123"}.glyphicons-message-out:before{content:"\E124"}.glyphicons-message-plus:before{content:"\E125"}.glyphicons-message-minus:before{content:"\E126"}.glyphicons-message-ban:before{content:"\E127"}.glyphicons-message-flag:before{content:"\E128"}.glyphicons-message-lock:before{content:"\E129"}.glyphicons-message-new:before{content:"\E130"}.glyphicons-inbox:before{content:"\E131"}.glyphicons-inbox-plus:before{content:"\E132"}.glyphicons-inbox-minus:before{content:"\E133"}.glyphicons-inbox-lock:before{content:"\E134"}.glyphicons-inbox-in:before{content:"\E135"}.glyphicons-inbox-out:before{content:"\E136"}.glyphicons-cogwheel:before{content:"\E137"}.glyphicons-cogwheels:before{content:"\E138"}.glyphicons-picture:before{content:"\E139"}.glyphicons-adjust-alt:before{content:"\E140"}.glyphicons-database-lock:before{content:"\E141"}.glyphicons-database-plus:before{content:"\E142"}.glyphicons-database-minus:before{content:"\E143"}.glyphicons-database-ban:before{content:"\E144"}.glyphicons-folder-open:before{content:"\E145"}.glyphicons-folder-plus:before{content:"\E146"}.glyphicons-folder-minus:before{content:"\E147"}.glyphicons-folder-lock:before{content:"\E148"}.glyphicons-folder-flag:before{content:"\E149"}.glyphicons-folder-new:before{content:"\E150"}.glyphicons-edit:before{content:"\E151"}.glyphicons-new-window:before{content:"\E152"}.glyphicons-check:before{content:"\E153"}.glyphicons-unchecked:before{content:"\E154"}.glyphicons-more-windows:before{content:"\E155"}.glyphicons-show-big-thumbnails:before{content:"\E156"}.glyphicons-show-thumbnails:before{content:"\E157"}.glyphicons-show-thumbnails-with-lines:before{content:"\E158"}.glyphicons-show-lines:before{content:"\E159"}.glyphicons-playlist:before{content:"\E160"}.glyphicons-imac:before{content:"\E161"}.glyphicons-macbook:before{content:"\E162"}.glyphicons-ipad:before{content:"\E163"}.glyphicons-iphone:before{content:"\E164"}.glyphicons-iphone-transfer:before{content:"\E165"}.glyphicons-iphone-exchange:before{content:"\E166"}.glyphicons-ipod:before{content:"\E167"}.glyphicons-ipod-shuffle:before{content:"\E168"}.glyphicons-ear-plugs:before{content:"\E169"}.glyphicons-record:before{content:"\E170"}.glyphicons-step-backward:before{content:"\E171"}.glyphicons-fast-backward:before{content:"\E172"}.glyphicons-rewind:before{content:"\E173"}.glyphicons-play:before{content:"\E174"}.glyphicons-pause:before{content:"\E175"}.glyphicons-stop:before{content:"\E176"}.glyphicons-forward:before{content:"\E177"}.glyphicons-fast-forward:before{content:"\E178"}.glyphicons-step-forward:before{content:"\E179"}.glyphicons-eject:before{content:"\E180"}.glyphicons-facetime-video:before{content:"\E181"}.glyphicons-download-alt:before{content:"\E182"}.glyphicons-mute:before{content:"\E183"}.glyphicons-volume-down:before{content:"\E184"}.glyphicons-volume-up:before{content:"\E185"}.glyphicons-screenshot:before{content:"\E186"}.glyphicons-move:before{content:"\E187"}.glyphicons-more:before{content:"\E188"}.glyphicons-brightness-reduce:before{content:"\E189"}.glyphicons-brightness-increase:before{content:"\E190"}.glyphicons-plus-sign:before{content:"\E191"}.glyphicons-minus-sign:before{content:"\E192"}.glyphicons-remove-sign:before{content:"\E193"}.glyphicons-ok-sign:before{content:"\E194"}.glyphicons-question-sign:before{content:"\E195"}.glyphicons-info-sign:before{content:"\E196"}.glyphicons-exclamation-sign:before{content:"\E197"}.glyphicons-remove-circle:before{content:"\E198"}.glyphicons-ok-circle:before{content:"\E199"}.glyphicons-ban-circle:before{content:"\E200"}.glyphicons-download:before{content:"\E201"}.glyphicons-upload:before{content:"\E202"}.glyphicons-shopping-cart:before{content:"\E203"}.glyphicons-lock:before{content:"\E204"}.glyphicons-unlock:before{content:"\E205"}.glyphicons-electricity:before{content:"\E206"}.glyphicons-ok:before{content:"\E207"}.glyphicons-remove:before{content:"\E208"}.glyphicons-cart-in:before{content:"\E209"}.glyphicons-cart-out:before{content:"\E210"}.glyphicons-arrow-left:before{content:"\E211"}.glyphicons-arrow-right:before{content:"\E212"}.glyphicons-arrow-down:before{content:"\E213"}.glyphicons-arrow-up:before{content:"\E214"}.glyphicons-resize-small:before{content:"\E215"}.glyphicons-resize-full:before{content:"\E216"}.glyphicons-circle-arrow-left:before{content:"\E217"}.glyphicons-circle-arrow-right:before{content:"\E218"}.glyphicons-circle-arrow-top:before{content:"\E219"}.glyphicons-circle-arrow-down:before{content:"\E220"}.glyphicons-play-button:before{content:"\E221"}.glyphicons-unshare:before{content:"\E222"}.glyphicons-share:before{content:"\E223"}.glyphicons-chevron-right:before{content:"\E224"}.glyphicons-chevron-left:before{content:"\E225"}.glyphicons-bluetooth:before{content:"\E226"}.glyphicons-euro:before{content:"\E227"}.glyphicons-usd:before{content:"\E228"}.glyphicons-gbp:before{content:"\E229"}.glyphicons-retweet-2:before{content:"\E230"}.glyphicons-moon:before{content:"\E231"}.glyphicons-sun:before{content:"\E232"}.glyphicons-cloud:before{content:"\E233"}.glyphicons-direction:before{content:"\E234"}.glyphicons-brush:before{content:"\E235"}.glyphicons-pen:before{content:"\E236"}.glyphicons-zoom-in:before{content:"\E237"}.glyphicons-zoom-out:before{content:"\E238"}.glyphicons-pin:before{content:"\E239"}.glyphicons-albums:before{content:"\E240"}.glyphicons-rotation-lock:before{content:"\E241"}.glyphicons-flash:before{content:"\E242"}.glyphicons-map-marker:before{content:"\E243"}.glyphicons-anchor:before{content:"\E244"}.glyphicons-conversation:before{content:"\E245"}.glyphicons-chat:before{content:"\E246"}.glyphicons-note-empty:before{content:"\E247"}.glyphicons-note:before{content:"\E248"}.glyphicons-asterisk:before{content:"\E249"}.glyphicons-divide:before{content:"\E250"}.glyphicons-snorkel-diving:before{content:"\E251"}.glyphicons-scuba-diving:before{content:"\E252"}.glyphicons-oxygen-bottle:before{content:"\E253"}.glyphicons-fins:before{content:"\E254"}.glyphicons-fishes:before{content:"\E255"}.glyphicons-boat:before{content:"\E256"}.glyphicons-delete:before{content:"\E257"}.glyphicons-sheriffs-star:before{content:"\E258"}.glyphicons-qrcode:before{content:"\E259"}.glyphicons-barcode:before{content:"\E260"}.glyphicons-pool:before{content:"\E261"}.glyphicons-buoy:before{content:"\E262"}.glyphicons-spade:before{content:"\E263"}.glyphicons-bank:before{content:"\E264"}.glyphicons-vcard:before{content:"\E265"}.glyphicons-electrical-plug:before{content:"\E266"}.glyphicons-flag:before{content:"\E267"}.glyphicons-credit-card:before{content:"\E268"}.glyphicons-keyboard-wireless:before{content:"\E269"}.glyphicons-keyboard-wired:before{content:"\E270"}.glyphicons-shield:before{content:"\E271"}.glyphicons-ring:before{content:"\E272"}.glyphicons-cake:before{content:"\E273"}.glyphicons-drink:before{content:"\E274"}.glyphicons-beer:before{content:"\E275"}.glyphicons-fast-food:before{content:"\E276"}.glyphicons-cutlery:before{content:"\E277"}.glyphicons-pizza:before{content:"\E278"}.glyphicons-birthday-cake:before{content:"\E279"}.glyphicons-tablet:before{content:"\E280"}.glyphicons-settings:before{content:"\E281"}.glyphicons-bullets:before{content:"\E282"}.glyphicons-cardio:before{content:"\E283"}.glyphicons-t-shirt:before{content:"\E284"}.glyphicons-pants:before{content:"\E285"}.glyphicons-sweater:before{content:"\E286"}.glyphicons-fabric:before{content:"\E287"}.glyphicons-leather:before{content:"\E288"}.glyphicons-scissors:before{content:"\E289"}.glyphicons-bomb:before{content:"\E290"}.glyphicons-skull:before{content:"\E291"}.glyphicons-celebration:before{content:"\E292"}.glyphicons-tea-kettle:before{content:"\E293"}.glyphicons-french-press:before{content:"\E294"}.glyphicons-coffee-cup:before{content:"\E295"}.glyphicons-pot:before{content:"\E296"}.glyphicons-grater:before{content:"\E297"}.glyphicons-kettle:before{content:"\E298"}.glyphicons-hospital:before{content:"\E299"}.glyphicons-hospital-h:before{content:"\E300"}.glyphicons-microphone:before{content:"\E301"}.glyphicons-webcam:before{content:"\E302"}.glyphicons-temple-christianity-church:before{content:"\E303"}.glyphicons-temple-islam:before{content:"\E304"}.glyphicons-temple-hindu:before{content:"\E305"}.glyphicons-temple-buddhist:before{content:"\E306"}.glyphicons-bicycle:before{content:"\E307"}.glyphicons-life-preserver:before{content:"\E308"}.glyphicons-share-alt:before{content:"\E309"}.glyphicons-comments:before{content:"\E310"}.glyphicons-flower:before{content:"\E311"}.glyphicons-baseball:before{content:"\E312"}.glyphicons-rugby:before{content:"\E313"}.glyphicons-ax:before{content:"\E314"}.glyphicons-table-tennis:before{content:"\E315"}.glyphicons-bowling:before{content:"\E316"}.glyphicons-tree-conifer:before{content:"\E317"}.glyphicons-tree-deciduous:before{content:"\E318"}.glyphicons-more-items:before{content:"\E319"}.glyphicons-sort:before{content:"\E320"}.glyphicons-filter:before{content:"\E321"}.glyphicons-gamepad:before{content:"\E322"}.glyphicons-playing-dices:before{content:"\E323"}.glyphicons-calculator:before{content:"\E324"}.glyphicons-tie:before{content:"\E325"}.glyphicons-wallet:before{content:"\E326"}.glyphicons-piano:before{content:"\E327"}.glyphicons-sampler:before{content:"\E328"}.glyphicons-podium:before{content:"\E329"}.glyphicons-soccer-ball:before{content:"\E330"}.glyphicons-blog:before{content:"\E331"}.glyphicons-dashboard:before{content:"\E332"}.glyphicons-certificate:before{content:"\E333"}.glyphicons-bell:before{content:"\E334"}.glyphicons-candle:before{content:"\E335"}.glyphicons-pushpin:before{content:"\E336"}.glyphicons-iphone-shake:before{content:"\E337"}.glyphicons-pin-flag:before{content:"\E338"}.glyphicons-turtle:before{content:"\E339"}.glyphicons-rabbit:before{content:"\E340"}.glyphicons-globe:before{content:"\E341"}.glyphicons-briefcase:before{content:"\E342"}.glyphicons-hdd:before{content:"\E343"}.glyphicons-thumbs-up:before{content:"\E344"}.glyphicons-thumbs-down:before{content:"\E345"}.glyphicons-hand-right:before{content:"\E346"}.glyphicons-hand-left:before{content:"\E347"}.glyphicons-hand-up:before{content:"\E348"}.glyphicons-hand-down:before{content:"\E349"}.glyphicons-fullscreen:before{content:"\E350"}.glyphicons-shopping-bag:before{content:"\E351"}.glyphicons-book-open:before{content:"\E352"}.glyphicons-nameplate:before{content:"\E353"}.glyphicons-nameplate-alt:before{content:"\E354"}.glyphicons-vases:before{content:"\E355"}.glyphicons-bullhorn:before{content:"\E356"}.glyphicons-dumbbell:before{content:"\E357"}.glyphicons-suitcase:before{content:"\E358"}.glyphicons-file-import:before{content:"\E359"}.glyphicons-file-export:before{content:"\E360"}.glyphicons-bug:before{content:"\E361"}.glyphicons-crown:before{content:"\E362"}.glyphicons-smoking:before{content:"\E363"}.glyphicons-cloud-upload:before{content:"\E364"}.glyphicons-cloud-download:before{content:"\E365"}.glyphicons-restart:before{content:"\E366"}.glyphicons-security-camera:before{content:"\E367"}.glyphicons-expand:before{content:"\E368"}.glyphicons-collapse:before{content:"\E369"}.glyphicons-collapse-top:before{content:"\E370"}.glyphicons-globe-af:before{content:"\E371"}.glyphicons-global:before{content:"\E372"}.glyphicons-spray:before{content:"\E373"}.glyphicons-nails:before{content:"\E374"}.glyphicons-claw-hammer:before{content:"\E375"}.glyphicons-classic-hammer:before{content:"\E376"}.glyphicons-hand-saw:before{content:"\E377"}.glyphicons-riflescope:before{content:"\E378"}.glyphicons-electrical-socket-eu:before{content:"\E379"}.glyphicons-electrical-socket-us:before{content:"\E380"}.glyphicons-message-forward:before{content:"\E381"}.glyphicons-coat-hanger:before{content:"\E382"}.glyphicons-dress:before{content:"\E383"}.glyphicons-bathrobe:before{content:"\E384"}.glyphicons-shirt:before{content:"\E385"}.glyphicons-underwear:before{content:"\E386"}.glyphicons-log-in:before{content:"\E387"}.glyphicons-log-out:before{content:"\E388"}.glyphicons-exit:before{content:"\E389"}.glyphicons-new-window-alt:before{content:"\E390"}.glyphicons-video-sd:before{content:"\E391"}.glyphicons-video-hd:before{content:"\E392"}.glyphicons-subtitles:before{content:"\E393"}.glyphicons-sound-stereo:before{content:"\E394"}.glyphicons-sound-dolby:before{content:"\E395"}.glyphicons-sound-5-1:before{content:"\E396"}.glyphicons-sound-6-1:before{content:"\E397"}.glyphicons-sound-7-1:before{content:"\E398"}.glyphicons-copyright-mark:before{content:"\E399"}.glyphicons-registration-mark:before{content:"\E400"}.glyphicons-radar:before{content:"\E401"}.glyphicons-skateboard:before{content:"\E402"}.glyphicons-golf-course:before{content:"\E403"}.glyphicons-sorting:before{content:"\E404"}.glyphicons-sort-by-alphabet:before{content:"\E405"}.glyphicons-sort-by-alphabet-alt:before{content:"\E406"}.glyphicons-sort-by-order:before{content:"\E407"}.glyphicons-sort-by-order-alt:before{content:"\E408"}.glyphicons-sort-by-attributes:before{content:"\E409"}.glyphicons-sort-by-attributes-alt:before{content:"\E410"}.glyphicons-compressed:before{content:"\E411"}.glyphicons-package:before{content:"\E412"}.glyphicons-cloud-plus:before{content:"\E413"}.glyphicons-cloud-minus:before{content:"\E414"}.glyphicons-disk-save:before{content:"\E415"}.glyphicons-disk-open:before{content:"\E416"}.glyphicons-disk-saved:before{content:"\E417"}.glyphicons-disk-remove:before{content:"\E418"}.glyphicons-disk-import:before{content:"\E419"}.glyphicons-disk-export:before{content:"\E420"}.glyphicons-tower:before{content:"\E421"}.glyphicons-send:before{content:"\E422"}.glyphicons-git-branch:before{content:"\E423"}.glyphicons-git-create:before{content:"\E424"}.glyphicons-git-private:before{content:"\E425"}.glyphicons-git-delete:before{content:"\E426"}.glyphicons-git-merge:before{content:"\E427"}.glyphicons-git-pull-request:before{content:"\E428"}.glyphicons-git-compare:before{content:"\E429"}.glyphicons-git-commit:before{content:"\E430"}.glyphicons-construction-cone:before{content:"\E431"}.glyphicons-shoe-steps:before{content:"\E432"}.glyphicons-plus:before{content:"\E433"}.glyphicons-minus:before{content:"\E434"}.glyphicons-redo:before{content:"\E435"}.glyphicons-undo:before{content:"\E436"}.glyphicons-golf:before{content:"\E437"}.glyphicons-hockey:before{content:"\E438"}.glyphicons-pipe:before{content:"\E439"}.glyphicons-wrench:before{content:"\E440"}.glyphicons-folder-closed:before{content:"\E441"}.glyphicons-phone-alt:before{content:"\E442"}.glyphicons-earphone:before{content:"\E443"}.glyphicons-floppy-disk:before{content:"\E444"}.glyphicons-floppy-saved:before{content:"\E445"}.glyphicons-floppy-remove:before{content:"\E446"}.glyphicons-floppy-save:before{content:"\E447"}.glyphicons-floppy-open:before{content:"\E448"}.glyphicons-translate:before{content:"\E449"}.glyphicons-fax:before{content:"\E450"}.glyphicons-factory:before{content:"\E451"}.glyphicons-shop-window:before{content:"\E452"}.glyphicons-shop:before{content:"\E453"}.glyphicons-kiosk:before{content:"\E454"}.glyphicons-kiosk-wheels:before{content:"\E455"}.glyphicons-kiosk-light:before{content:"\E456"}.glyphicons-kiosk-food:before{content:"\E457"}.glyphicons-transfer:before{content:"\E458"}.glyphicons-money:before{content:"\E459"}.glyphicons-header:before{content:"\E460"}.glyphicons-blacksmith:before{content:"\E461"}.glyphicons-saw-blade:before{content:"\E462"}.glyphicons-basketball:before{content:"\E463"}.glyphicons-server:before{content:"\E464"}.glyphicons-server-plus:before{content:"\E465"}.glyphicons-server-minus:before{content:"\E466"}.glyphicons-server-ban:before{content:"\E467"}.glyphicons-server-flag:before{content:"\E468"}.glyphicons-server-lock:before{content:"\E469"}.glyphicons-server-new:before{content:"\E470"}.glyphicons-charging-station:before{content:"\E471"}.glyphicons-gas-station:before{content:"\E472"}.glyphicons-target:before{content:"\E473"}.glyphicons-bed:before{content:"\E474"}.glyphicons-mosquito:before{content:"\E475"}.glyphicons-dining-set:before{content:"\E476"}.glyphicons-plate-of-food:before{content:"\E477"}.glyphicons-hygiene-kit:before{content:"\E478"}.glyphicons-blackboard:before{content:"\E479"}.glyphicons-marriage:before{content:"\E480"}.glyphicons-bucket:before{content:"\E481"}.glyphicons-none-color-swatch:before{content:"\E482"}.glyphicons-bring-forward:before{content:"\E483"}.glyphicons-bring-to-front:before{content:"\E484"}.glyphicons-send-backward:before{content:"\E485"}.glyphicons-send-to-back:before{content:"\E486"}.glyphicons-fit-frame-to-image:before{content:"\E487"}.glyphicons-fit-image-to-frame:before{content:"\E488"}.glyphicons-multiple-displays:before{content:"\E489"}.glyphicons-handshake:before{content:"\E490"}.glyphicons-child:before{content:"\E491"}.glyphicons-baby-formula:before{content:"\E492"}.glyphicons-medicine:before{content:"\E493"}.glyphicons-atv-vehicle:before{content:"\E494"}.glyphicons-motorcycle:before{content:"\E495"}.glyphicons-bed-alt:before{content:"\E496"}.glyphicons-tent:before{content:"\E497"}.glyphicons-glasses:before{content:"\E498"}.glyphicons-sunglasses:before{content:"\E499"}.glyphicons-family:before{content:"\E500"}.glyphicons-education:before{content:"\E501"}.glyphicons-shoes:before{content:"\E502"}.glyphicons-map:before{content:"\E503"}.glyphicons-cd:before{content:"\E504"}.glyphicons-alert:before{content:"\E505"}.glyphicons-piggy-bank:before{content:"\E506"}.glyphicons-star-half:before{content:"\E507"}.glyphicons-cluster:before{content:"\E508"}.glyphicons-flowchart:before{content:"\E509"}.glyphicons-commodities:before{content:"\E510"}.glyphicons-duplicate:before{content:"\E511"}.glyphicons-copy:before{content:"\E512"}.glyphicons-paste:before{content:"\E513"}.glyphicons-bath-bathtub:before{content:"\E514"}.glyphicons-bath-shower:before{content:"\E515"}.glyphicons-shower:before{content:"\E516"}.glyphicons-menu-hamburger:before{content:"\E517"}.glyphicons-option-vertical:before{content:"\E518"}.glyphicons-option-horizontal:before{content:"\E519"}.glyphicons-currency-conversion:before{content:"\E520"}.glyphicons-user-ban:before{content:"\E521"}.glyphicons-user-lock:before{content:"\E522"}.glyphicons-user-flag:before{content:"\E523"}.glyphicons-user-asterisk:before{content:"\E524"}.glyphicons-user-alert:before{content:"\E525"}.glyphicons-user-key:before{content:"\E526"}.glyphicons-user-conversation:before{content:"\E527"}.glyphicons-database:before{content:"\E528"}.glyphicons-database-search:before{content:"\E529"}.glyphicons-list-alt:before{content:"\E530"}.glyphicons-hazard-sign:before{content:"\E531"}.glyphicons-hazard:before{content:"\E532"}.glyphicons-stop-sign:before{content:"\E533"}.glyphicons-lab:before{content:"\E534"}.glyphicons-lab-alt:before{content:"\E535"}.glyphicons-ice-cream:before{content:"\E536"}.glyphicons-ice-lolly:before{content:"\E537"}.glyphicons-ice-lolly-tasted:before{content:"\E538"}.glyphicons-invoice:before{content:"\E539"}.glyphicons-cart-tick:before{content:"\E540"}.glyphicons-hourglass:before{content:"\E541"}.glyphicons-cat:before{content:"\E542"}.glyphicons-lamp:before{content:"\E543"}.glyphicons-scale-classic:before{content:"\E544"}.glyphicons-eye-plus:before{content:"\E545"}.glyphicons-eye-minus:before{content:"\E546"}.glyphicons-quote:before{content:"\E547"}.glyphicons-bitcoin:before{content:"\E548"}.glyphicons-yen:before{content:"\E549"}.glyphicons-ruble:before{content:"\E550"}.glyphicons-erase:before{content:"\E551"}.glyphicons-podcast:before{content:"\E552"}.glyphicons-firework:before{content:"\E553"}.glyphicons-scale:before{content:"\E554"}.glyphicons-king:before{content:"\E555"}.glyphicons-queen:before{content:"\E556"}.glyphicons-pawn:before{content:"\E557"}.glyphicons-bishop:before{content:"\E558"}.glyphicons-knight:before{content:"\E559"}.glyphicons-mic-mute:before{content:"\E560"}.glyphicons-voicemail:before{content:"\E561"}.glyphicons-paragraph-alt:before{content:"\E562"}.glyphicons-person-walking:before{content:"\E563"}.glyphicons-person-wheelchair:before{content:"\E564"}.glyphicons-underground:before{content:"\E565"}.glyphicons-car-hov:before{content:"\E566"}.glyphicons-car-rental:before{content:"\E567"}.glyphicons-transport:before{content:"\E568"}.glyphicons-taxi:before{content:"\E569"}.glyphicons-ice-cream-no:before{content:"\E570"}.glyphicons-uk-rat-u:before{content:"\E571"}.glyphicons-uk-rat-pg:before{content:"\E572"}.glyphicons-uk-rat-12a:before{content:"\E573"}.glyphicons-uk-rat-12:before{content:"\E574"}.glyphicons-uk-rat-15:before{content:"\E575"}.glyphicons-uk-rat-18:before{content:"\E576"}.glyphicons-uk-rat-r18:before{content:"\E577"}.glyphicons-tv:before{content:"\E578"}.glyphicons-sms:before{content:"\E579"}.glyphicons-mms:before{content:"\E580"}.glyphicons-us-rat-g:before{content:"\E581"}.glyphicons-us-rat-pg:before{content:"\E582"}.glyphicons-us-rat-pg-13:before{content:"\E583"}.glyphicons-us-rat-restricted:before{content:"\E584"}.glyphicons-us-rat-no-one-17:before{content:"\E585"}.glyphicons-equalizer:before{content:"\E586"}.glyphicons-speakers:before{content:"\E587"}.glyphicons-remote-control:before{content:"\E588"}.glyphicons-remote-control-tv:before{content:"\E589"}.glyphicons-shredder:before{content:"\E590"}.glyphicons-folder-heart:before{content:"\E591"}.glyphicons-person-running:before{content:"\E592"}.glyphicons-person:before{content:"\E593"}.glyphicons-voice:before{content:"\E594"}.glyphicons-stethoscope:before{content:"\E595"}.glyphicons-paired:before{content:"\E596"}.glyphicons-activity:before{content:"\E597"}.glyphicons-watch:before{content:"\E598"}.glyphicons-scissors-alt:before{content:"\E599"}.glyphicons-car-wheel:before{content:"\E600"}.glyphicons-chevron-up:before{content:"\E601"}.glyphicons-chevron-down:before{content:"\E602"}.glyphicons-superscript:before{content:"\E603"}.glyphicons-subscript:before{content:"\E604"}.glyphicons-text-size:before{content:"\E605"}.glyphicons-text-color:before{content:"\E606"}.glyphicons-text-background:before{content:"\E607"}.glyphicons-modal-window:before{content:"\E608"}.glyphicons-newspaper:before{content:"\E609"}.glyphicons-tractor:before{content:"\E610"}.glyphicons-camping:before{content:"\E611"}.glyphicons-camping-benches:before{content:"\E612"}.glyphicons-forest:before{content:"\E613"}.glyphicons-park:before{content:"\E614"}.glyphicons-field:before{content:"\E615"}.glyphicons-mountains:before{content:"\E616"}.glyphicons-fees-payments:before{content:"\E617"}.glyphicons-small-payments:before{content:"\E618"}.glyphicons-mixed-buildings:before{content:"\E619"}.glyphicons-industrial-zone:before{content:"\E620"}.glyphicons-visitor-tag:before{content:"\E621"}.glyphicons-businessman:before{content:"\E622"}.glyphicons-meditation:before{content:"\E623"}.glyphicons-bath:before{content:"\E624"}.glyphicons-donate:before{content:"\E625"}.glyphicons-sauna:before{content:"\E626"}.glyphicons-bedroom-nightstand:before{content:"\E627"}.glyphicons-bedroom-lamp:before{content:"\E628"}.glyphicons-doctor:before{content:"\E629"}.glyphicons-engineering-networks:before{content:"\E630"}.glyphicons-washing-machine:before{content:"\E631"}.glyphicons-dryer:before{content:"\E632"}.glyphicons-dishwasher:before{content:"\E633"}.glyphicons-luggage-group:before{content:"\E634"}.glyphicons-teenager:before{content:"\E635"}.glyphicons-person-stick:before{content:"\E636"}.glyphicons-person-stick-old:before{content:"\E637"}.glyphicons-traveler:before{content:"\E638"}.glyphicons-veteran:before{content:"\E639"}.glyphicons-group-chat:before{content:"\E640"}.glyphicons-elections:before{content:"\E641"}.glyphicons-law-justice:before{content:"\E642"}.glyphicons-judiciary:before{content:"\E643"}.glyphicons-house-fire:before{content:"\E644"}.glyphicons-firefighters:before{content:"\E645"}.glyphicons-police:before{content:"\E646"}.glyphicons-ambulance:before{content:"\E647"}.glyphicons-light-beacon:before{content:"\E648"}.glyphicons-important-day:before{content:"\E649"}.glyphicons-bike-park:before{content:"\E650"}.glyphicons-object-align-top:before{content:"\E651"}.glyphicons-object-align-bottom:before{content:"\E652"}.glyphicons-object-align-horizontal:before{content:"\E653"}.glyphicons-object-align-left:before{content:"\E654"}.glyphicons-object-align-vertical:before{content:"\E655"}.glyphicons-object-align-right:before{content:"\E656"}.glyphicons-reflect-y:before{content:"\E657"}.glyphicons-reflect-x:before{content:"\E658"}.glyphicons-tick:before{content:"\E659"}.glyphicons-lawnmower:before{content:"\E660"}.glyphicons-call-redirect:before{content:"\E661"}.glyphicons-call-ip:before{content:"\E662"}.glyphicons-call-record:before{content:"\E663"}.glyphicons-call-ringtone:before{content:"\E664"}.glyphicons-call-traffic:before{content:"\E665"}.glyphicons-call-hold:before{content:"\E666"}.glyphicons-call-incoming:before{content:"\E667"}.glyphicons-call-outgoing:before{content:"\E668"}.glyphicons-call-video:before{content:"\E669"}.glyphicons-call-missed:before{content:"\E670"}.glyphicons-theater:before{content:"\E671"}.glyphicons-heartbeat:before{content:"\E672"}.glyphicons-kettlebell:before{content:"\E673"}.glyphicons-fireplace:before{content:"\E674"}.glyphicons-street-lights:before{content:"\E675"}.glyphicons-pedestrian:before{content:"\E676"}.glyphicons-flood:before{content:"\E677"}.glyphicons-open-water:before{content:"\E678"}.glyphicons-for-sale:before{content:"\E679"}.glyphicons-dustbin:before{content:"\E680"}.glyphicons-door:before{content:"\E681"}.glyphicons-camp-fire:before{content:"\E682"}.glyphicons-fleur-de-lis:before{content:"\E683"}.glyphicons-temperature-settings:before{content:"\E684"}.glyphicons-article:before{content:"\E685"}.glyphicons-sunbath:before{content:"\E686"}.glyphicons-balanced-diet:before{content:"\E687"}.glyphicons-ticket:before{content:"\E688"}.glyphicons-parking-ticket:before{content:"\E689"}.glyphicons-parking-meter:before{content:"\E690"}.glyphicons-laptop:before{content:"\E691"}.glyphicons-tree-structure:before{content:"\E692"}.glyphicons-weather-warning:before{content:"\E693"}.glyphicons-temperature-low:before{content:"\E694"}.glyphicons-temperature-high:before{content:"\E695"}.glyphicons-temperature-low-warning:before{content:"\E696"}.glyphicons-temperature-high-warning:before{content:"\E697"}.glyphicons-hurricane:before{content:"\E698"}.glyphicons-storm:before{content:"\E699"}.glyphicons-sorted-waste:before{content:"\E700"}.glyphicons-ear:before{content:"\E701"}.glyphicons-ear-deaf:before{content:"\E702"}.glyphicons-file-plus:before{content:"\E703"}.glyphicons-file-minus:before{content:"\E704"}.glyphicons-file-lock:before{content:"\E705"}.glyphicons-file-cloud:before{content:"\E706"}.glyphicons-file-cloud-download:before{content:"\E707"}.glyphicons-file-cloud-upload:before{content:"\E708"}.glyphicons-paragraph:before{content:"\E709"}.glyphicons-list-numbered:before{content:"\E710"}.glyphicons-donate-heart:before{content:"\E711"}.glyphicons-government:before{content:"\E712"}.glyphicons-maze:before{content:"\E713"}.glyphicons-chronicle:before{content:"\E714"}.glyphicons-user-structure:before{content:"\E715"}.glyphicons-recycle:before{content:"\E716"}.glyphicons-gas:before{content:"\E717"}.glyphicons-waste-pipe:before{content:"\E718"}.glyphicons-water-pipe:before{content:"\E719"}.glyphicons-parking:before{content:"\E720"}.glyphicons-closed:before{content:"\E721"}.glyphicons-mouse:before{content:"\E722"}.glyphicons-mouse-double-click:before{content:"\E723"}.glyphicons-mouse-left-click:before{content:"\E724"}.glyphicons-mouse-right-click:before{content:"\E725"}.glyphicons-mouse-middle-click:before{content:"\E726"}.glyphicons-mouse-scroll:before{content:"\E727"}.glyphicons-resize-vertical:before{content:"\E728"}.glyphicons-resize-horizontal:before{content:"\E729"}.glyphicons-temperature:before{content:"\E730"}.glyphicons-puzzle:before{content:"\E731"}.glyphicons-puzzle-2:before{content:"\E732"}.glyphicons-puzzle-3:before{content:"\E733"}.glyphicons-nearby-square:before{content:"\E734"}.glyphicons-nearby-circle:before{content:"\E735"}.glyphicons-rotate-right:before{content:"\E736"}.glyphicons-rotate-left:before{content:"\E737"}.glyphicons-pictures:before{content:"\E738"}.glyphicons-photo-album:before{content:"\E739"}.glyphicons-cadastral-map:before{content:"\E740"}.glyphicons-fingerprint-scan:before{content:"\E741"}.glyphicons-fingerprint:before{content:"\E742"}.glyphicons-fingerprint-lock:before{content:"\E743"}.glyphicons-fingerprint-ok:before{content:"\E744"}.glyphicons-fingerprint-remove:before{content:"\E745"}.glyphicons-fingerprint-reload:before{content:"\E746"}.glyphicons-pending-notifications:before{content:"\E747"}.glyphicons-synchronization:before{content:"\E748"}.glyphicons-synchronization-ban:before{content:"\E749"}.glyphicons-hash:before{content:"\E750"}.glyphicons-gender-male:before{content:"\E751"}.glyphicons-gender-female:before{content:"\E752"}.glyphicons-gender-virgin-female:before{content:"\E753"}.glyphicons-gender-intersex:before{content:"\E754"}.glyphicons-gender-transgender:before{content:"\E755"}.glyphicons-gender-ori-lesbian:before{content:"\E756"}.glyphicons-gender-ori-gay:before{content:"\E757"}.glyphicons-gender-ori-hetero:before{content:"\E758"}.glyphicons-gender-other:before{content:"\E759"}.glyphicons-gender-unknown:before{content:"\E760"}.glyphicons-scanner:before{content:"\E761"}.glyphicons-multifunction-printer:before{content:"\E762"}.glyphicons-lasso:before{content:"\E763"}.glyphicons-view-360:before{content:"\E764"}.glyphicons-battery-charging:before{content:"\E765"}.glyphicons-battery-full:before{content:"\E766"}.glyphicons-battery-75:before{content:"\E767"}.glyphicons-battery-50:before{content:"\E768"}.glyphicons-battery-25:before{content:"\E769"}.glyphicons-battery-10:before{content:"\E770"}.glyphicons-satellite:before{content:"\E771"}.glyphicons-satellite-dish:before{content:"\E772"}.glyphicons-satellite-dish-alt:before{content:"\E773"}.glyphicons-auction:before{content:"\E774"}.glyphicons-directions:before{content:"\E775"}.glyphicons-race:before{content:"\E776"}.glyphicons-robot:before{content:"\E777"}.glyphicons-ruler-alt:before{content:"\E778"}.glyphicons-cube-empty:before{content:"\E779"}.glyphicons-cube-black:before{content:"\E780"}.glyphicons-move-square:before{content:"\E781"}.glyphicons-drop:before{content:"\E782"}.glyphicons-vr-headset:before{content:"\E783"}.glyphicons-vr-charging:before{content:"\E784"}.glyphicons-vr-low-battery:before{content:"\E785"}.glyphicons-vr-paired:before{content:"\E786"}.glyphicons-vr-settings:before{content:"\E787"}.glyphicons-vr-maintenance:before{content:"\E788"}.glyphicons-filter-remove:before{content:"\E789"}.glyphicons-filter-applied:before{content:"\E790"}.glyphicons-one-day:before{content:"\E791"}.glyphicons-user-vr:before{content:"\E792"}.glyphicons-user-vr-add:before{content:"\E793"}.glyphicons-user-vr-remove:before{content:"\E794"}.glyphicons-dice-1:before{content:"\E795"}.glyphicons-dice-2:before{content:"\E796"}.glyphicons-dice-3:before{content:"\E797"}.glyphicons-dice-4:before{content:"\E798"}.glyphicons-dice-5:before{content:"\E799"}.glyphicons-dice-6:before{content:"\E800"}
+.btn .glyphicons,
+.btn .halflings,
+.btn .filetypes,
+.btn .social{
+	margin-right:.3em;
+}
+.dropdown-menu li .glyphicons,
+.dropdown-menu li .halflings,
+.dropdown-menu li .filetypes,
+.dropdown-menu li .social{
+	margin-right:.2.9em;
+	margin-top:.19em;
+	margin-right:.3em;
+}
+.list-group .list-group-item .glyphicons,
+.list-group .list-group-item .halflings,
+.list-group .list-group-item .filetypes,
+.list-group .list-group-item .social{
+	margin-right:.5em;
+}
+
+a.btn 
+{
+line-height: 1.12;
+}
+.dm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.dm-overlay:target {
+    display: block;
+    -webkit-animation: fade .6s;
+    -moz-animation: fade .6s;
+    animation: fade .6s;
+}
+
+.dm-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.dm-cell {
+    display: table-cell;
+    padding: 0 1em;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.dm-modal {
+    display: inline-block;
+    padding: 20px;
+	min-width: 42vw;
+	overflow: hidden;
+    -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    background: #fff;
+    color: #1a1a1a;
+	border-radius: 10px;
+}
+
+.dm-close {
+    z-index: 9999;
+    float: right;
+    width: 30px;
+    height: 30px;
+    color: #b3b3b3;
+    text-align: center;
+    text-decoration: none;
+    line-height: 26px;
+    cursor: pointer;
+	margin-top:-17px;
+	margin-right:-17px;
+}
+.dm-close:after {
+    display: block;
+    border: 2px solid #b3b3b3;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    content: 'X';
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    transition: all 0.6s;
+    -webkit-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+    -ms-transform: scale(0.85);
+    transform: scale(0.85);
+}
+
+.dm-close:hover:after {
+    border-color: #666666;
+    color: #666666;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+@-moz-keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1
+    }
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1
+    }
+}
+.main_avatar{
+	display:inline-block;
+	vertical-align:middle;
+	white-space:nowrap;
+}
+.main_avatar img{
+	height: 40px;
+	width: auto;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray;
+	opacity: 0.8;
+}
+@media (min-width: 560px) {
+	.videoframe {
+		width: 560px;
+		height: 314px;
+	}
+}
+@media (max-width: 560px) {
+	.videoframe {
+		width: 320px;
+		height: 250px;
+	}
+}
+.donatecoin{
+	display:inline-block;
+	background: url(../images/moneta.png) 100% 100% no-repeat;
+	background-size: cover;
+	color:#6b5110;
+	font-weight:600;
+	cursor: pointer;
+	border-radius:50%;
+}
+.donatecoin:hover{
+	box-shadow: 0 0 10px 0 rgba(245,195,29,0.6), 0 0 6px 0 rgba(245,195,29,0.8), 0 0 10px 0 rgba(245,195,29,0.6);
+}
+.sharedlink{
+cursor:pointer;
+background-color: #fff;
+background: #fff;
+color: #000;
+overflow:hidden;
+padding:10px;
+margin:0px;
+font-family: Montserrat, 'Lato', sans-serif;
+font-display:swap;
+font-weight:300;
+font-size:14px;
+padding:0;
+text-decoration:none;
+}
+.sharedlink  h4{
+padding:0;
+margin:5px 0 5px;
+background-color: #fff;
+background: #fff;
+color: #000;
+overflow:hidden;
+font-family: Montserrat, 'Lato', sans-serif;
+font-display:swap;
+font-weight:600;
+font-size:16px;
+text-decoration:none;
+}
+.blink {
+  -webkit-animation: blink 1s linear;
+  animation: blink 1s linear;
+  -webkit-animation-iteration-count: 5;
+  animation-iteration-count: 5;
+}
+.shortblink {
+  -webkit-animation: blink 1s linear;
+  animation: blink 1s linear;
+  -webkit-animation-iteration-count: 2;
+  animation-iteration-count: 2;
+}
+@-webkit-keyframes blink {
+  10% {opacity:0.1;filter:alpha(opacity=10);-moz-opacity:0.1;}
+  20% {opacity:0.2;filter:alpha(opacity=20);-moz-opacity:0.2;}
+  30% {opacity:0.3;filter:alpha(opacity=30);-moz-opacity:0.3;}
+  40% {opacity:0.4;filter:alpha(opacity=40);-moz-opacity:0.4;}
+  50% {opacity:0.5;filter:alpha(opacity=50);-moz-opacity:0.5;}
+  60% {opacity:0.6;filter:alpha(opacity=60);-moz-opacity:0.6;}
+  70% {opacity:0.7;filter:alpha(opacity=70);-moz-opacity:0.7;}
+  80% {opacity:0.8;filter:alpha(opacity=80);-moz-opacity:0.8;}
+  90% {opacity:0.9;filter:alpha(opacity=90);-moz-opacity:0.9;}
+  100% {opacity:1;filter:alpha(opacity=100);-moz-opacity:1;}
+}
+@keyframes blink {
+  10% {opacity:0.1;filter:alpha(opacity=10);-moz-opacity:0.1;}
+  20% {opacity:0.2;filter:alpha(opacity=20);-moz-opacity:0.2;}
+  30% {opacity:0.3;filter:alpha(opacity=30);-moz-opacity:0.3;}
+  40% {opacity:0.4;filter:alpha(opacity=40);-moz-opacity:0.4;}
+  50% {opacity:0.5;filter:alpha(opacity=50);-moz-opacity:0.5;}
+  60% {opacity:0.6;filter:alpha(opacity=60);-moz-opacity:0.6;}
+  70% {opacity:0.7;filter:alpha(opacity=70);-moz-opacity:0.7;}
+  80% {opacity:0.8;filter:alpha(opacity=80);-moz-opacity:0.8;}
+  90% {opacity:0.9;filter:alpha(opacity=90);-moz-opacity:0.9;}
+  100% {opacity:1;filter:alpha(opacity=100);-moz-opacity:1;}
+}
+.trnsltphrss {
+  display:none;
+}
+.adimage {
+	width:100%;
+	margin:0 10px 10px 0;
+}
+.adcolleft {
+	width:200px;
+	display:inline-block;
+	text-align:left;
+	font-weight:600;
+}
+.adcolright {
+	width:auto;
+	text-align:left;
+	display:inline-block;
+}
+.adrowbrake {
+	display:block;
+	width:100%;
+	margin-top:5px;
+}
+@media (min-width:992px){
+.adimage {
+	max-width:40%;
+	float:left;
+	margin:0 10px 10px 0;
+}
+.adrowbrake {
+	display:block;
+	width:100%;
+	margin-top:0px;
+}
+}
+#p_prldr{
+position: fixed;
+left: 0;
+top: 0;
+right:0;
+bottom:0;
+background: #fff;
+z-index: 230000;}
+ 
+.contpre small{font-size:20px;}
+ 
+.contpre{
+width: 250px;
+height: 100px;
+position: absolute;
+left: 50%;top: 48%;
+margin-left:-125px;
+margin-top:-75px;
+color:#666;
+font-size:20px;
+letter-spacing:-2px;
+text-align:center;
+line-height:35px;}
+
+.spinner{
+-webkit-animation-name: spin;
+-webkit-animation-duration: 2000ms;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+-moz-animation-name: spin;
+-moz-animation-duration: 2000ms;
+-moz-animation-iteration-count: infinite;
+-moz-animation-timing-function: linear;
+-ms-animation-name: spin;
+-ms-animation-duration: 2000ms;
+-ms-animation-iteration-count: infinite;
+-ms-animation-timing-function: linear;
+animation-name: spin;
+animation-duration: 2000ms;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+.spinnerslow{
+-webkit-animation-duration: 10000ms !important;
+-moz-animation-duration: 10000ms !important;
+-ms-animation-duration: 10000ms !important;
+animation-duration: 10000ms !important;	
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+.header-h1 h3 {
+  display: inline-block;
+  position: relative;
+  background: #d4d4d4;
+  color: #545454;
+  margin-bottom: 10px;
+  margin-left: -1rem;
+  margin-top: 5px;
+  padding: 0.5rem 3rem 0.2rem 1rem;
+  text-transform: uppercase;
+  font-size:14pt;
+}
+.header-h1 h3::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right: 1.5rem solid #fff;
+  border-top: 3rem solid transparent; 
+  border-bottom: 3rem solid transparent;      
+}
+.makepost {
+	text-align:center;
+	margin-top:0px;	
+}
+@media (min-width:800px){
+.makepost {
+	position:absolute;
+	text-align:right;
+	right:20px;
+	margin-top:-25px;
+}
+}
+.navbar {
+  margin-bottom: 10px;
+}
+.navbar li {white-space:nowrap;overflow:visible;}
+.from-me {
+	color:white; 
+	background:#0B93F6;
+	align-self: flex-end;
+		
+	&:before {
+		right:-7px;
+		border-right:20px solid #0B93F6;
+		border-bottom-left-radius: 16px 14px;
+		transform:translate(0, -2px);
+	}
+
+	&:after {
+		right:-56px;
+		width:26px;
+		background:white;
+		border-bottom-left-radius: 10px;
+		transform:translate(-30px, -2px);
+	}
+}
+.from-them {
+	background:#E5E5EA;
+	color:black;
+		
+	&:before {
+		left:-7px;
+		border-left:20px solid #E5E5EA;
+		border-bottom-right-radius: 16px 14px;
+		transform:translate(0, -2px);
+	}
+
+	&:after {
+		left:4px;
+		width:26px;
+		background:white;
+		border-bottom-right-radius: 10px;
+		transform:translate(-30px, -2px);
+	}
+}
+.aimsg {
+  max-width: 70%;
+  word-wrap: break-word;
+  margin-bottom: 5px;
+  line-height: 24px;
+  position:relative;
+  padding:10px 20px;
+  border-radius:25px;
+  
+  &:before, &:after {
+    content:"";
+	position:absolute;
+    bottom:-2px;
+    height:20px;
+  }
+}
+.lngcontainer{
+	display:inline-block;
+	white-space:nowrap;
+	text-align:left;
+	width:45%;
+	overflow:hidden;
+}
+@media (min-width:768px){
+	.lngcontainer{
+		display:inline-block;
+		white-space:nowrap;
+		text-align:left;
+		width:23%;
+		overflow:hidden;
+	}
+}
+@media (min-width:1220px){
+	.lngcontainer{
+		display:inline-block;
+		white-space:nowrap;
+		text-align:left;
+		width:23%;
+		overflow:hidden;
+	}
+}
+
+.qwertywrapper > input {
+	display: none;
+}
+
+.qwertywrapper .qwertycontrols {
+	left: 50%;
+	margin-left: -98px;
+	position: absolute;
+}
+
+.qwertywrapper label:after {
+	border: 2px solid #fff;
+	content: " ";
+	display: block;
+	height: 16px;
+	left: -4px;
+	position: absolute;
+	top: -4px;
+	width: 16px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.qwertywrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+	margin: 25px 12px 0 16px;
+	position: relative;
+	width: 8px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transition: background ease-in-out .5s;
+	-moz-transition: background ease-in-out .5s;
+	-o-transition: background ease-in-out .5s;
+	transition: background ease-in-out .5s;
+}
+
+.qwertywrapper label:hover, 
+#slide1:checked ~ .qwertycontrols label:nth-of-type(1),
+#slide2:checked ~ .qwertycontrols label:nth-of-type(2),
+#slide3:checked ~ .qwertycontrols label:nth-of-type(3),
+#slide4:checked ~ .qwertycontrols label:nth-of-type(4),
+#slide5:checked ~ .qwertycontrols label:nth-of-type(5) {
+	background: #fff;
+}
+
+pre {
+	white-space: normal;
+}
+.qsnenewsboximg {
+	width:100%;
+	display:block;
+}
+.qsnenewsbox {
+	text-align:left;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	line-height:14px;
+	font-size:14px;
+	overflow:hidden;
+	width:100%;
+	display:inline-block;
+	padding:1px;
+	vertical-align:top;
+	white-space:normal;
+}
+@media (min-width:640px){
+	.qsnenewsboximg {
+		float:left;
+		max-width:100%;
+		min-width:100%;
+		display:block;
+	}
+	.qsnenewsbox {
+	text-align:left;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	line-height:14px;
+	font-size:14px;
+	overflow:hidden;
+	width:100%;
+	max-width:50% !important;
+	display:inline-block;
+	padding:10px;
+	vertical-align:top;
+}
+}
+@media (min-width:768px){
+	.qsnenewsboximg {
+		float:left;
+		max-width:100%;
+		min-width:100%;
+		display:block;
+	}
+	.qsnenewsbox {
+	text-align:left;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	line-height:14px;
+	font-size:14px;
+	overflow:hidden;
+	width:100%;
+	max-width:33% !important;
+	display:inline-block;
+	padding:10px;
+	vertical-align:top;
+}
+}
+@media (min-width:980px){
+	.qsnenewsboximg {
+		float:left;
+		max-width:100%;
+		min-width:100%;
+		display:block;
+	}
+	.qsnenewsbox {
+	text-align:left;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:0;
+	line-height:14px;
+	font-size:14px;
+	overflow:hidden;
+	width:100%;
+	border:none;
+	max-width:25% !important;
+	display:inline-block;
+	padding:10px;
+	vertical-align:top;
+}
+}
+
+.modal {
+text-align: center;
+padding: 0!important;
+height: 100%;
+}
+
+@media (min-width:768px){
+.modal:before {
+content: '';
+display: inline-block;
+height: 100%;
+vertical-align: middle;
+margin-right: -4px;
+}
+}
+
+.modal-dialog {
+display: inline-block;
+text-align: left;
+vertical-align: middle;
+}
+blockquote {
+    background: none repeat scroll 0 0 #f4e892;
+    color: #252540;
+    font-family: arial;
+	font-display:block;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.45;
+    text-align:center;
+    padding: 15px 38px;
+    position: relative;
+    width: 450px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 10px rgba(0,0,0,0.1) inset;
+}
+blockquote {
+    background: none repeat scroll 0 0 #f4e892;
+    color: #252540;
+    font-family: arial;
+	font-display:swap;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.45;
+    text-align:left;
+	margin-top:20px;
+    padding: 15px 38px;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 10px rgba(0,0,0,0.1) inset;
+}
+
+blockquote:before{
+position:absolute;
+margin-top:-33px;
+margin-left:-20px;
+content:url('/images/webpin3.png');
+}
+blockquote:after{
+z-index: -1;
+position: absolute;
+content: "";
+bottom: 15px;
+right: 10px;
+left: auto;
+width: 50%;
+top: 80%;
+-webkit-box-shadow: 0 19px 7px #a7a7a7;
+-moz-box-shadow: 0 19px 7px #a7a7a7;
+box-shadow: 0 19px 7px #a7a7a7;
+-webkit-transform: rotate(3deg);
+-moz-transform: rotate(3deg);
+-o-transform: rotate(3deg);
+-ms-transform: rotate(3deg);
+transform: rotate(3deg);
+}
+
+@font-face {
+  font-family: "TTCommons";
+  font-display:swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/internetportal/fonts/TTCommons-Regular.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "TTCommons";
+  font-display:swap;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/internetportal/fonts/TTCommons-Medium.woff2") format("woff2"); }
+@media (min-width: 1200px) {
+  #activities .containerqn {
+    max-width: 1360px; 
+  } 
+}
+.containerqn{
+	width:100%;
+	padding-right:15px;
+	padding-left:15px;
+	margin-right:auto;
+	margin-left:auto;
+	font-family: 'TTCommons', sans-serif;
+	font-display:swap;
+	font-size: 1em;
+	line-height: 1.5;
+}
+@media (min-width:576px){
+	.containerqn{
+		max-width:540px;
+	}
+}
+@media (min-width:768px){
+	.containerqn{
+		max-width:720px;
+	}
+}
+@media (min-width:992px){
+	.containerqn{
+		max-width:960px;
+	}
+}
+@media (min-width:1200px){
+	.containerqn{
+		max-width:1190px;
+	}
+}
+.containerqn-fluid{
+	width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;
+}
+.lngcontainer{
+	display:block;
+	white-space:nowrap;
+	text-align:left;
+	width:100%;
+	overflow:hidden;
+	font-size:14.45px;
+}
+@media (min-width:768px){
+	.lngcontainer{
+		display:inline-block;
+		white-space:nowrap;
+		text-align:left;
+		width:45%;
+		overflow:hidden;
+	}
+}
+@media (min-width:1220px){
+	.lngcontainer{
+		display:inline-block;
+		white-space:nowrap;
+		text-align:left;
+		width:23%;
+		overflow:hidden;
+	}
+}
+/**********************  footerqn  ********************/
+#footerqn {
+  padding-top: 45px;
+  padding-bottom: 10px; }
+
+#footerqn .box {
+  margin-bottom: 40px; }
+
+@media all and (max-width: 767px) {
+  #footerqn .box {
+    margin-bottom: 25px; } }
+
+@media all and (max-width: 767px) {
+  #footerqn .box {
+    text-align: center; } }
+
+#footerqn .box .box_inner ul li {
+  list-style: none;
+  line-height: 28px;
+  font-size: 19px; }
+
+#footerqn .box .box_inner ul li a {
+  color: #000; }
+
+@media all and (max-width: 767px) {
+  #footerqn .box.box_social {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2; } }
+
+#footerqn .box.box_social .box_inner {
+  text-align: right; }
+#footerqn .box.box_phones .box_inner {
+  text-align: left; }
+
+@media all and (max-width: 767px) {
+  #footerqn .box.box_social .box_inner {
+    text-align: center; } }
+@media all and (max-width: 767px) {
+  #footerqn .box.box_phones .box_inner {
+    text-align: center; } }
+@media all and (max-width: 767px) {
+  #footerqn .box.box_copyright {
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 0;
+        -ms-flex-order: 0;
+            order: 0; } }
+
+#footerqn .box.box_copyright .box_inner {
+  text-align: center; }
+
+#footerqn .box.box_copyright .box_inner a {
+  display: block;
+  margin-bottom: 10px; }
+
+#footerqn .box.box_copyright .box_inner a img {
+  width: 220px; }
+
+@media all and (max-width: 767px) {
+  #footerqn .box.box_address {
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1; } }
+
+@media all and (max-width: 767px) {
+  #footerqn .box.box_phones {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1; } }
+.floatimage {
+	max-width:250px;
+	margin:0 10px 0;
+	float:left;
+}
+@media all and (max-width: 767px) {
+  .floatimage {
+	max-width:100%;
+	float:none;
+	margin:10px;
+} }
+
+.post-tag{margin:10px 0 35px;}
+.post-tag a{background-color:#aaa;border-radius:0 2px 2px 0;color:#fff;text-decoration:none;display:inline-block;font-size:12px;line-height:13px;margin:0 0 2px 10px;padding:4px
+7px 3px;position:relative;text-transform:uppercase; transition: 0.2s linear}
+.post-tag a:before{transition: 0.2s linear; border-top:10px solid transparent;border-right:8px solid #aaa;border-bottom:10px solid transparent;content:"";height:0;position:absolute;top:0;left:-8px;width:0;}
+.post-tag a:after{background-color:#fff;border-radius:50%;content:"";height:4px;position:absolute;top:8px;left:-2px;width:4px}
+.post-tag a:hover{background:#444;color:#FFF;text-decoration:none;}
+.post-tag a:hover:before{border-right-color:#444}
+.ratingstar{color:#e99b00 !important}
+.headertext{position: fixed; top: 10px; left: 250px; font-size: 20px; font-weight: 600; color: #ffffff; text-shadow: #4d4d4d 1px 0px, #4d4d4d 1px 1px, #4d4d4d 0px 1px, #4d4d4d -1px 1px, #4d4d4d -1px 0px, #4d4d4d -1px -1px, #4d4d4d 0px -1px, #4d4d4d 1px -1px;}

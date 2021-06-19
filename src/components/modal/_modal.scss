@@ -15,14 +15,14 @@
 //       .modal__footer
 //         button.btn.is-primary(type='submit') Submit
 
-$modal-content-bg:                      $color-bg-normal;
-$modal-top-offset:                      $size-8;
-$modal-max-height:                      calc(100vh - $size-8 * 2);
-$modal-transition:                      transform $duration-lg $easing;
+$modal-content-bg:                      var(--color-background-base);
+$modal-top-offset:                      $size-space-8;
+$modal-max-height:                      calc(100vh - $size-space-8 * 2);
+$modal-transition:                      transform var(--motion-duration-lg) var(--motion-easing-base);
 
-$modal-header-padding:                  calc(#{$size-line} + var(--padding-top-h2)) var(--padding-x-box) var(--padding-bottom-h2);
-$modal-body-padding:                    0 var(--padding-x-box) $size-line;
-$modal-footer-padding:                  $size-2 var(--padding-x-box) var(--padding-x-box);
+$modal-header-padding:                  calc(#{$size-space-line} + var(--space-padding-top-subhead-h2)) var(--space-padding-x-box) var(--space-padding-bottom-subhead-h2);
+$modal-body-padding:                    0 var(--space-padding-x-box) $size-space-line;
+$modal-footer-padding:                  $size-space-2 var(--space-padding-x-box) var(--space-padding-x-box);
 
 // Kill the scroll on the body
 .modal-open {
@@ -50,12 +50,12 @@ $modal-footer-padding:                  $size-2 var(--padding-x-box) var(--paddi
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: $zindex-modal;
+  z-index: var(--layer-zindex-modal);
 }
 
 // Shell div to position the modal with bottom padding
 .modal-dialog {
-  margin: $size-1;
+  margin: $size-space-1;
   // allow clicks to pass through for custom click handling to close modal
   pointer-events: none;
   position: relative;
@@ -63,8 +63,8 @@ $modal-footer-padding:                  $size-2 var(--padding-x-box) var(--paddi
 
   // When fading in the modal, animate it to slide down
   .modal.fade & {
-    transition: transform $duration $easing;
-    transform: translate(0, -$size-line * 2);
+    transition: transform var(--motion-duration-base) var(--motion-easing-base);
+    transform: translate(0, -$size-space-line * 2);
   }
 
   .modal.show & {
@@ -72,12 +72,12 @@ $modal-footer-padding:                  $size-2 var(--padding-x-box) var(--paddi
   }
 
   @include media-breakpoint-up(md) {
-    margin: ($size-line * 2) $size-line;
+    margin: ($size-space-line * 2) $size-space-line;
   }
 }
 
 .modal-dialog.is-scrollable {
-  height: subtract(100%, $size-2);
+  height: subtract(100%, $size-space-2);
 
   .modal__box {
     overflow: hidden;
@@ -93,8 +93,8 @@ $modal-footer-padding:                  $size-2 var(--padding-x-box) var(--paddi
 .modal__box {
   background-clip: padding-box;
   background-color: $modal-content-bg;
-  border-radius: $border-radius-lg;
-  box-shadow: $box-shadow-z5;
+  border-radius: var(--shape-border-radius-lg);
+  box-shadow: var(--layer-box-shadow-z5);
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -107,23 +107,23 @@ $modal-footer-padding:                  $size-2 var(--padding-x-box) var(--paddi
   width: 100%;
 
   @include media-breakpoint-up(md) {
-    max-width: $width-md;
+    max-width: var(--size-width-md);
   }
 
-  @include media-breakpoint-up(lg) {
-    max-width: $width-lg;
+  @include media-breakpoint-up(xl) {
+    max-width: var(--size-width-lg);
   }
 }
 
 // Overlay
 .modal-backdrop {
-  background-color: $color-bg-scrim;
+  background-color: var(--color-scrim-base);
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: $zindex-modal-backdrop;
+  z-index: var(--layer-zindex-scrim);
 
   // Fade for backdrop
   &.fade { opacity: 0; }
@@ -167,6 +167,14 @@ $modal-footer-padding:                  $size-2 var(--padding-x-box) var(--paddi
   padding: $modal-footer-padding;
 }
 
+.modal__footer.has-dual-purpose {
+  justify-content: space-between;
+}
+
+.modal__footer.is-centered {
+  justify-content: center;
+}
+
 // Measure scrollbar width for padding body during modal show/hide
 .modal-scrollbar-measure {
   overflow: scroll;
@@ -176,4 +184,73 @@ $modal-footer-padding:                  $size-2 var(--padding-x-box) var(--paddi
   height: 50px;
 }
 
-// Scale up the modal
+//------------------------------------------------------------------------------
+// THE SPECIALS
+// -----------------------------------------------------------------------------
+
+.article__promotion {
+  z-index: var(--layer-zindex-modal);
+
+  p,
+  .modal__title {
+    text-align: center;
+  }
+}
+
+.article__promotion .dm-cell {
+  padding: $size-space-line $size-space-1;
+
+  @include media-breakpoint-up(md) {
+    padding: 0 $size-space-line;
+  }
+}
+
+.article__promotion .dm-modal {
+  border-radius: var(--shape-border-radius-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.9rem var(--space-padding-x-container) $size-space-4;
+  max-width: 30.4rem;
+
+  @include media-breakpoint-up(sm) {
+    max-width: var(--size-width-lg);
+  }
+
+  @include media-breakpoint-up(md) {
+    border-radius: var(--shape-border-radius-lg);
+  }
+}
+
+// Picture selection
+
+.modal__pic-selector {
+  white-space: nowrap;
+  margin: 2px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.modal__pic-selector > img {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.modal__pic-selector-btn {
+  display: inline-block;
+}
+
+.modal__pic-loader {
+  display: none;
+}
+
+// Close
+.dm-modal {
+  position: relative;
+}
+
+.dm-modal .btn.is-close {
+  position: absolute;
+  top: $size-space-2;
+  right: $size-space-2;
+}

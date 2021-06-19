@@ -22,33 +22,33 @@
   @include multiline-truncate(2);
 
   font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-  padding-top: var(--padding-top-base);
-  padding-bottom: var(--padding-bottom-base);
+  line-height: var(--font-line-height-base);
+  padding-top: var(--space-padding-top-base);
+  padding-bottom: var(--space-padding-bottom-base);
   height: 5.4rem;
 }
 
 
 // Expanded
 .product-tile__link {
-  color: $color-ink-normal;
+  color: var(--color-ink-base);;
 
   &:hover {
     color: $color-ink-link;
   }
 
   &::before {
-    border-radius: $border-radius;
+    border-radius: var(--shape-border-radius-base);
     content: '';
     position: absolute;
     top: 0;
-    bottom: $size-line * 2;
+    bottom: $size-space-line * 2;
     left: 0;
     right: 0;
   }
 
   &:focus::before {
-    box-shadow: $box-shadow-focus-outline;
+    box-shadow: var(--layer-box-shadow-focus-outline);
   }
 }
 
@@ -68,19 +68,19 @@
   width: 100%;
 
   &:hover {
-    background-color: $color-bg-alt;
+    background-color: $color-background-alt;
   }
 }
 
 .product-tile__actual-price {
   font-size: var(--font-size-big);
   font-weight: 500;
-  line-height: var(--line-height-big);
+  line-height: var(--font-line-height-big);
 }
 
 .product-tile__old-price {
-  color: $color-ink-3ry;
+  color: var(--color-ink-3ry);
   text-decoration: line-through;
   display: inline-block;
-  margin-left: $size-1;
+  margin-left: $size-space-1;
 }

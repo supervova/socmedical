@@ -1,8 +1,10 @@
 %btn {
+  --display: inline-flex;
+
   appearance: none;
   border: 0;
   cursor: pointer;
-  display: inline-flex;
+  display: var(--display);
   align-items: center;
   justify-content: center;
   font-weight: 400;
@@ -21,14 +23,14 @@
 %btn-base {
   @extend %btn;
 
-  --padding: 0 #{$size-2};
+  --padding: 0 #{$size-space-2};
 
-  border-radius: $border-radius;
+  border-radius: var(--shape-border-radius-base);
   text-decoration: none;
   padding-top: 0;
   padding-bottom: 0;
   padding: var(--padding);
-  height: $size-6;
+  height: $size-space-6;
 
   &:hover {
     text-decoration: none;
@@ -36,41 +38,41 @@
 
   &:active {
     box-shadow:
-      inset 0 0 0 1px $color-ink-border,
-      inset 0 3px 5px $color-ink-border,
-      inset 0 0 0 100px $dark-min;
+      inset 0 0 0 1px var(--color-border-dark),
+      inset 0 3px 5px var(--color-border-dark),
+      inset 0 0 0 100px $color-neutral-dark-min;
+  }
+
+  &:focus,
+  &:active:focus {
+    outline: 0;
   }
 
   &.is-compact {
     --padding: 0 1.2rem;
   }
 
-  // Reduce right padding in buttons with chevrons
-  .icon.is-chevron {
-    margin-right: -$size-1;
-  }
-
   @include media-breakpoint-up(md) {
-    --padding: 0 #{$size-3};
+    --padding: 0 #{$size-space-3};
   }
 }
 
 .btn.is-primary {
-  background-color: $color-primary-bg-dark;
-  background-image: linear-gradient(lighten($color-primary, 2%), darken($color-primary, 10%));
-  color: $color-ink-inverse-normal;
-  text-shadow: 0 1px 0 $color-ink-border;
+  background-color: var(--color-background-primary-dark);
+  background-image: linear-gradient(lighten($color-brand-primary-base, 2%), darken($color-brand-primary-base, 10%));
+  color: var(--color-ink-inverse-base);
+  text-shadow: 0 1px 0 var(--color-border-dark);
   transition:
-    filter $duration-xs,
-    box-shadow $duration-xs;
+    filter var(--motion-duration-xs),
+    box-shadow var(--motion-duration-xs);
 
   &:hover {
-    color: $color-ink-inverse-normal;
-    filter: brightness($hover-brightness);
+    color: var(--color-ink-inverse-base);
+    filter: brightness(var(--color-brightness-hover));
   }
 
   &:focus {
-    box-shadow: $box-shadow-focus-outline;
+    box-shadow: var(--layer-box-shadow-focus-outline);
   }
 
   &:active {
@@ -78,45 +80,37 @@
   }
 }
 
-.btn.is-primary .icon {
-  --icon-stroke: #{$color-ink-inverse-normal};
-}
-
 .btn.is-outline,
 %btn-outline {
   background-color: transparent;
-  box-shadow: inset 0 0 0 1px $color-ink-accent-border;
-  color: $color-primary-text;
+  box-shadow: inset 0 0 0 1px var(--color-border-primary);
+  color: var(--color-ink-primary-text);
   transition:
-    background-color $duration-xs,
-    box-shadow $duration-xs;
+    background-color var(--motion-duration-xs),
+    box-shadow var(--motion-duration-xs);
 
   &:hover {
-    background-color: $color-bg-alt;
-    color: $color-primary-text;
+    background-color: $color-background-alt;
+    color: var(--color-ink-primary-text);
   }
 
   &:focus {
-    box-shadow: $box-shadow-focus-outline;
+    box-shadow: var(--layer-box-shadow-focus-outline);
   }
 }
 
 .btn.is-outline.is-inverse {
-  box-shadow: inset 0 0 0 1px $color-ink-inverse-2ry;
-  color: $color-ink-inverse-normal;
-  text-shadow: 0 .1rem 0 $color-ink-border;
+  box-shadow: inset 0 0 0 1px var(--color-ink-inverse-2ry);
+  color: var(--color-ink-inverse-base);
+  text-shadow: 0 .1rem 0 var(--color-border-dark);
 
   &:hover {
-    background-color: rgba($color-bg-alt, .2);
-    color: $color-ink-inverse-normal;
+    background-color: rgba($color-background-alt, .2);
+    color: var(--color-ink-inverse-base);
   }
 
   &:focus {
-    box-shadow: 0 0 0 .4rem $color-ink-inverse-2ry;
-  }
-
-  .icon {
-    --icon-stroke: #{$color-ink-inverse-2ry};
+    box-shadow: 0 0 0 .4rem var(--color-ink-inverse-2ry);
   }
 }
 
@@ -133,29 +127,40 @@
   }
 
   &:focus {
-    box-shadow: $box-shadow-focus-outline;
+    box-shadow: var(--layer-box-shadow-focus-outline);
   }
 }
 
 .btn.is-icon {
   --padding: 0;
 
-  background-color: $color-bg-alt;
-  border: 2px solid $color-primary;
-  border-radius: 50%;
-  width: $size-5;
-  height: $size-5;
-
-  &:hover {
-    filter: brightness($hover-brightness);
-  }
+  width: $size-space-5;
+  height: $size-space-5;
 
   &:focus {
-    box-shadow: $box-shadow-focus-outline;
+    box-shadow: var(--layer-box-shadow-focus-outline);
+  }
+}
+
+.btn.is-icon:not(.is-ghost) {
+  background-color: var(--color-background-alt);
+  border: 2px solid var(--color-brand-primary-base);
+  border-radius: 50%;
+
+  &:hover {
+    filter: brightness(var(--color-brightness-hover));
   }
 
-  @media #{$mq-retina} {
+  @media #{$size-screen-retina} {
     border-width: 1.5px;
+  }
+}
+
+.btn.is-icon.is-ghost {
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--color-background-alt);
   }
 }
 
@@ -173,9 +178,10 @@
 .buttons,
 %buttons {
   display: flex;
+  align-items: center;
 
   .btn + .btn {
-    margin-left: $size-1;
+    margin-left: $size-space-1;
   }
 }
 
@@ -210,5 +216,5 @@
 // btn.setAttribute('aria-pressed', false);
 
 .btn.is-toggle[aria-pressed='true'] {
-  color: $color-primary-text;
+  color: var(--color-ink-primary-text);
 }

@@ -43,7 +43,7 @@
 // @param $color {String} Defines the color of the dot
 // @param $mq {Boolean} If you want a dots on touch device or not
 
-@mixin bullet-separator($size: 3px, $color: $color-primary, $mq: null) {
+@mixin bullet-separator($size: 3px, $color: $color-brand-primary-base, $mq: null) {
   display: flex;
   align-items: center;
   position: relative;
@@ -54,8 +54,8 @@
     content: '';
     display: inline-block;
     margin: {
-      left: $size-1;
-      right: $size-1;
+      left: $size-space-1;
+      right: $size-space-1;
     }
     vertical-align: middle;
     width: $size;
@@ -106,8 +106,8 @@
 
 @mixin scrollbar(
   $size: 12px,
-  $thumb: $color-ink-border,
-  $track: $color-background-secondary) {
+  $thumb: var(--color-border-dark),
+  $track: var(--color-background-2ry)) {
 
   // The emerging W3C standard that is currently Firefox-only
   scrollbar-width: thin;
@@ -125,7 +125,7 @@
 
   &::-webkit-scrollbar-thumb {
     background: $thumb;
-    border-radius: $border-radius;
+    border-radius: var(--shape-border-radius-base);
   }
 
   &::-webkit-scrollbar-track {

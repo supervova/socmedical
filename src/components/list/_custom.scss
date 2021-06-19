@@ -1,19 +1,19 @@
 .list.is-checklist {
   list-style: none;
-  padding-left: $size-5;
+  padding-left: $size-space-5;
 
   > li {
     position: relative;
   }
 
   > li::before {
-    background: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%234CB37C%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%20transform%3D%22translate%282%202%29%22%3E%3Cpath%20d%3D%22M20.0000565%2C9.08623485%20L20.0000565%2C10.0062349%20C19.9975243%2C14.4349207%2017.0823504%2C18.3344478%2012.8354089%2C19.5901358%20C8.58846732%2C20.8458238%204.02145001%2C19.158547%201.61101155%2C15.4433012%20C-0.799426916%2C11.7280554%20-0.479080094%2C6.86987383%202.39833065%2C3.503307%20C5.2757414%2C0.136740166%2010.0247691%2C-0.936239861%2014.0700565%2C0.866234854%22%2F%3E%3Cpolyline%20points%3D%2220%202.006%2010%2012.016%207%209.016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat 0 0;
+    background: var(--asset-data-image-circle-check) no-repeat 0 0;
     content: '';
     position: absolute;
-    top: var(----padding-top-base);
-    left: -$size-5;
-    width: $size-line;
-    height: $size-line;
+    top: var(----space-padding-top-base);
+    left: -$size-space-5;
+    width: $size-space-line;
+    height: $size-space-line;
   }
 }
 
@@ -34,7 +34,7 @@
   justify-content: space-between;
 
   &:hover {
-    color: $color-primary-text;
+    color: var(--color-ink-primary-text);
     text-decoration: underline;
   }
 }
@@ -45,21 +45,21 @@
   flex: 1;
   font-size: var(--font-size-base);
   font-weight: 400;
-  line-height: var(--line-height-base);
+  line-height: var(--font-line-height-base);
   padding-top: 0;
   padding-bottom: 0;
-  padding-right: $size-2;
+  padding-right: $size-space-2;
 }
 
 .directory-links__label {
   @extend %text-truncate;
 
-  color: $color-ink-2ry;
+  color: var(--color-ink-2ry);
   flex: 1;
-  padding-right: $size-2;
+  padding-right: $size-space-2;
 }
 
 
 .directory-links__counter {
-  color: $color-ink-3ry;
+  color: var(--color-ink-3ry);
 }

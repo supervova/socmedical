@@ -1,6 +1,6 @@
 .border,
 %border {
-  border-radius: $border-radius;
+  border-radius: var(--shape-border-radius-base);
 
   // inline-block should be avoided because it adds extra space around element
   display: table;
@@ -9,8 +9,8 @@
 
   // Border
   &::after {
-    border-radius: $border-radius;
-    box-shadow: inset 0 0 0 1px $color-ink-border;
+    border-radius: var(--shape-border-radius-base);
+    box-shadow: inset 0 0 0 1px var(--color-border-dark);
     content: '';
     display: block;
     pointer-events: none;
@@ -33,13 +33,13 @@
 figure,
 iframe {
   margin-top: 0;
-  margin-bottom: $size-line;
+  margin-bottom: $size-space-line;
 }
 
 figcaption {
-  color: $color-ink-2ry;
-  padding-top: var(--padding-top-base);
-  padding-bottom: var(--padding-bottom-base);
+  color: var(--color-ink-2ry);
+  padding-top: var(--space-padding-top-base);
+  padding-bottom: var(--space-padding-bottom-base);
 }
 
 // -----------------------------------------------------------------------------

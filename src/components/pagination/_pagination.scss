@@ -1,6 +1,6 @@
 .pagination {
-  padding-top: $size-line * 3;
-  padding-bottom: $size-line;
+  padding-top: $size-space-line * 3;
+  padding-bottom: $size-space-line;
 }
 
 .pagination > ul {
@@ -21,7 +21,7 @@
 
 .pagination__link {
   background-color: transparent;
-  border-radius: $border-radius;
+  border-radius: var(--shape-border-radius-base);
   color: $color-ink-link;
   display: flex;
   justify-content: center;
@@ -29,27 +29,27 @@
   position: relative;
   text-decoration: none;
   transition:
-    box-shadow $duration-xs,
-    background-color $duration-xs;
+    box-shadow var(--motion-duration-xs),
+    background-color var(--motion-duration-xs);
   min-width: 4.4rem;
 
   &:hover {
-    background-color: $color-bg-alt;
+    background-color: $color-background-alt;
     filter: none;
     text-decoration: none;
     z-index: 2;
   }
 
   &:focus {
-    background-color: $color-bg-alt;
-    box-shadow: $box-shadow-focus-outline;
+    background-color: $color-background-alt;
+    box-shadow: var(--layer-box-shadow-focus-outline);
     outline: 0;
     z-index: 3;
   }
 
   &.is-active {
-    background-color: $color-primary-bg-dark;
-    color: $color-ink-inverse-normal;
+    background-color: var(--color-background-primary-dark);
+    color: var(--color-ink-inverse-base);
     pointer-events: none;
     z-index: 3;
   }
@@ -63,7 +63,7 @@
 
 
 .pagination__link .icon {
-  fill: $color-ink-icon;
+  fill: var(--color-ink-icon);
 }
 
 .pagination__item:first-child .icon {

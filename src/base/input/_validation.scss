@@ -2,7 +2,7 @@
 .has-been-validated .form__control:not(.is-textarea),
 .form__item.has-error .form__control:not(.is-textarea),
 .form__item.is-correct .form__control:not(.is-textarea) {
-  background-position: right $size-1 center;
+  background-position: right $size-space-1 center;
   background-repeat: no-repeat;
 }
 
@@ -10,7 +10,7 @@
 .has-been-validated .form__control.is-textarea,
 .form__item.has-error .form__control.is-textarea,
 .form__item.is-correct .form__control.is-textarea {
-  background-position: right $size-1 top .9rem;
+  background-position: right $size-space-1 top .9rem;
   background-repeat: no-repeat;
 }
 
@@ -21,7 +21,7 @@
 .form__control.is-touched:not(:focus):not(:invalid),
 .has-been-validated .form__control:not(:focus):not(:invalid),
 .form__item.is-correct .form__control:not(:focus) {
-  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23060%22%20fill-rule%3D%22evenodd%22%20d%3D%22M12%2C3%20C16.9705627%2C3%2021%2C7.02943725%2021%2C12%20C21%2C16.9705627%2016.9705627%2C21%2012%2C21%20C7.02943725%2C21%203%2C16.9705627%203%2C12%20C3%2C7.02943725%207.02943725%2C3%2012%2C3%20Z%20M16.0407092%2C7.65887444%20C15.6093228%2C7.38155457%2015.0450266%2C7.47772054%2014.7274961%2C7.86483422%20L14.6587732%2C7.95929533%20L10.8949266%2C13.8119311%20L9.26817292%2C11.8598685%20L9.18188401%2C11.7684924%20C8.81881952%2C11.4292038%208.25140745%2C11.4054648%207.85976724%2C11.7318316%20C7.46812702%2C12.0581985%207.38915668%2C12.6205895%207.65741252%2C13.0388853%20L7.73173036%2C13.1402373%20L10.2317304%2C16.1402373%20L10.2990703%2C16.2136117%20L10.3938389%2C16.2954961%20L10.4841523%2C16.3570803%20L10.587172%2C16.4111347%20L10.7109275%2C16.4574902%20L10.7881244%2C16.4776056%20L10.9036344%2C16.4955926%20L11.0133734%2C16.5000689%20L11.0744808%2C16.4973433%20L11.2113888%2C16.4774445%20L11.3176026%2C16.44852%20L11.3737123%2C16.427665%20L11.4464449%2C16.3950884%20L11.5289847%2C16.3487965%20L11.5855471%2C16.3107058%20L11.5855471%2C16.3107058%20L11.640136%2C16.2682742%20L11.7323615%2C16.1810767%20L11.8094964%2C16.0875177%20L16.3411301%2C9.04081051%20L16.3985346%2C8.93907326%20C16.6188836%2C8.48948574%2016.4720957%2C7.93619432%2016.0407092%2C7.65887444%20Z%22%2F%3E%3C%2Fsvg%3E');
+  background-image: var(--asset-data-image-success);
 }
 
 // -----------------------------------------------------------------------------
@@ -33,9 +33,9 @@
 .form__control.is-touched:not(:focus):invalid,
 .has-been-validated .form__control:not(:focus):invalid,
 .form__item.has-error .form__control:not(:focus):invalid {
-  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23E60000%22%20d%3D%22M12%2C3%20C7.032%2C3%203%2C7.032%203%2C12%20C3%2C16.968%207.032%2C21%2012%2C21%20C16.968%2C21%2021%2C16.968%2021%2C12%20C21%2C7.032%2016.968%2C3%2012%2C3%20Z%20M13%2C17%20L11%2C17%20L11%2C15%20L13%2C15%20L13%2C17%20Z%20M13%2C13%20L11%2C13%20L11%2C7%20L13%2C7%20L13%2C13%20Z%22%2F%3E%3C%2Fsvg%3E');
-  border-color: $color-error;
-  box-shadow: inset 0 0 0 1px $color-error;
+  background-image: var(--asset-data-image-error);
+  border-color: var(--color-border-error);
+  box-shadow: inset 0 0 0 1px var(--color-border-error);
 
   // Show alert
   + .form__alert,
@@ -55,19 +55,19 @@
 // -----------------------------------------------------------------------------
 
 .form__alert {
-  color: $color-error-text;
+  color: var(--color-ink-error-text);
   font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
+  line-height: var(--font-line-height-small);
   overflow: hidden;
   opacity: 0;
-  transition: opacity $duration-lg;
+  transition: opacity var(--motion-duration-lg);
   height: 0;
 }
 
 // To hide message using height: 0 we should wrap it in another div and delegate
 // paddings to it
 .form__alert > div {
-  padding-top: var(--padding-top-small);
+  padding-top: var(--space-padding-top-small);
   padding-bottom: .4rem;
 }
 

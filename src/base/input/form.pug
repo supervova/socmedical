@@ -7,14 +7,14 @@
   .form__alert(role='alert') Message
 
 //- Input in row
-.row
-  .form__item.col-sm-4
+.qwt-row
+  .form__item.qwt-col-sm-4
     label.form-label(for='form-textarea1') Caption
     input#form-input1.form__control(type='text', required)
     .form__alert(role='alert') Message
 
 //- Inputs with prefixes and / or suffixes
-.form__item.col-sm-4
+.form__item.qwt-col-sm-4
   label.form__label(for='form-input2') Caption
   .form__group
     span.form__control-prefix $
@@ -35,12 +35,12 @@ form#form-needs-validation(action='' method='post' novalidate)
     label(for='form-email') Email
     input#form-email.form__control(name='email' type='email' inputmode='email' value='' maxlength='128' required)
     .form__alert(role='alert') Message
-  .row
-    .form__item-item.col-4
+  .qwt-row
+    .form__item-item.qwt-col-4
       label(for='form-country-code') Country code
       input#form-country-code.form__control(name='country-code' type='text' inputmode='numeric' value='' maxlength='3' pattern='\d{3}' required)
       .form__alert(role='alert') Message
-    .form__item-item.col-8
+    .form__item-item.qwt-col-8
       label(for='form-phone') Phone number
       input#form-phone.form__control(name='phone' type='text' inputmode='numeric' value='' maxlength='9' pattern='\d{8,9}' required)
       .form__alert(role='alert') Message

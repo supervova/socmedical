@@ -7,12 +7,12 @@
 
 // examples:
 // @include media-breakpoint-down(md) {
-//   .page.is-home .has-kpi .row {
+//   .page.is-home .has-kpi .qwt-row {
 //     position: relative;
 //   }
 
 //   .page.is-home .has-kpi {
-//     @include slider-slides(4, '.col-md-3');
+//     @include slider-slides(4, '.qwt-col-md-3');
 //   }
 // }
 
@@ -35,7 +35,7 @@
     animation-name: slider-autoplay-0#{$slides};
     animation-duration: ($slides * $on-screen);
     animation-iteration-count: infinite;
-    animation-iteration-count: $easing;
+    animation-iteration-count: var(--motion-easing-base);
     opacity: 1;
     position: relative;
   }

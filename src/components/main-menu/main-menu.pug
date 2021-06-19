@@ -1,44 +1,44 @@
 include /pages/base/mixins
 
-div.navbar-wrapper
-  .container
-    nav.navbar
-      a.navbar__logo(href="/")
+div.main-menu
+  .qwt-container
+    nav.main-menu__inner
+      a.main-menu__logo(href="/")
         figure
-          img.navbar__logomark(src=`${site.baseUrl}images/socmedical/components/logo/logomark.svg`, width="40", height="40", alt="Фирменный знак SocMedical")
+          img.main-menu__logomark(src=`${site.baseUrl}images/socmedical/components/logo/logomark.svg`, width="40", height="40", alt="Фирменный знак SocMedical")
           figcaption
             img(src=`${site.baseUrl}images/socmedical/components/logo/logotype.svg`, width="115", height="32", alt="Логотип SocMedical")
-            div.navbar__tagline Медицинская социальная&nbsp;сеть
+            div.main-menu__tagline Медицинская социальная&nbsp;сеть
 
-      ul.navbar__list
-        li.navbar__item
-          a.navbar__link(href='')
+      ul.main-menu__list
+        li.main-menu__item
+          a.main-menu__link(href='')
             +icon('group')
             span.d-md-none Сообщ.
             span.d-none.d-md-inline Сообщества
-        li.navbar__item
-          a.navbar__link(href='')
+        li.main-menu__item
+          a.main-menu__link(href='')
             +icon('list')
             | Лента
-        li.navbar__item
-          a.navbar__link(href='')
+        li.main-menu__item
+          a.main-menu__link(href='')
             +icon('case')
             span.d-md-none Услуги
             span.d-none.d-md-inline Медуслуги
-        li.navbar__item.d-none.d-md-flex
-          a.navbar__link(href='')
+        li.main-menu__item.d-none.d-md-flex
+          a.main-menu__link(href='')
             +icon('pills')
             | Маркетплейс
-        li.navbar__item.d-none.d-md-flex
-          a.navbar__link(href='')
+        li.main-menu__item.d-none.d-md-flex
+          a.main-menu__link(href='')
             +icon('stethoscope')
             | Специалисты
-        li.navbar__item.d-none.d-lg-flex
-          a.navbar__link(href='')
+        li.main-menu__item.d-none.d-lg-flex
+          a.main-menu__link(href='')
             +icon('building')
             | Организации
-        li.navbar__item.dropdown(data-dropdown)
-          button#navbar-more.navbar__dropdown-label(type='button' aria-controls='navbar-more-menu' aria-expanded='false' data-dropdown-toggle)
+        li.main-menu__item.dropdown(data-dropdown)
+          button#navbar-more.main-menu__dropdown-label(type='button' aria-controls='navbar-more-menu' aria-expanded='false' data-dropdown-toggle)
             +icon('arrow-up-circle', 'd-md-none')
             +icon('arrow-right-circle', 'd-none d-md-block')
             | Еще

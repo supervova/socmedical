@@ -4,27 +4,27 @@
 // https://codepen.io/keithpickering/pen/PeBpwG
 // https://caniuse.com/#search=details
 
-// Plus (14×14 / 10×10)
-$details-marker-closed: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%3E%3Cpolygon%20fill-rule%3D%22evenodd%22%20points%3D%228%202%208%206%2012%206%2012%208%208%208%208%2012%206%2012%206%208%202%208%202%206%206%206%206%202%22%2F%3E%3C%2Fsvg%3E%0A');
-// Minus
-$details-marker-open: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%3E%3Crect%20width%3D%2210%22%20height%3D%222%22%20x%3D%222%22%20y%3D%226%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E%0A');
+// The caret icon (chevron down) most clearly indicated to users that it would
+// open a collapsible in place
+// https://www.nngroup.com/articles/accordion-icons/
+// https://material.io/archive/guidelines/components/expansion-panels.html
 
-$details-animation-speed: $duration-md;
+$details-animation-speed: var(--motion-duration-md);
 
 // PARENT
 
 .details {
-  background-color: $color-bg-alt;
-  border-bottom: 1px solid $color-ink-border;
+  background-color: $color-background-alt;
+  border-bottom: 1px solid var(--color-border-dark);
   overflow: hidden;
-  transition: height $details-animation-speed $easing;
+  transition: height $details-animation-speed var(--motion-easing-base);
 }
 
 .details + :not(.details) {
-  margin-top: $size-line;
+  margin-top: $size-space-line;
 
   @include media-breakpoint-up(md) {
-    margin-top: $size-line * 2;
+    margin-top: $size-space-line * 2;
   }
 }
 
@@ -38,15 +38,15 @@ $details-animation-speed: $duration-md;
   font-weight: bold;
   padding:
     2.3rem
-    $size-2
-    $size-3
-    $size-5;
+    $size-space-2
+    $size-space-3
+    $size-space-5;
   position: relative;
-  transition: color $details-animation-speed $easing;
+  transition: color $details-animation-speed var(--motion-easing-base);
 
   .details[open] & {
-    color: $color-primary-text;
-    // margin-bottom: $size-line;
+    color: var(--color-ink-primary-text);
+    // margin-bottom: $size-space-line;
   }
 
   &:focus {
@@ -62,20 +62,20 @@ $details-animation-speed: $duration-md;
 // MARKERS
 .details__summary::before {
   background-color: transparent;
-  background-image: $details-marker-closed;
+  background-image: var(--asset-data-image-chevron-down);
   background-position: 0 0;
   background-repeat: no-repeat;
   content: '';
   opacity: .54;
   position: absolute;
   top: 2.8rem;
-  left: $size-2;
+  left: $size-space-2;
   width: 1.4rem;
   height: 1.4rem;
 }
 
 [open] > .details__summary::before {
-  background-image: $details-marker-open;
+  transform: scaleY(-1);
 }
 
 // DETAILS
@@ -84,14 +84,14 @@ $details-animation-speed: $duration-md;
   margin-top: -3.1rem;
   margin-bottom: -.1rem;
   padding-top: 0;
-  padding-right: $size-2;
+  padding-right: $size-space-2;
   padding-bottom: 0;
-  padding-left: $size-5;
+  padding-left: $size-space-5;
 }
 
 .details__summary,
 .details__content {
   @include media-breakpoint-up(md) {
-    padding-right: $size-line;
+    padding-right: $size-space-line;
   }
 }

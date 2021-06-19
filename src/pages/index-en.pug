@@ -37,20 +37,20 @@ block content
         a.btn.is-primary(href='javascript:void(0)', onclick='quickreg()')
           span.d-md-none Зарегистрироваться
           span.d-none.d-md-inline Позаботьтесь о своём здоровье
-          +icon('chevron-right', 'is-chevron')
+          +icon('chevron-right', 'is-right')
 
         a.btn.is-outline(href='javascript:void(0)', onclick='quickreg()')
           | Вы доктор? Вам сюда
-          +icon('chevron-right', 'is-chevron')
+          +icon('chevron-right', 'is-right')
 
     //- POPULAR
     section.section
-      .container
+      .qwt-container
         header.section__header
           button.section__eyebrow.is-action(type='button', data-bs-toggle='modal', data-bs-target='#modal') Самара
           h2.section__title Популярное
-        .row.is-sm-y-scrolling.pt-2.pb-1
-          .col-md-4.col-mdl-3
+        .qwt-row.is-sm-y-scrolling.pt-2.pb-1
+          .qwt-col-md-4.qwt-col-lg-3
             .card.has-directory-links
               figure.icon-badge
                 +icon('person')
@@ -63,7 +63,7 @@ block content
                 +directory-link('Дерматолог', '163')
               +link-go
 
-          .d-md-none.d-mdl-block.col-mdl-3
+          .d-md-none.d-lg-block.qwt-col-lg-3
             .card.has-directory-links
               figure.icon-badge
                 +icon('building')
@@ -76,7 +76,7 @@ block content
                 +directory-link('Роддом', '7')
               +link-go
 
-          .col-md-4.col-mdl-3
+          .qwt-col-md-4.qwt-col-lg-3
             .card.has-directory-links
               figure.icon-badge
                 +icon('case')
@@ -89,7 +89,7 @@ block content
                 +directory-link('Ринопластика', '13')
               +link-go
 
-          .col-md-4.col-mdl-3
+          .qwt-col-md-4.qwt-col-lg-3
             .card.has-directory-links
               figure.icon-badge
                 +icon('activity')
@@ -106,13 +106,13 @@ block content
 
     //- STORE
     section.section
-      .container
+      .qwt-container
         header.section__header
           p.section__eyebrow фармацевтика и медицинские изделия
           h2.section__title Лекарства, БАДы и медицинские товары
 
-        .row.is-sm-y-scrolling.pt-1.pb-1
-          .col-md-4.col-mdl-3.col-lg-2
+        .qwt-row.is-sm-y-scrolling.pt-1.pb-1
+          .qwt-col-md-4.qwt-col-lg-3.qwt-col-xl-2
             +product-tile(
               '001',
               'Витатека Рыбий жир, капсулы 100 шт.',
@@ -120,7 +120,7 @@ block content
                72, 89
             )
 
-          .col-md-4.col-mdl-3.col-lg-2
+          .qwt-col-md-4.qwt-col-lg-3.qwt-col-xl-2
             +product-tile(
               '002',
               'Balance Group Life 4999-011 Спирулина таблетки, 100 г',
@@ -128,7 +128,7 @@ block content
                621, 800
             )
 
-          .col-md-4.col-mdl-3.col-lg-2
+          .qwt-col-md-4.qwt-col-lg-3.qwt-col-xl-2
             +product-tile(
               '003',
               'Детримакс Бэби 30 мл',
@@ -136,7 +136,7 @@ block content
                360
             )
 
-          .col-md-4.d-md-none.d-mdl-block.col-mdl-3.col-lg-2
+          .qwt-col-md-4.d-md-none.d-lg-block.qwt-col-lg-3.qwt-col-xl-2
             +product-tile(
               '004',
               'Магний B6 (Magnesium B6), 30 таб. по 650 мг. Для нервной системы, при стрессах и нагрузке',
@@ -144,7 +144,7 @@ block content
                295, 370
             )
 
-          .col-md-4.d-md-none.d-lg-block.col-lg-2
+          .qwt-col-md-4.d-md-none.d-xl-block.qwt-col-xl-2
             +product-tile(
               '005',
               'Омега 3 1000 мг (90 капсул) / Рыбий жир / Omega 3',
@@ -152,7 +152,7 @@ block content
                460, '1 057'
             )
 
-          .col-md-4.d-md-none.d-lg-block.col-lg-2
+          .qwt-col-md-4.d-md-none.d-xl-block.qwt-col-xl-2
             +product-tile(
               '006',
               'РЕГУЛЯТОР АППЕТИТА - LIPROMIX ДИЕТА, средство для похудения. Способствует снижению аппетита, потере веса и активации обмена веществ. Биотин + витаминный комплекс',
@@ -166,14 +166,14 @@ block content
 
     hr.section-divider
 
-    //- FEED
-    section.section
-      .container
+    //- COLLECTION
+    section.section.collection
+      .qwt-container
         header.section__header
           p.section__eyebrow Лента новостей
           h2.section__title Врачи и пациенты о главных событиях
 
-        .feed
+        .collection__items
           +teaser(
             'Fo5csvdG',
             'Прививать иностранцев в России пока не планируют',
@@ -229,14 +229,14 @@ block content
 
     //- FEATURES
     section.section
-      .container
+      .qwt-container
         header.section__header
           p.section__eyebrow знания и профилактика
           h2.section__title Будьте здоровы!
 
-          .row.is-comfort.pt-1.pb-1
+          .qwt-row.is-comfort.pt-1.pb-1
 
-            .col-md-6.col-mdl-4
+            .qwt-col-md-6.qwt-col-lg-4
               .featurette
                 figure.icon-badge
                   +icon('ambulance')
@@ -247,7 +247,7 @@ block content
                   | Подробнее
                   +icon('chevron-right')
 
-            .col-md-6.col-mdl-4
+            .qwt-col-md-6.qwt-col-lg-4
               .featurette.mb-0
                 figure.icon-badge
                   +icon('heart')
@@ -258,7 +258,7 @@ block content
                   | Подробнее
                   +icon('chevron-right')
 
-            .d-none.d-mdl-block.col-mdl-4
+            .d-none.d-lg-block.qwt-col-lg-4
               .featurette
                 figure.icon-badge
                   +icon('book')
@@ -270,29 +270,29 @@ block content
                   +icon('chevron-right')
 
     //- KPI
-    .container.pb-1
+    .qwt-container.pb-1
       .card
-        .row
-          .kpi.d-none.d-mdl-block.col-mdl-4.col-lg-3
+        .qwt-row
+          .kpi.d-none.d-lg-block.qwt-col-lg-4.qwt-col-xl-3
             span.kpi__value 2 107 786
             span.kpi__caption отзывов
-          .kpi.col-md-6.col-mdl-4.col-lg-3
+          .kpi.qwt-col-md-6.qwt-col-lg-4.qwt-col-xl-3
             span.kpi__value 5 459 013
             span.kpi__caption записей на прием
-          .kpi.d-none.d-md-block.col-md-6.col-mdl-4.col-lg-3
+          .kpi.d-none.d-md-block.qwt-col-md-6.qwt-col-lg-4.qwt-col-xl-3
             span.kpi__value 725 177
             span.kpi__caption врачей
-          .kpi.d-none.d-lg-block.col-lg-3
+          .kpi.d-none.d-xl-block.qwt-col-xl-3
             span.kpi__value 17 939 712
             span.kpi__caption посетителей в мес.
 
     //- CTA
-    .container
+    .qwt-container
       .cta
         .cta__copy
           h2.cta__title То, что доктор прописал
           a.btn.is-outline.is-inverse(href='javascript:void(0)', onclick='quickreg()')
             | Зарегистрироваться
-            +icon('chevron-right', 'is-chevron')
+            +icon('chevron-right', 'is-right')
         img.cta__img(src=`${site.baseUrl}images/socmedical/components/cta/doctor.png`, alt="Доктор скоро вас примет")
 

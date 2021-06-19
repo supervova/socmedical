@@ -1,17 +1,17 @@
 .blockquote {
-  font-family: $font-family-accent;
+  font-family: var(--font-family-title);
   font-size: var(--font-size-big);
   font-weight: 500;
   letter-spacing: -.05rem;
-  line-height: var(--line-height-big);
+  line-height: var(--font-line-height-big);
   position: relative;
 
   &::before {
-    color: $color-ink-2ry;
+    color: var(--color-ink-2ry);
     content: '\00ab';
-    font-size: var(--font-size-h2);
+    font-size: var(--font-size-subhead-h2);
     position: absolute;
     top: -2.2rem;
-    left: -$size-3;
+    left: -$size-space-3;
   }
 }

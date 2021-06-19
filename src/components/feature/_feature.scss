@@ -1,29 +1,29 @@
 .feature {
   text-align: center;
-  padding-bottom: $size-line * 2 + $size-1;
+  padding-bottom: $size-space-line * 2 + $size-space-1;
 }
 
 .feature__icon {
-  background: $color-primary;
+  background: $color-brand-primary-base;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: auto;
   margin-left: auto;
-  width: $size-8;
-  height: $size-8;
+  width: $size-space-8;
+  height: $size-space-8;
 
   > .icon {
-    fill: $color-ink-accent-normal;
+    fill: var(--color-ink-primary-accent);
   }
 }
 
 .feature__title {
   text-transform: none;
-  margin-bottom: -$size-line;
+  margin-bottom: -$size-space-line;
 }
 
 .feature__copy {
-  color: $color-ink-2ry;
+  color: var(--color-ink-2ry);
 }

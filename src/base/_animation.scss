@@ -4,7 +4,7 @@
 .ani-fade-leave,
 .ani-slide-enter,
 .ani-slide-leave {
-  transition: all $duration;
+  transition: all var(--motion-duration-base);
 }
 
 // ? .ani-fade-enter-active

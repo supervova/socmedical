@@ -1,0 +1,79 @@
+/* stylelint-disable selector-max-id, selector-no-qualifying-type */
+
+// Base and header
+
+.article__comments {
+  padding-top: 2.2rem + $size-space-line;
+}
+
+.title-comments {
+  display: inline-block;
+  font-size: var(--font-size-subhead-h2);
+  font-weight: normal;
+  line-height: var(--font-line-height-subhead-h2);
+  margin-right: $size-space-2;
+}
+
+.title-comments + .btn {
+  color: var(--color-ink-primary-text);
+  margin-bottom: 0 !important;
+  padding-right: 0;
+  padding-left: 0;
+
+  &:hover {
+    background-color: transparent;
+    border: 0;
+    color: var(--color-ink-base);
+  }
+}
+
+// Form
+#replyto0 textarea {
+  @extend %form-control;
+
+  margin-top: $size-space-line + .1rem;
+  margin-bottom: .7rem;
+  max-width: var(--size-width-readable);
+}
+
+#replyto0 label {
+  color: var(--color-ink-2ry);
+}
+
+#replyto0 input[type='checkbox'] {
+  margin-right: $size-space-1;
+}
+
+// Button Save comment
+#savecomment {
+  background-color: var(--color-background-alt);
+  color: var(--color-ink-primary-text);
+
+  margin-top: 2.3rem;
+}
+
+// Comment
+.comment .media-text {
+  @include media-breakpoint-up(sm) {
+    padding-left: 45px;
+  }
+}
+
+.comment-reply .reply {
+  color: var(--color-ink-primary-text);
+
+  img { display: none; }
+}
+
+.footer-comment {
+  @include media-breakpoint-up(sm) {
+    padding-left: 36px;
+  }
+}
+
+// Comment dropdown menu
+
+.comment .dropdown-toggle {
+  --icon: var(--asset-data-image-more);
+  border-radius: var(--shape-border-radius-base);
+}

@@ -1,43 +1,43 @@
 .kpi {
   position: relative;
-  padding-top: $size-line;
+  padding-top: $size-space-line;
 
   @include media-breakpoint-up(md) {
-    padding-bottom: $size-line;
+    padding-bottom: $size-space-line;
   }
 }
 
 .kpi + .kpi {
   @include media-breakpoint-up(md) {
     &::before {
-      border-left: .1rem solid $color-ink-border;
+      border-left: .1rem solid var(--color-border-dark);
       content: '';
       position: absolute;
-      top: $size-line;
+      top: $size-space-line;
       left: 0;
       width: 0;
-      height: calc(100% - #{$size-line * 2});
+      height: calc(100% - #{$size-space-line * 2});
     }
   }
 }
 
 .kpi__value {
-  color: $color-ink-highlight;
+  color: var(--color-ink-primary-fill);
   display: block;
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-title);
   font-weight: 500;
   letter-spacing: -.2rem;
-  line-height: var(--line-height-h1);
+  line-height: var(--font-line-height-title);
   text-align: center;
-  padding-top: var(--padding-top-h1);
-  padding-bottom: var(--padding-bottom-h1);
+  padding-top: var(--space-padding-top-title);
+  padding-bottom: var(--space-padding-bottom-title);
 }
 
 .kpi__caption {
-  color: $color-ink-2ry;
+  color: var(--color-ink-2ry);
   display: block;
   text-align: center;
-  margin-top: -$size-line;
-  padding-top: var(--padding-top-base);
-  padding-bottom: var(--padding-bottom-base);
+  margin-top: -$size-space-line;
+  padding-top: var(--space-padding-top-base);
+  padding-bottom: var(--space-padding-bottom-base);
 }

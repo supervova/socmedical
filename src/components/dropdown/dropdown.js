@@ -70,3 +70,14 @@ window.addEventListener('keydown', (event) => {
       });
   }
 });
+
+/**
+ * Remove nbsp; from edit menu item
+ */
+(() => {
+  const editBtn = document.getElementById('dropdown-menu-edit');
+
+  if (editBtn) {
+    editBtn.innerHTML.replace(/&nbsp;/gi, '');
+  }
+})();

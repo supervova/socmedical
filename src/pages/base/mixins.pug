@@ -10,16 +10,16 @@ mixin button(label, icon=false, classes=false, type='button')
       +icon(icon)
     span.label= label
 
-//- Feed snippet
+//- COLLECTION snippet
 mixin teaser(id, title, summary, img=false, link='#')
-  article.feed__item(id=id, itemscope, itemtype='http://schema.org/Article')
-    a.feed__block-link(href= link)
-      figure.feed__img
+  article.collection__item(id=id, itemscope, itemtype='http://schema.org/Article')
+    a.collection__wrapper-link(href= link)
+      figure.collection__item-img
         if img
           img(src=`${site.baseUrl}images/socmedical/placeholders/thumbnail-${img}.jpg` alt='')
-      .feed__copy
-        h3.feed__title(itemprop='headline')= title
-        p.feed__summary(itemprop='description')= summary
+      .collection__item-copy
+        h3.collection__item-title(itemprop='headline')= title
+        p.collection__item-summary(itemprop='description')= summary
 //-
   +teaser(
     'id',
@@ -57,7 +57,7 @@ mixin product-tile(img, title, rating, count, price, priceOld, link='#')
       span.product-tile__actual-price= price + '₽'
       if priceOld
         del.product-tile__old-price= priceOld + '₽'
-      +icon('chevron-right', 'is-chevron')
+      +icon('chevron-right', 'is-right')
 
 //- LANGUAGES
 

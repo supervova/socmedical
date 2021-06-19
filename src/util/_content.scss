@@ -39,7 +39,7 @@
 }
 
 .is-note {
-  color: $color-ink-2ry;
+  color: var(--color-ink-2ry);
 }
 
 .nobr {
@@ -78,7 +78,7 @@
 .has-middle-dot,
 %has-middle-dot {
   &::before {
-    color: $color-ink-icon;
+    color: var(--color-ink-icon);
     content: ' \00b7';
   }
 }
@@ -86,19 +86,19 @@
 .has-focus-outline,
 %has-focus-outline {
   :focus {
-    box-shadow: $box-shadow-focus-outline;
+    box-shadow: var(--layer-box-shadow-focus-outline);
     outline: 0;
   }
 }
 
 .chevron-down,
 %chevron-down {
-  background-image: $chevron-down;
+  background-image: var(--asset-data-image-chevron-down);
 }
 
 .chevron-right,
 %chevron-right {
-  background-image: $chevron-right;
+  background-image: var(--asset-data-image-chevron-right);
 }
 
 // -----------------------------------------------------------------------------
@@ -117,7 +117,7 @@
 // Using
 // This is <span class="hp-space"> </span><span class="hp-quote">„</span>Magic
 
-.main__header > h1 {
+.article__header > h1 {
   // Right margin for quote predecessor to compensate negative one in line
   .hp-space {
     margin-right: 1.2rem;

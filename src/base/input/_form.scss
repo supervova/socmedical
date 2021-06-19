@@ -16,49 +16,50 @@
 // Input container
 .form__item {
   position: relative;
-  padding-bottom: var(--padding-bottom-form-group);
+  padding-bottom: var(--space-padding-bottom-form-group);
 }
 
 // Input, text area, select
-.form__control {
+.form__control,
+%form-control {
   appearance: none;
   background-clip: padding-box;
-  background-color: $color-bg-normal;
+  background-color: var(--color-background-base);
   background-image: none;
-  border-radius: $border-radius;
+  border-radius: var(--shape-border-radius-base);
   border: 0;
   box-shadow:
-    $box-shadow-contour,
-    $box-shadow-z2;
-  color: $color-ink-2ry;
+    var(--layer-box-shadow-contour),
+    var(--layer-box-shadow-z2);
+  color: var(--color-ink-2ry);
   display: block;
   margin: 0;
-  padding-top: var(--padding-y-input);
-  padding-right: var(--padding-right-input);
-  padding-bottom: var(--padding-y-input);
-  padding-left: var(--padding-left-input);
+  padding-top: var(--space-padding-y-input);
+  padding-right: var(--space-padding-right-input);
+  padding-bottom: var(--space-padding-y-input);
+  padding-left: var(--space-padding-left-input);
   overflow: visible;
-  transition: border-color $easing $duration-xs;
+  transition: border-color var(--motion-easing-base) var(--motion-duration-xs);
   width: 100%;
 
   &:focus {
-    color: $color-ink-normal;
-    border-color: $color-primary;
+    color: var(--color-ink-base);
+    border-color: $color-brand-primary-base;
     box-shadow:
-      $box-shadow-focus-outline,
-      $box-shadow-z2;
+      var(--layer-box-shadow-focus-outline),
+      var(--layer-box-shadow-z2);
     outline: 0;
   }
 
   // Placeholder
   &::placeholder {
-    color: $color-ink-3ry;
+    color: var(--color-ink-3ry);
     // Override Firefox's unusual default opacity
     opacity: 1;
   }
 }
 
 .form__actions {
-  padding-bottom: var(--padding-bottom-form-actions);
+  padding-bottom: var(--space-padding-bottom-form-actions);
 }
 

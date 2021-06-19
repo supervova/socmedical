@@ -57,7 +57,7 @@
       () => {
         const currentScrollPos = window.pageYOffset;
         if (currentScrollPos > prevScrollPos) {
-          header.style.setProperty('--top-position', '-130px');
+          header.style.setProperty('--top-position', '-138px');
         } else {
           header.style.setProperty('--top-position', '0');
         }

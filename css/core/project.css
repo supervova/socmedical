@@ -1,0 +1,306 @@
+.header-h1 h3 {
+  background: #e4ebf3;
+  color: #2a323b;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  background-color: #e4ebf3;
+  border-radius: 5px;
+  font-weight:500;
+}
+.nw {
+  font-weight:normal !important;
+}
+.blackback{
+color: #e4ebf3;
+font-size: 12pt;
+}
+.stylehf,
+.toTop {
+background:#e4ebf3;
+overflow:hidden;
+color:#2a323b;
+}
+.alert-ad {
+  color: #2a323b;
+  background-color: #e4ebf3;
+  border-color: #2a323b;
+}
+.stylehf a{color:#2a323b;word-break: break-word;-webkit-transition:color 0.1s ease-in, background 0.1s ease-in;-moz-transition:color 0.1s ease-in, background 0.1s ease-in;-ms-transition:color 0.1s ease-in, background 0.1s ease-in;-o-transition:color 0.1s ease-in, background 0.1s ease-in;transition:color 0.1s ease-in, background 0.1s ease-in;}
+.stylehf a:hover,
+.stylehf a:focus{color:#6a7e95;text-decoration:none;outline:0;}
+.stylehf a:before,
+.stylehf a:after{word-break: break-word;-webkit-transition:color 0.1s ease-in, background 0.1s ease-in;-moz-transition:color 0.1s ease-in, background 0.1s ease-in;-ms-transition:color 0.1s ease-in, background 0.1s ease-in;-o-transition:color 0.1s ease-in, background 0.1s ease-in;transition:color 0.1s ease-in, background 0.1s ease-in;}
+.btn-primary {
+    color: #fff;
+    background-color: #8999ab;
+    border-color: #6a7e95;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #fff;
+  background-color: #2a323b;
+  border-color: #161a1f;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #2a323b;
+  border-color: #204d74;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #2a323b;
+  border-color: #204d74;
+}
+.glyphicons,
+.glyphicon {
+  color: #6a7e95;
+  vertical-align:middle;
+}
+.menuicon {
+  color:#6a7e95;
+  fill:#6a7e95;
+  width:10pt;
+  height:10pt;
+}
+.badge {
+  color: #2a323b;
+  background-color: #e4ebf3;
+}
+.nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  background-color: #e4ebf3;
+  color: #2a323b;
+  border-color: #ddd #ddd #ddd;
+}
+.nav-tabs > li > a:hover {
+  background-color: #2a323b;
+  color: #e4ebf3;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #2a323b;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.label-info {
+    background-color: #e4ebf3 !important;
+    color: #2a323b !important;
+}
+.bootstrap-tagsinput .tag {
+    margin-right: 2px !important;
+    color: #2a323b !important;
+    font-weight: normal !important;
+    font-size: 100% !important;
+}
+.trnsltphrss {
+  display:none;
+}
+
+#p_prldr{
+position: fixed;
+left: 0;
+top: 0;
+right:0;
+bottom:0;
+background: #fff;
+z-index: 230000;}
+ 
+.contpre small{font-size:20px;}
+ 
+.contpre{
+width: 250px;
+height: 100px;
+position: absolute;
+left: 50%;top: 48%;
+margin-left:-125px;
+margin-top:-75px;
+color:#2a323b;
+font-size:20px;
+letter-spacing:-2px;
+text-align:center;
+line-height:35px;}
+.sidebaricon {
+  background: #e4ebf3 !important;
+  color: #6a7e95 !important;
+  margin:-2px !important;
+  padding:3px !important;
+  border-radius:50% !important;
+}
+.postspost a{color:#3f4b59;}
+
+.preview-blick__btn {
+	text-align:center;
+	max-width:270px;
+	margin: 0 auto;
+}
+
+.blickbtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding-top: 2px;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    font-size: 14px;
+    font-weight: 600px;
+    color: #6b7f96;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    background: #e4ebf3;
+    background: -webkit-gradient(linear, left top, right top, color-stop(25%, #e4ebf3), to(#E4EBF3));
+    background: linear-gradient(to right, #e4ebf3 25%, #E4EBF3);
+    -webkit-box-shadow: 0px 9px 16px 0px rgba(42, 50, 59, 0.25);
+    box-shadow: 0px 9px 16px 0px rgba(42, 50, 59, 0.25);
+    -webkit-transition: ease 0.3s;
+    transition: ease 0.3s;
+}
+
+.blickbtn:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #e4ebf3;
+    opacity: 0;
+    z-index: 1;
+    -webkit-transition: ease 0.3s;
+    transition: ease 0.3s;
+}
+
+.blickbtn:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 300px;
+    margin-left: 60px;
+    background: #fff;
+	opacity: 0.6;
+    position: absolute;
+    left: -40px;
+    top: -150px;
+    z-index: 1;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    -webkit-animation-name: slideme;
+    animation-name: slideme;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-delay: 0.05s;
+    animation-delay: 0.05s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes slideme { 0% { left: -30px; margin-left: 0px; }
+  30% { left: 110%; margin-left: 80px; }
+  100% { left: 110%; margin-left: 80px; }
+}
+
+@font-face {
+    font-family: 'DINPro';
+	src: url('DINPro.eot');
+	src:
+	     url('../fonts/DINPro.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/DINPro.woff') format('woff'),
+	     url('../fonts/DINPro.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DINPro-Medium';
+	src: url('DINPro-Medium.eot');
+	src:
+	     url('../fonts/DINPro-Medium.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/DINPro-Medium.woff') format('woff'),
+	     url('../fonts/DINPro-Medium.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DINPro-Black';
+	src: url('DINPro-Black.eot');
+	src:
+	     url('../fonts/DINPro-Black.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/DINPro-Black.woff') format('woff'),
+	     url('../fonts/DINPro-Black.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DINPro-Bold';
+	src: url('DINPro-Bold.eot');
+	src:
+	     url('../fonts/DINPro-Bold.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/DINPro-Bold.woff') format('woff'),
+	     url('../fonts/DINPro-Bold.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DINPro-CondensedRegular';
+	src: url('DINPro-CondensedRegular.eot');
+	src:
+	     url('../fonts/DINPro-CondensedRegular.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/DINPro-CondensedRegular.woff') format('woff'),
+	     url('../fonts/DINPro-CondensedRegular.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DINPro-Light';
+	src: url('DINPro-Light.eot');
+	src:
+	     url('../fonts/DINPro-Light.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/DINPro-Light.woff') format('woff'),
+	     url('../fonts/DINPro-Light.ttf') format('truetype');
+    font-style: normal;
+}
+body{font-family: 'DINPro' !important;font-weight:200 !important;font-size:14px !important;}
+p{line-height:20px;margin-top:15px;margin-bottom:5px;font-size:15px;font-weight: 300;}
+h1,h2,h3,h4,.communitydescr,.lightstrong {
+	font-family: 'DINPro-Medium' !important;
+	font-weight: normal !important;
+	font-style: normal !important;
+}
+b {
+	font-family: 'DINPro-Bold' !important;
+}
+.nav {
+	font-family: 'DINPro' !important;
+	font-weight: normal !important;
+	font-style: normal !important;
+	font-size: 14px !important;
+}
+.fhead {
+	font-family: 'DINPro-Medium' !important;
+	font-weight: normal !important;
+	font-style: normal !important;
+	font-size: 14px !important;
+}
+footer{font-family: 'DINPro' !important;font-weight:300;font-size:17px;}

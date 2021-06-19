@@ -1,7 +1,7 @@
 // stylelint-disable selector-no-qualifying-type
 
-$table-background:                      $color-bg-normal;
-$table-accent-bg:                       $color-bg-alt;
+$table-background:                      var(--color-background-base);
+$table-accent-bg:                       $color-background-alt;
 $table-hover-bg:                        hsla(0, 0%, 0%, .03);
 
 // -----------------------------------------------------------------------------
@@ -13,8 +13,8 @@ table {
   background-color: $table-background;
   font-feature-settings: 'lnum' 1, 'tnum' 1;
   font-variant-numeric: lining-nums tabular-nums;
-  margin-top: var(--margin-top-table);
-  margin-bottom: var(--margin-top-bottom);
+  margin-top: var(--space-margin-top-table);
+  margin-bottom: var(--space-margin-bottom-table);
   table-layout: fixed;
   width: 100%;
   max-width: 100%;
@@ -26,26 +26,26 @@ caption {
   font-weight: 500;
   text-align: left;
   padding-top: 0;
-  padding-bottom: $size-1;
-  padding-left: calc(var(--padding-x-cell) / 2);
+  padding-bottom: $size-space-1;
+  padding-left: calc(var(--space-padding-x-cell) / 2);
 }
 
 th,
 td {
-  border-top: $border-width solid $color-ink-border;
+  border-top: var(--size-border-width) solid var(--color-border-dark);
   text-align: left;
-  padding-top: calc(var(--padding-y-cell) - #{$border-width});
-  padding-right: var(--padding-x-cell);
-  padding-bottom: var(--padding-y-cell);
-  padding-left: var(--padding-x-cell);
+  padding-top: calc(var(--space-padding-y-cell) - var(--size-border-width));
+  padding-right: var(--space-padding-x-cell);
+  padding-bottom: var(--space-padding-y-cell);
+  padding-left: var(--space-padding-x-cell);
   vertical-align: top;
 
   &:first-child {
-    padding-left: calc(var(--padding-x-cell) / 2);
+    padding-left: calc(var(--space-padding-x-cell) / 2);
   }
 
   &:last-child {
-    padding-right: calc(var(--padding-x-cell) / 2);
+    padding-right: calc(var(--space-padding-x-cell) / 2);
   }
 
   // Remove margin from the last-child
@@ -53,9 +53,9 @@ td {
 }
 
 thead th {
-  border-bottom: (2 * $border-width) solid $color-ink-border;
+  border-bottom: calc(var(--size-border-width) * 2) solid var(--color-border-dark);
   font-weight: 500;
-  padding-bottom: calc(var(--padding-y-cell) - #{$border-width * 2});
+  padding-bottom: calc(var(--space-padding-y-cell) - var(--size-border-width) * 2);
   vertical-align: bottom;
 
   &[colspan] {
@@ -64,10 +64,10 @@ thead th {
 }
 
 th[scope='row'] {
-  border-right: $border-width solid $color-ink-border;
+  border-right: var(--size-border-width) solid var(--color-border-dark);
 
   tbody & {
-    background: $color-bg-normal;
+    background: var(--color-background-base);
   }
 }
 
@@ -91,7 +91,7 @@ th[scope='row'] {
 
 tbody tr:hover {
   background-color: $table-hover-bg;
-  transition: background-color $duration-sm;
+  transition: background-color var(--motion-duration-sm);
 }
 
 // #endregion
@@ -156,13 +156,13 @@ tbody {
   background-repeat: no-repeat;
   background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
 
-  border: .1rem solid $color-ink-border;
-  margin-top: var(--margin-top-table);
-  margin-bottom: var(--margin-top-bottom);
+  border: .1rem solid var(--color-border-dark);
+  margin-top: var(--space-margin-top-table);
+  margin-bottom: var(--space-margin-bottom-table);
   overflow: auto;
 
   &:focus {
-    box-shadow: $box-shadow-focus-outline;
+    box-shadow: var(--layer-box-shadow-focus-outline);
   }
 }
 

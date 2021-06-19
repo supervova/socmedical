@@ -3,28 +3,28 @@
 // -----------------------------------------------------------------------------
 // #region
 .hero {
-  background-color: $color-bg-alt;
+  background-color: $color-background-alt;
   position: relative;
-  padding-top: $size-line * 5;
+  padding-top: $size-space-line * 5;
   padding-left: 2rem;
   padding-right: 2rem;
 
   @include media-breakpoint-up(md) {
     --hero-container-max-width: 70.4rem;
     display: grid;
-    grid-gap: $size-2;
+    grid-gap: $size-space-2;
     grid-template-columns:
       calc(calc(100% - var(--hero-container-max-width)) / 2)
       repeat(12, 1fr)
       calc(calc(100% - var(--hero-container-max-width)) / 2);
 
-    padding-top: $size-line * 7;
+    padding-top: $size-space-line * 7;
     padding-left: 0;
     padding-right: 0;
     min-height: 81.6rem;
   }
 
-  @include media-breakpoint-up(mdl) {
+  @include media-breakpoint-up(lg) {
     --hero-container-max-width: 99.2rem;
     background-image:
       radial-gradient(
@@ -36,21 +36,21 @@
       ),
       radial-gradient(
         43.7rem at 43.7rem 43.7rem,
-        darken($color-bg-alt, 5%),
-        rgba(darken($color-bg-alt, 4%), 0)
+        darken($color-background-alt, 5%),
+        rgba(darken($color-background-alt, 4%), 0)
       );
     background-position:
       calc(50% - 14.4rem) calc(100% - 21.6rem),
       calc(50% + 52.8rem) calc(100% - 21.6rem);
     background-repeat: no-repeat;
     background-size: 87.4rem;
-    box-shadow: inset 0 -.8rem 0 lighten($color-primary, 25%);
+    box-shadow: inset 0 -.8rem 0 lighten($color-brand-primary-base, 25%);
     overflow-x: hidden;
     padding-top: 0;
     min-height: 74.4rem;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     --hero-container-max-width: 133.4rem;
     min-height: 81.2rem;
   }
@@ -69,12 +69,12 @@
   --hero-oval: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22210%22%20height%3D%22168%22%20viewBox%3D%220%200%20210%20168%22%3E%3Cpath%20fill%3D%22%2347A875%22%20fill-rule%3D%22evenodd%22%20d%3D%22M168.007686%2C-0.00191651682%20C193.506695%2C19.1547706%20210%2C49.6512764%20210%2C84%20C210%2C118.348724%20193.506695%2C148.845229%20168.007686%2C168.001917%20L41.9923144%2C168.001917%20C16.4933051%2C148.845229%200%2C118.348724%200%2C84%20C0%2C49.6512764%2016.4933051%2C19.1547706%2041.9923144%2C-0.00191651682%20L168.007686%2C-0.00191651682%20Z%22%2F%3E%3C%2Fsvg%3E');
   --hero-corner: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22195%22%20height%3D%22167%22%20viewBox%3D%220%200%20195%20167%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%234CB37C%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%224%22%20d%3D%22M191.59214%2C164.162906%20C181.992091%2C164.222173%20172.483126%2C164.131056%20163.340374%2C164.131056%20L161.910356%2C164.13174%20C114.623377%2C164.175769%2057.9204604%2C166.23401%2029.2811704%2C137.59357%20C4.30748321%2C112.334349%203.02232974%2C65.3055466%203%2C22.0516137%20L3%2C19.074879%20C3.00340013%2C13.6296417%203.01838941%2C8.25413818%203%2C3%22%2F%3E%3C%2Fsvg%3E');
 
-  background-color: $color-primary;
-  border-radius: $border-radius-lg;
-  box-shadow: inset 0 0 0 2.5rem lighten($color-primary, 3%);
+  background-color: $color-brand-primary-base;
+  border-radius: var(--shape-border-radius-lg);
+  box-shadow: inset 0 0 0 2.5rem lighten($color-brand-primary-base, 3%);
   position: relative;
   margin-bottom: 0;
-  height: $size-line * 7;
+  height: $size-space-line * 7;
 
   &::after {
     background-image: var(--hero-asterisks);
@@ -82,7 +82,7 @@
     background-position: 0 0;
     content: '';
     position: absolute;
-    right: $size-4;
+    right: $size-space-4;
     top: 50%;
     transform: translateY(-50%);
     width: 8.2rem;
@@ -106,7 +106,7 @@
     grid-column: 6 / span 7;
   }
 
-  @include media-breakpoint-up(mdl) {
+  @include media-breakpoint-up(lg) {
     background-color: transparent;
     box-shadow: none;
     border-radius: 0;
@@ -132,12 +132,12 @@
   transform: translateX(-50%);
   z-index: 1;
 
-  @include media-breakpoint-up(mdl) {
+  @include media-breakpoint-up(lg) {
     background-image:
       var(--hero-asterisks),
       url('#{$base-url}images/socmedical/components/hero/bg-shapes-lg.svg');
     background-position:
-      right $size-4 top 24%,
+      right $size-space-4 top 24%,
       0 100%;
     background-repeat: no-repeat;
     background-size: auto, contain;
@@ -147,7 +147,7 @@
     bottom: auto;
     left: auto;
     object-fit: cover;
-    object-position: 0 calc(100% + #{$size-line * 3});
+    object-position: 0 calc(100% + #{$size-space-line * 3});
     transform: none;
     width: 54.3rem;
     height: auto;
@@ -167,8 +167,8 @@
     }
   }
 
-  @include media-breakpoint-up(lg) {
-    object-position: $size-line 100%;
+  @include media-breakpoint-up(xl) {
+    object-position: $size-space-line 100%;
   }
 }
 
@@ -176,7 +176,7 @@
   width: auto;
   max-width: none;
 
-  @include media-breakpoint-up(mdl) {
+  @include media-breakpoint-up(lg) {
     max-width: 100%;
   }
 }
@@ -191,38 +191,38 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: $size-line * 2;
+  padding-bottom: $size-space-line * 2;
 
   @include media-breakpoint-up(md) {
     align-items: flex-start;
     grid-column: 6 / span 8;
   }
 
-  @include media-breakpoint-up(mdl) {
+  @include media-breakpoint-up(lg) {
     grid-column: 5 / span 5;
     grid-row: 1 / 2;
     justify-content: center;
     padding-bottom: 0;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     grid-column: 6 / span 4;
   }
 }
 
 .hero__title {
-  color: $color-ink-highlight;
+  color: var(--color-ink-primary-text);
   font-size: var(--font-size-hero-title);
   font-weight: var(--font-weight-hero-title);
   letter-spacing: -.15rem;
-  line-height: var(--line-height-hero-title);
+  line-height: var(--font-line-height-hero-title);
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: -1rem;
   margin-right: -1rem;
-  padding-top: var(--padding-top-hero-title);
-  padding-bottom: var(--padding-bottom-hero-title);
+  padding-top: var(--space-padding-top-hero-title);
+  padding-bottom: var(--space-padding-bottom-hero-title);
 
   @include media-breakpoint-up(sm) {
     margin-left: 0;
@@ -230,27 +230,27 @@
   }
 
   @include media-breakpoint-up(md) {
-    margin-bottom: $size-1;
-    margin-right: -$size-line;
+    margin-bottom: $size-space-1;
+    margin-right: -$size-space-line;
     text-align: left;
   }
 }
 
 .hero__copy .is-checklist {
-  color: $color-ink-2ry;
-  margin-bottom: $size-2;
+  color: var(--color-ink-2ry);
+  margin-bottom: $size-space-2;
 }
 
 .hero__copy .btn.is-outline {
   --display: none;
 
-  @include media-breakpoint-up(mdl) {
+  @include media-breakpoint-up(lg) {
     --display: inline-flex;
 
-    margin-top: $size-1;
+    margin-top: $size-space-1;
 
     &:hover {
-      background-color: lighten($color-bg-alt, 4%);
+      background-color: lighten($color-background-alt, 4%);
     }
   }
 }

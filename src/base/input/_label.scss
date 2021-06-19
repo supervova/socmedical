@@ -13,9 +13,9 @@ label {
 }
 
 label {
-  padding-top: var(--padding-top-base);
-  padding-bottom: var(--padding-bottom-label);
-  transition: all $duration-lg $easing;
+  padding-top: var(--space-padding-top-base);
+  padding-bottom: var(--space-padding-bottom-label);
+  transition: all var(--motion-duration-lg) var(--motion-easing-base);
   z-index: 1;
 }
 
@@ -23,15 +23,20 @@ label {
 .form__label.is-icon {
   padding: 0;
   position: absolute;
-  top: $size-1;
-  left: $size-1;
+  top: $size-space-1;
+  left: $size-space-1;
   width: 2rem;
   height: 2rem;
+}
+
+.form__label.has-tip {
+  display: flex;
+  justify-content: space-between;
 }
 
 // Class set with JS
 .is-filled label {
   top: 0;
   font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
+  line-height: var(--font-line-height-small);
 }

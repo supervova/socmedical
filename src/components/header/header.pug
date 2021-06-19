@@ -11,7 +11,7 @@ form#search-drawer.search-drawer(action='/search' method='get')
 
 header#header.header
 
-  .container
+  .qwt-container
     a.d-md-none(href="/")
       img(src=`${site.baseUrl}images/socmedical/components/logo/logomark.svg`, width="40", height="40", alt="Фирменный знак SocMedical")
       span.sr-only SocMedical — первая страница
@@ -28,12 +28,12 @@ header#header.header
         a.header__btn-sign-up(href='javascript:void(0)', onclick='loginform()')
           span.d-md-none Регистрация
           span.d-none.d-md-inline Зарегистрироваться
-          +icon('chevron-right', 'is-chevron')
+          +icon('chevron-right', 'is-right')
       li
         a.header__btn-sign-in(href='javascript:void(0)', onclick='quickreg()')
           span.d-md-none Вход
           span.d-none.d-md-inline Войти
-          +icon('chevron-right', 'is-chevron')
+          +icon('chevron-right', 'is-right')
       li.header__btn-search-slot
         a.btn.is-outline.is-compact(href='/search' role='button' data-search-btn aria-haspopup='true' aria-label='Искать на сайте')
           +icon('search')

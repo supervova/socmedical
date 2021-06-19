@@ -10,18 +10,18 @@ class Details {
 
     // Setup initial positions
     for (let i = 0; i < this.details.length; i++) {
-      const detail  = this.details[i];
-      const toggle  = this.toggles[i];
+      const detail = this.details[i];
+      const toggle = this.toggles[i];
       const content = this.contents[i];
 
       // Set transition-duration to match JS setting
-      detail.style.transitionDuration = `${this.settings.speed}ms`;
+      detail.style.transitionDuration = '${this.settings.speed}ms';
 
       // Set initial height to transition from
       if (!detail.hasAttribute('open')) {
-        detail.style.height = `${toggle.clientHeight}px`;
+        detail.style.height = '${toggle.clientHeight}px';
       } else {
-        detail.style.height = `${toggle.clientHeight + content.clientHeight}px`;
+        detail.style.height = '${toggle.clientHeight + content.clientHeight}px';
       }
     }
 
@@ -71,7 +71,7 @@ class Details {
     detail.removeAttribute('open');
 
     // Set the correct height and let CSS transition it
-    detail.style.height = `${toggleHeight + contentHeight}px`;
+    detail.style.height = '${toggleHeight + contentHeight}px';
 
     // Finally set the open attr
     detail.setAttribute('open', true);
@@ -88,11 +88,13 @@ class Details {
     const toggleHeight = toggle.clientHeight;
 
     // Set the height so only the toggle is visible
-    detail.style.height = `${toggleHeight}px`;
+    detail.style.height = '${toggleHeight}px';
 
     setTimeout(() => {
       // Check if still closing
-      if (detail.classList.contains('is-closing')) { detail.removeAttribute('open'); }
+      if (detail.classList.contains('is-closing')) {
+        detail.removeAttribute('open');
+      }
       detail.classList.remove('is-closing');
     }, this.settings.speed);
   }

@@ -28,7 +28,7 @@ const root = {
 const paths = {
   css: {
     src: {
-      main: `${root.src}/style.scss`,
+      main: `${root.src}/socmedical.scss`,
     },
     watch: `${root.src}/**/*.scss`,
     tmp: `${root.src}/css`,
@@ -49,7 +49,7 @@ const paths = {
   img: {
     src: {
       components: [
-        `${root.src}/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
+        `${root.src}/**/*.+(jpg|jpeg|png|svg|gif|webp|ico)`,
         `!${root.src}/base/graphics/sprite/**/*`,
         `!${root.src}/img/**/*`,
       ],
@@ -108,7 +108,7 @@ const cssTasks = (
 ) =>
   src(source)
     .pipe(changed(destination))
-    .pipe(plumber())
+    // .pipe(plumber())
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
     .pipe(
       sass({
@@ -165,7 +165,7 @@ function css(done) {
     'main', // subtitle
     // uncssHTML; use array syntax for normal results
     [`${root.src}/pages/uncss/**/*.html`],
-    `${paths.css.dest}/socmedical`
+    paths.css.dest
   );
   done();
 }
@@ -358,7 +358,7 @@ const del = require('del');
 function cleanAssets() {
   return del([
     `${paths.css.dest}/**/*.css`,
-    `!${paths.css.dest}/**/bootstrap.css`,
+    `!${paths.css.dest}/core/*.css`,
     // `${root.dest}_includes/critical.css`,
     `${paths.js.dest}/**/*`,
     `${paths.img.dest}/**/*`,
@@ -373,13 +373,14 @@ function cleanAssets() {
  */
 // #region
 
-// const { reload } = browserSync;
+const { reload } = browserSync;
 
 function watchFiles() {
   watch(paths.css.watch, series(css));
   watch(paths.js.watch, series(scripts));
   watch(paths.img.watch).on('change', series(img));
   watch(paths.markup.watch, series(buildPug));
+  watch(`${paths.markup.dest}/**/*.html`).on('change', series(reload));
 }
 
 function serve(done) {

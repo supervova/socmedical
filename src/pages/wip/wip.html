@@ -20,7 +20,7 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap">
-    <link rel="stylesheet" href="/css/socmedical/style.css">
+    <link rel="stylesheet" href="/css/socmedical.css">
     <meta name="author" content="@qwertynetworks">
     <script type="application/ld+json">
       {
@@ -76,7 +76,7 @@
     </form>
     <div class="scrim" id="search-scrim"></div>
     <header class="header" id="header">
-      <div class="container"><a class="d-md-none" href="/"><img src="/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical"><span class="sr-only">SocMedical — первая страница</span></a>
+      <div class="qwt-container"><a class="d-md-none" href="/"><img src="/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical"><span class="sr-only">SocMedical — первая страница</span></a>
         <form class="header__search" id="header-search-form" action="/search" method="get">
           <div class="form__item">
             <input class="form__control" id="header-search-input" name="q" type="search" dir="auto" autocomplete="off" aria-label="Искать на сайте" placeholder="Поиск">
@@ -89,11 +89,11 @@
         </form>
         <ul class="header__buttons">
           <li><a class="header__btn-sign-up" href="javascript:void(0)" onclick="loginform()"><span class="d-md-none">Регистрация</span><span class="d-none d-md-inline">Зарегистрироваться</span>
-                  <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                  <svg class="icon is-right" aria-hidden="true" focusable="false">
                     <use href="/images/socmedical/base/graphics/sprite.svg#icon-chevron-right"></use>
                   </svg></a></li>
           <li><a class="header__btn-sign-in" href="javascript:void(0)" onclick="quickreg()"><span class="d-md-none">Вход</span><span class="d-none d-md-inline">Войти</span>
-                  <svg class="icon is-chevron" aria-hidden="true" focusable="false">
+                  <svg class="icon is-right" aria-hidden="true" focusable="false">
                     <use href="/images/socmedical/base/graphics/sprite.svg#icon-chevron-right"></use>
                   </svg></a></li>
           <li class="header__btn-search-slot"><a class="btn is-outline is-compact" href="/search" role="button" data-search-btn aria-haspopup="true" aria-label="Искать на сайте">
@@ -103,41 +103,41 @@
         </ul>
       </div>
     </header>
-    <div class="navbar-wrapper">
-      <div class="container">
-        <nav class="navbar"><a class="navbar__logo" href="/">
-            <figure><img class="navbar__logomark" src="/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical">
+    <div class="main-menu">
+      <div class="qwt-container">
+        <nav class="main-menu__inner"><a class="main-menu__logo" href="/">
+            <figure><img class="main-menu__logomark" src="/images/socmedical/components/logo/logomark.svg" width="40" height="40" alt="Фирменный знак SocMedical">
               <figcaption><img src="/images/socmedical/components/logo/logotype.svg" width="115" height="32" alt="Логотип SocMedical">
-                <div class="navbar__tagline">Медицинская социальная&nbsp;сеть</div>
+                <div class="main-menu__tagline">Медицинская социальная&nbsp;сеть</div>
               </figcaption>
             </figure></a>
-          <ul class="navbar__list">
-            <li class="navbar__item"><a class="navbar__link" href="">
+          <ul class="main-menu__list">
+            <li class="main-menu__item"><a class="main-menu__link" href="">
                     <svg class="icon" aria-hidden="true" focusable="false">
                       <use href="/images/socmedical/base/graphics/sprite.svg#icon-group"></use>
                     </svg><span class="d-md-none">Сообщ.</span><span class="d-none d-md-inline">Сообщества</span></a></li>
-            <li class="navbar__item"><a class="navbar__link" href="">
+            <li class="main-menu__item"><a class="main-menu__link" href="">
                     <svg class="icon" aria-hidden="true" focusable="false">
                       <use href="/images/socmedical/base/graphics/sprite.svg#icon-list"></use>
                     </svg>Лента</a></li>
-            <li class="navbar__item"><a class="navbar__link" href="">
+            <li class="main-menu__item"><a class="main-menu__link" href="">
                     <svg class="icon" aria-hidden="true" focusable="false">
                       <use href="/images/socmedical/base/graphics/sprite.svg#icon-case"></use>
                     </svg><span class="d-md-none">Услуги</span><span class="d-none d-md-inline">Медуслуги</span></a></li>
-            <li class="navbar__item d-none d-md-flex"><a class="navbar__link" href="">
+            <li class="main-menu__item d-none d-md-flex"><a class="main-menu__link" href="">
                     <svg class="icon" aria-hidden="true" focusable="false">
                       <use href="/images/socmedical/base/graphics/sprite.svg#icon-pills"></use>
                     </svg>Маркетплейс</a></li>
-            <li class="navbar__item d-none d-md-flex"><a class="navbar__link" href="">
+            <li class="main-menu__item d-none d-md-flex"><a class="main-menu__link" href="">
                     <svg class="icon" aria-hidden="true" focusable="false">
                       <use href="/images/socmedical/base/graphics/sprite.svg#icon-stethoscope"></use>
                     </svg>Специалисты</a></li>
-            <li class="navbar__item d-none d-lg-flex"><a class="navbar__link" href="">
+            <li class="main-menu__item d-none d-lg-flex"><a class="main-menu__link" href="">
                     <svg class="icon" aria-hidden="true" focusable="false">
                       <use href="/images/socmedical/base/graphics/sprite.svg#icon-building"></use>
                     </svg>Организации</a></li>
-            <li class="navbar__item dropdown" data-dropdown>
-              <button class="navbar__dropdown-label" id="navbar-more" type="button" aria-controls="navbar-more-menu" aria-expanded="false" data-dropdown-toggle>
+            <li class="main-menu__item dropdown" data-dropdown>
+              <button class="main-menu__dropdown-label" id="navbar-more" type="button" aria-controls="navbar-more-menu" aria-expanded="false" data-dropdown-toggle>
                     <svg class="icon d-md-none" aria-hidden="true" focusable="false">
                       <use href="/images/socmedical/base/graphics/sprite.svg#icon-arrow-up-circle"></use>
                     </svg>
@@ -182,7 +182,7 @@
     </div>
     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal">Launch demo modal</button>
     <footer class="footer" id="footer">
-      <div class="container">
+      <div class="qwt-container">
         <ul class="language-switcher">
               <li><a class="language-switcher__link" href="https://af.socmedical.com" lang="af">
                   <svg class="icon" aria-hidden="true" focusable="false">

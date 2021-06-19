@@ -10,8 +10,8 @@
 
 // Stars/hearts
 .rating__points {
-  --point-color: #{$dark-min};
-  --point-background: #{$red};
+  --point-color: #{$color-neutral-dark-min};
+  --point-background: #{$color-palette-red};
   --percent: calc(var(--rating) / 5 * 100%);
 
   transform: scaleX(1.1);
@@ -32,10 +32,10 @@
 }
 
 .rating__count {
-  color: $color-ink-3ry;
+  color: var(--color-ink-3ry);
   display: inline-block;
   font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
+  line-height: var(--font-line-height-small);
   margin-left: 1.2rem;
   padding: 0;
   vertical-align: middle;

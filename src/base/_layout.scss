@@ -1,0 +1,229 @@
+// -----------------------------------------------------------------------------
+// BOOTSTRAP PREFIXED
+// -----------------------------------------------------------------------------
+// #region
+
+.qwt-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: var(--space-padding-x-container);
+  padding-right: var(--space-padding-x-container);
+  width: 100%;
+
+  // we iterate over the map $container-max-widths: save the key to the variable
+  // $breakpoint, and save the value to the variable $max-width
+  @each $breakpoint, $max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      width: $max-width;
+      max-width: 100%;
+    }
+  }
+}
+
+.qwt-row {
+  @include make-row();
+
+  > * {
+    @include make-col-ready();
+  }
+}
+
+// Columns
+
+@mixin make-prefixed-grid-columns(
+  $columns: $grid-columns,
+  $gutter: $grid-gutter-width,
+  $breakpoints: $grid-breakpoints
+) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.qwt-col-{bp}` classes for equal-width flexbox columns
+      .qwt-col#{$infix} {
+        flex: 1 0 0%; // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
+      }
+
+      .qwt-row-cols#{$infix}-auto > * {
+        @include make-col-auto();
+      }
+
+      @if $grid-row-columns > 0 {
+        @for $i from 1 through $grid-row-columns {
+          .qwt-row-cols#{$infix}-#{$i} {
+            @include row-cols($i);
+          }
+        }
+      }
+
+      .qwt-col#{$infix}-auto {
+        @include make-col-auto();
+      }
+
+      @if $columns > 0 {
+        @for $i from 1 through $columns {
+          .qwt-col#{$infix}-#{$i} {
+            @include make-col($i, $columns);
+          }
+        }
+
+        // `$columns - 1` because offsetting by the width of an entire row isn't possible
+        @for $i from 0 through ($columns - 1) {
+          @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+            .qwt-offset#{$infix}-#{$i} {
+              @include make-col-offset($i, $columns);
+            }
+          }
+        }
+      }
+
+      // Gutters
+      // Make use of `.g-*`, `.gx-*` or `.gy-*` utilities to change spacing between the columns.
+      @each $key, $value in $gutters {
+        .g#{$infix}-#{$key},
+        .gx#{$infix}-#{$key} {
+          --#{$variable-prefix}gutter-x: #{$value};
+        }
+
+        .g#{$infix}-#{$key},
+        .gy#{$infix}-#{$key} {
+          --#{$variable-prefix}gutter-y: #{$value};
+        }
+      }
+    }
+  }
+}
+
+@include make-prefixed-grid-columns();
+// #endregion
+
+// -----------------------------------------------------------------------------
+// MAIN CONTAINERS
+// -----------------------------------------------------------------------------
+// #region
+
+// LEGACY
+// Wrapper Inner
+.bodybg {
+  background: transparent !important;
+  text-align: center;
+  width: 100%;
+}
+
+// Wrapper Inner
+.containerbg {
+  margin: 0;
+  text-align: left;
+  width: 100% /*!important*/;
+
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: var(--size-max-width-container);
+  }
+}
+
+.container {
+  margin-top: 0;
+  overflow-y: hidden;
+}
+
+.spread {
+  padding: 0 2rem;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.6rem;
+    padding: 0 $size-space-4;
+  }
+}
+
+.main,
+.affix-content {
+  float: none !important;
+  padding-top: $size-space-line * 4;
+  padding-right: 0 !important;
+  padding-bottom: $size-space-line * 2;
+  padding-left: 0 !important;
+  overflow: visible;
+
+  // Animated scroll-to-target behavior
+  scroll-behavior: smooth;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    grid-column: 5 / span 8;
+    padding-top: ($size-space-line * 7);
+    padding-bottom: $size-space-line * 3;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-column: 4 / span 9;
+    padding-bottom: $size-space-line * 4;
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-column: 5 / span 8;
+  }
+}
+
+.main > .container,
+.affix-content > .container {
+  background-color: transparent;
+  padding: 0 !important;
+}
+
+.js-smartPhoto > img {
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+// #endregion
+
+// -----------------------------------------------------------------------------
+// ROWS VARIATIONS
+// -----------------------------------------------------------------------------
+// #region
+
+.qwt-row.is-comfort {
+  margin-left: calc(var(--size-gutter-lg) / -2);
+  margin-right: calc(var(--size-gutter-lg) / -2);
+
+  > * {
+    padding-left: calc(var(--size-gutter-lg) / 2);
+    padding-right: calc(var(--size-gutter-lg) / 2);
+  }
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// HORIZONTAL SCROLLING ROWS
+// -----------------------------------------------------------------------------
+// #region
+
+.qwt-row.is-sm-y-scrolling {
+  --is-sm-y-scrolling-item-width: 24rem;
+
+  @include media-breakpoint-down(md) {
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: calc(-1 * var(--space-padding-x-container));
+    min-width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    [class^='col-'],
+    [class*=' col-'] {
+      margin-right: $size-gutter-base;
+      width: var(--is-sm-y-scrolling-item-width);
+    }
+  }
+}
+// #endregion
+
+

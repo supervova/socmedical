@@ -16,8 +16,8 @@
 //       span 1 concurrent build
 //   //- other-cards
 
-$plan-padding: $size-line;
-$plan-radius: $border-radius;
+$plan-padding: $size-space-line;
+$plan-radius: var(--shape-border-radius-base);
 $plan-radio-border-width: .2rem;
 $plan-radio-size: .5em;
 
@@ -32,7 +32,7 @@ $plan-radio-size: .5em;
 }
 
 .plan {
-  background-color: $color-bg-normal;
+  background-color: var(--color-background-base);
   border-radius: $plan-radius;
   position: relative;
 
@@ -45,7 +45,7 @@ $plan-radio-size: .5em;
   appearance: none;
   background: #fff;
   border-radius: 50%;
-  border: $plan-radio-border-width solid $color-ink-border;
+  border: $plan-radio-border-width solid var(--color-border-dark);
   cursor: pointer;
   font-size: inherit;
   height: $plan-radio-size;
@@ -55,8 +55,8 @@ $plan-radio-size: .5em;
   right: $plan-padding + $plan-radio-border-width;
   top: $plan-padding + $plan-radio-border-width;
   transition:
-    background $duration-sm $easing,
-    border-color $duration-sm $easing;
+    background var(--motion-duration-sm) var(--motion-easing-base),
+    border-color var(--motion-duration-sm) var(--motion-easing-base);
   width: $plan-radio-size;
 
   &::after {
@@ -76,16 +76,16 @@ $plan-radio-size: .5em;
   }
 
   &:checked {
-    background: $color-primary;
-    border-color: $color-primary;
+    background: $color-brand-primary-base;
+    border-color: $color-brand-primary-base;
   }
 }
 
 .plan:hover .plan__radio {
-  border-color: $color-bg-alt;
+  border-color: $color-background-alt;
 
   &:checked {
-    border-color: $color-primary;
+    border-color: $color-brand-primary-base;
   }
 }
 
@@ -99,40 +99,40 @@ $plan-radio-size: .5em;
 }
 
 .plan:hover .plan__details {
-  border-color: $color-bg-alt;
+  border-color: $color-background-alt;
 }
 
 .plan__radio:checked ~ .plan__details {
-  border-color: $color-primary;
+  border-color: $color-brand-primary-base;
 }
 
 .plan__radio:focus ~ .plan__details {
-  box-shadow: 0 0 0 2px $color-bg-alt;
+  box-shadow: 0 0 0 2px $color-background-alt;
 }
 
 .plan__radio:disabled ~ .plan__details {
-  color: $color-bg-alt;
+  color: $color-background-alt;
   cursor: default;
 }
 
 .plan__radio:disabled ~ .plan__details .plan__type {
-  color: $color-bg-alt;
+  color: $color-background-alt;
 }
 
 .plan:hover .plan__radio:disabled ~ .plan__details {
-  border-color: $color-ink-border;
+  border-color: var(--color-border-dark);
   box-shadow: none;
 }
 
 .plan:hover .plan__radio:disabled {
-  border-color: $color-ink-border;
+  border-color: var(--color-border-dark);
 }
 
 .plan__type {
-  color: $color-primary-text;
+  color: var(--color-ink-primary-text);
   font-size: 1.5rem;
   font-weight: bold;
-  line-height: var(--line-height-base);
+  line-height: var(--font-line-height-base);
 }
 
 .plan__cost {

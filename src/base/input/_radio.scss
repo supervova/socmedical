@@ -7,8 +7,8 @@
 
 $radio-size:                            1.6rem;
 $radio-border-width:                    .2rem;
-$radio-color:                           $color-ink-border;
-$radio-color-active:                    $color-primary;
+$radio-color:                           var(--color-border-dark);
+$radio-color-active:                    $color-brand-primary-base;
 
 // Hide the native radio button
 .form__radio,
@@ -34,7 +34,7 @@ $radio-color-active:                    $color-primary;
   margin-right: .3rem;
   position: relative;
   vertical-align: -.2rem;
-  transition: border-color $duration;
+  transition: border-color var(--motion-duration-base);
   width: $radio-size;
   height: $radio-size;
 }

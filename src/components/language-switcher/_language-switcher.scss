@@ -3,7 +3,7 @@
   grid-auto-flow: column;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  grid-column-gap: $size-2;
+  grid-column-gap: $size-space-2;
   grid-row-gap: 0;
   list-style: none;
   padding-left: 0;
@@ -11,7 +11,7 @@
   @include media-breakpoint-up(md) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: $size-3;
+    grid-column-gap: $size-space-3;
     margin-left: auto;
     margin-right: auto;
     // Visual centering
@@ -23,7 +23,7 @@
     max-width: 83.4rem;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     max-width: 76.2rem;
   }
 }
@@ -41,5 +41,5 @@
 }
 
 .language-switcher__link .icon {
-  margin-right: $size-1;
+  margin-right: $size-space-1;
 }

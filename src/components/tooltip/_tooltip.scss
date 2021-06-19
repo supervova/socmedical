@@ -3,12 +3,12 @@
 // seems preferable.
 // Based on Chris Bracco's one. See https://codepen.io/cbracco/pen/nufHz
 
-$tooltip-background:                    $color-bg-alt;
+$tooltip-background:                    $color-background-alt;
 $tooltip-padding-bottom:                1.3rem;
-$tooltip-padding:                       1.4rem ($size-1 * 2) $tooltip-padding-bottom;
-$tooltip-width:                         $width-xs;
-$tooltip-arrow-width:                   $size-1;
-$tooltip-offset:                        ($size-1 * 2);
+$tooltip-padding:                       1.4rem ($size-space-1 * 2) $tooltip-padding-bottom;
+$tooltip-width:                         $size-width-xs;
+$tooltip-arrow-width:                   $size-space-1;
+$tooltip-offset:                        ($size-space-1 * 2);
 
 // An element that has a tooltip
 .has-tooltip {
@@ -23,9 +23,9 @@ $tooltip-offset:                        ($size-1 * 2);
     pointer-events: none;
     position: absolute;
     transition:
-      opacity $duration-sm $easing,
-      visibility $duration-sm $easing,
-      transform $duration-sm $easing;
+      opacity var(--motion-duration-sm) var(--motion-easing-base),
+      visibility var(--motion-duration-sm) var(--motion-easing-base),
+      transform var(--motion-duration-sm) var(--motion-easing-base);
     transform: translate3d(0, 0, 0);
     visibility: hidden;
   }
@@ -33,15 +33,15 @@ $tooltip-offset:                        ($size-1 * 2);
   // Tooltip's body
   &::after {
     background-color: $tooltip-background;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow-z4;
-    color: $color-ink-normal;
+    border-radius: var(--shape-border-radius-base);
+    box-shadow: $layer-box-shadow-z4;
+    color: var(--color-ink-base);;
     content: attr(aria-label);
     font-size: var(--font-size-small);
-    line-height: var(--line-height-small);
+    line-height: var(--font-line-height-small);
     padding: $tooltip-padding;
     width: $tooltip-width;
-    z-index: $zindex-tooltip;
+    z-index: var(--layer-zindex-tooltip);
   }
 
   // Tooltip's arrow
@@ -49,7 +49,7 @@ $tooltip-offset:                        ($size-1 * 2);
     background: transparent;
     border: ($tooltip-arrow-width / 2) solid transparent;
     content: '';
-    z-index: $zindex-tooltip + 1;
+    z-index: calc(var(--layer-zindex-tooltip) + 1);
   }
 
   // Show the tooltip on hover and focus

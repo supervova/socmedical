@@ -21,24 +21,24 @@
 // Pseudo element
 .form__check-input ~ .form__check-toggle {
   border-radius: 50%;
-  border: $border-width solid $color-ink-border;
+  border: var(--size-border-width) solid var(--color-border-dark);
   cursor: pointer;
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  width: ($size-1 * 2);
-  height: ($size-1 * 2);
+  width: ($size-space-1 * 2);
+  height: ($size-space-1 * 2);
 }
 
 // Hover
 .form__check-input:hover ~ .form__check-toggle {
-  border-color: $color-primary;
+  border-color: $color-brand-primary-base;
 }
 
 // Checked
 .form__check-input:checked ~ .form__check-toggle {
-  border-color: $color-primary;
-  background: $color-primary url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=') center no-repeat;
+  border-color: $color-brand-primary-base;
+  background: $color-brand-primary-base var(--asset-data-image-check) center no-repeat;
 }
 
 // -----------------------------------------------------------------------------
@@ -63,7 +63,7 @@ $checkbox-size: 2.4rem;
   + label {
     @extend %center;
     border-radius: 50%;
-    transition: background .2s $easing;
+    transition: background .2s var(--motion-easing-base);
     width: $checkbox-size;
     height: $checkbox-size;
 
@@ -78,7 +78,7 @@ $checkbox-size: 2.4rem;
       right: 0;
       bottom: 0;
       left: 0;
-      transition: border-width .2s $easing;
+      transition: border-width .2s var(--motion-easing-base);
     }
   }
 

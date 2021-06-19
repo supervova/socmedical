@@ -1,9 +1,9 @@
 // Scrim / overlay / backdrop
 .scrim {
-  background-color: $color-bg-scrim;
+  background-color: var(--color-scrim-base);
   opacity: 0;
-  transition: opacity $duration;
-  z-index: $zindex-scrim;
+  transition: opacity var(--motion-duration-base);
+  z-index: var(--layer-zindex-scrim);
 
   &.is-on {
     opacity: 1;

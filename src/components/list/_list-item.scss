@@ -16,7 +16,7 @@
   @include media-breakpoint-up(sm) {
     display: flex;
     align-items: flex-start;
-    margin-top: $size-line + .6rem;
+    margin-top: $size-space-line + .6rem;
   }
 }
 
@@ -24,11 +24,11 @@
   @extend %border;
 
   @include media-breakpoint-up(sm) {
-    margin-right: $size-line;
+    margin-right: $size-space-line;
   }
 
   @include media-breakpoint-up(md) {
-    margin-right: $size-4;
+    margin-right: $size-space-4;
   }
 }
 

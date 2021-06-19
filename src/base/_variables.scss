@@ -1,491 +1,506 @@
 // stylelint-disable declaration-colon-space-after, order/order
 
-$base-url:                              '/'; // '/project12/';
+$base-url:                              '/';
 
 // -----------------------------------------------------------------------------
-// 🎨 COLORS
+// 🏗 BASE
 // -----------------------------------------------------------------------------
+
+// COLORS
 // #region
+// To create other colors change hue by an equal angle. E. g. red: 0, orange: 30,
+// yellow: 60, lime: 90, green: 120, turquoise: 150, cyan: 180, cobalt: 210,
+// blue: 210, violet: 270, crimson: 330.
 
-// FUNCTIONAL PALETTE
+// For shades and tints use the darken() / lighten() functions.
+// E. g. $color-ink-link: darken($color-palette-blue, 13%);
 
-$yellow:                                hsl(60, 40%, 90%);
-$green:                                 hsl(148, 40%, 50%);
-$blue:                                  hsl(222, 40%, 50%);
-$magenta:                               hsl(298, 40%, 50%);
-$red:                                   hsl(0, 40%, 50%);
-
-// To create other colors change hue by 30. red: 0, orange: 30, yellow: 60,
-// lime: 90, green: 120, turquoise: 150, cyan: 180, cobalt: 210, blue: 210,
-// violet: 270, crimson: 330.
+$color-palette-yellow:                  hsl(60, 40%, 90%);
+$color-palette-green:                   hsl(148, 40%, 50%);
+$color-palette-blue:                    hsl(222, 40%, 50%);
+$color-palette-magenta:                 hsl(298, 40%, 50%);
+$color-palette-red:                     hsl(0, 40%, 50%);
 
 // Neutral colors
-$dark-max:                              rgba(darken($green, 44%), .91);
-$dark-beta:                             rgba(darken($green, 44%), .75);
-$dark-2ry:                              rgba(darken($green, 44%), .58);
-$dark-3ry:                              rgba(darken($green, 44%), .42);
-$dark-4ry:                              rgba(darken($green, 44%), .29);
-$dark-psi:                              rgba(darken($green, 44%), .16);
-$dark-min:                              rgba(darken($green, 44%), .08);
+$color-neutral-dark-max:                rgba(darken($color-palette-green, 44%), .91);
+$color-neutral-dark-beta:               rgba(darken($color-palette-green, 44%), .75);
+$color-neutral-dark-2ry:                rgba(darken($color-palette-green, 44%), .58);
+$color-neutral-dark-3ry:                rgba(darken($color-palette-green, 44%), .42);
+$color-neutral-dark-4ry:                rgba(darken($color-palette-green, 44%), .29);
+$color-neutral-dark-psi:                rgba(darken($color-palette-green, 44%), .16);
+$color-neutral-dark-min:                rgba(darken($color-palette-green, 44%), .08);
 
-$light-max:                             hsl(0, 0%, 100%);
-$light-2ry:                             hsla(0, 0%, 100%, .7);
-$light-3ry:                             hsla(0, 0%, 100%, .5);
-$light-psi:                             hsla(0, 0%, 100%, .12);
+$color-neutral-light-max:               hsl(0, 0%, 100%);
+$color-neutral-light-2ry:               hsla(0, 0%, 100%, .7);
+$color-neutral-light-3ry:               hsla(0, 0%, 100%, .5);
+$color-neutral-light-psi:               hsla(0, 0%, 100%, .12);
 
 // COLOR ROLES
+$color-brand-primary-base:              $color-palette-green;
+$color-background-alt:                  lighten($color-brand-primary-base, 44%);
+$color-ink-link:                        darken($color-palette-blue, 5%);
 
-// Brand green
-$color-primary:                         $green;
-$color-primary-bg:                      lighten($green, 44%);
-$color-primary-bg-dark:                 darken($green, 4%);
-$color-primary-gradient:                linear-gradient(lighten($green, 2%), darken($green, 10%));
-$color-primary-title-icon:              darken($green, 7%);
-$color-primary-text:                    darken($green, 16%);
-$color-primary-border:                  rgba($green, .35);
-
-// BASE BACKGROUNDS
-$color-bg-normal:                       $light-max;
-$color-bg-alt:                          $color-primary-bg;
-$color-bg-inverse:                      desaturate(darken($color-primary, 35%), 25%);
-$color-bg-scrim:                        rgba(#000, .56);
-
-$color-bg-acrylic-material:             rgba(#fff, .72);
-$backdrop-filter-acrylic-material:      saturate(180%) blur(20px);
-
-// FEEDBACK COLORS
-// Use relative luminance calculator in order to achieve backgrounds consistency
-// To create colored text use contrast checkers to keep the necessary level
-// of contrast for the body copy and headings: 4.5 and 3, respectively.
-
-$color-error:                           $red;
-$color-error-bg:                        lighten($red, 40%);
-$color-error-title-icon:                lighten($red, 7%);
-$color-error-text:                      darken($red, 5%);
-
-$color-info:                            $blue;
-$color-info-bg:                         lighten($blue, 39%);
-$color-info-title-icon:                 lighten($blue, 6%);
-$color-info-text:                       darken($blue, 5%);
-
-$color-success:                         $color-primary;
-$color-success-bg:                      darken($color-bg-alt, 5%);
-$color-success-title-icon:              darken($color-primary, 7%);
-$color-success-text:                    $color-primary-text;
-
-$color-warning:                         $yellow;
-$color-warning-bg:                      lighten($yellow, 40%);
-$color-warning-title-icon:              darken($yellow, 18%);
-$color-warning-text:                    darken($yellow, 25%);
-
-$color-highlight:                       $color-success-bg;
-
-// INKS / FOREGROUNDS
-// Inks are foreground colors for texts, borders, and icons.
-// In order to use the sass contrast check functions, the colors should
-// be moved to the map.
-$color-ink-title:                       $dark-max;
-$color-ink-normal:                      $dark-max;
-$color-ink-2ry:                         $dark-2ry;
-$color-ink-3ry:                         $dark-3ry;
-$color-ink-icon:                        $dark-4ry;
-$color-ink-border:                      $dark-psi;
-$color-ink-link:                        darken($blue, 5%);
-$color-ink-code:                        $magenta;
-$color-ink-highlight:                   $color-primary-text;
-
-$color-ink-accent-normal:               rgba(darken($color-primary, 44%), .78);
-$color-ink-accent-border:               rgba($color-primary, .35);
-
-$color-ink-inverse-normal:              $light-max;
-$color-ink-inverse-2ry:                 $light-2ry;
-$color-ink-inverse-3ry:                 $light-3ry;
-$color-ink-inverse-icon:                $light-3ry;
-$color-ink-inverse-border:              $light-psi;
-$color-ink-inverse-link:                lighten($blue, 5%);
-
-$hover-brightness:                      1.1;
 // #endregion
 
-// ---------------------------------------------------------------------------
-// 📰 LAYOUT
-// ---------------------------------------------------------------------------
+// 📐 LAYERS, SHAPE & SIZE
 // #region
 
-$size-half:                             .4rem;
-$size-1:                                .8rem;
-$size-2:                                $size-1 * 2;
-$size-3:                                $size-1 * 3;
-$size-4:                                $size-1 * 4;
-$size-5:                                $size-1 * 5;
-$size-6:                                $size-1 * 6;
-$size-7:                                $size-1 * 7;
-$size-8:                                $size-1 * 8;
+$size-space-half:                       .4rem;
+$size-space-1:                          .8rem;
+$size-space-2:                          $size-space-1 * 2;
+$size-space-3:                          $size-space-1 * 3;
+$size-space-4:                          $size-space-1 * 4;
+$size-space-5:                          $size-space-1 * 5;
+$size-space-6:                          $size-space-1 * 6;
+$size-space-7:                          $size-space-1 * 7;
+$size-space-8:                          $size-space-1 * 8;
 
-// For larger values use derived lines. E.g. $size-line * 3
-$size-line:                             $size-3;
+// For larger values use derived lines. E.g. $size-space-line * 3
+$size-space-line:                      $size-space-3;
+
+$size-screen-xs: 0;
+$size-screen-sm: 568px;
+$size-screen-md: 768px;
+$size-screen-lg: 1024px;
+$size-screen-xl: 1360px;
+$size-screen-xxl: 1920px;
+$size-screen-xxxl: 2560px; // iMac 27''
+// Using: @media #{$size-screen-retina} { … }
+$size-screen-retina: 'print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi)';
+
+$size-gutter-base:                      $size-space-1 * 2;
+
+$size-max-width-container: 136.6rem;
+
+// #endregion
+
+// -----------------------------------------------------------------------------
+// 🔵 BOOTSTRAP VARIABLE AND MAPS IN USE
+// -----------------------------------------------------------------------------
+// #region
+
+$grid-gutter-width:                     $size-gutter-base;
 
 $spacers: (
   0:  0,
-  1s: $size-1,
-  2s: $size-2,
-  4s: $size-4,
-  5s: $size-5,
-  7s: $size-7,
-  8s: $size-8,
-  1:  $size-line,
-  2:  $size-line * 2,
-  3:  $size-line * 3,
-  4:  $size-line * 4,
+  1s: $size-space-1,
+  2s: $size-space-2,
+  4s: $size-space-4,
+  5s: $size-space-5,
+  7s: $size-space-7,
+  8s: $size-space-8,
+  1:  $size-space-line,
+  2:  $size-space-line * 2,
+  3:  $size-space-line * 3,
+  4:  $size-space-line * 4,
 );
 
 // Bootstrap mixins variables
 $grid-breakpoints: (
-  xs:   0,
-  sm:   568px,
-  md:   768px, // Use the same layout as on sm, but with vertical navbar
-  mdl:  1024px,
-  lg:   1360px,
-  // xl:  1440px,
-  // xxl: 1920px,
-  // jumbo: 2560 // iMac 27''
+  xs: $size-screen-xs,
+  sm: $size-screen-sm,
+  md: $size-screen-md,
+  lg: $size-screen-lg,
+  xl: $size-screen-xl,
 );
 
-$grid-gutter-width:                     $size-2;
-$grid-gutter-lg:                        $size-4;
-$grid-gutter-xl:                        $size-6;
-
-
-$container-max-width: 136.6rem;
-
-// Using: @media #{$mq-retina} { … }
-$mq-retina: 'print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi)';
+$container-max-widths: (
+  lg: $size-max-width-container,
+);
 // #endregion
-
-// #endregion
-
-
-// ---------------------------------------------------------------------------
-// 📦 COMPONENT BOXES
-// ---------------------------------------------------------------------------
-// #region
-
-$border-width:                          .1rem;
-
-// BOX BORDER RADIUS
-
-// Alerts, Cards, Rectangular Images
-$border-radius-sm:                      .7rem;
-
-// Buttons
-$border-radius:                         1.4rem;
-
-// Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks, Popovers, Tooltips
-$border-radius-lg:                      2.8rem;
-
-// Modals
-$border-radius-xl:                      2.8rem;
-
-$border-radius-pill:                    99rem;
-
-// BOX SHADOWS
-// Increasing the number of shadows and decreasing the alpha value.
-// The difference of arithmetic progression can be changed. E.g., by making it
-// equal 8, we can achieve very soft shadows of the highest level: 1-9-17-25-33
-// Another method: create shape in Photoshop with minimum and maximum
-// elevation shadows and then create tween to get intermediate values.
-
-$box-shadow-contour:                    0 0 0 1px rgba($color-primary, .08);
-
-// Buttons, Cards, Alerts, App Bar, Tab Bar, Switches
-$box-shadow-z1:                         0 1px 0 rgba($color-primary, .45);
-
-
-// FAB, Buttons hover, Snackbars
-$box-shadow-z2:
-  0 0 0 1px rgba($color-primary, .08),
-  0 1px 3px rgba($color-primary, .12),
-  0 1px 24px rgba($color-primary, .21);
-
-
-// FAB hover, Drawers, Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks
-$box-shadow-z3:
-  0 0 0 1px rgba($color-primary, .08),
-  0 1px 6px rgba($color-primary, .12),
-  0 1px 48px rgba($color-primary, .21);
-
-
-// Popovers, Tooltips
-$box-shadow-z4:
-  0 0 0 1px rgba($color-primary, .08),
-  0 1px 9px rgba($color-primary, .12),
-  0 1px 72px rgba($color-primary, .21);
-
-
-// Modals
-$box-shadow-z5:
-  0 0 0 1px rgba($color-primary, .08),
-  0 1px 12px rgba($color-primary, .12),
-  0 1px 96px rgba($color-primary, .21);
-
-$box-shadow-focus-outline:              0 0 0 4px rgba($blue, .5);
-
-
-// BOX Z-INDEX
-$zindex-dropdown:                       1000;
-$zindex-sticky:                         1020;
-$zindex-fixed-scrim:                    1025;
-$zindex-fixed:                          1030;
-$zindex-popover:                        1040;
-$zindex-tooltip:                        1050;
-$zindex-scrim:                          1060;
-$zindex-drawer:                         1070;
-$zindex-modal:                          1080;
-
-// Material design order
-// https://material.io/design/environment/elevation.html
-// Dialog: 24dp
-// Nav drawer: 16dp
-// FAB: 6dp
-// App bar: 4dp
-// Button: 2dp
-// Card: 1dp to 8dp (for dragging)
-
-
-// PANEL WIDTHS
-
-$width-xs:                              20rem;
-
-// Tooltips, mobile drawers
-$width-sm:                              28rem;
-
-// Dropdowns, popovers, tablet and desktop drawers
-$width:                                 32rem;
-
-// Wide drawers, modals on tablets
-$width-md:                              64rem;
-
-// Modals on desktops
-$width-lg:                              80rem;
-
-$width-readable:                        60ch;
-
-$chevron-down:                          url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M6%209L12%2015L18%209%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
-$chevron-right:                         url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M9%2018L15%2012L9%206%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
-$chevron-up:                            url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M6%2015L12%209L18%2015%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
-
-// #endregion
-
-// ---------------------------------------------------------------------------
-// 👻 ANIMATION & TRANSITIONS
-// ---------------------------------------------------------------------------
-// #region
-
-// Use shorter for disappearing  elements. To do that set transitions on both
-// states, like this:
-// .el { transition: all $duration-sm $easing-disappearance; }
-// .el.is-hidden { transition: all $duration-md $easing-appearance; }
-$duration-xs:                           .1s;
-
-// Medium elements changing states
-// and disappearance
-$duration-sm:                           .1s;
-
-// Medium elements appearance,
-// large elements changing states
-// and disappearance
-$duration:                              .2s;
-
-// Medium to large elements appearance
-$duration-md:                           .4s;
-
-// Large elements appearance
-$duration-lg:                           .6s;
-$duration-xl:                           .8s;
-
-$easing:                                cubic-bezier(.4, 0, .2, 1); // accented ease-in-out
-$easing-appearance:                     cubic-bezier(0, 0, .2, 1); // accented ease-out
-$easing-disappearance:                  cubic-bezier(.4, 0, 1, 1); // ease-in
-$easing-bounce:                         cubic-bezier(.175, .885, .32, 1.275);
-
-// #endregion
-
-// ---------------------------------------------------------------------------
-// 🔠 TYPOGRAPHY & PADDING
-// ---------------------------------------------------------------------------
-// #region
-
-/* stylelint-disable indentation */
-// Don't use system-ui (Tahoma in Win7) and Segoe UI. These fonts are ugly
-$font-family-base:
- 'Inter',
- 'Helvetica Neue',
- -apple-system,
-  Roboto,
-  Helvetica,
-  Arial,
- 'Noto Sans',
-  sans-serif,
- 'Apple Color Emoji',
- 'Segoe UI Emoji',
- 'Segoe UI Symbol',
- 'Noto Color Emoji';
-
-$font-family-accent:
- -apple-system,
- 'Inter',
- 'Helvetica Neue',
-  Roboto,
-  Helvetica,
-  Arial,
- 'Noto Sans',
-  sans-serif,
- 'Apple Color Emoji',
- 'Segoe UI Emoji',
- 'Segoe UI Symbol',
- 'Noto Color Emoji';
-
- $list-bullet:                           url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%225%22%20height%3D%227%22%20viewBox%3D%220%200%205%207%22%3E%3Ccircle%20cx%3D%222.5%22%20cy%3D%222.5%22%20r%3D%222.5%22%20fill-opacity%3D%22.38%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-
-// 3:4 — perfect fourth
-// Headings sizes increase on large screens. See the custom properties section
-// below.
 
 :root {
+  // ---------------------------------------------------------------------------
+  // 🎨 COLORS
+  // ---------------------------------------------------------------------------
+  // #region
+
+  // BRAND
+  --color-brand-primary-base:           #{$color-brand-primary-base};
+  --color-brand-primary-gradient:       #{linear-gradient(lighten($color-palette-green, 2%), darken($color-palette-green, 10%))};
+  --color-brand-primary-scrim:
+    #{linear-gradient(rgba(darken($color-brand-primary-base, 40%), .8), rgba(darken($color-brand-primary-base, 40%), .8))},
+    #{linear-gradient($color-brand-primary-base, $color-brand-primary-base)};
+
+  // INKS
+  // Inks are foreground colors for headlines, body copy and icons.
+  --color-ink-title:                    #{$color-neutral-dark-max};
+  --color-ink-base:                     #{$color-neutral-dark-max};
+  --color-ink-2ry:                      #{$color-neutral-dark-2ry};
+  --color-ink-3ry:                      #{$color-neutral-dark-3ry};
+  --color-ink-icon:                     #{$color-neutral-dark-4ry};
+  --color-ink-link:                     #{$color-ink-link};
+  --color-ink-link-hover:               #{$color-palette-blue};
+  --color-ink-code:                     #{$color-palette-magenta};
+
+  --color-ink-inverse-title:            #{$color-neutral-light-max};
+  --color-ink-inverse-base:             #{$color-neutral-light-max};
+  --color-ink-inverse-2ry:              #{$color-neutral-light-2ry};
+  --color-ink-inverse-3ry:              #{$color-neutral-light-3ry};
+  --color-ink-inverse-icon:             #{$color-neutral-light-3ry};
+  --color-ink-inverse-link:             #{lighten($color-palette-blue, 5%)};
+
+  // Fills are used for titles and icons.
+  --color-ink-primary-fill:             #{darken($color-brand-primary-base, 7%)};
+  --color-ink-primary-text:             #{darken($color-brand-primary-base, 16%)};
+  --color-ink-primary-accent:           #{rgba(darken($color-brand-primary-base, 44%), .78)};
+
+  // Semantic
+  --color-ink-info-fill:                #{lighten($color-palette-blue, 6%)};
+  --color-ink-info-text:                #{darken($color-palette-blue, 5%)};
+  --color-ink-success-fill:             #{darken($color-brand-primary-base, 7%)};
+  --color-ink-success-text:             var(--color-ink-primary-text);
+  --color-ink-warning-base:             #{$color-palette-yellow};
+  --color-ink-warning-fill:             #{darken($color-palette-yellow, 18%)};
+  --color-ink-warning-text:             #{darken($color-palette-yellow, 25%)};
+  --color-ink-error-fill:               #{lighten($color-palette-red, 7%)};
+  --color-ink-error-text:               #{darken($color-palette-red, 5%)};
+
+  // BACKGROUNDS
+  // For the sake of design, we can violate the recommendations in contrast, but
+  // only where, it will not spoil the UX.
+  --color-background-base:              #{$color-neutral-light-max};
+  --color-background-alt:               #{$color-background-alt};
+  --color-background-primary-dark:      #{darken($color-brand-primary-base, 4%)};
+  --color-background-inverse:           #{desaturate(darken($color-brand-primary-base, 35%), 25%)};
+  --color-background-acrylic:           #{rgba(#fff, .72)};
+  --color-background-acrylic-backdrop:  #{saturate(180%) blur(20px)};
+
+  // Semantic
+  --color-background-success:           #{darken($color-background-alt, 5%)};
+  --color-background-info:              #{lighten($color-palette-blue, 39%)};
+  --color-background-warning:           #{lighten($color-palette-yellow, 40%)};
+  --color-background-error:             #{lighten($color-palette-red, 40%)};
+
+  // BORDERS
+  --color-border-dark:                  #{$color-neutral-dark-psi};
+  --color-border-light:                 #{$color-neutral-light-psi};
+  --color-border-primary:               #{rgba($color-brand-primary-base, .35)};
+  --color-border-error:                 #{$color-palette-red};
+
+  // SPECIAL CASES
+  --color-scrim-base:                   #{rgba(#000, .56)};
+  --color-brightness-hover:             #{1.1};
+  // #endregion
+
+  // ---------------------------------------------------------------------------
+  // 🔠 TYPOGRAPHY
+  // ---------------------------------------------------------------------------
+  // #region
+
+  // Don't use system-ui (Tahoma in Win7) and Segoe UI. These fonts are ugly
+  /* stylelint-disable indentation */
+  --font-family-base:
+   'Inter',
+   'Helvetica Neue',
+   -apple-system,
+    Roboto,
+    Helvetica,
+    Arial,
+   'Noto Sans',
+    sans-serif,
+   'Apple Color Emoji',
+   'Segoe UI Emoji',
+   'Segoe UI Symbol',
+   'Noto Color Emoji';
+
+  --font-family-title:
+  -apple-system,
+   'Inter',
+   'Helvetica Neue',
+    Roboto,
+    Helvetica,
+    Arial,
+   'Noto Sans',
+    sans-serif,
+   'Apple Color Emoji',
+   'Segoe UI Emoji',
+   'Segoe UI Symbol',
+   'Noto Color Emoji';
+   /* stylelint-enable indentation */
+
   --font-size-hero-title:               3.8rem;
   // Keep parentheses to do math using interpolation
-  --line-height-hero-title:             #{(38/40)};
+  --font-line-height-hero-title:        #{(38/40)};
   --font-weight-hero-title:             400;
-  --padding-top-hero-title:             #{$size-2};
-  --padding-bottom-hero-title:          2rem;
+  --space-padding-top-hero-title:       #{$size-space-2};
+  --space-padding-bottom-hero-title:    2rem;
 
-  --font-size-h1:                       2.8rem;
-  --line-height-h1:                     #{(28/32)};
-  --font-weight-h1:                     500;
-  --padding-top-h1:                     .2rem;
-  --padding-bottom-h1:                  2.2rem;
-  --margin-top-h1-has-eyebrow:          0;
+  --font-size-title:                    2.8rem;
+  --font-line-height-title:             #{(32/28)};
+  --font-weight-title:                  500;
+  --space-padding-top-title:            .2rem;
+  --space-padding-bottom-title:         2.2rem;
+  --space-margin-bottom-title-minus:    0;
 
-  --font-size-h2:                       2.1rem;
-  --line-height-h2:                     #{(24/21)};
-  --font-weight-h2:                     500;
-  --padding-top-h2:                     .5rem;
-  --padding-bottom-h2:                  1.9rem;
-  --margin-top-subhead:                 #{$size-line};
+  --font-size-subhead-h2:               2.1rem;
+  --font-line-height-subhead-h2:        #{(24/21)};
+  --font-weight-subhead-h2:             500;
+  --space-padding-top-subhead-h2:       .5rem;
+  --space-padding-bottom-subhead-h2:    1.9rem;
+  --space-margin-top-subhead-h2-plus:   #{$size-space-line};
 
   --font-size-big:                      1.6rem;
-  --line-height-big:                    1.5;
+  --font-line-height-big:               1.5;
   --font-weight-big:                    500;
-  --padding-top-big:                    .6rem;
-  --padding-bottom-big:                 1.8rem;
+  --space-padding-top-big:              .6rem;
+  --space-padding-bottom-big:           1.8rem;
 
   --font-size-base:                     1.6rem;
-  --line-height-base:                   1.5; // 24px
-  --padding-top-base:                   .6rem;
-  --padding-bottom-base:                1.8rem;
+  --font-line-height-base:              1.5; // 24px
+  --space-padding-top-base:             .6rem;
+  --space-padding-bottom-base:          1.8rem;
 
   --font-size-small:                    1.2rem;
-  --line-height-small:                  1.333; // 16px
-  --padding-top-small:                  1.2rem;
-  --padding-bottom-small:               2.1rem;
+  --font-line-height-small:             1.333; // 16px
+  --space-padding-top-small:            1.2rem;
+  --space-padding-bottom-small:         2.1rem;
 
   // Lists
-  --padding-bottom-li:                  .2rem;
-  --padding-bottom-list:                #{$size-2};
-
-  // Table
-  --margin-top-table:                   1.8rem;
-  --margin-top-bottom:                  3rem;
-  --padding-x-cell:                     #{$size-2};
-  --padding-y-cell:                     1.2rem;
-
-  // Form
-  --padding-bottom-form-group:          #{$size-1};
-  --padding-y-input:                    1.1rem;
-  --padding-right-input:                1.6rem;
-  --padding-left-input:                 1.6rem;
-  --padding-bottom-label:               .4rem;
-  --padding-bottom-form-actions:        2.2rem;
-  --padding-top-select:                 1.6rem;
-  --padding-bottom-select:              1.2rem;
-
-  --padding-x-box:                      #{$size-2};
-  --padding-x-container:                2rem;
-  --spacer:                             #{$size-line};
+  --space-padding-bottom-li:            .2rem;
+  --space-padding-bottom-list:          #{$size-space-2};
 
   @media screen and (min-width: #{map-get($grid-breakpoints, 'md')}) {
     --font-weight-hero-title:           500;
 
-    --font-size-h1:                     3.8rem;
-    --line-height-h1:                   #{(40/38)};
-    --padding-top-h1:                   #{$size-2};
-    --padding-bottom-h1:                2rem;
-    --margin-top-h1-has-eyebrow:        #{-$size-line};
+    --font-size-title:                  3.8rem;
+    --font-line-height-title:           #{(40/38)};
+    --space-padding-top-title:          #{$size-space-2};
+    --space-padding-bottom-title:       2rem;
+    --space-margin-bottom-title-minus:  #{-$size-space-line};
 
-    --font-size-h2:                     2.8rem;
-    --line-height-h2:                   #{(32/28)};
-    --padding-top-h2:                   2.2rem;
-    --padding-bottom-h2:                1.8rem;
+    --font-size-subhead-h2:             2.8rem;
+    --font-line-height-subhead-h2:      #{(32/28)};
+    --space-padding-top-subhead-h2:     2.2rem;
+    --space-padding-bottom-subhead-h2:  1.8rem;
 
     --font-size-big:                    2.1rem;
-    --line-height-big:                  #{(24/21)};
-    --padding-top-big:                  .5rem;
-    --padding-bottom-big:               1.9rem;
-
-    --padding-bottom-form-group:        #{$size-2};
-    --padding-right-input:              2.4rem;
-    --padding-left-input:               2.4rem;
-
-    --padding-x-container:              #{$size-4};
-    --spacer:                           #{$size-line * 3};
+    --font-line-height-big:             #{(24/21)};
+    --space-padding-top-big:            .5rem;
+    --space-padding-bottom-big:         1.9rem;
   }
 
-  @media screen and (min-width: #{map-get($grid-breakpoints, 'mdl')}) {
+  @media screen and (min-width: #{map-get($grid-breakpoints, 'xl')}) {
     --font-size-hero-title:             5.1rem;
-    --line-height-hero-title:           #{(51/56)};
-    --padding-top-hero-title:           .7rem;
-    --padding-bottom-hero-title:        1.9rem;
+    --font-line-height-hero-title:      #{(51/56)};
+    --space-padding-top-hero-title:     .7rem;
+    --space-padding-bottom-hero-title:  1.9rem;
+  }
+  // #endregion
+
+  // ---------------------------------------------------------------------------
+  // 📐 LAYERS, SHAPE & SIZE
+  // ---------------------------------------------------------------------------
+  // #region
+
+  --size-max-width-container:           #{$size-max-width-container};
+
+  --size-gutter-base:                   #{$size-gutter-base};
+  --size-gutter-lg:                     #{$size-space-4)};
+  --size-gutter-xl:                     #{$size-space-6)};
+
+  --size-border-width:                  .1rem;
+
+  // BOX BORDER RADIUS
+
+  // Alerts, Cards, Rectangular Images
+  --shape-border-radius-sm:             .7rem;
+
+  // Buttons
+  --shape-border-radius-base:           1.4rem;
+
+  // Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks, Popovers, Tooltips
+  --shape-border-radius-lg:             2.8rem;
+
+  // Modals
+  --shape-border-radius-xl:             2.8rem;
+
+  --shape-border-radius-pill:           99rem;
+
+  // BOX SHADOWS
+  // Increasing the number of shadows and decreasing the alpha value.
+  // The difference of arithmetic progression can be changed. E.g., by making it
+  // equal 8, we can achieve very soft shadows of the highest level: 1-9-17-25-33
+  // Another method: create shape in Photoshop with minimum and maximum
+  // elevation shadows and then create tween to get intermediate values.
+
+  --layer-box-shadow-contour:           0 0 0 1px #{rgba($color-brand-primary-base, .08)};
+
+  // Buttons, Cards, Alerts, App Bar, Tab Bar, Switches
+  --layer-box-shadow-z1:                0 1px 0 #{rgba($color-brand-primary-base, .45)};
+
+  // FAB, Buttons hover, Snackbars
+  --layer-box-shadow-z2:
+    0 0 0 1px #{rgba($color-brand-primary-base, .08)},
+    0 1px 3px #{rgba($color-brand-primary-base, .12)},
+    0 1px 24px #{rgba($color-brand-primary-base, .21)};
+
+  // FAB hover, Drawers, Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks
+  --layer-box-shadow-z3:
+    0 0 0 1px #{rgba($color-brand-primary-base, .08)},
+    0 1px 6px #{rgba($color-brand-primary-base, .12)},
+    0 1px 48px #{rgba($color-brand-primary-base, .21)};
+
+  // Popovers, Tooltips
+  --layer-box-shadow-z4:
+    0 0 0 1px #{rgba($color-brand-primary-base, .08)},
+    0 1px 9px #{rgba($color-brand-primary-base, .12)},
+    0 1px 72px #{rgba($color-brand-primary-base, .21)};
+
+  // Modals
+  --layer-box-shadow-z5:
+    0 0 0 1px #{rgba($color-brand-primary-base, .08)},
+    0 1px 12px #{rgba($color-brand-primary-base, .12)},
+    0 1px 96px #{rgba($color-brand-primary-base, .21)};
+
+  --layer-box-shadow-focus-outline:     0 0 0 4px #{rgba($color-palette-blue, .5)};
+
+  // BOX Z-INDEX
+  --layer-zindex-header:                1000;
+  --layer-zindex-dropdown:              1010;
+  --layer-zindex-sticky:                1020;
+  --layer-zindex-fixed-scrim:           1025;
+  --layer-zindex-fixed:                 1030;
+  --layer-zindex-popover:               1040;
+  --layer-zindex-tooltip:               1050;
+  --layer-zindex-scrim:                 1060;
+  --layer-zindex-drawer:                1070;
+  --layer-zindex-modal:                 1080;
+
+  // Material design order
+  // https://material.io/design/environment/elevation.html
+  // Dialog: 24dp
+  // Nav drawer: 16dp
+  // FAB: 6dp
+  // App bar: 4dp
+  // Button: 2dp
+  // Card: 1dp to 8dp (for dragging)
+
+  // PANEL WIDTHS
+
+  --size-width-xs:                      20rem;
+
+  // Tooltips, mobile drawers
+  --size-width-sm:                      28rem;
+
+  // Dropdowns, popovers, tablet and desktop drawers
+  --size-width-base:                    32rem;
+
+  // Wide drawers, modals on tablets
+  --size-width-md:                      64rem;
+
+  // Modals on desktops
+  --size-width-lg:                      80rem;
+
+  --size-width-readable:                60ch;
+  // #endregion
+
+  // ---------------------------------------------------------------------------
+  // 🧑🏻‍🎨 GRAPHICS
+  // ---------------------------------------------------------------------------
+  // #region
+  --asset-data-image-list-bullet:       url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%225%22%20height%3D%227%22%20viewBox%3D%220%200%205%207%22%3E%3Ccircle%20cx%3D%222.5%22%20cy%3D%222.5%22%20r%3D%222.5%22%20fill-opacity%3D%22.38%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+
+  --asset-data-image-chevron-down:      url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M6%209L12%2015L18%209%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-chevron-right:     url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M9%2018L15%2012L9%206%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-chevron-up:        url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M6%2015L12%209L18%2015%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-more:              url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12%2013C12.5523%2013%2013%2012.5523%2013%2012C13%2011.4477%2012.5523%2011%2012%2011C11.4477%2011%2011%2011.4477%2011%2012C11%2012.5523%2011.4477%2013%2012%2013Z%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M19%2013C19.5523%2013%2020%2012.5523%2020%2012C20%2011.4477%2019.5523%2011%2019%2011C18.4477%2011%2018%2011.4477%2018%2012C18%2012.5523%2018.4477%2013%2019%2013Z%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M5%2013C5.55228%2013%206%2012.5523%206%2012C6%2011.4477%205.55228%2011%205%2011C4.44772%2011%204%2011.4477%204%2012C4%2012.5523%204.44772%2013%205%2013Z%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-check:             url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M16%206L7.75%2014.25L4%2010.5%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E%0A');
+  --asset-data-image-success:           url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22%20fill%3D%22%234CB37C%22%2F%3E%3Cpath%20d%3D%22M16%209.5L10.5%2015L8%2012.5%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-error:             url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22%20fill%3D%22%23BE6565%22%2F%3E%3Cpath%20d%3D%22M12%208V12M12%2016H12.01%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-chevron-xxxl:      url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22108%22%20height%3D%22108%22%20viewBox%3D%220%200%20108%20108%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20filter%3D%22url%28%23filter0_ddd%29%22%3E%3Crect%20x%3D%2224%22%20y%3D%2223%22%20width%3D%2260%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22white%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M48%2067L62%2053L48%2039%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_ddd%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22108%22%20height%3D%22108%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%2F%3E%3CfeOffset%20dy%3D%221%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%2212%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.3%200%200%200%200%200.7%200%200%200%200%200.486667%200%200%200%200.21%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%2F%3E%3CfeOffset%20dy%3D%221%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%221.5%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.3%200%200%200%200%200.7%200%200%200%200%200.486667%200%200%200%200.12%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22effect1_dropShadow%22%20result%3D%22effect2_dropShadow%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%2F%3E%3CfeMorphology%20radius%3D%221%22%20operator%3D%22dilate%22%20in%3D%22SourceAlpha%22%20result%3D%22effect3_dropShadow%22%2F%3E%3CfeOffset%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.301961%200%200%200%200%200.698039%200%200%200%200%200.486275%200%200%200%200.08%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22effect2_dropShadow%22%20result%3D%22effect3_dropShadow%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect3_dropShadow%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E');
+  --asset-data-image-circle-check:      url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%234CB37C%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%20transform%3D%22translate%282%202%29%22%3E%3Cpath%20d%3D%22M20.0000565%2C9.08623485%20L20.0000565%2C10.0062349%20C19.9975243%2C14.4349207%2017.0823504%2C18.3344478%2012.8354089%2C19.5901358%20C8.58846732%2C20.8458238%204.02145001%2C19.158547%201.61101155%2C15.4433012%20C-0.799426916%2C11.7280554%20-0.479080094%2C6.86987383%202.39833065%2C3.503307%20C5.2757414%2C0.136740166%2010.0247691%2C-0.936239861%2014.0700565%2C0.866234854%22%2F%3E%3Cpolyline%20points%3D%2220%202.006%2010%2012.016%207%209.016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  --asset-data-image-logo-inverse:      url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cpath%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%20d%3D%22M25%2C4%20L24.9995935%2C11.339%20L31.3564065%2C7.66987298%20L36.3564065%2C16.330127%20L30.0005935%2C20%20L36.3564065%2C23.669873%20L31.3564065%2C32.330127%20L24.9995935%2C28.66%20L25%2C36%20L15%2C36%20L14.9995935%2C28.66%20L8.64359354%2C32.330127%20L3.64359354%2C23.669873%20L9.99859354%2C19.999%20L3.64359354%2C16.330127%20L8.64359354%2C7.66987298%20L14.9995935%2C11.339%20L15%2C4%20L25%2C4%20Z%20M20%2C12%20C15.581722%2C12%2012%2C15.581722%2012%2C20%20C12%2C24.418278%2015.581722%2C28%2020%2C28%20C22.2147688%2C28%2024.2193313%2C27.0999998%2025.6679116%2C25.6457754%20L25.8619666%2C25.4440693%20L25.7834218%2C25.4134271%20C27.4006076%2C26.0779664%2029.249063%2C25.7414155%2030.5266709%2C24.5678122%20L30.6900121%2C24.41%20L30.6400121%2C23.79%20L30.414049%2C23.7631741%20C29.2946432%2C23.5982192%2028.335512%2C22.9753883%2027.7222569%2C22.0973233%20C27.9033637%2C21.4288967%2028%2C20.7257336%2028%2C20%20C28%2C15.581722%2024.418278%2C12%2020%2C12%20Z%22%2F%3E%3C%2Fsvg%3E');
+
+  --asset-data-image-user:              url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M20%2021V19C20%2016.7909%2018.2091%2015%2016%2015H8C5.79086%2015%204%2016.7909%204%2019V21%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%227%22%20r%3D%224%22%20fill%3D%22%23E9F6EF%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-thumbs-up:         url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M7%2011L11%202C11.7956%202%2012.5587%202.31607%2013.1213%202.87868C13.6839%203.44129%2014%204.20435%2014%205V9H19.66C19.9499%208.99672%2020.2371%209.0565%2020.5016%209.17522C20.7661%209.29393%2021.0016%209.46873%2021.1919%209.68751C21.3821%209.90629%2021.5225%2010.1638%2021.6033%2010.4423C21.6842%2010.7207%2021.7035%2011.0134%2021.66%2011.3L20.28%2020.3C20.2077%2020.7769%2019.9654%2021.2116%2019.5979%2021.524C19.2304%2021.8364%2018.7623%2022.0055%2018.28%2022H7%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M7%2022H4C3.46957%2022%202.96086%2021.7893%202.58579%2021.4142C2.21071%2021.0391%202%2020.5304%202%2020V13C2%2012.4696%202.21071%2011.9609%202.58579%2011.5858C2.96086%2011.2107%203.46957%2011%204%2011H7%22%20fill%3D%22%23E9F6EF%22%2F%3E%3Cpath%20d%3D%22M7%2011V22H4C3.46957%2022%202.96086%2021.7893%202.58579%2021.4142C2.21071%2021.0391%202%2020.5304%202%2020V13C2%2012.4696%202.21071%2011.9609%202.58579%2011.5858C2.96086%2011.2107%203.46957%2011%204%2011H7Z%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-thumbs-down:       url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M16%2013L12%2022C11.2044%2022%2010.4413%2021.6839%209.87868%2021.1213C9.31607%2020.5587%209%2019.7956%209%2019V15H3.34C3.05009%2015.0033%202.76294%2014.9435%202.49843%2014.8248C2.23392%2014.7061%201.99839%2014.5313%201.80814%2014.3125C1.6179%2014.0937%201.47749%2013.8362%201.39666%2013.5577C1.31583%2013.2793%201.29649%2012.9866%201.34%2012.7L2.72%203.7C2.79232%203.22309%203.03457%202.78839%203.40209%202.47599C3.76962%202.1636%204.23767%201.99455%204.72%202H16%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M16%202H19C19.5304%202%2020.0391%202.21071%2020.4142%202.58579C20.7893%202.96086%2021%203.46957%2021%204V11C21%2011.5304%2020.7893%2012.0391%2020.4142%2012.4142C20.0391%2012.7893%2019.5304%2013%2019%2013H16%22%20fill%3D%22%23E9F6EF%22%2F%3E%3Cpath%20d%3D%22M16%2013V2H19C19.5304%202%2020.0391%202.21071%2020.4142%202.58579C20.7893%202.96086%2021%203.46957%2021%204V11C21%2011.5304%2020.7893%2012.0391%2020.4142%2012.4142C20.0391%2012.7893%2019.5304%2013%2019%2013H16Z%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-donate:            url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M17.5428%2010.0083L15.9949%2011L14.447%2010.0083C10.2182%207.30088%2010.9921%204.83149%2011.1717%204.36538C11.5545%203.45359%2012.6991%202.89326%2013.887%203.03613C15.0748%203.17901%2015.9634%203.98391%2015.9949%204.94554C16.0181%203.97833%2016.9091%203.16561%2018.1037%203.0221C19.2982%202.8786%2020.4478%203.44619%2020.8243%204.36538C21.0162%204.83149%2021.7716%207.30088%2017.5428%2010.0083Z%22%20fill%3D%22%23E9F6EF%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M2%2014C2%2012.8954%202.89543%2012%204%2012H6V21H4C2.89543%2021%202%2020.1046%202%2019V14Z%22%20fill%3D%22%23E9F6EF%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M6%2019.5L14%2021.5L21%2019C21%2018.3333%2020.6%2017%2019%2017C17.8911%2017%2016.7822%2017%2015.8438%2017M10.5%2016C11.5%2016.5%2012.5%2017%2014%2017C14.4456%2017%2015.0896%2017%2015.8438%2017M15.8438%2017C16.0625%2016.3333%2016%2014.8%2014%2014C12%2013.2%209.5%2012.3333%208.5%2012H6%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-edit:              url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M11%204H4C3.46957%204%202.96086%204.21071%202.58579%204.58579C2.21071%204.96086%202%205.46957%202%206V20C2%2020.5304%202.21071%2021.0391%202.58579%2021.4142C2.96086%2021.7893%203.46957%2022%204%2022H18C18.5304%2022%2019.0391%2021.7893%2019.4142%2021.4142C19.7893%2021.0391%2020%2020.5304%2020%2020V13%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M18.5%202.49998C18.8978%202.10216%2019.4374%201.87866%2020%201.87866C20.5626%201.87866%2021.1022%202.10216%2021.5%202.49998C21.8978%202.89781%2022.1213%203.43737%2022.1213%203.99998C22.1213%204.56259%2021.8978%205.10216%2021.5%205.49998L12%2015L8%2016L9%2012L18.5%202.49998Z%22%20fill%3D%22%23E9F6EF%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-rss:               url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2225%22%20height%3D%2225%22%20viewBox%3D%220%200%2025%2025%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4.5%2011.5C6.88695%2011.5%209.17613%2012.4482%2010.864%2014.136C12.5518%2015.8239%2013.5%2018.1131%2013.5%2020.5M4.5%204.5C8.74346%204.5%2012.8131%206.18571%2015.8137%209.18629C18.8143%2012.1869%2020.5%2016.2565%2020.5%2020.5M6.5%2019.5C6.5%2020.0523%206.05228%2020.5%205.5%2020.5C4.94772%2020.5%204.5%2020.0523%204.5%2019.5C4.5%2018.9477%204.94772%2018.5%205.5%2018.5C6.05228%2018.5%206.5%2018.9477%206.5%2019.5Z%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-comment:           url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M21%2015C21%2016.1046%2020.1046%2017%2019%2017H7L3%2021V5C3%203.89543%203.89543%203%205%203H19C20.1046%203%2021%203.89543%2021%205V15Z%22%20fill%3D%22%23E9F6EF%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E%0A');
+  --asset-data-image-repost:            url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2225%22%20height%3D%2225%22%20viewBox%3D%220%200%2025%2025%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cg%20clip-path%3D%22url%28%23clip0%29%22%3E%20%3Cpath%20d%3D%22M17.5%201.5L21.5%205.5M21.5%205.5L17.5%209.5M21.5%205.5H7.5C6.43913%205.5%205.42172%205.92143%204.67157%206.67157C3.92143%207.42172%203.5%208.43913%203.5%209.5V11.5M7.5%2023.5L3.5%2019.5M3.5%2019.5L7.5%2015.5M3.5%2019.5H17.5C18.5609%2019.5%2019.5783%2019.0786%2020.3284%2018.3284C21.0786%2017.5783%2021.5%2016.5609%2021.5%2015.5V13.5%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%20%3C%2Fg%3E%20%3Cdefs%3E%20%3CclipPath%20id%3D%22clip0%22%3E%20%3Crect%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22white%22%20transform%3D%22translate%280.5%200.5%29%22%2F%3E%20%3C%2FclipPath%3E%20%3C%2Fdefs%3E%20%3C%2Fsvg%3E');
+
+  --asset-data-image-facebook:          url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M7%2010V14H10V21H14V14H17L18%2010H14V8C14%207.73478%2014.1054%207.48043%2014.2929%207.29289C14.4804%207.10536%2014.7348%207%2015%207H18V3H15C13.6739%203%2012.4021%203.52678%2011.4645%204.46447C10.5268%205.40215%2010%206.67392%2010%208V10H7Z%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-telegram:          url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M15%2010L11%2014L17%2020L21%204L3%2011L7%2013L9%2019L12%2015%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --asset-data-image-vk:                url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10%206H12V18C7.5%2017%204%2011.5%203%206M20%206C19%208%2017%2011%2015%2012M15%2012H12M15%2012C17%2013%2019%2016%2020%2018%22%20stroke%3D%22%234CB37C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+
+  --asset-background-image-section-header:
+    url('https://unsplash.it/1000?image=215');
+  --asset-background-image-section-header-logo:
+    url('https://unsplash.it/300?image=306');
+  // #endregion
+
+  // ---------------------------------------------------------------------------
+  // 👻 ANIMATION & TRANSITIONS
+  // ---------------------------------------------------------------------------
+  // #region
+
+  // Use shorter for disappearing  elements. To do that set transitions on both
+  // states, like this:
+  // .el { transition: all var(--motion-duration-sm) $motion-easing-disappearance; }
+  // .el.is-hidden { transition: all var(--motion-duration-md) $motion-easing-appearance; }
+  --motion-duration-xs:                 .1s;
+
+  // Medium elements changing states
+  // and disappearance
+  --motion-duration-sm:                 .1s;
+
+  // Medium elements appearance,
+  // large elements changing states
+  // and disappearance
+  --motion-duration-base:               .2s;
+
+  // Medium to large elements appearance
+  --motion-duration-md:                 .4s;
+
+  // Large elements appearance
+  --motion-duration-lg:                 .6s;
+  --motion-duration-xl:                 .8s;
+
+  --motion-easing-base:                 cubic-bezier(.4, 0, .2, 1); // accented ease-in-out
+  --motion-easing-appearance:           cubic-bezier(0, 0, .2, 1); // accented ease-out
+  --motion-easing-disappearance:        cubic-bezier(.4, 0, 1, 1); // ease-in
+  --motion-easing-bounce:               cubic-bezier(.175, .885, .32, 1.275);
+
+  // ---------------------------------------------------------------------------
+  // 🍱 COMPONENTS BASE
+  // ---------------------------------------------------------------------------
+  // #region
+
+  // Components base
+  --space-padding-x-box:                #{$size-space-2};
+  --space-padding-x-container:          2rem;
+  --size-space-base:                    #{$size-space-line};
+
+  // Table
+  --space-margin-top-table:             1.8rem;
+  --space-margin-bottom-table:          3rem;
+  --space-padding-x-cell:               #{$size-space-2};
+  --space-padding-y-cell:               1.2rem;
+
+  // Form
+  --space-padding-bottom-form-group:    #{$size-space-1};
+  --space-padding-y-input:              1.1rem;
+  --space-padding-right-input:          1.6rem;
+  --space-padding-left-input:           1.6rem;
+  --space-padding-bottom-label:         .4rem;
+  --space-padding-bottom-form-actions:  2.2rem;
+  --space-padding-top-select:           1.6rem;
+  --space-padding-bottom-select:        1.2rem;
+
+  @media screen and (min-width: #{map-get($grid-breakpoints, 'md')}) {
+    --space-padding-x-container:        #{$size-space-4};
+    --space-padding-x-box:              #{$size-space-3};
+    --size-space-base:                  #{$size-space-line * 3};
+
+    --space-padding-bottom-form-group:  #{$size-space-2};
+    --space-padding-right-input:        2.4rem;
+    --space-padding-left-input:         2.4rem;
   }
 
-  @media screen and (min-width: #{map-get($grid-breakpoints, 'lg')}) {
-    --padding-x-box:                    #{$size-4};
+  @media screen and (min-width: #{map-get($grid-breakpoints, 'xl')}) {
+    --space-padding-x-box:              #{$size-space-4};
   }
+  // #endregion
 }
-// #endregion
-
-// -----------------------------------------------------------------------------
-// 🌓 DARK THEME
-// -----------------------------------------------------------------------------
-// #region
-
-// // SYSTEM SETTINGS LEVEL
-// // Tis block shoud be nested in :root
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     --color-primary:                    #{$blue};
-//     --color-secondary:                  #{$green};
-//     --color-bg-normal:                  #{$dark-max};
-//     --color-bg-accent:                  var(--color-primary-darkest);
-//     --color-ink-normal:                 #{$light-max};
-//     --color-ink-muted:                  #{$light-2ry};
-//   }
-
-//   // Or use filter for minimum viable dark mode. hue-rotate is optional
-//   filter: invert(90%) hue-rotate(25deg);
-
-//   img, video, iframe {
-//     filter: invert(100%) hue-rotate(-25deg);
-//   }
-
-// // SITE/APP LEVEL
-// This block should be on the same level as a :root
-// html[data-theme='dark'] {
-//   --color-primary:                    #{$blue};
-//   --color-secondary:                  #{$green};
-//   --color-bg-normal:                  #{$dark-max};
-//   --color-bg-accent:                  var(--color-primary-darkest);
-//   --color-ink-normal:                 #{$light-max};
-//   --color-ink-muted:                  #{$light-2ry};
-// }
-
-// #endregion

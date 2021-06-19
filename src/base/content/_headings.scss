@@ -21,16 +21,16 @@
 
 .eyebrow,
 %eyebrow {
-  color: $color-primary-text;
+  color: var(--color-ink-primary-text);
   display: block;
   font-size: var(--font-size-small);
   font-weight: 500;
   letter-spacing: .05rem;
-  line-height: var(--line-height-small);
+  line-height: var(--font-line-height-small);
   text-transform: uppercase;
   margin: 0;
-  padding-top: var(--padding-top-small);
-  padding-bottom: var(--padding-bottom-small);
+  padding-top: var(--space-padding-top-small);
+  padding-bottom: var(--space-padding-bottom-small);
 }
 
 // -----------------------------------------------------------------------------
@@ -40,49 +40,49 @@
 h1, .h1, %h1,
 h2, .h2, %h2 {
   // OpenType kerning
-  font-family: $font-family-accent;
+  font-family: var(--font-family-title);
   font-feature-settings: 'kern' 1, 'liga' 1;
 
-  @include media-breakpoint-up(mdl) {
+  @include media-breakpoint-up(lg) {
     letter-spacing: -.1rem;
   }
 }
 
 // H1 and hero titles
 h1, .h1, %h1 {
-  color: $color-ink-title;
-  font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-h1);
-  line-height: var(--line-height-h1);
+  color: var(--color-ink-title);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-title);
+  line-height: var(--font-line-height-title);
   margin: 0;
-  padding-top: var(--padding-top-h1);
-  padding-bottom: var(--padding-bottom-h1);
+  padding-top: var(--space-padding-top-title);
+  padding-bottom: var(--space-padding-bottom-title);
 
   // With eyebrow
   header > & {
-    margin-top: var(--margin-top-h1-has-eyebrow);
+    margin-top: var(--space-margin-bottom-title-minus);
   }
 }
 
 // Heading 2
 h2, .h2, %h2 {
-  color: $color-ink-accent-normal;
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-h2);
-  line-height: var(--line-height-h2);
+  color: var(--color-ink-primary-accent);
+  font-size: var(--font-size-subhead-h2);
+  font-weight: var(--font-weight-subhead-h2);
+  line-height: var(--font-line-height-subhead-h2);
   // Prevent text transformation on h3 styled as h2
   text-transform: none;
   margin: 0;
-  padding-top: var(--padding-top-h2);
-  padding-bottom: var(--padding-bottom-h2);
+  padding-top: var(--space-padding-top-subhead-h2);
+  padding-bottom: var(--space-padding-bottom-subhead-h2);
 
   &:not(:first-child):not([class]) {
-    margin-top: var(--margin-top-subhead);
+    margin-top: var(--space-margin-top-subhead-h2-plus);
   }
 }
 
 .h2.is-highlight {
-  color: $color-ink-highlight;
+  color: var(--color-ink-primary-fill);
 }
 
 // -----------------------------------------------------------------------------
@@ -98,13 +98,13 @@ h2, .h2, %h2 {
 // SUBHEADS
 
 h3, %h3 {
-  color: $color-ink-title;
+  color: var(--color-ink-title);
   font-size: var(--font-size-big);
-  line-height: var(--line-height-big);
+  line-height: var(--font-line-height-big);
   text-transform: uppercase;
   margin: 0;
-  padding-top: var(--padding-top-big);
-  padding-bottom: var(--padding-bottom-big);
+  padding-top: var(--space-padding-top-big);
+  padding-bottom: var(--space-padding-bottom-big);
 
   @include media-breakpoint-up(md) {
     text-transform: none;
@@ -113,21 +113,22 @@ h3, %h3 {
 
 h3, %h3,
 h4, h5, h6 {
+  font-family: var(--font-family-base);
   font-weight: 500;
   margin: 0;
 
   &:not(:first-child):not([class]) {
-    margin-top: var(--margin-top-subhead);
+    margin-top: var(--space-margin-top-subhead-h2-plus);
   }
 }
 
 h4, h5, h6 {
   font-size: 100%;
   line-height: $line-height-base;
-  padding-top: var(--padding-top-base);
-  padding-bottom: var(--padding-bottom-base);
+  padding-top: var(--space-padding-top-base);
+  padding-bottom: var(--space-padding-bottom-base);
 
   &:not(:first-child):not([class]) {
-    margin-top: var(--margin-top-subhead);
+    margin-top: var(--space-margin-top-subhead-h2-plus);
   }
 }

@@ -10,10 +10,11 @@ _tmp
 assets
 backup
 docs
-src/css/bootstrap.css
+src/css/core
 src/pages/outlines
 src/overrides/*
 !src/overrides/_overrides.scss
+!src/overrides/_add-ons.scss
 tmp
 uploads
 

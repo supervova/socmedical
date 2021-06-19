@@ -13,16 +13,17 @@
 // -----------------------------------------------------------------------------
 
 body {
-  background-color: $color-bg-normal;
-  color: $color-ink-normal;
+  background-color: var(--color-background-base);
+  color: var(--color-ink-base);;
 
   // Use flex to distribute blocks across the entire height of the screen
   // setting central area flex-growth to 1.
   // display: flex;
   // flex-direction: column;
-  font-family: $font-family-base;
+  font-family: var(--font-family-base);
   font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
+  font-weight: normal;
+  line-height: var(--font-line-height-base);
   text-align: left;
   min-height: 100%;
 }
@@ -48,7 +49,8 @@ a:not([class]) {
   @extend %standard-focus;
 
   color: $color-ink-link;
-  transition: color $duration-xs $easing;
+  transition: color var(--motion-duration-xs) var(--motion-easing-base);
+  word-break: break-word;
 
   &:hover {
     text-decoration: underline;
@@ -69,8 +71,8 @@ a:not([class]) {
 .link.is-cta {
   color: $color-ink-link;
   display: table;
-  padding-top: var(--padding-top-base);
-  padding-bottom: var(--padding-bottom-base);
+  padding-top: var(--space-padding-top-base);
+  padding-bottom: var(--space-padding-bottom-base);
   position: relative;
 
   &:visited {
@@ -81,7 +83,7 @@ a:not([class]) {
     background-color: rgba($color-ink-link, .5);
     content: '';
     position: absolute;
-    bottom: $size-1;
+    bottom: $size-space-1;
     left: 0;
     right: 0;
     height: .4rem;
@@ -131,19 +133,19 @@ a:not([class]) {
 
   &:focus {
     background-color: #fff;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow-z2;
+    border-radius: var(--shape-border-radius-base);
+    box-shadow: var(--layer-box-shadow-z2);
     clip: auto;
-    color: $color-ink-2ry;
+    color: var(--color-ink-2ry);
     display: block;
     line-height: normal;
     text-decoration: none;
-    padding: $size-2;
-    top: $size-1;
-    left: $size-1;
+    padding: $size-space-2;
+    top: $size-space-1;
+    left: $size-space-1;
     width: auto;
     height: auto;
-    z-index: $zindex-dropdown;
+    z-index: var(--layer-zindex-dropdown);
   }
 }
 
@@ -156,25 +158,33 @@ pre,
 %body-copy {
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: var(--padding-top-base);
-  padding-bottom: var(--padding-bottom-base);
+  padding-top: var(--space-padding-top-base);
+  padding-bottom: var(--space-padding-bottom-base);
+}
+
+// Override main.css
+p {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: normal;
+  line-height: var(--font-line-height-base);
 }
 
 .lead,
 %lead {
   font-size: var(--font-size-big);
   font-weight: var(--font-weight-big);
-  line-height: var(--line-height-big);
-  padding-top: var(--padding-top-big);
-  padding-bottom: var(--padding-bottom-big);
+  line-height: var(--font-line-height-big);
+  padding-top: var(--space-padding-top-big);
+  padding-bottom: var(--space-padding-bottom-big);
 }
 
 .petit,
 %petit {
   font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
-  padding-top: var(--padding-top-small);
-  padding-bottom: var(--padding-bottom-small);
+  line-height: var(--font-line-height-small);
+  padding-top: var(--space-padding-top-small);
+  padding-bottom: var(--space-padding-bottom-small);
 }
 
 // QUOTES
@@ -183,11 +193,11 @@ blockquote {
   margin: 0;
 
   > footer {
-    color: $color-ink-2ry;
+    color: var(--color-ink-2ry);
     font-style: normal;
-    margin-top: -$size-line;
-    padding-top: var(--padding-top-base);
-    padding-bottom: var(--padding-bottom-base);
+    margin-top: -$size-space-line;
+    padding-top: var(--space-padding-top-base);
+    padding-bottom: var(--space-padding-bottom-base);
 
     &::before {
       content: '\2014\00A0'; // em dash, nbsp
@@ -224,8 +234,8 @@ blockquote {
 // .list-caption may be a span
 .list-caption {
   display: block;
-  padding-top: var(--padding-top-base);
-  padding-bottom: var(--padding-bottom-li);
+  padding-top: var(--space-padding-top-base);
+  padding-bottom: var(--space-padding-bottom-li);
 }
 
 ol,
@@ -233,17 +243,17 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
-  padding-bottom: var(--padding-bottom-list);
+  padding-bottom: var(--space-padding-bottom-list);
 }
 
 li {
-  padding-top: var(--padding-top-base);
-  padding-bottom: var(--padding-bottom-li);
+  padding-top: var(--space-padding-top-base);
+  padding-bottom: var(--space-padding-bottom-li);
 }
 
 ul {
-  list-style-image: $list-bullet;
-  padding-left: $size-2;
+  list-style-image: var(--asset-data-image-list-bullet);
+  padding-left: $size-space-2;
 
   @include media-breakpoint-up(md) {
     padding-left: 0;
@@ -253,7 +263,7 @@ ul {
 ol ol,
 ul ul,
 ul ol {
-  padding-left: $size-2;
+  padding-left: $size-space-2;
 }
 
 ol ol,
@@ -296,21 +306,26 @@ dd {
   &:not(:last-child)::after {
     content: '';
     display: block;
-    height: $size-line;
+    height: $size-space-line;
   }
 }
 
 // INLINE
+b,
+strong {
+  font-weight: 500;
+}
+
 mark {
-  background-color: $color-highlight;
-  border-radius: $border-radius-sm;
-  color: $color-ink-normal;
+  background-color: var(--color-background-success);
+  border-radius: var(--shape-border-radius-sm);
+  color: var(--color-ink-base);;
   padding: 0 .2rem;
 }
 
 small,
 .note {
-  color: $color-ink-2ry;
+  color: var(--color-ink-2ry);
   font-size: 100%;
 }
 
@@ -318,7 +333,7 @@ small,
 
 hr {
   border: 0;
-  border-top: $border-width solid $color-ink-border;
-  margin-top: $size-line * 3 - .1rem;
-  margin-bottom: $size-line * 3;
+  border-top: var(--size-border-width) solid var(--color-border-dark);
+  margin-top: $size-space-line * 3 - .1rem;
+  margin-bottom: $size-space-line * 3;
 }

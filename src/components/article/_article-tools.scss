@@ -1,0 +1,292 @@
+// -----------------------------------------------------------------------------
+// ARTICLE TOOLS: COMMANDS & STATS
+// -----------------------------------------------------------------------------
+// #region
+
+.article__tools {
+  // page-footer override
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 .4rem 0 0;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-start;
+  }
+}
+
+.article__tools a:hover {
+  text-decoration: none;
+}
+
+// Buy button
+
+.article__tools .btn.is-primary {
+  display: none;
+}
+
+
+// More menu
+.article__tools .dropup {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-left: $size-space-1;
+  }
+}
+
+.article__tools .dropup .dropdown__menu {
+  top: auto;
+  right: calc(100% - #{$size-space-5});
+  bottom: $size-space-5;
+  left: auto;
+  width: var(--size-width-sm);
+  min-width: 0;
+}
+
+// Stats
+
+.article__stats {
+  color: var(--color-ink-2ry);
+  display: flex;
+  list-style: none;
+  margin-left: 0;
+  padding: 0 0 0 1.7rem;
+}
+
+.article__stats figure {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.article__stats .icon {
+  margin-right: $size-space-1;
+}
+
+.article__stats figure + figure {
+  margin-left: $size-space-2;
+}
+
+// Abuse
+.btn.is-abuse,
+a[onclick='abusepost()'] {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: inline-flex;
+
+    small {
+      font-size: var(--font-size-small);
+    }
+  }
+}
+
+a[onclick='abusepost()']:not(.is-abuse) {
+  @include media-breakpoint-up(md) {
+    transform: translateY(45px);
+  }
+}
+
+// #endregion
+
+// -----------------------------------------------------------------------------
+// LEGACY
+//------------------------------------------------------------------------------
+
+// Tags
+.post-tag {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: $size-space-1 0 ($size-space-2 + .4rem);
+}
+
+.post-tag a {
+  background-color: var(--color-background-success) /* !important */;
+  border-radius: var(--shape-border-radius-base) /* !important */;
+  color: var(--color-ink-success-text) /* !important */;
+  font-size: var(--font-size-small) /* !important */;
+  line-height: var(--font-line-height-small) /* !important */;
+  margin: 0 $size-space-1 $size-space-1 0 /* !important */;
+  padding: .4rem $size-space-1 /* !important */;
+  transition: background-color var(--motion-duration-xs) var(--motion-easing-base) /* !important */;
+
+  &:hover {
+    // Override main
+    background-color: var(--color-background-alt);
+    color: var(--color-ink-success-text);
+    text-decoration: none;
+  }
+
+  &::before,
+  &::after {
+    display: none;
+  }
+}
+
+.post-tag a:last-child {
+  margin-right: 0;
+}
+
+// Icons Reset
+.glyphicon-thumbs-up,
+.glyphicon-thumbs-down,
+.glyphicon-eye-open,
+.glyphicon-user,
+.glyphicons-retweet,
+.glyphicons-comments {
+  background-repeat: no-repeat;
+  display: inline-block;
+  text-shadow: none /* !important */;
+  position: static /* !important */;
+  vertical-align: middle;
+  width: $size-space-5;
+  height: $size-space-5;
+
+  &::before {
+    display: none;
+  }
+}
+
+// Voting
+
+.postrating {
+  font-size: var(--font-size-small) /* !important */;
+  text-shadow: none /* !important */;
+}
+
+.comment .rating {
+  display: inline-flex;
+}
+
+font[color='green'] {
+  color: var(--color-ink-success-text);
+  font-weight: normal;
+}
+
+font[color='red'] {
+  color: var(--color-ink-error-text);
+  font-weight: normal;
+}
+
+a[onclick^='votepost'] {
+  border-radius: var(--shape-border-radius-base);
+  display: inline-block;
+  transition: background var(--motion-duration-xs);
+
+  &:hover {
+    background-color: $color-background-alt;
+    text-decoration: none;
+  }
+}
+
+.glyphicon-thumbs-up {
+  background-image: var(--asset-data-image-thumbs-up);
+  background-position: 50% calc(50% - 2px);
+}
+
+.glyphicon-thumbs-down {
+  background-image: var(--asset-data-image-thumbs-down);
+  background-position: 50% calc(50% + 2px);
+}
+
+// Donate
+a[href^='/donate'] {
+  background-image: var(--asset-data-image-donate);
+  background-position: 50% calc(50% + -4px);
+  background-repeat: no-repeat;
+  border-radius: var(--shape-border-radius-base);
+  display: inline-block;
+  vertical-align: middle;
+  transition: background var(--motion-duration-xs);
+  width: $size-space-5;
+  height: $size-space-5;
+
+  &:hover {
+    background-color: $color-background-alt;
+    text-decoration: none;
+  }
+
+  img {
+    display: none;
+  }
+}
+
+// Comments & reposts
+
+.glyphicons-comments {
+  background-image: var(--asset-data-image-comment);
+  background-position: 50% 50%;
+}
+
+.glyphicons-retweet {
+  background-image: var(--asset-data-image-repost);
+  background-position: 50% 50%;
+}
+
+
+// Social
+
+.at-style-responsive .at-share-btn {
+  background-color: transparent !important;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-radius: var(--shape-border-radius-base) !important;
+  margin: 0 $size-space-1 0 0 !important;
+  padding: 0 !important;
+  width: 5.2rem;
+  height: 5.2rem;
+
+  &:hover {
+    background-color: $color-background-alt !important;
+    transform: none !important;
+  }
+
+  .at-icon-wrapper {
+    display: none;
+  }
+}
+
+.at-svc-facebook {
+  background-image: var(--asset-data-image-facebook);
+}
+
+.at-svc-telegram {
+  background-image: var(--asset-data-image-telegram);
+}
+
+.at-svc-vk {
+  background-image: var(--asset-data-image-vk);
+}
+
+// Edit
+img[src*='editpost.png'] {
+  display: none;
+
+  + small {
+    background: rgba(0, 0, 0, 0) var(--asset-data-image-edit) no-repeat 0 50%;
+    display: inline-block;
+    font-size: var(--font-size-small);
+    line-height: $size-space-line;
+    margin-left: -.4rem;
+    padding-left: $size-space-5;
+    position: relative;
+    height: $size-space-line;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,12 +1,12 @@
-.navbar-wrapper {
+.main-menu {
   pointer-events: none;
   opacity: 1;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  transition: opacity $duration $easing;
-  z-index: $zindex-tooltip;
+  transition: opacity var(--motion-duration-base) var(--motion-easing-base);
+  z-index: var(--layer-zindex-tooltip);
 
   @include media-breakpoint-up(md) {
     top: 0;
@@ -14,66 +14,61 @@
   }
 }
 
-.page.is-home .navbar-wrapper {
+// Hide navbar on inner pages when the footer is appeared
+.has-hidden-stickies:not(.is-home) .main-menu {
   @include media-breakpoint-up(md) {
-    position: absolute;
+    opacity: 0;
   }
 }
 
-// Hide navbar on inner pages when the footer is appeared
-.has-hidden-stickies:not(.is-home) .navbar-wrapper {
-  opacity: 0;
-}
+// Outer container
 
-// Navbar outer container
-
-.navbar-wrapper > .container {
-  --padding-x-container: 0;
+.main-menu > .qwt-container {
+  --space-padding-x-container: 0;
 
   @include media-breakpoint-down(md) {
     pointer-events: none;
   }
 
   @include media-breakpoint-up(md) {
-    --padding-x-container: #{$size-4};
-    padding-top: $size-4;
-    padding-bottom: $size-4;
+    --space-padding-x-container: #{$size-space-4};
+    padding-top: $size-space-4;
+    padding-bottom: $size-space-4;
   }
 }
 
-.navbar {
-  background: $color-bg-alt;
+.main-menu__inner {
+  background: $color-background-alt;
   box-shadow:
     inset 0 1px 0 0 rgba(255, 255, 255, .5),
     0 -2px 4px 0 rgba(0, 0, 0, .08),
     0 -1px 0 0 rgba(0, 0, 0, .06);
   pointer-events: auto;
   width: 100%;
-  height: $size-7;
+  height: $size-space-7;
 
   @include media-breakpoint-up(md) {
-    background: $color-bg-normal;
-    border-radius: $border-radius-lg;
+    background: var(--color-background-base);
+    border-radius: var(--shape-border-radius-lg);
     box-shadow:
-      $box-shadow-contour,
-      $box-shadow-z5;
-    padding-top: $size-line * 2;
-    padding-left: $size-1;
-    padding-right: $size-1;
+      var(--layer-box-shadow-contour),
+      var(--layer-box-shadow-z5);
+    padding-top: $size-space-line * 2;
+    padding-right: $size-space-1;
+    padding-bottom: $size-space-line * 2;
+    padding-left: $size-space-1;
     width: calc(#{percentage(1/4)} - 1.2rem);
     height: auto;
-    min-height: 65.6rem;
-  }
-
-  @include media-breakpoint-only(mdl) {
-    width: calc(#{percentage(1/6)} - 1.4rem);
   }
 
   @include media-breakpoint-only(lg) {
-    padding-top: $size-5;
-    padding-left: $size-line;
-    padding-right: $size-line;
-    min-height: 73.6rem;
+    width: calc(#{percentage(1/6)} - 1.4rem);
+  }
+
+  @include media-breakpoint-only(xl) {
+    padding-top: $size-space-5;
+    padding-left: $size-space-line;
+    padding-right: $size-space-line;
   }
 }
 
@@ -81,54 +76,54 @@
 // LOGO
 // -----------------------------------------------------------------------------
 
-.navbar__logo {
+.main-menu__logo {
   display: none;
 
   @include media-breakpoint-up(md) {
     display: block;
-    border-radius: $border-radius;
+    border-radius: var(--shape-border-radius-base);
 
     &:focus {
-      background: $color-bg-alt;
+      background: $color-background-alt;
     }
   }
 }
 
-.navbar__logo > figure {
+.main-menu__logo > figure {
   text-align: center;
   margin-bottom: 2.9rem;
 
-  @include media-breakpoint-up(mdl) {
+  @include media-breakpoint-up(lg) {
     margin-bottom: 1.3rem;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     display: flex;
     align-items: center;
     text-align: left;
-    margin-bottom: ($size-line * 3) + 2.1rem;
+    margin-bottom: ($size-space-line * 3) + 2.1rem;
   }
 }
 
-.navbar__logomark {
+.main-menu__logomark {
   display: block;
   margin-left: auto;
   margin-right: auto;
 
-  @include media-breakpoint-up(lg) {
-    margin-left: $size-1;
-    margin-right: $size-1;
+  @include media-breakpoint-up(xl) {
+    margin-left: $size-space-1;
+    margin-right: $size-space-1;
   }
 }
 
-.navbar__tagline {
-  color: $color-ink-2ry;
+.main-menu__tagline {
+  color: var(--color-ink-2ry);
   font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
+  line-height: var(--font-line-height-small);
   word-break: break-word;
   padding: .4rem 0 0;
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     margin-top: -.4rem;
     padding: 0;
   }
@@ -138,80 +133,85 @@
 // -----------------------------------------------------------------------------
 // MENU
 // -----------------------------------------------------------------------------
-.navbar__list {
+.main-menu__list {
   display: flex;
+  align-items: stretch;
   padding: 0;
+  height: calc(100% - #{$size-space-1});
 
   @include media-breakpoint-up(md) {
     flex-direction: column;
   }
 }
 
-.navbar__item {
+.main-menu__item {
   display: flex;
   flex: 1 0 0%;
   justify-content: center;
   padding: 0;
 
   @include media-breakpoint-only(md) {
-    padding-bottom: $size-1;
+    padding-bottom: $size-space-1;
   }
 }
 
-.navbar__link,
+.main-menu__link,
 %navbar-link {
-  border-radius: $border-radius;
-  color: $color-ink-2ry;
+  border-radius: var(--shape-border-radius-base);
+  color: var(--color-ink-2ry);
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
+  line-height: var(--font-line-height-small);
   text-align: center;
+  word-break: word;
   margin-top: .4rem;
-  padding: .4rem $size-1;
-  transition: background $duration-xs;
+  padding: .4rem $size-space-1;
+  transition: background var(--motion-duration-xs);
   min-width: 7rem;
 
   &:hover,
   &:focus {
-    background-color: $color-bg-alt;
+    background-color: $color-background-alt;
     text-decoration: none;
   }
 
   @include media-breakpoint-up(md) {
-    color: $color-ink-2ry;
+    color: var(--color-ink-2ry);
     font-size: var(--font-size-small);
     letter-spacing: .05rem;
-    line-height: var(--line-height-small);
+    line-height: var(--font-line-height-small);
     font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
     margin: 0;
-    padding: $size-2 $size-1 1.3rem;
+    padding: $size-space-2 $size-space-1 1.3rem;
     width: 100%;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     flex-direction: row;
+    justify-content: flex-start;
     margin-bottom: .4rem;
-    padding: .2rem $size-2 0;
-    transition: background $duration-xs;
+    padding: .2rem $size-space-2 0;
+    transition: background var(--motion-duration-xs);
     height: 5.2rem;
   }
 }
 
-.navbar__link .icon,
-.navbar__dropdown-label .icon {
+.main-menu__link .icon,
+.main-menu__dropdown-label .icon {
   display: block;
 
   @include media-breakpoint-up(md) {
     margin-bottom: 1.2rem;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     margin-bottom: 0;
-    margin-right: $size-2;
+    margin-right: $size-space-2;
     transform: translateY(-.1rem);
   }
 }
@@ -220,33 +220,33 @@
 // MORE
 // -----------------------------------------------------------------------------
 
-.navbar__dropdown-label {
+.main-menu__dropdown-label {
   @extend %btn, %navbar-link;
 
   background: transparent;
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     justify-content: flex-start;
   }
 }
 
-.navbar__dropdown-label[aria-expanded='true'] {
-  background-color: darken($color-bg-alt, 5%);
+.main-menu__dropdown-label[aria-expanded='true'] {
+  background-color: darken($color-background-alt, 5%);
 
   @include media-breakpoint-up(md) {
-    background-color: $color-bg-alt;
+    background-color: $color-background-alt;
   }
 }
 
-.navbar__item .dropdown__menu {
+.main-menu__item .dropdown__menu {
   top: auto;
   bottom: 100%;
   left: auto;
   right: 2rem;
 
   @include media-breakpoint-up(md) {
-    bottom: -$size-line;
-    left: $size-line * 6;
+    bottom: -$size-space-line;
+    left: $size-space-line * 6;
     right: auto;
   }
 }
